@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock %}
+{% block content %}
+<h2>
+{{user.username}}'s profile
+</h2>
+
+{% with profile=user.profile %}
+<table style="width:50">
+<tr>
+  <th>favored</th>
+{% for favored in profile.favored %}
+  <td style="padding: 35px";><div style="background-color:rgb(0, 255, 0)";>{{favored}}</div> </td>
+{% endfor %}
+</tr>
+
+<tr>
+<th>disliked</th>
+{% for dislike in profile.disliked %}
+  <td style="padding: 35px";><div style="background-color:rgb(255, 0, 0)";>{{dislike}}</div></td>
+{% endfor %}
+</tr>
+</table>
+{% endwith %}
+
+<h3>Add data</h3>
+<form action = "/accounts/profile/send" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <p>Favored</p>
+  <input id="favored" type="text" name="favored">
+  <p>Disliked</p>
+  <input id="disliked" type="text" name="disliked">
+  <input type="submit" value="OK">
+</form>
+<h3>Remove data</h3>
+<form action = "/accounts/profile/remove" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <p>Favored</p>
+  <input id="favored" type="text" name="favored">
+  <p>Disliked</p>
+  <input id="disliked" type="text" name="disliked">
+  <input type="submit" value="OK">
+</form>
+{% endblock %}

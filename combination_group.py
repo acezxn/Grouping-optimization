@@ -1,16 +1,28 @@
 import itertools
 import random
-'''
+
+"""
 Favor data records the favorism of different people. The dictionary has key of different names,
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
-'''
+"""
 
-total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-favor_data = {'A':[['B', 'C'], ['E']], 'B':[['C'], ['D']], 'C':[['B'], ['A']], 'D':[['B'], ['E']], 'E':[['C'], ['D']], 'F':[['A'], ['C']], 'G':[['H'],['E']], 'H':[['G'], ['F']]}
+total = ["A", "B", "C", "D", "E", "F", "G", "H"]
+favor_data = {
+    "A": [["B", "C"], ["E"]],
+    "B": [["C"], ["D"]],
+    "C": [["B"], ["A"]],
+    "D": [["B"], ["E"]],
+    "E": [["C"], ["D"]],
+    "F": [["A"], ["C"]],
+    "G": [["H"], ["E"]],
+    "H": [["G"], ["F"]],
+}
 size = 4
 group_list = []
 
 inner = []
+
+
 def complement(src, aux):
     out = []
     for i in src:
@@ -31,6 +43,7 @@ def happiness_calc(group):
             if single in group:
                 score -= 1
     return score
+
 
 def branch(src, group, starter):
     if group != starter:
@@ -64,7 +77,6 @@ def branch(src, group, starter):
         branch(other, group, starter)
 
 
-
 scores = []
 score_list = []
 processed_data = []
@@ -74,12 +86,11 @@ for group in groups:
     # inner.append(groups[0])
     branch(total, group, group)
 
-# print(score_list)
+# print(len(group_list))
 for i in score_list:
     s = 0
     diff = max(i) - min(i)
     processed_data.append(diff)
-
 
 
 maximums = []

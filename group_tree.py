@@ -1,10 +1,21 @@
 import random
-total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-wills = [['A', ['B', 'C', 'D']], ['B', ['C', 'D', 'A']], ['C', ['D']], [
-    'D', ['A', 'B']], ['E', ['F']], ['F', ['E']], ['G', ['F']], ['H', []]]
+
+total = ["A", "B", "C", "D", "E", "F", "G", "H"]
+wills = [
+    ["A", ["B", "C", "D"]],
+    ["B", ["C", "D", "A"]],
+    ["C", ["D"]],
+    ["D", ["A", "B"]],
+    ["E", ["F"]],
+    ["F", ["E"]],
+    ["G", ["F"]],
+    ["H", []],
+]
 group_size = 4
 
 generated = []
+
+
 def gen(n):
     i = random.choice(n)
     while i in generated:
@@ -12,16 +23,18 @@ def gen(n):
     generated.append(i)
     return i
 
+
 rating_list = []
 grouped = []
 groups = []
 selection = ""
 
+
 def randomly_choose():
     print("No ideal points left, randomly assigning")
-    c = random.randint(0, len(total)-1)
+    c = random.randint(0, len(total) - 1)
     while total[c] in grouped:
-        c = random.randint(0, len(total)-1)
+        c = random.randint(0, len(total) - 1)
     selection = total[c]
     return selection
 
@@ -50,7 +63,7 @@ for x in range(len(total)):
     rating_list = []
     group = [target]
     grouped.append(target)
-    for iter in range(group_size-1):
+    for iter in range(group_size - 1):
         for j in range(len(wanter)):
             want_idx_in_total = total.index(wanter[j])
             wanted_num = len(wills[want_idx_in_total][1])
@@ -83,15 +96,28 @@ for x in range(len(total)):
                             collection = []
                             lengths = []
                             for m in wills:
-                                print('m', m[0], m[1], src in m[1], m[0] not in grouped, m[0] != src, not (m[0] in wanter))
+                                print(
+                                    "m",
+                                    m[0],
+                                    m[1],
+                                    src in m[1],
+                                    m[0] not in grouped,
+                                    m[0] != src,
+                                    not (m[0] in wanter),
+                                )
                                 print(m[0], wanter)
-                                if src in m[1] and m[0] not in grouped and m[0] != src and not (m[0] in wanter):
-                                    print(f'appending {m[0]}')
+                                if (
+                                    src in m[1]
+                                    and m[0] not in grouped
+                                    and m[0] != src
+                                    and not (m[0] in wanter)
+                                ):
+                                    print(f"appending {m[0]}")
                                     collection.append(m[0])
                                     lengths.append(len(m[1]))
                             if len(collection) >= 1:
                                 selection = collection[lengths.index(min(lengths))]
-                                print(f'selection --> {selection}')
+                                print(f"selection --> {selection}")
                                 status = True
                             else:
                                 status = False
@@ -100,13 +126,10 @@ for x in range(len(total)):
                             if status == True:
                                 break
 
-
                         if status == False:
                             selection = randomly_choose()
         except ValueError:
             selection = randomly_choose()
-
-
 
         # print("appending: ", wanter[c])
         grouped.append(selection)
@@ -115,4 +138,3 @@ for x in range(len(total)):
     print("Grouped: ", group)
     groups.append(group)
 print(groups)
-

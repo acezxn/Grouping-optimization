@@ -16,13 +16,38 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='UserProfile',
+            name="UserProfile",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('is_full_name_displayed', models.BooleanField(default=True)),
-                ('favored', django_mysql.models.ListTextField(models.CharField(max_length=10), size=5)),
-                ('disliked', django_mysql.models.ListTextField(models.CharField(max_length=10), size=5)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("is_full_name_displayed", models.BooleanField(default=True)),
+                (
+                    "favored",
+                    django_mysql.models.ListTextField(
+                        models.CharField(max_length=10), size=5
+                    ),
+                ),
+                (
+                    "disliked",
+                    django_mysql.models.ListTextField(
+                        models.CharField(max_length=10), size=5
+                    ),
+                ),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="profile",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

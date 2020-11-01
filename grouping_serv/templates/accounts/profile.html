@@ -2,23 +2,25 @@
 
 {% block title %}home{% endblock %}
 {% block content %}
+
 <h2>
 {{user.username}}'s profile
 </h2>
 
+<a href="/accounts/list">available usernames</a>
 {% with profile=user.profile %}
 <table style="width:50">
-<tr>
-  <th>favored</th>
+<tr style="background-color: rgb(100, 255, 100);">
+  <th> favored: </th>
 {% for favored in profile.favored %}
-  <td style="padding: 35px";><div style="background-color:rgb(0, 255, 0)";>{{favored}}</div> </td>
+  <td style="padding: 14px 16px; overflow: hidden; text-align: center;"><div>{{favored}}</div> </td>
 {% endfor %}
 </tr>
 
-<tr>
-<th>disliked</th>
+<tr style="background-color: rgb(255, 100, 100);">
+<th> disliked: </th>
 {% for dislike in profile.disliked %}
-  <td style="padding: 35px";><div style="background-color:rgb(255, 0, 0)";>{{dislike}}</div></td>
+  <td style="padding: 14px 16px; overflow: hidden; text-align: center;"><div>{{dislike}}</div></td>
 {% endfor %}
 </tr>
 </table>
@@ -32,6 +34,7 @@
   <input id="favored" type="text" name="favored">
   <p>Disliked</p>
   <input id="disliked" type="text" name="disliked">
+  <p></p>
   <input type="submit" value="OK">
 </form>
 <h3>Remove data</h3>
@@ -42,6 +45,17 @@
   <input id="favored" type="text" name="favored">
   <p>Disliked</p>
   <input id="disliked" type="text" name="disliked">
+  <p></p>
   <input type="submit" value="OK">
+{% if user.is_authenticated %}
+
+{% if user.is_superuser %}
 </form>
+<p>Combination grouping algorithm</p>
+<form action = "/accounts/compute" method="post">
+  {% csrf_token %}
+  <input type="submit" value="compute">
+</form>
+{% endif %}
+{% endif %}
 {% endblock %}

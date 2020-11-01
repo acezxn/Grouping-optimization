@@ -10,23 +10,32 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='userprofile',
-            name='disliked',
-            field=django_mysql.models.ListTextField(models.CharField(max_length=10, null=True), size=5),
+            model_name="userprofile",
+            name="disliked",
+            field=django_mysql.models.ListTextField(
+                models.CharField(max_length=10, null=True), size=5
+            ),
         ),
         migrations.AlterField(
-            model_name='userprofile',
-            name='favored',
-            field=django_mysql.models.ListTextField(models.CharField(max_length=10, null=True), size=5),
+            model_name="userprofile",
+            name="favored",
+            field=django_mysql.models.ListTextField(
+                models.CharField(max_length=10, null=True), size=5
+            ),
         ),
         migrations.AlterField(
-            model_name='userprofile',
-            name='user',
-            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL),
+            model_name="userprofile",
+            name="user",
+            field=models.OneToOneField(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="profile",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

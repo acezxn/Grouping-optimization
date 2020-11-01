@@ -1,12 +1,21 @@
-<nav>
-  <a href="/">Home</a>  |
-      <a href="/about">About<a>  |
-      {% if user.is_authenticated %}
-      <a href="/accounts/logout">Logout</a> |
-      <a href="/accounts/profile">{{user.username}}</a>  |
-      {% else %}
-        <a href="/accounts/login">Login</a>
+<style>
+a:hover {
+  background-color: rgb(255, 100, 100);
+}
+.username:hover {
+  background-color: rgb(100, 100, 255);
+}
+</style>
+<div class="navbar">
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+{% if user.is_authenticated %}
+  <a class = "username" href="/accounts/search">{{user.username}}</a>
+  <a href="/accounts/logout">Logout</a>
+{% else %}
+  <a href="/accounts/login">Login</a>
+  <a href="/accounts/signup">Sign up</a>
+{% endif %}
 
-      {% endif %}
 
-</nav>
+</div>

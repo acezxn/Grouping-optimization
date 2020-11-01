@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "/styles.css" %}">
+  <title>Available users</title>
+</head>
+<body>
+  <!-- {% include 'navbar.html' %} -->
+
+  <h2>Available users</h2>
+  {% csrf_token %}
+  {% with users=user %}
+
+
+    {% for u in users %}
+      {% if not u.is_superuser %}
+        <div style = "background-color: rgb(221, 221, 221); padding: 1px 10px; border-style: ridge;"><p>{{u}}</p></div>
+      {% endif %}
+    {% endfor %}
+  {% endwith %}
+  <a href = {{prev}}> back</a>
+
+</body>
+</html>

@@ -20,8 +20,11 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 
 
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),
+
 ]

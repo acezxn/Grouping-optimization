@@ -2,3 +2,5 @@ django
 django_mysql
 black
 whitenoise
+django-secure
+django-sslserver

@@ -1,3 +1,4 @@
 django
 django_mysql
 black
+whitenoise

@@ -62,7 +62,7 @@ MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware"
 )
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_FRAME_DENY = True
@@ -72,7 +72,7 @@ SECURE_REFERRER_POLICY = []
 ROOT_URLCONF = "grouping_serv.urls"
 
 # INSTALLED_APPS += "sslserver"
-# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_BROWSER_XSS_FILTER = True
 TEMPLATES = [
     {
@@ -151,21 +151,21 @@ LOGOUT_REDIRECT_URL = "public:index"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # In settings.py
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': 'log.log',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'log.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

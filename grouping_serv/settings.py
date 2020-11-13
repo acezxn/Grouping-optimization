@@ -23,8 +23,8 @@ PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "%m1xg0l+v2_ec%!i++y&t$l53*h8e-@_(ps+x723xkd83m-zy!"
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 # SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 # SESSION_COOKIE_HTTPSONLY=True
 

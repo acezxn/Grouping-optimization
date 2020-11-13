@@ -31,7 +31,7 @@ SESSION_COOKIE_HTTPSONLY=True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
+ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com', '0.0.0.0']
 
 
 # Application definition

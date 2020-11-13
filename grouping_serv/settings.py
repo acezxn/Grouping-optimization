@@ -26,12 +26,12 @@ SECRET_KEY = "%m1xg0l+v2_ec%!i++y&t$l53*h8e-@_(ps+x723xkd83m-zy!"
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE=True
-# SESSION_COOKIE_HTTPSONLY=True
+SESSION_COOKIE_HTTPSONLY=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'https://group-optipus.herokuapp.com/']
+ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
 
 
 # Application definition
@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_FRAME_DENY = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

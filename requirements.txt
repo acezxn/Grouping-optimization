@@ -2,4 +2,3 @@ django
 django_mysql
 black
 whitenoise
-dj_database_url

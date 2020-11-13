@@ -1,1 +1,1 @@
-web: python manage.py runsslserver --certificate cert.pem --key key.pem 0.0.0.0:8000
+web: python manage.py runsslserver --certificate cert.pem --key key.pem 0.0.0.0:$PORT

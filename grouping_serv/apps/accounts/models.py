@@ -13,20 +13,23 @@ class UserProfile(models.Model):
         User, on_delete=models.CASCADE, related_name="profile", null=True
     )
     is_full_name_displayed = models.BooleanField(default=True)
-    # classrooms = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
+    classrooms = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
 
-    favored = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
-    disliked = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
+    allowed_join = models.CharField(max_length=200)
+    created = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
+    # favored = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
+    # disliked = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
 
-    # favored = models.CharField(max_length=200)
-    # disliked = models.CharField(max_length=200)
+    favored = models.CharField(max_length=200)
+    disliked = models.CharField(max_length=200)
 
-    def set_relation(self, x, y):
-        self.favored = json.dumps(x)
-        self.disliked = json.dumps(y)
+    def setup(self):
+        self.favored = json.dumps([])
+        self.disliked = json.dumps([])
+        self.allowed_join = json.dumps([])
 
     @classmethod
     def create(cls, id):
         obj = cls(user_id=id)
-        obj.set_relation([], [])
+        obj.setup()
         return obj

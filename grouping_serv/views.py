@@ -10,6 +10,7 @@ def index(request):
     template = loader.get_template("index.html")
     return render(request, "index.html")
 
+
 def about(request):
     template = loader.get_template("about.html")
     return render(request, "about.html")

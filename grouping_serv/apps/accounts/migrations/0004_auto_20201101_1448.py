@@ -7,13 +7,15 @@ import django_mysql.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0003_auto_20201101_1446'),
+        ("accounts", "0003_auto_20201101_1446"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='userprofile',
-            name='classrooms',
-            field=django_mysql.models.ListTextField(models.CharField(max_length=10, null=True), size=5),
+            model_name="userprofile",
+            name="classrooms",
+            field=django_mysql.models.ListTextField(
+                models.CharField(max_length=10, null=True), size=5
+            ),
         ),
     ]

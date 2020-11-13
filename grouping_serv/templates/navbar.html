@@ -1,21 +1,75 @@
-<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <style>
 a:hover {
   background-color: rgb(255, 100, 100);
+}
+a:checked {
+  background-color: rgb(150, 100, 100);
 }
 .username:hover {
   background-color: rgb(100, 100, 255);
 }
-</style>
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style> -->
 <div class="navbar">
+  {% if url == "home" %}
+  <a class = "username" href="/">Home</a>
+  {% else %}
   <a href="/">Home</a>
+  {% endif %}
+  {% if url == "about" %}
+  <a class = "username" href="/about">About</a>
+  {% else %}
   <a href="/about">About</a>
+  {% endif %}
+
 {% if user.is_authenticated %}
-  <a class = "username" href="/accounts/search">{{user.username}}</a>
+  {% if url == "accounts" %}
+  <a class = "username" href="/accounts/profile">{{user.username}}</a>
+  {% else %}
+  <a href="/accounts/profile">{{user.username}}</a>
+  {% endif %}
   <a href="/accounts/logout">Logout</a>
 {% else %}
   <a href="/accounts/login">Login</a>
+  {% if url == "signup" %}
+  <a class = "username" href="/accounts/signup">Sign up</a>
+  {% else %}
   <a href="/accounts/signup">Sign up</a>
+  {% endif %}
 {% endif %}
-
-
+<!-- <div class="dropdown">
+  <button class="dropbtn">Dropdown
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> -->
 </div>

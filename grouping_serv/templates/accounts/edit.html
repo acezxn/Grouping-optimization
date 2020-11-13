@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock %}
+{% block content %}
+
+<h2>Edit permissions</h2>
+<h4>User allowed to join</h4>
+{% with user=allowed %}
+{% for i in user %}
+  <div style = "padding: 2px 0px;"><p class = "list">{{i}}</p></div>
+{% endfor %}
+<form action = {{"/accounts/edit/"|add:classid|add:"/"}} method="post">
+  {% csrf_token %}
+    <a>Add user: </a>
+    <div><input id="user" type="text" name="user"></div>
+    <input type="submit" value="ADD">
+    <div><a>Remove user: </a></div>
+    <div><input id="rm_user" type="text" name="rm_user"></div>
+    <input type="submit" value="REMOVE">
+</form>
+<form action = {{"/accounts/dangerzone/"|add:classid|add:"/"}} method="post">
+  {% csrf_token %}
+  <input type="submit" value="Danger Zone" style = "background-color: rgb(221, 0, 0);">
+</form>
+{% endwith %}
+
+{% endblock %}

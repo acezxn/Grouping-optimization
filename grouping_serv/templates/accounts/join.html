@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage{% endblock %}
+{% block content %}
+<h1>
+Manage your class
+</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <h3>Join classroom</h3>
+  <p>Classid</p>
+  <input id="classid" type="text" name="classid">
+  <input type="submit" value="JOIN">
+  <h3>Leave classroom</h3>
+  <p>Classid</p>
+  <input id="rm_classid" type="text" name="rm_classid">
+  <input type="submit" value="LEAVE">
+</form>
+
+{% endblock %}

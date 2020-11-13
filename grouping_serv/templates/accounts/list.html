@@ -7,7 +7,7 @@
   <title>Available users</title>
 </head>
 <body>
-  <!-- {% include 'navbar.html' %} -->
+  {% include 'navbar.html' %}
 
   <h2>Available users</h2>
   {% csrf_token %}
@@ -16,11 +16,11 @@
 
     {% for u in users %}
       {% if not u.is_superuser %}
-        <div style = "background-color: rgb(221, 221, 221); padding: 1px 10px; border-style: ridge;"><p>{{u}}</p></div>
+        <div><p class = "list">{{u}}</p></div>
       {% endif %}
     {% endfor %}
   {% endwith %}
-  <a href = {{prev}}> back</a>
+  <a href = {{prev}} class = "link">{{"< back"}}</a>
 
 </body>
 </html>

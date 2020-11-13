@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage{% endblock %}
+{% block content %}
+<h1>
+Manage classrooms
+</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <h3>Create classroom</h3>
+  <p>Classid</p>
+  <input id="classid" type="text" name="classid">
+  <p>User allowed to join this class</p>
+  <input id="allowed_join" type="text" name="allowed_join">
+  <input type="submit" value="OK">
+  <h3>Remove classroom</h3>
+</form>
+{% endblock %}

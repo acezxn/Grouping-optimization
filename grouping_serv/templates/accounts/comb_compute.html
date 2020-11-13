@@ -9,9 +9,9 @@ Results:
 <table>
 {% for g in grouplist %}
 <tr style="background-color: rgb(100, 255, 100);">
-  <th>Group {{ forloop.counter }}</th>
+  <th class = "table_element">Group {{ forloop.counter }}</th>
 {% for member in g %}
-<td style="padding: 14px 16px; overflow: hidden; text-align: center; border-style: ridge;"> {{member}} </td>
+<td class = "table_element"> {{member}} </td>
 {% endfor %}
 </tr>
 {% endfor %}

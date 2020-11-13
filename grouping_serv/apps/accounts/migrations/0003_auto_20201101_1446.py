@@ -7,24 +7,28 @@ import django_mysql.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_auto_20201026_1312'),
+        ("accounts", "0002_auto_20201026_1312"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='userprofile',
-            name='classrooms',
-            field=django_mysql.models.ListTextField(models.CharField(default='', max_length=10, null=True), default='', size=5),
+            model_name="userprofile",
+            name="classrooms",
+            field=django_mysql.models.ListTextField(
+                models.CharField(default="", max_length=10, null=True),
+                default="",
+                size=5,
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='userprofile',
-            name='disliked',
+            model_name="userprofile",
+            name="disliked",
             field=models.CharField(max_length=200),
         ),
         migrations.AlterField(
-            model_name='userprofile',
-            name='favored',
+            model_name="userprofile",
+            name="favored",
             field=models.CharField(max_length=200),
         ),
     ]

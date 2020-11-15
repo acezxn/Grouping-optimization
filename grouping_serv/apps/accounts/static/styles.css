@@ -28,7 +28,9 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
+header {
+  font-size:10vw;
+}
 input[type=submit]:hover {
   background-color: rgb(100, 200, 100);
 }

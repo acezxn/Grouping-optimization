@@ -60,12 +60,13 @@ body {
   background-color: rgb(30, 50, 40);
   color: white;
   width:60%;
+  margin-left: auto;
+  margin-right: auto;
   padding:0 20px;
 }
 
 .main p {
   color: white;
-  text-align: center;
   padding: 10px 10px;
 }
 

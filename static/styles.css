@@ -18,7 +18,7 @@ input[type=password], select {
 }
 
 input[type=submit] {
-  width: 50%;
+  width: 100%;
   background-color: rgb(50, 100, 50);
   color: white;
   padding: 14px 20px;
@@ -28,7 +28,11 @@ input[type=submit] {
   cursor: pointer;
 }
 
-
+header {
+  padding: 20px;
+  text-align: center;
+  font-size: 10vw;
+}
 input[type=submit]:hover {
   background-color: rgb(100, 200, 100);
 }
@@ -48,43 +52,27 @@ button[type=submit]:hover {
   background-color: rgb(100, 200, 100);
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .navbar {
   overflow: hidden;
   background-color: #333;
+  float:top;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+.main {
+  background-color: rgb(200, 200, 200);
+  width:80%;
+  padding:30px 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {

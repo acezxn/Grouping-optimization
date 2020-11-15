@@ -2,7 +2,13 @@
 <html>
 
 <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&display=swap" rel="stylesheet">
   {% load static %}
   <link rel="stylesheet" href="{% static "/styles.css" %}">
   <title>Classrooms</title>
@@ -10,8 +16,8 @@
 <body>
   {% include 'navbar.html' %}
 
-  <h2>Your classrooms</h2>
-  <div><h3>Joined classes</h3><a class = "link" href = /accounts/join>Manage</a></div>
+  <h2 style = "font-family: Rajdhani">Your classrooms</h2>
+  <div><h3 style = "font-family: Rajdhani">Joined classes</h3><a class = "link" href = /accounts/join>Manage</a></div>
   {% csrf_token %}
 
   {% with created_class=created %}
@@ -19,7 +25,7 @@
 
     {% for c in classes %}
       {% if c not in created_class %}
-        <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}}>{{c}}</a></div>
+        <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
       {% endif %}
     {% endfor %}
     {% if classes|length == 0 %}
@@ -28,9 +34,9 @@
   {% endwith %}
 
 
-  <h3>Created classes</h3>
+  <h3 style = "font-family: Rajdhani">Created classes</h3>
   {% for c in created_class %}
-    <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}}>{{c}}</a></div>
+    <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
   {% endfor %}
   {% if created_class|length == 0 %}
     <div style = "padding: 30px 0px;"><a class = "msg">There is no classroom you have created</a></div>

@@ -2,6 +2,7 @@
 
 {% block title %}home{% endblock %}
 {% block content %}
+
 <h1>Danger zone</h1>
 {% with classid=q %}
 <form action={{"/accounts/rm/"|add:classid|add:"/"}} method='post'>

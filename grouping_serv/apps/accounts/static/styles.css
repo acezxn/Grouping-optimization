@@ -54,21 +54,6 @@ button[type=submit]:hover {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(10, 20, 100);
-}
-
-.main {
-  background-color: rgb(30, 50, 40);
-  color: white;
-  width:80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding:0 20px;
-}
-
-.main p {
-  color: white;
-  padding: 10px 10px;
 }
 
 .navbar {

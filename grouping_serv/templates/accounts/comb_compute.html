@@ -6,6 +6,9 @@
 Results:
 </h1>
 {% with grouplist=GROUP %}
+{% if grouplist|length == 0 %}
+<div style = "padding: 30px 0px;"><a class = "msg">No results</a></div>
+{% else %}
 <table>
 {% for g in grouplist %}
 <tr style="background-color: rgb(100, 255, 100);">
@@ -16,5 +19,6 @@ Results:
 </tr>
 {% endfor %}
 </table>
+{% endif %}
 {% endwith %}
 {% endblock %}

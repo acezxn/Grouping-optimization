@@ -8,6 +8,7 @@ and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored p
 
 
 def start_group(size, favor_data, total, rule):
+    # rule = [('user', 'user2')]
     try:
         temp = total
         remain_group = []
@@ -88,24 +89,33 @@ def start_group(size, favor_data, total, rule):
             # inner.append(groups[0])
             branch(total, group, group)
 
-        for j in score_list:
-            s = 0
-            diff = max(j) - min(j)
-            processed_data.append(diff)
+        tmp = group_list
+        for case in tmp:
+            for g in case:
+                for r in rule:
+                    if r[0] in g and r[1] in g:
+                        group_list.remove(case)
+        if len(group_list) > 0:
+            for j in score_list:
+                s = 0
+                diff = max(j) - min(j)
+                processed_data.append(diff)
 
-        MIN = min(processed_data)
-        c = 0
-        for i in processed_data:
-            if i == MIN:
-                min_scores.append(i)
-                minimums.append(group_list[c])
-            c += 1
+            MIN = min(processed_data)
+            c = 0
+            for i in processed_data:
+                if i == MIN:
+                    min_scores.append(i)
+                    minimums.append(group_list[c])
+                c += 1
 
-        r = random.choice(minimums)
-        if len(remain_group) > 0:
-            remain_group = tuple(remain_group)
-            r.append(remain_group)
-        return r, 1
+            r = random.choice(minimums)
+            if len(remain_group) > 0:
+                remain_group = tuple(remain_group)
+                r.append(remain_group)
+            return r, 1
+        else:
+            return [], 1
     except:
         return [], 0
 

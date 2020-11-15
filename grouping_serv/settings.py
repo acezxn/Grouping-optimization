@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "grouping_serv.apps.accounts",
     "djangosecure",
-    "sslserver"
+    "sslserver",
 ]
 
 MIDDLEWARE = [

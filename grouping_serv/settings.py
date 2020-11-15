@@ -57,12 +57,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 ]
 MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware"
 )
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 # # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_FRAME_DENY = True
@@ -72,7 +73,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = "grouping_serv.urls"
 
 # INSTALLED_APPS += "sslserver"
-# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # SECURE_BROWSER_XSS_FILTER = True
 TEMPLATES = [
     {

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock %}
+{% block content %}
+<h1>
+Delete user
+</h1>
+<form action="/accounts/deleteuser/" method='post'>
+  {% csrf_token %}
+  <p>Enter your username to confirm</p>
+  <div><input id="verify" type="text" name="verify"></div>
+  <input type="submit" value="Delele user" style="background-color: rgb(221, 0, 0);">
+</form>
+{% endblock %}

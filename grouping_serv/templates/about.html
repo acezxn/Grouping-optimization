@@ -2,16 +2,19 @@
 
 {% block title %}home{% endblock %}
 {% block content %}
-<h1>
+<h1 style="font-size: 5vw; text-align: center;">
 Creator
 </h1>
+<div class='main'>
 <p>
 Designer: Daniel Lee
 </p>
 <p>
   Engineer: Daniel Lee
 </p>
-<h2>The algorithm</h2>
+</div>
+<h2 style="font-size: 5vw; text-align: center;">The algorithm</h2>
+<div class='main'>
 <p>The website collects data of favored and unfavored groups from each classroom user
 <br>and form a datastructure: [user, [[favored, []], unfavored, []]]
 <br>the program calculate the all possibility of grouping of every member in a class</p>
@@ -21,4 +24,5 @@ Designer: Daniel Lee
 <br>The difference of the most happy group and the most unhappy group is measured in every cases,
 <br>The algorithm finally randomly select one case with the least happiness difference.
 </p>
+</div>
 {% endblock %}

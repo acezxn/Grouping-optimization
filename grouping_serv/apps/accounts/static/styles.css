@@ -90,6 +90,11 @@ body {
   font-family: inherit;
   margin: 0;
 }
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;

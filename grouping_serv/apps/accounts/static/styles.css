@@ -56,9 +56,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.main {
+  background-color: rgb(30, 50, 40);
+  color: white
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.main p {
+  color: white;
+  padding: 10px 10px;
 }
 
 .navbar {
@@ -74,34 +82,6 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-.main {
-  background-color: rgb(30, 50, 40);
-  color: white
-  float:left;
-  width:60%;
-  padding:0 20px;
-}
-
-.main p {
-  color: white;
-  padding: 10px 10px;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {

@@ -64,6 +64,7 @@ body {
 .navbar {
   overflow: hidden;
   background-color: #333;
+  float:top;
 }
 
 .navbar a {

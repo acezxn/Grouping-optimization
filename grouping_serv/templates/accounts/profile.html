@@ -13,16 +13,59 @@
 {{classid}}
 </h2>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
-</form>
+<p>Joined users</p>
+{% for u in joined_users %}
+  {% if not u.is_superuser %}
+    <div><p class = "list">{{u}}</p></div>
+  {% endif %}
+{% endfor %}
 <p>Combination grouping algorithm</p>
-<form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post">
+<form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
     <a>Group size: </a>
     <div><input id="size" type="text" name="size" style ="width:100px;"></div>
   <input type="submit" value="compute">
+  <h3>Advanced ruling: (Optional)</h3>
+  <div>
+    <input type="text" name="src[]" style = "width: 10%;">
+    <a> Not with </a>
+    <input type="text" name="dst[]" style = "width: 10%;">
+  </div>
 </form>
+<button onclick="add_field()">ADD RULE</button>
 
+<script>
+    function add_field(){
 
+        var x = document.getElementById("form");
+        // create an input field to insert
+        var div = document.createElement("div");
+        var src_field = document.createElement("input");
+        var mid_text = document.createElement("a");
+        var dst_field = document.createElement("input");
+        // set input field data type to text
+        src_field.setAttribute("type", "text");
+        src_field.setAttribute("style", "width: 10%;");
+        mid_text.innerText = " Not with ";
+        dst_field.setAttribute("type", "text");
+        dst_field.setAttribute("style", "width: 10%;");
+        // set input field name
+        src_field.setAttribute("name", "src[]");
+        dst_field.setAttribute("name", "dst[]");
+        // select last position to insert element before it
+        var pos = x.childElementCount;
+        var divpos = div.childElementCount;
+
+        // insert element
+        div.insertBefore(src_field, div.childNodes[divpos]);
+        var divpos = div.childElementCount;
+        div.insertBefore(mid_text, div.childNodes[divpos]);
+        var divpos = div.childElementCount;
+        div.insertBefore(dst_field, div.childNodes[divpos]);
+        var pos = x.childElementCount;
+        x.insertBefore(div, x.childNodes[pos+10]);
+    }
+</script>
 {% else %}
 <h2>
 {{user.username}}'s profile in {{classid}}

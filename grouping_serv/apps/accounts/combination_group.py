@@ -84,11 +84,11 @@ def start_group(size, favor_data, total, rule):
                 branch(other, group, starter)
 
         groups = list(itertools.combinations(total, size))
-        # print(groups)
+        print("groups", groups)
         for group in groups:
             # inner.append(groups[0])
             branch(total, group, group)
-
+        print("grouplist", group_list)
         tmp = group_list
         for case in tmp:
             for g in case:
@@ -121,6 +121,7 @@ def start_group(size, favor_data, total, rule):
 
 
 if __name__ == "__main__":
-
-    g = start_group(2, favor_data, total)
+    favor_data = [['A', ['B'], ['C']], ['B', ['C'], ['A']]]
+    total = ['A', 'B']
+    g = start_group(2, favor_data, total, [])
     print(g)

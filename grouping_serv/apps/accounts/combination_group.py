@@ -18,7 +18,7 @@ def start_group(size, favor_data, total, rule):
                 person = random.choice(total)
                 remain_group.append(person)
                 total.remove(person)
-                del favor_data['person']
+                del favor_data[person]
 
         group_list = []
 
@@ -116,7 +116,8 @@ def start_group(size, favor_data, total, rule):
             return r, 1
         else:
             return [], 1
-    except:
+    except Exception as e:
+        print(e)
         return [], 0
 
 

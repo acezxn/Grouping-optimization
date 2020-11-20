@@ -21,6 +21,6 @@ urlpatterns = [
     path("dangerzone/<slug:q>/", views.dangerzone),
     path("edit/<slug:q>/", views.edit),
     path("signup", views.signup),
-    path("list", views.list_user),
+    path("list/<slug:q>/", views.list_user),
     path("compute/<slug:q>/", views.compute),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

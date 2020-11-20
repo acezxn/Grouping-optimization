@@ -15,7 +15,7 @@ class UserProfile(models.Model):
     is_full_name_displayed = models.BooleanField(default=True)
     classrooms = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
 
-    allowed_join = models.CharField(max_length=200)
+    passcode = models.CharField(max_length=200)
     created = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
     # favored = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
     # disliked = ListTextField(base_field=CharField(max_length=10, null=True), size=5)
@@ -26,7 +26,7 @@ class UserProfile(models.Model):
     def setup(self):
         self.favored = json.dumps([])
         self.disliked = json.dumps([])
-        self.allowed_join = json.dumps([])
+        self.passcode = json.dumps([])
 
     @classmethod
     def create(cls, id):

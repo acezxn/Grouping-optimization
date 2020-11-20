@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 import json
+import random
 
 from . import combination_group
 
@@ -130,6 +131,11 @@ def ProfileView(request, q):
 
             if q in classes:
                 relation = UserProfile.objects.get(user_id=userid)
+                codes = json.loads(relation.passcode)
+                code = ""
+                for c in codes:
+                    if c[0] == q:
+                        code = c[1]
                 if q in relation.classrooms:
                     if q in relation.created:
 
@@ -144,7 +150,8 @@ def ProfileView(request, q):
                                 "disliked": json.loads(relation.disliked),
                                 "created": 1,
                                 "url": "accounts",
-                                "joined_users": joined_user
+                                "joined_users": joined_user,
+                                "passcode": code
                             },
                         )
                     else:
@@ -195,12 +202,12 @@ def remove(request, q):
                     profile.classrooms = classrooms
 
                     print(profile.created)
-                    allowed_join = json.loads(profile.allowed_join)
-                    temp = allowed_join
+                    passcode = json.loads(profile.passcode)
+                    temp = passcode
                     for c in temp:
                         if q in c:
-                            allowed_join.remove(c)
-                    profile.allowed_join = json.dumps(allowed_join)
+                            passcode.remove(c)
+                    profile.passcode = json.dumps(passcode)
                     profile.save()
                     users = User.objects.all()
                     for u in users:
@@ -235,85 +242,85 @@ def remove(request, q):
 
 
 def edit(request, q):
+    # if request.user.is_authenticated:
+    #     profile = UserProfile.objects.get(user_id=request.user.id)
+    #     if request.method == 'POST':
+    #         user = User.objects.all()
+    #         if request.POST["user"] != "":
+    #             exist = False
+    #             for u in user:
+    #                 if request.POST["user"] == u.username:
+    #                     exist = True
+    #                     break
+    #             if exist:
+    #                 allowed_join = json.loads(profile.allowed_join)
+    #                 for c in allowed_join:
+    #                     if c[0] == q:
+    #                         print(allowed_join[allowed_join.index(c)][1])
+    #                         if request.POST["user"] in allowed_join[allowed_join.index(c)][1]:
+    #                             return HttpResponse("User already added")
+    #                         else:
+    #                             allowed_join[allowed_join.index(c)][1].append(request.POST["user"])
+    #                             break
+    #                 print(allowed_join)
+    #                 profile.allowed_join = json.dumps(allowed_join)
+    #             else:
+    #                 return HttpResponse("user does not exist")
+    #         if request.POST["rm_user"] != "":
+    #             exist = False
+    #             for u in user:
+    #                 if request.POST["rm_user"] == u.username:
+    #                     exist = True
+    #                     id = u.id
+    #                     break
+    #             if exist:
+    #                 allowed_join = json.loads(profile.allowed_join)
+    #                 for c in allowed_join:
+    #                     if c[0] == q:
+    #                         try:
+    #                             c[1].remove(request.POST["rm_user"])
+    #                             break
+    #                         except:
+    #                             pass
+    #                 # delete classrooms of tgt
+    #                 userprofile = UserProfile.objects.get(user_id=id)
+    #                 classrooms = userprofile.classrooms
+    #                 try:
+    #                     classrooms.remove(q)
+    #                 except:
+    #                     pass
+    #                 userprofile.classrooms = classrooms
+    #
+    #                 # delete favor dislike data
+    #                 favored = json.loads(userprofile.favored)
+    #                 for i in favored:
+    #                     if i[0] == q:
+    #                         favored.remove(i)
+    #                         break
+    #                 disliked = json.loads(userprofile.disliked)
+    #                 for i in disliked:
+    #                     if i[0] == q:
+    #                         disliked.remove(i)
+    #                         break
+    #                 userprofile.favored = json.dumps(favored)
+    #                 userprofile.disliked = json.dumps(disliked)
+    #                 userprofile.save()
+    #
+    #                 profile.allowed_join = json.dumps(allowed_join)
+    #             else:
+    #                 return HttpResponse("user does not exist")
+    #         profile.save()
+
+
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user_id=request.user.id)
-        if request.method == 'POST':
-            user = User.objects.all()
-            if request.POST["user"] != "":
-                exist = False
-                for u in user:
-                    if request.POST["user"] == u.username:
-                        exist = True
-                        break
-                if exist:
-                    allowed_join = json.loads(profile.allowed_join)
-                    for c in allowed_join:
-                        if c[0] == q:
-                            print(allowed_join[allowed_join.index(c)][1])
-                            if request.POST["user"] in allowed_join[allowed_join.index(c)][1]:
-                                return HttpResponse("User already added")
-                            else:
-                                allowed_join[allowed_join.index(c)][1].append(request.POST["user"])
-                                break
-                    print(allowed_join)
-                    profile.allowed_join = json.dumps(allowed_join)
-                else:
-                    return HttpResponse("user does not exist")
-            if request.POST["rm_user"] != "":
-                exist = False
-                for u in user:
-                    if request.POST["rm_user"] == u.username:
-                        exist = True
-                        id = u.id
-                        break
-                if exist:
-                    allowed_join = json.loads(profile.allowed_join)
-                    for c in allowed_join:
-                        if c[0] == q:
-                            try:
-                                c[1].remove(request.POST["rm_user"])
-                                break
-                            except:
-                                pass
-                    # delete classrooms of tgt
-                    userprofile = UserProfile.objects.get(user_id=id)
-                    classrooms = userprofile.classrooms
-                    try:
-                        classrooms.remove(q)
-                    except:
-                        pass
-                    userprofile.classrooms = classrooms
-
-                    # delete favor dislike data
-                    favored = json.loads(userprofile.favored)
-                    for i in favored:
-                        if i[0] == q:
-                            favored.remove(i)
-                            break
-                    disliked = json.loads(userprofile.disliked)
-                    for i in disliked:
-                        if i[0] == q:
-                            disliked.remove(i)
-                            break
-                    userprofile.favored = json.dumps(favored)
-                    userprofile.disliked = json.dumps(disliked)
-                    userprofile.save()
-
-                    profile.allowed_join = json.dumps(allowed_join)
-                else:
-                    return HttpResponse("user does not exist")
-            profile.save()
-
-
-
         try:
-            return render(request, "accounts/edit.html", {"allowed": json.loads(profile.allowed_join)[profile.created.index(q)][1],
+            return render(request, "accounts/edit.html", {
         "classid": q})
         except ValueError:
             return redirect("/accounts/profile")
 
     else:
-        return redirect('/')
+        return redirect('/accounts/login')
 
 def signup(request):
     if request.method == "POST":
@@ -336,11 +343,16 @@ def signup(request):
         return redirect("/")
 
 
-def list_user(request):
+def list_user(request, q):
     if request.user.is_authenticated:
         user = User.objects.all()
+        classmate = []
+        for u in user:
+            profile = UserProfile.objects.get(user_id=u.id)
+            if q in profile.classrooms:
+                classmate.append(u)
         return render(
-            request, "accounts/list.html", {"user": user, "prev": "/accounts/profile"}
+            request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
         )
     else:
         return redirect("/accounts/profile")
@@ -366,6 +378,12 @@ def classrooms(request):
     else:
         return redirect("/accounts/login")
 
+def generate(length):
+    numbers = '1234567890'
+    code = []
+    for i in range(length):
+        code.append(random.choice(list(numbers)))
+    return ''.join(code)
 
 def create(request):
     if request.user.is_authenticated:
@@ -383,12 +401,12 @@ def create(request):
                 return HttpResponse("class already created")
             else:
                 relation.created.append(request.POST["classid"])
-                print(relation.allowed_join)
-                allowed_join = json.loads(relation.allowed_join)
-                allowed_join.append(
-                    [request.POST["classid"], request.POST["allowed_join"].split(",")]
+                passcode = json.loads(relation.passcode)
+
+                passcode.append(
+                    [request.POST["classid"], generate(8)]
                 )
-                relation.allowed_join = json.dumps(allowed_join)
+                relation.passcode = json.dumps(passcode)
                 relation.classrooms.append(request.POST["classid"])
                 relation.save()
                 return redirect("/accounts/profile")
@@ -414,11 +432,11 @@ def join(request):
 
                 for u in user:
                     relation = UserProfile.objects.get(user_id=u.id)
-                    allowed_join = json.loads(relation.allowed_join)
+                    passcode = json.loads(relation.passcode)
 
-                    for c in allowed_join:
+                    for c in passcode:
                         print(c)
-                        if request.user.username in c[1]:
+                        if request.POST["passcode"] == c[1]:
                             permitted = True
                             break
 
@@ -440,7 +458,7 @@ def join(request):
                     else:
                         return HttpResponse("class not exist")
                 else:
-                    return HttpResponse("Joining not allowed")
+                    return HttpResponse("Invalid classid or password")
         else:
             return render(request, "accounts/join.html", {})
     else:

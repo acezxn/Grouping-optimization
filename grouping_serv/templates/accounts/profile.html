@@ -12,7 +12,8 @@
 <h2>
 {{classid}}
 </h2>
-<div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
+<div><a>Class password: {{passcode}}</a></div>
+<!-- <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div> -->
 <p>Joined users</p>
 {% for u in joined_users %}
   {% if not u.is_superuser %}
@@ -25,7 +26,7 @@
     <a>Group size: </a>
     <div><input id="size" type="text" name="size" style ="width:100px;"></div>
   <input type="submit" value="compute">
-  <h3>Advanced ruling: (Optional)</h3>
+  <h3>Group filter: (Optional)</h3>
   <div>
     <input type="text" name="src[]" style = "width: 10%;">
     <a> Not with </a>
@@ -100,7 +101,7 @@
 {% endwith %}
 </table>
 {% endwith %}
-<div style = "padding: 10px 2px"><a href="/accounts/list" class = "link">available usernames</a></div>
+<div style = "padding: 10px 2px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class = "link">available usernames</a></div>
 <h3>Add data</h3>
 <form action = "" method="post">
   {% csrf_token %}

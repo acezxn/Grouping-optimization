@@ -29,7 +29,7 @@ SECRET_KEY = "%m1xg0l+v2_ec%!i++y&t$l53*h8e-@_(ps+x723xkd83m-zy!"
 # SESSION_COOKIE_HTTPSONLY=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
 
@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware"
 )
 
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 # # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_FRAME_DENY = True

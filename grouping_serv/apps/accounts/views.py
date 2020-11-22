@@ -322,6 +322,25 @@ def edit(request, q):
     else:
         return redirect('/accounts/login')
 
+def unsign(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            if request.POST['verify'] == request.user.username:
+                id = request.user.id
+                # obj = UserProfile.delete_user(id)
+                profile = UserProfile.objects.filter(user_id=id)
+                profile.delete()
+                user = User.objects.filter(id=id)
+                user.delete()
+                # profile.save()
+                return redirect("/")
+            else:
+                return HttpResponse('verification failed')
+        else:
+            return render(request, "accounts/signout.html")
+    else:
+        return redirect('/accounts/login')
+
 def signup(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)

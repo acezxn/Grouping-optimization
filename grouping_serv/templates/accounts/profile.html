@@ -9,10 +9,10 @@
 {% if user.is_authenticated %}
 
 {% if own %}
-<h2>
+<h1>
 {{classid}}
-</h2>
-<div><a>Class password: {{passcode}}</a></div>
+</h1>
+<div><h2>Class password: {{passcode}}</h2></div>
 <!-- <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div> -->
 <p>Joined users</p>
 {% for u in joined_users %}

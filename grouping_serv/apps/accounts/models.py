@@ -23,6 +23,9 @@ class UserProfile(models.Model):
     favored = models.CharField(max_length=200)
     disliked = models.CharField(max_length=200)
 
+    def delete_user(self):
+        self.User.delete()
+
     def setup(self):
         self.favored = json.dumps([])
         self.disliked = json.dumps([])

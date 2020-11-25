@@ -4,11 +4,14 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 
 def index(request):
+    normal_users = 0
     user = User.objects.all()
-    n = len(user)
+    for u in user:
+        if not u.is_superuser:
+            normal_users += 1
     template = loader.get_template("index.html")
     return render(request, "index.html", {
-    "url": "home", "users": n})
+    "url": "home", "users": normal_users})
 
 
 def about(request):

@@ -370,7 +370,7 @@ def list_user(request, q):
             profile = UserProfile.objects.get(user_id=u.id)
             if q in profile.classrooms:
                 classmate.append(u)
-        classmate.remove(request.user.username)
+        classmate.remove(request.user)
         return render(
             request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
         )

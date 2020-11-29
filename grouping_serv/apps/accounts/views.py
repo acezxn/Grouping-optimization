@@ -242,82 +242,20 @@ def remove(request, q):
 
 
 def edit(request, q):
-    # if request.user.is_authenticated:
-    #     profile = UserProfile.objects.get(user_id=request.user.id)
-    #     if request.method == 'POST':
-    #         user = User.objects.all()
-    #         if request.POST["user"] != "":
-    #             exist = False
-    #             for u in user:
-    #                 if request.POST["user"] == u.username:
-    #                     exist = True
-    #                     break
-    #             if exist:
-    #                 allowed_join = json.loads(profile.allowed_join)
-    #                 for c in allowed_join:
-    #                     if c[0] == q:
-    #                         print(allowed_join[allowed_join.index(c)][1])
-    #                         if request.POST["user"] in allowed_join[allowed_join.index(c)][1]:
-    #                             return HttpResponse("User already added")
-    #                         else:
-    #                             allowed_join[allowed_join.index(c)][1].append(request.POST["user"])
-    #                             break
-    #                 print(allowed_join)
-    #                 profile.allowed_join = json.dumps(allowed_join)
-    #             else:
-    #                 return HttpResponse("user does not exist")
-    #         if request.POST["rm_user"] != "":
-    #             exist = False
-    #             for u in user:
-    #                 if request.POST["rm_user"] == u.username:
-    #                     exist = True
-    #                     id = u.id
-    #                     break
-    #             if exist:
-    #                 allowed_join = json.loads(profile.allowed_join)
-    #                 for c in allowed_join:
-    #                     if c[0] == q:
-    #                         try:
-    #                             c[1].remove(request.POST["rm_user"])
-    #                             break
-    #                         except:
-    #                             pass
-    #                 # delete classrooms of tgt
-    #                 userprofile = UserProfile.objects.get(user_id=id)
-    #                 classrooms = userprofile.classrooms
-    #                 try:
-    #                     classrooms.remove(q)
-    #                 except:
-    #                     pass
-    #                 userprofile.classrooms = classrooms
-    #
-    #                 # delete favor dislike data
-    #                 favored = json.loads(userprofile.favored)
-    #                 for i in favored:
-    #                     if i[0] == q:
-    #                         favored.remove(i)
-    #                         break
-    #                 disliked = json.loads(userprofile.disliked)
-    #                 for i in disliked:
-    #                     if i[0] == q:
-    #                         disliked.remove(i)
-    #                         break
-    #                 userprofile.favored = json.dumps(favored)
-    #                 userprofile.disliked = json.dumps(disliked)
-    #                 userprofile.save()
-    #
-    #                 profile.allowed_join = json.dumps(allowed_join)
-    #             else:
-    #                 return HttpResponse("user does not exist")
-    #         profile.save()
 
 
     if request.user.is_authenticated:
-        try:
-            return render(request, "accounts/edit.html", {
-        "classid": q})
-        except ValueError:
-            return redirect("/accounts/profile")
+        profile = UserProfile.objects.get(user_id=request.user.id)
+        created = profile.created
+        if q in created:
+            if request.method == 'POST':
+                pass
+            try:
+                return render(request, "accounts/edit.html", {"classid": q})
+            except ValueError:
+                return redirect("/accounts/profile")
+        else:
+            return redirect('/')
 
     else:
         return redirect('/accounts/login')

@@ -93,18 +93,6 @@ button[type=submit]:hover {
   border-radius: 4px;
 }
 
-.danger {
-  font-size: 16px;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 0, 0);
-  border-radius: 4px;
-}
-.danger:hover {
-  background-color: rgb(145, 0, 0);
-}
 
 .link:hover {
   background-color: rgb(100, 100, 100);
@@ -118,7 +106,16 @@ button[type=submit]:hover {
   border-radius: 4px;
 }
 
-.list:hover {
+.selection {
+  background-color: rgb(221, 221, 221);
+  padding: 20px 20px;
+  border-style: ridge;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.selection:hover {
   background-color: rgb(185, 185, 185);
 }
 

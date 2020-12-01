@@ -15,7 +15,7 @@
 </head>
 <body>
   {% include 'navbar.html' %}
-  <h2 style = "font-family: Rajdhani">Your classrooms</h2>
+  <h1 style = "font-family: Rajdhani">Your classrooms</h1>
   <div><h3 style = "font-family: Rajdhani">Joined classes</h3><a class = "link" href = /accounts/join>Manage</a></div>
   {% csrf_token %}
 
@@ -44,6 +44,6 @@
   {% endwith %}
 
   <div style = "padding: 7px 0px"><a class = "link" href = {{prev}}> back</a></div>
-  <div style = "padding: 30px 0px;"><a class = 'danger' href = /accounts/signout style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">Danger zone</a></div>
+  <div style = "padding: 30px 0px;"><a class = 'link' href = /accounts/signout style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">Danger zone</a></div>
 </body>
 </html>

@@ -17,7 +17,7 @@
 <p>Joined users</p>
 {% for u in joined_users %}
   {% if not u.is_superuser %}
-    <div><p class = "list">{{u}}</p></div>
+    <div><p class = "selection">{{u}}</p></div>
   {% endif %}
 {% endfor %}
 <p>Combination grouping algorithm</p>

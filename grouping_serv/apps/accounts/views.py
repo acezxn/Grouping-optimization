@@ -124,7 +124,7 @@ def ProfileView(request, q):
             joined_user = []
             for u in user:
                 relation = UserProfile.objects.get(user_id=u.id)
-                if q in relation.classrooms:
+                if (q in relation.classrooms) and (q not in relation.created):
                     joined_user.append(u)
                 classes.extend(relation.created)
             print(joined_user)

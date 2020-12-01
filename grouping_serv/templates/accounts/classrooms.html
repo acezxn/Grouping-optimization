@@ -16,7 +16,7 @@
 <body>
   {% include 'navbar.html' %}
   <h1 style = "font-family: Rajdhani">Your classrooms</h1>
-  <div><h3 style = "font-family: Rajdhani">Joined classes</h3><a class = "link" href = /accounts/join>Manage</a></div>
+  <div><h2 style = "font-family: Rajdhani">Joined classes</h2><a class = "link" href = /accounts/join>Manage</a></div>
   {% csrf_token %}
 
   {% with created_class=created %}
@@ -33,7 +33,7 @@
   {% endwith %}
 
 
-  <h3 style = "font-family: Rajdhani">Created classes</h3>
+  <h2 style = "font-family: Rajdhani">Created classes</h2>
   {% for c in created_class %}
     <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
   {% endfor %}

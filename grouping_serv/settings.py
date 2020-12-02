@@ -110,8 +110,10 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': 'postgres',
-        'HOST': '127.0.0.1',
+        'NAME': 'd1aievjol527br',
+        'HOST': 'ec2-54-235-192-146.compute-1.amazonaws.com',
+        'USER': 'vepdyhtusbtpeo',
+        'PASSWORD': 'd001c13cca42bdd136f4a08b1acaf3b778cea4aa18b73f2fc9ea6d7f47ccf101',
         'PORT':'5432'
     }
 }

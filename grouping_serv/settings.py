@@ -110,7 +110,7 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': 'postgres',
+        'NAME': 'd1aievjol527br',
     }
 }
 

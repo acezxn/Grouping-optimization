@@ -4,3 +4,4 @@ black
 whitenoise
 django-secure
 django-sslserver
+psycopg2

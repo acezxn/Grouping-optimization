@@ -322,6 +322,13 @@ def classrooms(request):
         if request.method == 'POST':
             pass
         relation = UserProfile.objects.get(user_id=request.user.id)
+        print(relation.classrooms)
+        # try:
+        #     relation.created.remove('\u200b\n')
+        #     relation.classrooms.remove('\u200b\n')
+        # except:
+        #     pass
+        relation.save()
         return render(
             request,
             "accounts/classrooms.html",

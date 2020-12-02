@@ -29,7 +29,7 @@ SECRET_KEY = "%m1xg0l+v2_ec%!i++y&t$l53*h8e-@_(ps+x723xkd83m-zy!"
 # SESSION_COOKIE_HTTPSONLY=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
 
@@ -98,25 +98,21 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        "OPTIONS": {
-            "timeout": 10,
-        },
-    }
-}
 # DATABASES = {
 #     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         'USER': 'postgres',
-#         'NAME': 'DATABASE_URL',
-#         'TEST': {
-#             'NAME': 'DATABASE_URL',
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         "OPTIONS": {
+#             "timeout": 10,
 #         },
 #     }
 # }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        'NAME': 'postgres',
+    }
+}
 
 
 # Password validation

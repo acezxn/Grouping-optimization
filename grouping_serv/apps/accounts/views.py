@@ -307,7 +307,8 @@ def list_user(request, q):
         for u in user:
             profile = UserProfile.objects.get(user_id=u.id)
             if q in profile.classrooms:
-                classmate.append(u)
+                if q not in profile.created:
+                    classmate.append(u)
         classmate.remove(request.user)
         return render(
             request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
@@ -465,47 +466,53 @@ def leave(request):
 def compute(request, q):
 
     if request.method == "POST":
-        src = dict(request.POST)['src[]']
-        dst = dict(request.POST)['dst[]']
-        rule = []
-        for i in range(len(dict(request.POST)['src[]'])):
-            rule.append((src[i], dst[i]))
-        print("post")
-        all = list(User.objects.all())
-        total = []
-        G = []
-        favor_data = dict()
-
-        for u in all:
-            if u.username != request.user.username:
-                if not u.is_superuser:
-                    profile = UserProfile.objects.get(user_id=u.id)
-                    if q in profile.classrooms:
-                        total.append(u.username)
-                        classes = profile.classrooms
-                        favored = []
-                        disliked = []
-                        for f in json.loads(profile.favored):
-                            if f[0] == q:
-                                favored = f[1]
-                        for d in json.loads(profile.disliked):
-                            if d[0] == q:
-                                disliked = d[1]
-                        favor_data[u.username] = [favored, disliked]
-        print(favor_data)
-        try:
-            size = int(request.POST['size'])
-            if size <= 0:
-                return HttpResponse('Not an natural number')
-        except:
-            return HttpResponse('Not an natural number')
-        G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule)
-        if state:
-            return render(request, "accounts/comb_compute.html", {"GROUP": G})
-        else:
-            return HttpResponse('Invalid group size')
-        try:
-            pass
-        except:
+        profile = UserProfile.objects.get(user_id=request.user.id)
+        if q not in profile.created:
             return redirect("/accounts/profile")
+        else:
+            
+            src = dict(request.POST)['src[]']
+            dst = dict(request.POST)['dst[]']
+            rule = []
+            for i in range(len(dict(request.POST)['src[]'])):
+               rule.append((src[i], dst[i]))
+            print("post")
+            all = list(User.objects.all())
+            total = []
+            G = []
+            favor_data = dict()
+
+            for u in all:
+                if u.username != request.user.username:
+                    if not u.is_superuser:
+                        profile = UserProfile.objects.get(user_id=u.id)
+                        if q in profile.classrooms:
+                            total.append(u.username)
+                            classes = profile.classrooms
+                            favored = []
+                            disliked = []
+                            for f in json.loads(profile.favored):
+                                if f[0] == q:
+                                    favored = f[1]
+                            for d in json.loads(profile.disliked):
+                                if d[0] == q:
+                                    disliked = d[1]
+                            favor_data[u.username] = [favored, disliked]
+            print(favor_data)
+            try:
+                size = int(request.POST['size'])
+                if size <= 0:
+                    return HttpResponse('Not an natural number')
+            except:
+                return HttpResponse('Not an natural number')
+            G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule)
+            if state:
+                return render(request, "accounts/comb_compute.html", {"GROUP": G})
+            else:
+                return HttpResponse('Invalid group size')
+            try:
+                pass
+            except:
+                return redirect("/accounts/profile")
+        
     return redirect("/accounts/profile")

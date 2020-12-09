@@ -502,9 +502,9 @@ def compute(request, q):
             try:
                 size = int(request.POST['size'])
                 if size <= 0:
-                    return HttpResponse('Not an natural number')
+                    return HttpResponse('Group size not a natural number')
             except:
-                return HttpResponse('Not an natural number')
+                return HttpResponse('Group size not a natural number')
             G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule)
             if state:
                 return render(request, "accounts/comb_compute.html", {"GROUP": G})

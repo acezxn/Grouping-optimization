@@ -9,31 +9,31 @@
 {% if user.is_authenticated %}
 
 {% if own %}
-<h1>
+<h1 style="text-align:center; font-family: Ubuntu;">
 {{classid}}
 </h1>
 <div><h2>Class password: {{passcode}}</h2></div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
-<p>Joined users</p>
+<p style="font-family: Ubuntu;">Joined users</p>
 {% for u in joined_users %}
   {% if not u.is_superuser %}
     <div><p class = "selection">{{u}}</p></div>
   {% endif %}
 {% endfor %}
-<p>Combination grouping algorithm</p>
+<p style="font-family: Ubuntu;">Combination grouping algorithm</p>
 <form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
-    <a>Group size: </a>
+    <a style="font-family: Ubuntu;">Group size: </a>
     <div><input id="size" type="text" name="size" style ="width:100px;"></div>
   <input type="submit" value="compute">
-  <h3>Group filter: (Optional)</h3>
+  <h3 style="font-family: Ubuntu;">Group filter: (Optional)</h3>
   <div>
     <input type="text" name="src[]" style = "width: 10%;">
     <a> Not with </a>
     <input type="text" name="dst[]" style = "width: 10%;">
   </div>
 </form>
-<button onclick="add_field()">ADD RULE</button>
+<button onclick="add_field()" style="font-family: Ubuntu; padding: 5px 5px;">ADD RULE</button>
 
 <script>
     function add_field(){
@@ -81,7 +81,7 @@
 {% for f in favored %}
   {% if f.0 == c %}
   {% for inner in f.1 %}
-    <td class = "table_element"><div>{{inner}}</div> </td>
+    <td class = "table_element" style = "font-family: Ubuntu;"><div>{{inner}}</div> </td>
   {% endfor %}
   {% endif %}
 {% endfor %}
@@ -94,7 +94,7 @@
 {% for f in disliked %}
   {% if f.0 == c %}
   {% for inner in f.1 %}
-    <td class = "table_element"><div>{{inner}}</div> </td>
+    <td class = "table_element" style = "font-family: Ubuntu;"><div>{{inner}}</div> </td>
   {% endfor %}
   {% endif %}
 {% endfor %}

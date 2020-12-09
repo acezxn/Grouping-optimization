@@ -4,6 +4,7 @@ Two algorithms are used to optimize grouping and improve overall groupmate happi
 
 ## 1. Branch grouping
 1. A collection of targets of favor are the collection of all members for grouping.
+![](images/filename Original.png)
 2. Each member is wanted by several other people, branching out from the target.
 3. A branch is selected randomly from the collection.
 4. To select people with the target, the algorithm start to select the member who likes the target with a fewer branches.

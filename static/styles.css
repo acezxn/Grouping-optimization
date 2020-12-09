@@ -29,9 +29,9 @@ input[type=submit] {
 }
 
 header {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  font-size: 10vw;
+  font-size: 20vw;
 }
 input[type=submit]:hover {
   background-color: rgb(100, 200, 100);

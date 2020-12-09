@@ -10,7 +10,17 @@ Two algorithms are used to optimize grouping and improve overall groupmate happi
 3. To select people with the target, the algorithm start to select the member who likes the target with a fewer branches.
 4. If a branch is selected, the target is not available for grouping anymore.
 5. If running out of liked members (branches), looking for the branch that the target is the in one of branches of the branch. If not available, then the algorithm will randomly assign group members into the group.
+### See the pictures for better understanding
 
+![](images/Original.png)
+![](images/First_selection.png)
+![](images/First_BS.png)
+![](images/Group_BS.png)
+![](images/Second_selection.png)
+![](images/Group_BS2.png)
+![](images/Third_selection.png)
+![](images/Forth_selection.png)
+![](images/done.png)
 ## 2. Combination grouping
 1. The possible outcome of a single groups are generated using itertools library.
 2. Using a recursive function, compute the possible outcomes of other groups to form nCr cases, which n is the number of people in total, and r is the group size.

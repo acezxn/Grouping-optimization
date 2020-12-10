@@ -15,11 +15,15 @@
 <div><h2 style = "font-family: Ubuntu;">Class password: {{passcode}}</h2></div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
 <p style="font-family: Ubuntu;">Joined users</p>
+{% if joined_users|length == 0 %}
+    <div style = "padding: 30px 0px;"><a class = "msg">No user has joined</a></div>
+{% else %}
 {% for u in joined_users %}
   {% if not u.is_superuser %}
     <div><p class = "selection">{{u}}</p></div>
   {% endif %}
 {% endfor %}
+{% endif %}
 <p style="font-family: Ubuntu;">Combination grouping algorithm</p>
 <form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}

@@ -9,6 +9,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 import json
 import random
+import string
 
 from . import combination_group
 
@@ -366,6 +367,10 @@ def create(request):
             if request.POST["classid"] in classes:
                 return HttpResponse("class already created")
             else:
+                for e in list(request.POST["classid"]):
+                    valid_char = string.ascii_letters
+                    if e not in valid_char:
+                        return HttpResponse("Invalid class name")
                 relation.created.append(request.POST["classid"])
                 passcode = json.loads(relation.passcode)
 

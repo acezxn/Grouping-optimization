@@ -368,7 +368,7 @@ def create(request):
                 return HttpResponse("class already created")
             else:
                 for e in list(request.POST["classid"]):
-                    valid_char = string.ascii_letters
+                    valid_char = string.ascii_letters + range(0, 10)
                     if e not in valid_char:
                         return HttpResponse("Invalid class name")
                 relation.created.append(request.POST["classid"])

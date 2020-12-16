@@ -279,31 +279,6 @@ def unsign(request):
                 user = User.objects.filter(id=id)
                 user.delete()
                 # profile.save()
-                for c in profile.classrooms:
-                    if c in profile.classrooms:
-                        if c not in profile.created:
-                            profile.classrooms.remove(c)
-                            favored = json.loads(profile.favored)
-                            try:
-                                for f in favored:
-                                    if f[0] == c:
-                                        favored.remove(f)
-                                        break
-                                profile.favored = json.dumps(favored)
-                                disliked = json.loads(profile.disliked)
-                                for d in disliked:
-                                    if d[0] == c:
-                                        disliked.remove(d)
-                                        break
-                            except:
-                                pass
-                        else:
-                            return HttpResponse("You own this classroom")
-                        profile.disliked = json.dumps(disliked)
-                        profile.save()
-                        return redirect("/")
-                    else:
-                        return HttpResponse("Invalid selection")
                 return redirect("/")
             else:
                 return HttpResponse('verification failed')

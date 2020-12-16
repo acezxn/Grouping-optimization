@@ -5,6 +5,15 @@
 
 <h2>Edit permissions</h2>
 
+<!-- <a href = "/">Joined users</a>
+
+<h3>Kick user: </h3>
+<form action = "" method="post">
+  {% csrf_token %}
+  <input type="text" name = "member2kick" style = "background-color: rgb(221, 0, 0);">
+  <input type="submit" value="Danger Zone" style = "background-color: rgb(221, 0, 0);">
+</form> -->
+
 <form action = {{"/accounts/dangerzone/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
   <input type="submit" value="Danger Zone" style = "background-color: rgb(221, 0, 0);">

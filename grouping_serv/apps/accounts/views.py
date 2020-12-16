@@ -248,11 +248,18 @@ def edit(request, q):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user_id=request.user.id)
         created = profile.created
+        user = User.objects.all()
+        joined_user = []
+        for u in user:
+            relation = UserProfile.objects.get(user_id=u.id)
+            if (q in relation.classrooms) and (q not in relation.created):
+                joined_user.append(u)
+        print(joined_user)
         if q in created:
             if request.method == 'POST':
                 pass
             try:
-                return render(request, "accounts/edit.html", {"classid": q})
+                return render(request, "accounts/edit.html", {"classid": q, "joined_user": joined_user})
             except ValueError:
                 return redirect("/accounts/profile")
         else:
@@ -303,20 +310,33 @@ def signup(request):
 
 def list_user(request, q):
     if request.user.is_authenticated:
-        user = User.objects.all()
-        classmate = []
-        for u in user:
-            profile = UserProfile.objects.get(user_id=u.id)
-            if q in profile.classrooms:
-                if q not in profile.created:
-                    classmate.append(u)
-        classmate.remove(request.user)
-        return render(
-            request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
-        )
+        profile = UserProfile.objects.get(user_id=request.user.id)
+        if q in profile.created:
+            
+            user = User.objects.all()
+            classmate = []
+            for u in user:
+                profile = UserProfile.objects.get(user_id=u.id)
+                if q in profile.classrooms:
+                    if q not in profile.created:
+                        classmate.append(u)
+            try:
+                classmate.remove(request.user)
+            except:
+                pass
+            return render(
+                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
+            )
+        else:
+            return redirect("/accounts/profile")
     else:
         return redirect("/accounts/profile")
 
+def kick(request, q):
+    if request.method == 'POST':
+        return redirect("/accounts/profile")
+    else:
+        return redirect("/accounts/profile")
 
 def classrooms(request):
     print('classrooms')

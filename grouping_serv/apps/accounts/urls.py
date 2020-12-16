@@ -24,4 +24,5 @@ urlpatterns = [
     path("signout", views.unsign),
     path("list/<slug:q>/", views.list_user),
     path("compute/<slug:q>/", views.compute),
+    path("kick/<slug:q>/", views.kick),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

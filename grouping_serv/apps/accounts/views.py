@@ -279,6 +279,31 @@ def unsign(request):
                 user = User.objects.filter(id=id)
                 user.delete()
                 # profile.save()
+                for c in profile.classrooms:
+                    if c in profile.classrooms:
+                        if c not in profile.created:
+                            profile.classrooms.remove(c)
+                            favored = json.loads(profile.favored)
+                            try:
+                                for f in favored:
+                                    if f[0] == c:
+                                        favored.remove(f)
+                                        break
+                                profile.favored = json.dumps(favored)
+                                disliked = json.loads(profile.disliked)
+                                for d in disliked:
+                                    if d[0] == c:
+                                        disliked.remove(d)
+                                        break
+                            except:
+                                pass
+                        else:
+                            return HttpResponse("You own this classroom")
+                        profile.disliked = json.dumps(disliked)
+                        profile.save()
+                        return redirect("/")
+                    else:
+                        return HttpResponse("Invalid selection")
                 return redirect("/")
             else:
                 return HttpResponse('verification failed')
@@ -312,7 +337,7 @@ def list_user(request, q):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user_id=request.user.id)
         if q in profile.created:
-            
+
             user = User.objects.all()
             classmate = []
             for u in user:
@@ -495,7 +520,7 @@ def compute(request, q):
         if q not in profile.created:
             return redirect("/accounts/profile")
         else:
-            
+
             src = dict(request.POST)['src[]']
             dst = dict(request.POST)['dst[]']
             rule = []
@@ -539,5 +564,5 @@ def compute(request, q):
                 pass
             except:
                 return redirect("/accounts/profile")
-        
+
     return redirect("/accounts/profile")

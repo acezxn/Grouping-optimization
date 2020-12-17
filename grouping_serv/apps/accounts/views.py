@@ -334,6 +334,34 @@ def list_user(request, q):
 
 def kick(request, q):
     if request.method == 'POST':
+        request.POST['member2kick']
+        userlist = User.objects.all()
+        for i in userlist:
+            if i.username == request.POST['member2kick']:
+                id = i.id
+                break
+            
+        profile = UserProfile.objects.get(user_id = id)        
+        classrooms = profile.classrooms
+        classrooms.remove(q)
+        favored = json.loads(profile.favored)
+        for e in favored:
+            if e[0] == q:
+                favored.remove(e)
+                break
+        disliked = json.loads(profile.disliked)
+        for e in disliked:
+            if e[0] == q:
+                disliked.remove(e)
+                break
+        profile.favored = json.dumps(favored)
+        profile.disliked = json.dumps(disliked)
+        profile.classrooms = classrooms
+        profile.save()
+        try:
+            pass
+        except Exception as e:
+            pass
         return redirect("/accounts/profile")
     else:
         return redirect("/accounts/profile")

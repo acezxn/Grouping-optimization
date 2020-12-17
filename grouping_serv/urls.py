@@ -27,5 +27,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),
-    path('favicon.ico', RedirectView.as_view(url='logos/favicon.ico'))
+    path('favicon.ico', RedirectView.as_view(url='/static/logos/favicon.ico'))
 ]

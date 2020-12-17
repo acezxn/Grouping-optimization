@@ -92,7 +92,7 @@ TEMPLATES = [
     },
 ]
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WSGI_APPLICATION = "grouping_serv.wsgi.application"
 
 

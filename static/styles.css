@@ -82,6 +82,11 @@ button[type=submit]:hover {
 .username {
   background-color: #666;
 }
+
+.navimg {
+    width: 10%;
+    height: auto;
+}
 .link {
   font-size: 16px;
   text-align: center;

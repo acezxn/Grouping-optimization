@@ -36,6 +36,8 @@ a:checked {
 }
 </style> -->
 <div class="navbar">
+    {% load static %}
+    <img src="{% static 'logos/iplusi.png' %}">
   {% if url == "home" %}
   <a class = "username" href="/">Home</a>
   {% else %}

@@ -54,7 +54,7 @@ button[type=submit]:hover {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(12, 20, 0);
   float:top;
 }
 
@@ -67,8 +67,7 @@ button[type=submit]:hover {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: rgb(30, 48, 0)
-    border-style: outset;
+    background-color: rgb(12, 20, 0);
 }
 
 .main {

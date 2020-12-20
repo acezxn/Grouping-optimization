@@ -58,9 +58,6 @@ button[type=submit]:hover {
   float:top;
 }
 
-.logo:hover {
-    background-color: #333;
-}
 
 .navbar a {
     font-family: Rajdhani;

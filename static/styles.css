@@ -78,11 +78,11 @@ button[type=submit]:hover {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(55, 255, 0);
 }
 
 .username {
-  background-color: #666;
+  background-color: rgb(1, 79, 0);
 }
 
 

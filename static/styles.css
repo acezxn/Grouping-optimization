@@ -99,7 +99,6 @@ button[type=submit]:hover {
 }
 .link:hover {
   background-color: rgb(100, 100, 100);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   width: 125px;
   border-style: inset;
 }

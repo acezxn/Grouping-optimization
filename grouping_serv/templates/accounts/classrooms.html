@@ -25,7 +25,7 @@
     {% for c in classes %}
       {% if c not in created_class %}
         <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
-        <div><a> </a></div>
+        <div><a> <br></a></div>
       {% endif %}
     {% endfor %}
     {% if classes|length == 0 %}

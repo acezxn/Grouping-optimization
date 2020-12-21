@@ -28,7 +28,7 @@
 <form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
     <a style="font-family: Ubuntu;">Group size: </a>
-    <div><input id="size" type="text" name="size" style="width:100px;"><input type="submit" value="compute"></div>
+    <div><input id="size" type="text" name="size" style="width:100px;"><a> </a><input type="submit" value="compute"></div>
   <h3 style="font-family: Ubuntu;">Group filter: (Optional)</h3>
   <div>
     <input type="text" name="src[]" style = "width: 10%;">

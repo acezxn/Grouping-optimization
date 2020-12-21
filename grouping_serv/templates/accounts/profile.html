@@ -7,11 +7,10 @@
 
 {% with own=created %}
 {% if user.is_authenticated %}
-
+<header style="font-size: 10vw; text-align: center; font-family: Rajdhani;">
+    {{classid}}
+</header>
 {% if own %}
-<h1 style="text-align:center; font-family: Ubuntu;">
-{{classid}}
-</h1>
 <div><h2 style = "font-family: Ubuntu;">Class password: {{passcode}}</h2></div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
 <p style="font-family: Ubuntu;">Joined users</p>
@@ -71,9 +70,6 @@
     }
 </script>
 {% else %}
-<h2>
-{{user.username}}'s profile in {{classid}}
-</h2>
 
 {% with profile=user.profile %}
 <table style="width:50">

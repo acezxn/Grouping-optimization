@@ -78,7 +78,8 @@ button[type=submit]:hover {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(55, 255, 0);
+  background-color: rgb(43 202 0);
+  box-shadow: 0 0 10px rgb(0 255 0 / 100%);
 }
 
 .username {
@@ -89,6 +90,7 @@ button[type=submit]:hover {
 .link {
   font-size: 16px;
   text-align: center;
+  border-style: outset;
   padding: 5px 5px;
   text-decoration: none;
   color: white;
@@ -97,14 +99,26 @@ button[type=submit]:hover {
 }
 .link:hover {
   background-color: rgb(100, 100, 100);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  width: 125px;
+  border-style: inset;
 }
 .list {
-  background-color: rgb(221, 221, 221);
-  padding: 20px 20px;
-  border-style: ridge;
-  color: black;
-  text-decoration: none;
-  border-radius: 4px;
+    background-color: rgb(221, 221, 221);
+    padding: 20px 20px;
+    border-style: outset;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.list:hover {
+    background-color: rgb(221, 221, 221);
+    padding: 20px 20px;
+    border-style: inset;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
 .msg {

@@ -10,8 +10,8 @@
 <h3>Kick user: </h3>
 <form action={{"/accounts/kick/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
-  <input type="text" name = "member2kick" style = "background-color: rgb(221, 0, 0);">
-  <input type="submit" value="Kick" style = "background-color: rgb(221, 0, 0);">
+  <input type="text" name = "member2kick">
+  <input type="submit" value="Kick" style = "background-color: rgb(255, 179, 0);">
 </form>
 
 <form action = {{"/accounts/dangerzone/"|add:classid|add:"/"}} method="post">

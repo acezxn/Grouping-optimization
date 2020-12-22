@@ -142,3 +142,16 @@ button[type=submit]:hover {
   text-align: center;
   border-radius: 4px;
 }
+
+.selection {
+    background-color: rgb(221, 221, 221);
+    padding: 20px 20px;
+    border-style: ridge;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.selection:hover {
+    background-color: rgb(185, 185, 185);
+}

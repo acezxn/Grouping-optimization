@@ -112,7 +112,7 @@ button[type=submit]:hover {
     font-size: 16px;
     text-align: center;
     border-style: outset;
-    padding: 5px 5px;
+    padding: 1vw 1vw;
     text-decoration: none;
     color: white;
     background-color: rgb(25 25 25 / 1);

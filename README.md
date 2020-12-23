@@ -1,6 +1,8 @@
 # Grouping-optimization
 
 Two algorithms are used to optimize grouping and improve overall groupmate happiness
+https://group-optipus.herokuapp.com
+
 
 ## 1. Branch grouping
 1. A collection of targets of favor are the collection of all members for grouping.

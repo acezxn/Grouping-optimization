@@ -7,11 +7,13 @@
 
 {% with own=created %}
 {% if user.is_authenticated %}
-<header style="font-size: 10vw; text-align: center; font-family: Rajdhani;">
+<header style="font-size: 10vw;text-align: center;font-family: Rajdhani;border-style: solid;margin: 1vw 0px;">
     {{classid}}
 </header>
 {% if own %}
-<div><h2 style = "font-family: Ubuntu;">Class password: {{passcode}}</h2></div>
+<div>
+    <h2 style="font-family: Ubuntu;text-align: center;">Class password: {{passcode}}</h2>
+</div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
 <p style="font-family: Ubuntu;">Joined users</p>
 {% if joined_users|length == 0 %}

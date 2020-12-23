@@ -144,10 +144,14 @@ button[type=submit]:hover {
 }
 
 .msg {
-  background-color: rgb(221, 221, 221);
-  padding: 20px 20px;
-  color: black;
-  text-decoration: none;
+    background-color: rgb(221, 221, 221);
+    padding: 5vw 5vw;
+    padding-right: max(15px, 5%);
+    padding-left: max(15px, 5%);
+    padding-top: max(15px, 5%);
+    padding-bottom: max(15px, 5%);
+    color: black;
+    text-decoration: none;
 }
 
 .table_element {

@@ -39,7 +39,7 @@ input[type=submit]:hover {
     width: 10vw;
     min-width: 90px;
     height: auto;
-    filter: brightness(1.1);
+    filter: brightness(1.5);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -54,9 +54,7 @@ header {
   text-align: center;
   font-size: 20vw;
 }
-input[type=submit]:hover {
-  background-color: rgb(100, 200, 100);
-}
+
 
 button[type=submit] {
   width: 50;
@@ -83,7 +81,7 @@ button[type=submit]:hover {
 .navbar a {
     font-family: Rajdhani;
     float: left;
-    font-size: 20px;
+    font-size: 4.5vw;
     color: white;
     text-align: center;
     padding: 14px 16px;

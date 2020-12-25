@@ -2,6 +2,7 @@
 
 {% block title %}home{% endblock %}
 {% block content %}
+{% load static %}
 <header style="font-size: 10vw; text-align: center; font-family: Rajdhani;">
 Grouping Optimizer
 </header>
@@ -9,8 +10,14 @@ Grouping Optimizer
 <h2 style = "font-family: Ubuntu;">Number of users: {{users}}</h2>
 <h3 style = "font-family: Ubuntu;">The website is still in development</h3>
 <p style = "font-family: Ubuntu;">The website is no responsible for data loss</p>
-{% load static %}
-<img src = "{% static 'images/done.png' %}">
+
+<h1 style="font-family: Ubuntu;text-align:center;">Convenient</h1>
+<p style="font-family: Ubuntu;">Just input the group size and press a single button, groups can be generated</p>
+<h1 style="font-family: Ubuntu;text-align:center;">Accurate</h1>
+<p style="font-family: Ubuntu;">Iterate all conbinations of grouping, and select the favorable results</p>
+<h1 style="font-family: Ubuntu;text-align:center;">Randomness</h1>
+<p style="font-family: Ubuntu;">Add variety in generated results</p>
+<!-- <img src = "{% static 'images/done.png' %}"> -->
 <footer>
 <marquee>
   this is a good frontend ya

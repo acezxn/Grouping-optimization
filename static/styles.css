@@ -1,24 +1,3 @@
-@keyframes zoom {
-    from {
-        font-size: min(4.5vw, 20px);
-    }
-
-    to {
-        font-size: min(4.5vw, 21px);
-    }
-}
-
-@keyframes zoomout {
-    from {
-        font-size: min(4.5vw, 21px);
-    }
-
-    to {
-        font-size: min(4.5vw, 20px);
-    }
-}
-
-
 
 input[type=text],
 select {
@@ -94,23 +73,20 @@ button[type=submit]:hover {
 }
 
 .navbar {
-    overflow: hidden;
-    float: top;
+  overflow: hidden;
+  background-color: rgb(12, 20, 0);
+  float:top;
 }
 
 
 .navbar a {
     font-family: Rajdhani;
     float: left;
-    background-color: rgb(12, 20, 0);
-
     font-size: min(4.5vw, 20px);
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    animation-name: zoomout;
-    animation-duration: 0.5s;
 }
 
 .main {
@@ -121,13 +97,9 @@ button[type=submit]:hover {
   margin-right: auto;
 }
 
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-    background-color: rgb(43 202 0);
-    box-shadow: 0 0 10px rgb(0 255 0 / 100%);
-    animation-name: zoom;
-    animation-duration: 0.5s;
-    font-size: min(4.5vw, 21px);
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(43 202 0);
+  box-shadow: 0 0 10px rgb(0 255 0 / 100%);
 }
 
 .username {

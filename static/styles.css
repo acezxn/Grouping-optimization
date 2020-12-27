@@ -88,6 +88,9 @@ button[type=submit]:hover {
     padding: 14px 16px;
     text-decoration: none;
 }
+.logo:hover {
+    filter:brightness(1.5);
+}
 
 .main {
   background-color: rgb(200, 200, 200);

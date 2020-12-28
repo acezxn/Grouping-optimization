@@ -116,10 +116,11 @@ def start_group(size, favor_data, total, rule):
         score_list.remove(j)
 
     # print("grouplist", group_list)
-    # print("scorelist", score_list)
+    print("scorelist", score_list)
     if len(group_list) > 0:
         for j in score_list:
             MIN = min(j)
+            print(MIN)
             min_scores.append(MIN)
         print("max", max(min_scores))
         for j in min_scores:

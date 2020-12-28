@@ -106,6 +106,7 @@ def start_group(size, favor_data, total, rule):
                         idx = group_list.index(case)
                         case2rm.append(case)
                         score2rm.append(score_list[idx])
+                        print("case data: ", case, score_list[idx])
                         # group_list.remove(case)
                         # score_list.remove(score_list[idx])
                         break

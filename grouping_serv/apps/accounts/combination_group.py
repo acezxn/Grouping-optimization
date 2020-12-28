@@ -123,7 +123,7 @@ def start_group(size, favor_data, total, rule):
             min_scores.append(MIN)
         for j in min_scores:
             if j == max(min_scores):
-                minimums.append(j)
+                minimums.append(group_list[min_scores.index(j)])
 
     # else:
     #     return [], 1

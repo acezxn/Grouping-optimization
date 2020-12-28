@@ -89,6 +89,7 @@ def start_group(size, favor_data, total, rule):
         branch(total, group, group)
     print("grouplist", group_list)
     tmp = group_list
+    case2rm = []
     for case in tmp:
         print("case",case)
         for g in case: # groups
@@ -102,13 +103,16 @@ def start_group(size, favor_data, total, rule):
                         print(score_list)
                         print(score_list[group_list.index(case)])
                         idx = group_list.index(case)
-                        group_list.remove(case)
-                        score_list.remove(score_list[idx])
+                        case2rm.append(idx)
+                        # group_list.remove(case)
+                        # score_list.remove(score_list[idx])
                         break
                     except:
                         pass
 
-
+    for i in case2rm:
+        group_list.remove(group_list[i])
+        score_list.remove(score_list[i])
 
     print("grouplist", group_list)
     print("scorelist", score_list)

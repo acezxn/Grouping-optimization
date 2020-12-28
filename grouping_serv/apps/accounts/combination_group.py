@@ -115,7 +115,7 @@ def start_group(size, favor_data, total, rule):
         group_list.remove(i)
         score_list.remove(j)
 
-    # print("grouplist", group_list)
+    print("grouplist", group_list)
     print("scorelist", score_list)
     if len(group_list) > 0:
         for j in score_list:

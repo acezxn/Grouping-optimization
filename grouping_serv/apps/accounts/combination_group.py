@@ -94,15 +94,15 @@ def start_group(size, favor_data, total, rule):
     for case in tmp:
         print("case",case)
         for g in case: # groups
-            print("group",g)
+            # print("group",g)
             for r in rule:
                 print(r[0], r[1])
                 if r[0] in list(g) and r[1] in list(g):
                     # print(group_list)
                     try:
-                        print(len(group_list), len(score_list))
-                        print(score_list)
-                        print(score_list[group_list.index(case)])
+                        # print(len(group_list), len(score_list))
+                        # print(score_list)
+                        # print(score_list[group_list.index(case)])
                         idx = group_list.index(case)
                         case2rm.append(case)
                         score2rm.append(score_list[idx])
@@ -115,14 +115,14 @@ def start_group(size, favor_data, total, rule):
         group_list.remove(i)
         score_list.remove(j)
 
-    print("grouplist", group_list)
-    print("scorelist", score_list)
+    # print("grouplist", group_list)
+    # print("scorelist", score_list)
     if len(group_list) > 0:
         for j in score_list:
             s = 0
             diff = max(j) - min(j)
             processed_data.append(diff)
-        print("processed data", processed_data)
+        # print("processed data", processed_data)
         MIN = min(processed_data)
         c = 0
         for i in processed_data:
@@ -130,7 +130,7 @@ def start_group(size, favor_data, total, rule):
                 min_scores.append(i)
                 minimums.append(group_list[c])
             c += 1
-        print("minimums", minimums)
+        # print("minimums", minimums)
         r = random.choice(minimums)
         if len(remain_group) > 0:
             remain_group = tuple(remain_group)

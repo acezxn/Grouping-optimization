@@ -14,10 +14,13 @@ import string
 from . import combination_group
 
 def normalize(words):
-    new_words = []
-    for word in words:
-        new_words.append(word.replace(" ", ""))
-    return new_words
+    try:
+        new_words = []
+        for word in words:
+            new_words.append(word.replace(" ", ""))
+        return new_words
+    except:
+        return words
 
 def ProfileView(request, q):
 

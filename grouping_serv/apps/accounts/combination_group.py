@@ -97,9 +97,11 @@ def start_group(size, favor_data, total, rule):
                     # print(group_list)
                     try:
                         print(len(group_list), len(score_list))
+                        print(score_list)
                         print(score_list[group_list.index(case)])
+                        idx = group_list.index(case)
                         group_list.remove(case)
-                        score_list.remove(score_list[group_list.index(case)])
+                        score_list.remove(score_list[idx])
                     except:
                         pass
     if len(group_list) > 0:

@@ -46,7 +46,7 @@ def ProfileView(request, q):
 
                         # post data
                         try:
-                            if request.POST["favored"].split(",") != [""]:
+                            if request.POST["favored"].split(",").replace(" ", "") != [""]:
                                 idx = 0
                                 favored = json.loads(relation.favored)
                                 print(favored)
@@ -54,29 +54,29 @@ def ProfileView(request, q):
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + request.POST["favored"].split(",")]
+                                            [data[0], data[1] + request.POST["favored"].split(",").replace(" ", "")]
                                         )
                                         favored[idx] = [
                                             data[0],
-                                            data[1] + request.POST["favored"].split(","),
+                                            data[1] + request.POST["favored"].split(",").replace(" ", ""),
                                         ]
                                         relation.favored = json.dumps(favored)
                                         break
                                     idx += 1
                             else:
                                 pass
-                            if request.POST["disliked"].split(",") != [""]:
+                            if request.POST["disliked"].split(",").replace(" ", "") != [""]:
                                 idx = 0
                                 disliked = json.loads(relation.disliked)
                                 for data in disliked:
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + request.POST["disliked"].split(",")]
+                                            [data[0], data[1] + request.POST["disliked"].split(",").replace(" ", "")]
                                         )
                                         disliked[idx] = [
                                             data[0],
-                                            data[1] + request.POST["disliked"].split(","),
+                                            data[1] + request.POST["disliked"].split(",").replace(" ", ""),
                                         ]
                                         relation.disliked = json.dumps(disliked)
                                         break
@@ -92,7 +92,7 @@ def ProfileView(request, q):
                             favored = json.loads(relation.favored)
                             for data in favored:
                                 if data[0] == q:
-                                    for element in request.POST["rm_favored"].split(","):
+                                    for element in request.POST["rm_favored"].split(",").replace(" ", ""):
                                         data[1].remove(element)
 
                                     favored[idx] = [data[0], data[1]]
@@ -108,7 +108,7 @@ def ProfileView(request, q):
                             disliked = json.loads(relation.disliked)
                             for data in disliked:
                                 if data[0] == q:
-                                    for element in request.POST["rm_disliked"].split(","):
+                                    for element in request.POST["rm_disliked"].split(",").replace(" ", ""):
                                         data[1].remove(element)
 
                                     disliked[idx] = [data[0], data[1]]

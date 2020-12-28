@@ -528,7 +528,7 @@ def compute(request, q):
             dst = dict(request.POST)['dst[]']
             rule = []
             for i in range(len(dict(request.POST)['src[]'])):
-               rule.append((src[i], dst[i]))
+               rule.append([src[i], dst[i]])
             print("post")
             all = list(User.objects.all())
             total = []

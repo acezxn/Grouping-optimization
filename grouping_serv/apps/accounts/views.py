@@ -325,7 +325,7 @@ def list_user(request, q):
             except:
                 pass
             return render(
-                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"}
+                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"+q}
             )
         else:
             return redirect("/accounts/profile")
@@ -340,8 +340,8 @@ def kick(request, q):
             if i.username == request.POST['member2kick']:
                 id = i.id
                 break
-            
-        profile = UserProfile.objects.get(user_id = id)        
+
+        profile = UserProfile.objects.get(user_id = id)
         classrooms = profile.classrooms
         classrooms.remove(q)
         favored = json.loads(profile.favored)

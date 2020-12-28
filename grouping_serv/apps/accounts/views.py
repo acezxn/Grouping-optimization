@@ -89,40 +89,33 @@ def ProfileView(request, q):
                             pass
 
                         # remove data
-                        received = normalize(request.POST.get('rm_favored', "").split(","))
-                        if len(received) == 0:
+                        try:
                             idx = 0
                             favored = json.loads(relation.favored)
                             for data in favored:
                                 if data[0] == q:
-                                    for element in received:
+                                    for element in request.POST["rm_favored"].split(","):
                                         data[1].remove(element)
 
                                     favored[idx] = [data[0], data[1]]
                                     relation.favored = json.dumps(favored)
                                     break
                                 idx += 1
-                        try:
-                            pass
 
                         except Exception as e:
                             print(e)
                             pass
-                        received = normalize(request.POST.get('rm_disliked', "").split(","))
-                        if len(received) == 0:
+                        try:
                             idx = 0
                             disliked = json.loads(relation.disliked)
                             for data in disliked:
                                 if data[0] == q:
-                                    for element in received:
+                                    for element in request.POST["rm_disliked"].split(","):
                                         data[1].remove(element)
 
                                     disliked[idx] = [data[0], data[1]]
                                     relation.disliked = json.dumps(disliked)
                                     break
-
-                        try:
-                            pass
                         except Exception as e:
                             print(e)
                             pass

@@ -13,6 +13,11 @@ import string
 
 from . import combination_group
 
+def normalize(words):
+    new_words = []
+    for word in words:
+        new_words.append(word.replace(" ", ""))
+    return new_words
 
 def ProfileView(request, q):
 
@@ -39,6 +44,7 @@ def ProfileView(request, q):
                         # post data
                         try:
                             if request.POST["favored"].split(",") != [""]:
+                                recieved = normalize(request.POST["favored"].split(","))
                                 idx = 0
                                 favored = json.loads(relation.favored)
                                 print(favored)
@@ -46,11 +52,11 @@ def ProfileView(request, q):
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + request.POST["favored"].split(",")]
+                                            [data[0], data[1] + recieved]
                                         )
                                         favored[idx] = [
                                             data[0],
-                                            data[1] + request.POST["favored"].split(","),
+                                            data[1] + recieved,
                                         ]
                                         relation.favored = json.dumps(favored)
                                         break
@@ -58,17 +64,18 @@ def ProfileView(request, q):
                             else:
                                 pass
                             if request.POST["disliked"].split(",") != [""]:
+                                recieved = normalize(request.POST["disliked"].split(","))
                                 idx = 0
                                 disliked = json.loads(relation.disliked)
                                 for data in disliked:
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + request.POST["disliked"].split(",")]
+                                            [data[0], data[1] + recieved]
                                         )
                                         disliked[idx] = [
                                             data[0],
-                                            data[1] + request.POST["disliked"].split(","),
+                                            data[1] + recieved,
                                         ]
                                         relation.disliked = json.dumps(disliked)
                                         break
@@ -80,11 +87,12 @@ def ProfileView(request, q):
 
                         # remove data
                         try:
+                            recieved = normalize(request.POST["rm_favored"].split(","))
                             idx = 0
                             favored = json.loads(relation.favored)
                             for data in favored:
                                 if data[0] == q:
-                                    for element in request.POST["rm_favored"].split(","):
+                                    for element in received:
                                         data[1].remove(element)
 
                                     favored[idx] = [data[0], data[1]]
@@ -96,11 +104,12 @@ def ProfileView(request, q):
                             print(e)
                             pass
                         try:
+                            recieved = normalize(request.POST["rm_favored"].split(","))
                             idx = 0
                             disliked = json.loads(relation.disliked)
                             for data in disliked:
                                 if data[0] == q:
-                                    for element in request.POST["rm_disliked"].split(","):
+                                    for element in received:
                                         data[1].remove(element)
 
                                     disliked[idx] = [data[0], data[1]]

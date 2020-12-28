@@ -91,8 +91,9 @@ def start_group(size, favor_data, total, rule):
     tmp = group_list
     for case in tmp:
         for g in case: # groups
+            print("group",g)
             for r in rule:
-                print(r[0], r[1], g)
+                print(r[0], r[1])
                 if r[0] in list(g) and r[1] in list(g):
                     # print(group_list)
                     try:

@@ -90,17 +90,18 @@ def ProfileView(request, q):
 
                         # remove data
                         received = normalize(request.POST.get('rm_favored', "").split(","))
-                        idx = 0
-                        favored = json.loads(relation.favored)
-                        for data in favored:
-                            if data[0] == q:
-                                for element in received:
-                                    data[1].remove(element)
+                        if len(received) == 0:
+                            idx = 0
+                            favored = json.loads(relation.favored)
+                            for data in favored:
+                                if data[0] == q:
+                                    for element in received:
+                                        data[1].remove(element)
 
-                                favored[idx] = [data[0], data[1]]
-                                relation.favored = json.dumps(favored)
-                                break
-                            idx += 1
+                                    favored[idx] = [data[0], data[1]]
+                                    relation.favored = json.dumps(favored)
+                                    break
+                                idx += 1
                         try:
                             pass
 
@@ -108,16 +109,18 @@ def ProfileView(request, q):
                             print(e)
                             pass
                         received = normalize(request.POST.get('rm_disliked', "").split(","))
-                        idx = 0
-                        disliked = json.loads(relation.disliked)
-                        for data in disliked:
-                            if data[0] == q:
-                                for element in received:
-                                    data[1].remove(element)
+                        if len(received) == 0:
+                            idx = 0
+                            disliked = json.loads(relation.disliked)
+                            for data in disliked:
+                                if data[0] == q:
+                                    for element in received:
+                                        data[1].remove(element)
 
-                                disliked[idx] = [data[0], data[1]]
-                                relation.disliked = json.dumps(disliked)
-                                break
+                                    disliked[idx] = [data[0], data[1]]
+                                    relation.disliked = json.dumps(disliked)
+                                    break
+
                         try:
                             pass
                         except Exception as e:

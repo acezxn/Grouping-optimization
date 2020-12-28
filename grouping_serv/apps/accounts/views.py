@@ -325,7 +325,7 @@ def list_user(request, q):
             except:
                 pass
             return render(
-                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile"+q}
+                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q}
             )
         else:
             return redirect("/accounts/profile")

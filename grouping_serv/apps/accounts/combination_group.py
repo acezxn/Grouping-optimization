@@ -108,14 +108,14 @@ def start_group(size, favor_data, total, rule):
 
 
 
-    print(group_list)
-    print(score_list)
+    print("grouplist", group_list)
+    print("scorelist", score_list)
     if len(group_list) > 0:
         for j in score_list:
             s = 0
             diff = max(j) - min(j)
             processed_data.append(diff)
-        print(processed_data)
+        print("processed data", processed_data)
         MIN = min(processed_data)
         c = 0
         for i in processed_data:
@@ -123,7 +123,7 @@ def start_group(size, favor_data, total, rule):
                 min_scores.append(i)
                 minimums.append(group_list[c])
             c += 1
-        print(minimums)
+        print("minimums", minimums)
         r = random.choice(minimums)
         if len(remain_group) > 0:
             remain_group = tuple(remain_group)

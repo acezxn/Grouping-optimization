@@ -44,7 +44,7 @@ def ProfileView(request, q):
                         userid = request.user.id
                         relation = UserProfile.objects.get(user_id=userid)
                         if request.POST.get('favored', "").split(",") != [""]:
-                            recieved = normalize(request.POST.get('favored', ""))
+                            received = normalize(request.POST.get('favored', ""))
                             idx = 0
                             favored = json.loads(relation.favored)
                             print(favored)
@@ -52,11 +52,11 @@ def ProfileView(request, q):
                                 print(data)
                                 if data[0] == q:
                                     print(
-                                        [data[0], data[1] + recieved]
+                                        [data[0], data[1] + received]
                                     )
                                     favored[idx] = [
                                         data[0],
-                                        data[1] + recieved,
+                                        data[1] + received,
                                     ]
                                     relation.favored = json.dumps(favored)
                                     break
@@ -64,18 +64,18 @@ def ProfileView(request, q):
                         else:
                             pass
                         if request.POST.get('disliked', "").split(",") != [""]:
-                            recieved = normalize(request.POST.get('disliked', "").split(","))
+                            received = normalize(request.POST.get('disliked', "").split(","))
                             idx = 0
                             disliked = json.loads(relation.disliked)
                             for data in disliked:
                                 print(data)
                                 if data[0] == q:
                                     print(
-                                        [data[0], data[1] + recieved]
+                                        [data[0], data[1] + received]
                                     )
                                     disliked[idx] = [
                                         data[0],
-                                        data[1] + recieved,
+                                        data[1] + received,
                                     ]
                                     relation.disliked = json.dumps(disliked)
                                     break
@@ -89,7 +89,7 @@ def ProfileView(request, q):
                             pass
 
                         # remove data
-                        recieved = normalize(request.POST.get('rm_favored', "").split(","))
+                        received = normalize(request.POST.get('rm_favored', "").split(","))
                         idx = 0
                         favored = json.loads(relation.favored)
                         for data in favored:
@@ -107,7 +107,7 @@ def ProfileView(request, q):
                         except Exception as e:
                             print(e)
                             pass
-                        recieved = normalize(request.POST.get('rm_disliked', "").split(","))
+                        received = normalize(request.POST.get('rm_disliked', "").split(","))
                         idx = 0
                         disliked = json.loads(relation.disliked)
                         for data in disliked:

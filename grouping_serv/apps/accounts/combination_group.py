@@ -95,7 +95,7 @@ def start_group(size, favor_data, total, rule):
                 for r in rule:
                     # print(r[0], r[1], g)
                     if r[0] in list(g) and r[1] in list(g):
-                        print(case)
+                        print(group_list)
                         try:
                             group_list.remove(case)
                         except:

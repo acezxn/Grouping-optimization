@@ -311,24 +311,20 @@ def signup(request):
 def list_user(request, q):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user_id=request.user.id)
-        if q in profile.created:
-
-            user = User.objects.all()
-            classmate = []
-            for u in user:
-                profile = UserProfile.objects.get(user_id=u.id)
-                if q in profile.classrooms:
-                    if q not in profile.created:
-                        classmate.append(u)
-            try:
-                classmate.remove(request.user)
-            except:
-                pass
-            return render(
-                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q}
-            )
-        else:
-            return redirect("/accounts/profile")
+        user = User.objects.all()
+        classmate = []
+        for u in user:
+            profile = UserProfile.objects.get(user_id=u.id)
+            if q in profile.classrooms:
+                if q not in profile.created:
+                    classmate.append(u)
+        try:
+            classmate.remove(request.user)
+        except:
+            pass
+        return render(
+            request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q}
+        )
     else:
         return redirect("/accounts/profile")
 

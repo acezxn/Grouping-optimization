@@ -90,9 +90,9 @@ def start_group(size, favor_data, total, rule):
     print("grouplist", group_list)
     tmp = group_list
     for case in tmp:
-        for g in case:
+        for g in case: # groups
             for r in rule:
-                # print(r[0], r[1], g)
+                print(r[0], r[1], g)
                 if r[0] in list(g) and r[1] in list(g):
                     # print(group_list)
                     try:
@@ -102,6 +102,7 @@ def start_group(size, favor_data, total, rule):
                         idx = group_list.index(case)
                         group_list.remove(case)
                         score_list.remove(score_list[idx])
+                        break
                     except:
                         pass
     if len(group_list) > 0:

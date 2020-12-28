@@ -43,8 +43,8 @@ def ProfileView(request, q):
                         # relation = UserProfile.objects.get_or_create(id=request.user.id, defaults={'favored': [''], 'disliked': ['']})
                         userid = request.user.id
                         relation = UserProfile.objects.get(user_id=userid)
-                        if request.POST["favored"].split(",") != [""]:
-                            recieved = normalize(request.POST["favored"].split(","))
+                        if request.POST.get('favored', "").split(",") != [""]:
+                            recieved = normalize(request.POST.get('favored', ""))
                             idx = 0
                             favored = json.loads(relation.favored)
                             print(favored)
@@ -63,8 +63,8 @@ def ProfileView(request, q):
                                 idx += 1
                         else:
                             pass
-                        if request.POST["disliked"].split(",") != [""]:
-                            recieved = normalize(request.POST["disliked"].split(","))
+                        if request.POST.get('disliked', "").split(",") != [""]:
+                            recieved = normalize(request.POST.get('disliked', "").split(","))
                             idx = 0
                             disliked = json.loads(relation.disliked)
                             for data in disliked:
@@ -89,7 +89,7 @@ def ProfileView(request, q):
                             pass
 
                         # remove data
-                        recieved = normalize(request.POST["rm_favored"].split(","))
+                        recieved = normalize(request.POST.get('rm_favored', "").split(","))
                         idx = 0
                         favored = json.loads(relation.favored)
                         for data in favored:
@@ -107,7 +107,7 @@ def ProfileView(request, q):
                         except Exception as e:
                             print(e)
                             pass
-                        recieved = normalize(request.POST["rm_disliked"].split(","))
+                        recieved = normalize(request.POST.get('rm_disliked', "").split(","))
                         idx = 0
                         disliked = json.loads(relation.disliked)
                         for data in disliked:

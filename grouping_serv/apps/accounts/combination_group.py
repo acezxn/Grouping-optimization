@@ -90,6 +90,7 @@ def start_group(size, favor_data, total, rule):
     print("grouplist", group_list)
     tmp = group_list
     for case in tmp:
+        print("case",case)
         for g in case: # groups
             print("group",g)
             for r in rule:

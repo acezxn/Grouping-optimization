@@ -107,7 +107,7 @@ def ProfileView(request, q):
                             print(e)
                             pass
                         try:
-                            recieved = normalize(request.POST["rm_favored"].split(","))
+                            recieved = normalize(request.POST["rm_disliked"].split(","))
                             idx = 0
                             disliked = json.loads(relation.disliked)
                             for data in disliked:

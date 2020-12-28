@@ -46,8 +46,7 @@ def ProfileView(request, q):
 
                         # post data
                         try:
-                            if request.POST.get('favored', "").split(",") != [""]:
-                                received = normalize(request.POST.get('favored', ""))
+                            if request.POST["favored"].split(",") != [""]:
                                 idx = 0
                                 favored = json.loads(relation.favored)
                                 print(favored)
@@ -55,30 +54,29 @@ def ProfileView(request, q):
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + received]
+                                            [data[0], data[1] + request.POST["favored"].split(",")]
                                         )
                                         favored[idx] = [
                                             data[0],
-                                            data[1] + received,
+                                            data[1] + request.POST["favored"].split(","),
                                         ]
                                         relation.favored = json.dumps(favored)
                                         break
                                     idx += 1
                             else:
                                 pass
-                            if request.POST.get('disliked', "").split(",") != [""]:
-                                received = normalize(request.POST.get('disliked', "").split(","))
+                            if request.POST["disliked"].split(",") != [""]:
                                 idx = 0
                                 disliked = json.loads(relation.disliked)
                                 for data in disliked:
                                     print(data)
                                     if data[0] == q:
                                         print(
-                                            [data[0], data[1] + received]
+                                            [data[0], data[1] + request.POST["disliked"].split(",")]
                                         )
                                         disliked[idx] = [
                                             data[0],
-                                            data[1] + received,
+                                            data[1] + request.POST["disliked"].split(","),
                                         ]
                                         relation.disliked = json.dumps(disliked)
                                         break

@@ -105,6 +105,11 @@ def start_group(size, favor_data, total, rule):
                         break
                     except:
                         pass
+
+
+
+    print(group_list)
+    print(score_list)
     if len(group_list) > 0:
         for j in score_list:
             s = 0

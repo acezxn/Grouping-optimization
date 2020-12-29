@@ -28,6 +28,5 @@ https://group-optipus.herokuapp.com
 2. Using a recursive function, compute the possible outcomes of other groups to form nCr cases, which n is the number of people in total, and r is the group size.
 3. A dictionary of people favorism are used to compute the overall happiness of each group. For every groupmates, if one favored person in the same group, the overall happiness index will plus 1. On the other hand, if one unfavored person in the same group, the overall happiness index will minus 1.
 4. The happiness calculation will run in every groups in every cases
-5. The difference of the most happy group and the least happy group is calculated and recorded on a list.
-6. The cases with least difference in happiness will be selected to be the output.
-
+5. The score of least happy groups will be collected as a list, where each element represent the least happy group of each case.
+6. The cases with highest least happy score will be selected to be the output.

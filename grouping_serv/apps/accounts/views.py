@@ -23,7 +23,7 @@ def normalize(words):
 
     for word in words:
         stat = check_exist(word)
-        print(stat)
+        print(words, stat)
         if stat == 0:
             return words,0
     return words, 1

@@ -64,7 +64,6 @@ def ProfileView(request, q):
                         relation = UserProfile.objects.get(user_id=userid)
 
                         # post data
-                        processed_data, state = normalize(request.POST["favored"].split(","))
                         try:
                             processed_data, state = normalize(request.POST["favored"].split(","))
                             print('processed_data: ', processed_data)

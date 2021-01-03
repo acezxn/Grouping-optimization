@@ -18,9 +18,13 @@ def normalize(words):
         new_words = []
         for word in words:
             new_words.append(word.replace(" ", ""))
-        return new_words
+        for word in new_words:
+            for c in word:
+                if c not in (string.ascii_letters + string.digits):
+                    return words, 0
+        return new_words, 1
     except:
-        return words
+        return words, 0
 
 def ProfileView(request, q):
 
@@ -46,43 +50,55 @@ def ProfileView(request, q):
 
                         # post data
                         try:
-                            if request.POST["favored"].replace(" ", "").split(",") != [""]:
-                                idx = 0
-                                favored = json.loads(relation.favored)
-                                print(favored)
-                                for data in favored:
-                                    print(data)
-                                    if data[0] == q:
-                                        print(
-                                            [data[0], data[1] + request.POST["favored"].replace(" ", "").split(",")]
-                                        )
-                                        favored[idx] = [
-                                            data[0],
-                                            data[1] + request.POST["favored"].replace(" ", "").split(","),
-                                        ]
-                                        relation.favored = json.dumps(favored)
-                                        break
-                                    idx += 1
+                            processed_data, state = normalize(request.POST["favored"].split(","))
+                            if state == 1:
+                                if processed_data != [""]:
+                                    idx = 0
+                                    favored = json.loads(relation.favored)
+                                    print(favored)
+                                    for data in favored:
+                                        print(data)
+                                        if data[0] == q:
+                                            print(
+                                                [data[0], data[1] + processed_data]
+                                            )
+                                            favored[idx] = [
+                                                data[0],
+                                                data[1] + processed_data,
+                                            ]
+                                            relation.favored = json.dumps(favored)
+                                            break
+                                        idx += 1
                             else:
-                                pass
-                            if request.POST["disliked"].replace(" ", "").split(",") != [""]:
-                                idx = 0
-                                disliked = json.loads(relation.disliked)
-                                for data in disliked:
-                                    print(data)
-                                    if data[0] == q:
-                                        print(
-                                            [data[0], data[1] + request.POST["disliked"].replace(" ", "").split(",")]
-                                        )
-                                        disliked[idx] = [
-                                            data[0],
-                                            data[1] + request.POST["disliked"].replace(" ", "").split(","),
-                                        ]
-                                        relation.disliked = json.dumps(disliked)
-                                        break
-                                    idx += 1
+                                return HttpResponse('no')
+                            # if request.POST["favored"].replace(" ", "").split(",") != [""]:
+                            #
+                            # else:
+                            #     pass
+                            processed_data, state = normalize(request.POST["disliked"].split(","))
+                            if state == 1:
+                                if processed_data != [""]:
+                                    idx = 0
+                                    disliked = json.loads(relation.disliked)
+                                    for data in disliked:
+                                        print(data)
+                                        if data[0] == q:
+                                            print(
+                                                [data[0], data[1] + request.POST["disliked"].replace(" ", "").split(",")]
+                                            )
+                                            disliked[idx] = [
+                                                data[0],
+                                                data[1] + request.POST["disliked"].replace(" ", "").split(","),
+                                            ]
+                                            relation.disliked = json.dumps(disliked)
+                                            break
+                                        idx += 1
                             else:
-                                relation.disliked = relation.disliked
+                                return HttpResponse('nod')
+                            # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
+                            # 
+                            # else:
+                            #     relation.disliked = relation.disliked
                         except:
                             pass
 

@@ -13,18 +13,30 @@ import string
 
 from . import combination_group
 
+def check_exist(word):
+    users = User.objects.all()
+    for user in users:
+        if word == user.username:
+            return 1
+    return 0
 def normalize(words):
-    try:
-        new_words = []
-        for word in words:
-            new_words.append(word.replace(" ", ""))
-        for word in new_words:
-            for c in word:
-                if c not in (string.ascii_letters + string.digits):
-                    return words, 0
-        return new_words, 1
-    except:
-        return words, 0
+
+    for word in words:
+        stat = check_exist(word)
+        if stat == 0:
+            return words,0
+    return words, 1
+    # try:
+    #     new_words = []
+    #     for word in words:
+    #         new_words.append(word.replace(" ", ""))
+    #     for word in new_words:
+    #         for c in word:
+    #             if c not in (string.ascii_letters + string.digits):
+    #                 return words, 0
+    #     return new_words, 1
+    # except:
+    #     return words, 0
 
 def ProfileView(request, q):
 
@@ -70,7 +82,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Special characters not allowed')
+                                return HttpResponse('Cannot find specified user)
                             # if request.POST["favored"].replace(" ", "").split(",") != [""]:
                             #
                             # else:
@@ -94,7 +106,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Special characters not allowed')
+                                return HttpResponse('Cannot find specified user)
                             # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
                             #
                             # else:

@@ -64,7 +64,7 @@ def ProfileView(request, q):
                         # post data
                         try:
                             processed_data, state = normalize(request.POST["favored"].split(",").remove(''))
-                            print('processed_data: 'processed_data)
+                            print('processed_data: ', processed_data)
                             if state == 1:
                                 if processed_data != [""]:
                                     idx = 0

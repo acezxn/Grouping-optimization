@@ -63,7 +63,7 @@ def ProfileView(request, q):
 
                         # post data
                         try:
-                            processed_data, state = normalize(request.POST["favored"].split(","))
+                            processed_data, state = normalize(request.POST["favored"].split(",").remove(''))
                             if state == 1:
                                 if processed_data != [""]:
                                     idx = 0
@@ -88,7 +88,7 @@ def ProfileView(request, q):
                             #
                             # else:
                             #     pass
-                            processed_data, state = normalize(request.POST["disliked"].split(","))
+                            processed_data, state = normalize(request.POST["disliked"].split(",").remove(''))
                             if state == 1:
                                 if processed_data != [""]:
                                     idx = 0
@@ -97,11 +97,11 @@ def ProfileView(request, q):
                                         print(data)
                                         if data[0] == q:
                                             print(
-                                                [data[0], data[1] + request.POST["disliked"].replace(" ", "").split(",")]
+                                                [data[0], data[1] + processed_data]
                                             )
                                             disliked[idx] = [
                                                 data[0],
-                                                data[1] + request.POST["disliked"].replace(" ", "").split(","),
+                                                data[1] + processed_data,
                                             ]
                                             relation.disliked = json.dumps(disliked)
                                             break

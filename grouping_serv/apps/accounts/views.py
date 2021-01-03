@@ -82,7 +82,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Cannot find specified user)
+                                return HttpResponse('Cannot find specified user')
                             # if request.POST["favored"].replace(" ", "").split(",") != [""]:
                             #
                             # else:
@@ -106,7 +106,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Cannot find specified user)
+                                return HttpResponse('Cannot find specified user')
                             # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
                             #
                             # else:

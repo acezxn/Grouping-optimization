@@ -70,7 +70,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('no')
+                                return HttpResponse('Special characters not allowed')
                             # if request.POST["favored"].replace(" ", "").split(",") != [""]:
                             #
                             # else:
@@ -94,9 +94,9 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('nod')
+                                return HttpResponse('Special characters not allowed')
                             # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
-                            # 
+                            #
                             # else:
                             #     relation.disliked = relation.disliked
                         except:

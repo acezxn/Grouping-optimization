@@ -525,7 +525,7 @@ def join(request):
 
 
 def leave(request):
-
+# authentication gate needed
     profile = UserProfile.objects.get(user_id=request.user.id)
     print(request.POST["rm_classid"] in profile.classrooms)
     if request.POST["rm_classid"] in profile.classrooms:
@@ -557,7 +557,7 @@ def leave(request):
 
 
 def compute(request, q):
-
+#authentication gate needed
     if request.method == "POST":
         profile = UserProfile.objects.get(user_id=request.user.id)
         if q not in profile.created:

@@ -135,15 +135,6 @@ button[type=submit]:hover {
     border-radius: 4px;
 }
 
-.list:hover {
-    background-color: rgb(221, 221, 221);
-    font-size: 20px;
-    padding: 20px 15px;
-    border-style: inset;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
-}
 
 .msg {
     background-color: rgb(221, 221, 221);

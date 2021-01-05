@@ -10,7 +10,7 @@
 
     {% for u in users %}
       {% if not u.is_superuser %}
-        <div><p class = "list">{{u}}</p></div>
+        <div><p class = "selection">{{u}}</p></div>
       {% endif %}
     {% endfor %}
   {% endwith %}

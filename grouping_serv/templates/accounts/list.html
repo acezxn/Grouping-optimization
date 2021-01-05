@@ -3,14 +3,14 @@
 {% block title %}login{% endblock %}
 {% block content %}
 
-  <h2>Available users</h2>
+  <h2 style = "font-family: Ubuntu;">Available users</h2>
   {% csrf_token %}
   {% with users=user %}
 
 
     {% for u in users %}
       {% if not u.is_superuser %}
-        <div><p class = "list">{{u}}</p></div>
+        <div><p class = "list" >{{u}}</p></div>
       {% endif %}
     {% endfor %}
   {% endwith %}

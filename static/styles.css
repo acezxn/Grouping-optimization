@@ -160,6 +160,7 @@ button[type=submit]:hover {
     color: black;
     text-decoration: none;
     border-radius: 4px;
+    font-family: Ubuntu;
 }
 
 .selection:hover {

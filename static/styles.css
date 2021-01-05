@@ -22,6 +22,16 @@ select {
     box-sizing: border-box;
 }
 
+h1 {
+  font-family: Ubuntu;
+}
+h2 {
+  font-family: Ubuntu;
+}
+h3 {
+  font-family: Ubuntu;
+}
+
 input[type=submit] {
   width: 10vw;
   min-width: 90px;

@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-<style>
-p {
-  color: white;
-}
-</style>
-<head>
-  <meta charset = "utf-8">
-  {% load static %}
-  <link rel="stylesheet" href="{% static "/styles.css" %}">
-  <title>Available users</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}login{% endblock %}
+{% block content %}
   {% include 'navbar.html' %}
 
   <h2>Available users</h2>
@@ -27,5 +17,4 @@ p {
   {% endwith %}
   <a href = {{prev}} class = "link">{{"< back"}}</a>
 
-</body>
-</html>
+{% endblock %}

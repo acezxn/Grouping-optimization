@@ -137,14 +137,14 @@ button[type=submit]:hover {
     border-style: inset;
 }
 .list {
-    background-color: rgb(221, 221, 221);
-    padding: 20px 20px;
-    border-style: outset;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
+  background-color: rgb(221, 221, 221);
+  padding: 20px 20px;
+  border-style: ridge;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: Ubuntu;
 }
-
 
 .msg {
     background-color: rgb(221, 221, 221);
@@ -164,15 +164,15 @@ button[type=submit]:hover {
 }
 
 .selection {
-    background-color: rgb(221, 221, 221);
-    padding: 20px 20px;
-    border-style: ridge;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
-    font-family: Ubuntu;
+  background-color: rgb(221, 221, 221);
+  padding: 20px 20px;
+  border-style: outset;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
 .selection:hover {
     background-color: rgb(185, 185, 185);
+    border-style: inset;
 }

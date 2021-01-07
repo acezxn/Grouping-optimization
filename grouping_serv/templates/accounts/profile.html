@@ -21,7 +21,7 @@
 {% else %}
 {% for u in joined_users %}
   {% if not u.is_superuser %}
-    <div><p class = "selection">{{u}}</p></div>
+    <div><p class = "list">{{u}}</p></div>
   {% endif %}
 {% endfor %}
 {% endif %}

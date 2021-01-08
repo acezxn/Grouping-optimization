@@ -1,5 +1,4 @@
 from django.conf import settings
-settings.configure()
 from django.views.generic.base import TemplateView
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -382,7 +381,7 @@ def list_user(request, q):
         else:
             return redirect("/accounts/profile")
     else:
-        return redirect("/accounts/profile")
+        return redirect("/accounts/login")
 
 
 def kick(request, q):

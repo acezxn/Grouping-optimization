@@ -7,14 +7,13 @@
   {% csrf_token %}
   {% with users=user %}
 
-  <div class="table">  
+
     {% for u in users %}
       {% if not u.is_superuser %}
-        <div class="table-cell"><p class="name" >{{u}}</p></div>
+        <div><p class = "list" >{{u}}</p></div>
       {% endif %}
     {% endfor %}
   {% endwith %}
-  </div>
   <a href = {{prev}} class = "link">{{"< back"}}</a>
 
 {% endblock %}

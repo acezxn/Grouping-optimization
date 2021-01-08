@@ -15,7 +15,7 @@
     <h2 style="font-family: Ubuntu;text-align: center;">Class password: {{passcode}}</h2>
 </div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
-<div style="padding: 5vw 0px"><a href="/accounts/list/classid/" class="link">available usernames</a></div>
+<div style="padding: 5vw 0px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">available usernames</a></div>
 <p style="font-family: Ubuntu;">Combination grouping algorithm</p>
 <form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}

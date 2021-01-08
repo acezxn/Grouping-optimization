@@ -8,7 +8,6 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import EmailMessage
-from .forms import SignupForm
 import json
 import random
 import string
@@ -341,8 +340,7 @@ def unsign(request):
 
 def signup(request):
     if request.method == "POST":
-        # form = UserCreationForm(request.POST)
-        form = SignupForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get("username")

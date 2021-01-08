@@ -66,7 +66,7 @@ input[type=submit]:hover {
 header {
   padding: 10px;
   text-align: center;
-  font-size: 20vw;
+  font-size: font-size:min(5vw, 40px);;
 }
 
 

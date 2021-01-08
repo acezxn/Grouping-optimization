@@ -7,6 +7,7 @@ from .forms import NameForm
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import EmailMessage
 import json
 import random
 import string
@@ -344,6 +345,7 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
+            to_email = form.cleaned_data.get('email')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
             id = request.user.id

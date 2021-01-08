@@ -1,6 +1,7 @@
+from django.conf import settings
+settings.configure()
 from django.views.generic.base import TemplateView
 from django.shortcuts import render, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from .models import UserProfile
 from .forms import NameForm

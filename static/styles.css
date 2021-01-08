@@ -24,12 +24,15 @@ select {
 
 h1 {
   font-family: Ubuntu;
+  font-size:min(4vw, 30px);
 }
 h2 {
   font-family: Ubuntu;
+  font-size:min(4vw, 25px);
 }
 h3 {
   font-family: Ubuntu;
+  font-size:min(3vw, 20px);
 }
 
 input[type=submit] {
@@ -143,6 +146,7 @@ button[type=submit]:hover {
   text-decoration: none;
   border-radius: 4px;
   font-family: Ubuntu;
+  font-size:min(3vw, 20px);
 }
 
 .msg {

@@ -6,6 +6,7 @@ Favor data records the favorism of different people. The dictionary has key of d
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
 """
 
+
 def grouping(size, favor_data, total, rule):
     group_list = []
 
@@ -80,8 +81,8 @@ def grouping(size, favor_data, total, rule):
     case2rm = []
     score2rm = []
     for case in tmp:
-        print("case",case)
-        for g in case: # groups
+        print("case", case)
+        for g in case:  # groups
             # print("group",g)
             for r in rule:
                 print(r[0], r[1])
@@ -144,6 +145,8 @@ def grouping(size, favor_data, total, rule):
         print(e)
         return [], 0
 
+
+# select remainder from each case and look for the case with the happiest unhappy group
 def start_group(size, favor_data, total, rule):
     # rule = [('user', 'user2')]
     metacase = dict()
@@ -204,16 +207,13 @@ def start_group(size, favor_data, total, rule):
                 max_scores.append(all)
         return random.choice(max_scores), 1
 
-
     else:
         g, stat = grouping(size, favor_data, total, rule)
         return g, stat
 
 
-
-
 if __name__ == "__main__":
-    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[],[]]}
+    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []]}
     total = ['A', 'B', 'C']
     # g = start_group(2, favor_data, total, [])
     g, stat = start_group(2, favor_data, total, [])

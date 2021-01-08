@@ -365,7 +365,7 @@ def list_user(request, q):
             except:
                 pass
             return render(
-                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q}
+                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q,"url": "accounts"}
             )
         else:
             return redirect("/accounts/profile")
@@ -600,7 +600,7 @@ def compute(request, q):
                 return HttpResponse('Group size not a natural number')
             G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule)
             if state:
-                return render(request, "accounts/comb_compute.html", {"GROUP": G})
+                return render(request, "accounts/comb_compute.html", {"GROUP": G,"url": "accounts"})
             else:
                 return HttpResponse('Invalid group size')
             try:

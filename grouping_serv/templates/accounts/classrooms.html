@@ -36,7 +36,7 @@
 
   <h2 style = "font-family: Rajdhani">Created classes</h2>
   {% for c in created_class %}
-    <div style = "padding: 30px 0px;"><a class = "list" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
+    <div style = "padding: 30px 0px;"><a class = "selection" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
   {% endfor %}
   {% if created_class|length == 0 %}
     <div style = "padding: 30px 0px;"><a class = "msg">There is no classroom you have created</a></div>

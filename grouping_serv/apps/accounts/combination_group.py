@@ -6,19 +6,7 @@ Favor data records the favorism of different people. The dictionary has key of d
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
 """
 
-
-def start_group(size, favor_data, total, rule):
-    # rule = [('user', 'user2')]
-    temp = total
-    remain_group = []
-    remainder = len(total) % size
-    if remainder != 0:
-        for i in range(remainder):
-            person = random.choice(total)
-            remain_group.append(person)
-            total.remove(person)
-            del favor_data[person]
-
+def grouping(size, favor_data, total, rule):
     group_list = []
 
     inner = []
@@ -147,9 +135,6 @@ def start_group(size, favor_data, total, rule):
     #         c += 1
     #     # print("minimums", minimums)
         r = random.choice(minimums)
-        if len(remain_group) > 0:
-            remain_group = tuple(remain_group)
-            r.append(remain_group)
         return r, 1
     else:
         return [], 1
@@ -159,9 +144,77 @@ def start_group(size, favor_data, total, rule):
         print(e)
         return [], 0
 
+def start_group(size, favor_data, total, rule):
+    # rule = [('user', 'user2')]
+    metacase = dict()
+    temp = total.copy()
+    tmp_f = favor_data.copy()
+    remain_group = []
+    remainder = len(total) % size
+    possible_remainders = list(itertools.combinations(total, remainder))
+    print('possible rems: ', possible_remainders)
+    if remainder != 0:
+        for remain_group in possible_remainders:
+            favor_data = tmp_f.copy()
+            total = temp.copy()
+            for i in remain_group:
+                total.remove(i)
+                del favor_data[i]
+                print("data before run")
+                print(total)
+                print(favor_data)
+            g, stat = grouping(size, favor_data, total, rule)
+            print('output: ', g)
+            metacase[remain_group] = g
+            print(metacase)
+
+        favor_data = tmp_f.copy()
+        total = temp.copy()
+        meta_scorelist = []
+        for remain_group in possible_remainders:
+            score = 0
+            for member in remain_group:
+                favored = favor_data[member][0]
+                avoid = favor_data[member][1]
+                for single in favored:
+                    if single in remain_group:
+                        score += 1
+                for single in avoid:
+                    if single in remain_group:
+                        score -= 1
+            for groups in metacase[remain_group]:
+                for member in groups:
+                    favored = favor_data[member][0]
+                    avoid = favor_data[member][1]
+                    for single in favored:
+                        if single in groups:
+                            score += 1
+                    for single in avoid:
+                        if single in groups:
+                            score -= 1
+            meta_scorelist.append(score)
+        print(meta_scorelist)
+
+        maximum = max(meta_scorelist)
+        max_scores = []
+        for case in possible_remainders:
+            if meta_scorelist[possible_remainders.index(case)] == maximum:
+                all = metacase[case].copy()
+                all.append(case)
+                max_scores.append(all)
+        return random.choice(max_scores), 1
+
+
+    else:
+        g, stat = grouping(size, favor_data, total, rule)
+        return g, stat
+
+
+
 
 if __name__ == "__main__":
-    favor_data = [['A', ['B'], ['C']], ['B', ['C'], ['A']]]
-    total = ['A', 'B']
-    g = start_group(2, favor_data, total, [])
+    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[],[]]}
+    total = ['A', 'B', 'C']
+    # g = start_group(2, favor_data, total, [])
+    g, stat = start_group(2, favor_data, total, [])
     print(g)

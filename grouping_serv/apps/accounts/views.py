@@ -360,7 +360,6 @@ def signup(request):
 
 def list_user(request, q):
     if request.user.is_authenticated:
-        login_user = request.user
         profile = UserProfile.objects.get(user_id=request.user.id)
         if q in profile.classrooms:
 
@@ -376,8 +375,8 @@ def list_user(request, q):
             except:
                 pass
             return render(
-                request, "accounts/list.html", {"user": classmate,
-                                                "prev": "/accounts/profile/" + q, "url": "accounts", "user": login_user}
+                request, "accounts/list.html", {"users": classmate,
+                                                "prev": "/accounts/profile/" + q, "url": "accounts","user": request.user}
             )
         else:
             return redirect("/accounts/profile")

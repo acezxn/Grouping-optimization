@@ -13,12 +13,15 @@ import string
 
 from . import combination_group
 
+
 def check_exist(word):
     users = User.objects.all()
     for user in users:
         if word == user.username:
             return 1
     return 0
+
+
 def normalize(words):
 
     for word in words:
@@ -27,7 +30,7 @@ def normalize(words):
         stat = check_exist(word)
         print(words, stat)
         if stat == 0:
-            return words,0
+            return words, 0
     return words, 1
     # try:
     #     new_words = []
@@ -40,6 +43,7 @@ def normalize(words):
     #     return new_words, 1
     # except:
     #     return words, 0
+
 
 def ProfileView(request, q):
 
@@ -56,7 +60,7 @@ def ProfileView(request, q):
                 relation = UserProfile.objects.get(user_id=userid)
                 if q in relation.classrooms:
                     if q in relation.created:
-                        return redirect("/accounts/profile/"+q)
+                        return redirect("/accounts/profile/" + q)
                     else:
                         print()
                         # relation = UserProfile.objects.get_or_create(id=request.user.id, defaults={'favored': [''], 'disliked': ['']})
@@ -65,7 +69,8 @@ def ProfileView(request, q):
 
                         # post data
                         try:
-                            processed_data, state = normalize(request.POST["favored"].split(","))
+                            processed_data, state = normalize(
+                                request.POST["favored"].split(","))
                             print('processed_data: ', processed_data)
                             if state == 1:
                                 if processed_data != [""]:
@@ -82,7 +87,8 @@ def ProfileView(request, q):
                                                 data[0],
                                                 data[1] + processed_data,
                                             ]
-                                            relation.favored = json.dumps(favored)
+                                            relation.favored = json.dumps(
+                                                favored)
                                             break
                                         idx += 1
                             else:
@@ -91,7 +97,8 @@ def ProfileView(request, q):
                             #
                             # else:
                             #     pass
-                            processed_data, state = normalize(request.POST["disliked"].split(","))
+                            processed_data, state = normalize(
+                                request.POST["disliked"].split(","))
                             if state == 1:
                                 if processed_data != [""]:
                                     idx = 0
@@ -106,7 +113,8 @@ def ProfileView(request, q):
                                                 data[0],
                                                 data[1] + processed_data,
                                             ]
-                                            relation.disliked = json.dumps(disliked)
+                                            relation.disliked = json.dumps(
+                                                disliked)
                                             break
                                         idx += 1
                             else:
@@ -180,7 +188,6 @@ def ProfileView(request, q):
                 if q in relation.classrooms:
                     if q in relation.created:
 
-
                         return render(
                             request,
                             "accounts/profile.html",
@@ -219,15 +226,17 @@ def ProfileView(request, q):
     else:
         return redirect("/accounts/login")
 
+
 def dangerzone(request, q):
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user_id=request.user.id)
         if q in profile.created:
-            return render(request, "accounts/danger.html", {"q":q})
+            return render(request, "accounts/danger.html", {"q": q})
         else:
             return redirect("/accounts/profile")
     else:
         return redirect("/accounts/login")
+
 
 def remove(request, q):
     if request.user.is_authenticated:
@@ -284,7 +293,6 @@ def remove(request, q):
 
 def edit(request, q):
 
-
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user_id=request.user.id)
         created = profile.created
@@ -308,6 +316,7 @@ def edit(request, q):
     else:
         return redirect('/accounts/login')
 
+
 def unsign(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -326,6 +335,7 @@ def unsign(request):
             return render(request, "accounts/signout.html")
     else:
         return redirect('/accounts/login')
+
 
 def signup(request):
     if request.method == "POST":
@@ -365,12 +375,14 @@ def list_user(request, q):
             except:
                 pass
             return render(
-                request, "accounts/list.html", {"user": classmate, "prev": "/accounts/profile/"+q,"url": "accounts"}
+                request, "accounts/list.html", {"user": classmate,
+                                                "prev": "/accounts/profile/" + q, "url": "accounts", "user": request.user}
             )
         else:
             return redirect("/accounts/profile")
     else:
         return redirect("/accounts/profile")
+
 
 def kick(request, q):
     if request.method == 'POST':
@@ -381,7 +393,7 @@ def kick(request, q):
                 id = i.id
                 break
 
-        profile = UserProfile.objects.get(user_id = id)
+        profile = UserProfile.objects.get(user_id=id)
         classrooms = profile.classrooms
         classrooms.remove(q)
         favored = json.loads(profile.favored)
@@ -405,6 +417,7 @@ def kick(request, q):
         return redirect("/accounts/profile")
     else:
         return redirect("/accounts/profile")
+
 
 def classrooms(request):
     print('classrooms')
@@ -433,12 +446,14 @@ def classrooms(request):
     else:
         return redirect("/accounts/login")
 
+
 def generate(length):
     numbers = '1234567890'
     code = []
     for i in range(length):
         code.append(random.choice(list(numbers)))
     return ''.join(code)
+
 
 def create(request):
     if request.user.is_authenticated:
@@ -525,87 +540,94 @@ def join(request):
 
 
 def leave(request):
-# authentication gate needed
-    profile = UserProfile.objects.get(user_id=request.user.id)
-    print(request.POST["rm_classid"] in profile.classrooms)
-    if request.POST["rm_classid"] in profile.classrooms:
-        if request.POST["rm_classid"] not in profile.created:
-            profile.classrooms.remove(request.POST["rm_classid"])
-            favored = json.loads(profile.favored)
-            try:
-                for f in favored:
-                    if f[0] == request.POST["rm_classid"]:
-                        favored.remove(f)
-                        break
-                profile.favored = json.dumps(favored)
-                disliked = json.loads(profile.disliked)
-                for d in disliked:
-                    if d[0] == request.POST["rm_classid"]:
-                        disliked.remove(d)
-                        break
-            except:
-                pass
+    # authentication gate needed
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user_id=request.user.id)
+        print(request.POST["rm_classid"] in profile.classrooms)
+        if request.POST["rm_classid"] in profile.classrooms:
+            if request.POST["rm_classid"] not in profile.created:
+                profile.classrooms.remove(request.POST["rm_classid"])
+                favored = json.loads(profile.favored)
+                try:
+                    for f in favored:
+                        if f[0] == request.POST["rm_classid"]:
+                            favored.remove(f)
+                            break
+                    profile.favored = json.dumps(favored)
+                    disliked = json.loads(profile.disliked)
+                    for d in disliked:
+                        if d[0] == request.POST["rm_classid"]:
+                            disliked.remove(d)
+                            break
+                except:
+                    pass
+            else:
+                return HttpResponse("You own this classroom")
+            profile.disliked = json.dumps(disliked)
+            profile.save()
+            print("saved")
+            return redirect("/accounts/profile")
         else:
-            return HttpResponse("You own this classroom")
-        profile.disliked = json.dumps(disliked)
-        profile.save()
-        print("saved")
-        return redirect("/accounts/profile")
+            print("invalid")
+            return HttpResponse("Invalid selection")
     else:
-        print("invalid")
-        return HttpResponse("Invalid selection")
+        return redirect('/accounts/login')
 
 
 def compute(request, q):
-#authentication gate needed
-    if request.method == "POST":
-        profile = UserProfile.objects.get(user_id=request.user.id)
-        if q not in profile.created:
-            return redirect("/accounts/profile")
-        else:
-
-            src = dict(request.POST)['src[]']
-            dst = dict(request.POST)['dst[]']
-            rule = []
-            for i in range(len(dict(request.POST)['src[]'])):
-               rule.append([src[i], dst[i]])
-            print("post")
-            all = list(User.objects.all())
-            total = []
-            G = []
-            favor_data = dict()
-
-            for u in all:
-                if u.username != request.user.username:
-                    if not u.is_superuser:
-                        profile = UserProfile.objects.get(user_id=u.id)
-                        if q in profile.classrooms:
-                            total.append(u.username)
-                            classes = profile.classrooms
-                            favored = []
-                            disliked = []
-                            for f in json.loads(profile.favored):
-                                if f[0] == q:
-                                    favored = f[1]
-                            for d in json.loads(profile.disliked):
-                                if d[0] == q:
-                                    disliked = d[1]
-                            favor_data[u.username] = [favored, disliked]
-            print(favor_data)
-            try:
-                size = int(request.POST['size'])
-                if size <= 0:
-                    return HttpResponse('Group size not a natural number')
-            except:
-                return HttpResponse('Group size not a natural number')
-            G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule)
-            if state:
-                return render(request, "accounts/comb_compute.html", {"GROUP": G,"url": "accounts"})
-            else:
-                return HttpResponse('Invalid group size')
-            try:
-                pass
-            except:
+    # authentication gate needed
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            profile = UserProfile.objects.get(user_id=request.user.id)
+            if q not in profile.created:
                 return redirect("/accounts/profile")
+            else:
 
-    return redirect("/accounts/profile")
+                src = dict(request.POST)['src[]']
+                dst = dict(request.POST)['dst[]']
+                rule = []
+                for i in range(len(dict(request.POST)['src[]'])):
+                    rule.append([src[i], dst[i]])
+                print("post")
+                all = list(User.objects.all())
+                total = []
+                G = []
+                favor_data = dict()
+
+                for u in all:
+                    if u.username != request.user.username:
+                        if not u.is_superuser:
+                            profile = UserProfile.objects.get(user_id=u.id)
+                            if q in profile.classrooms:
+                                total.append(u.username)
+                                classes = profile.classrooms
+                                favored = []
+                                disliked = []
+                                for f in json.loads(profile.favored):
+                                    if f[0] == q:
+                                        favored = f[1]
+                                for d in json.loads(profile.disliked):
+                                    if d[0] == q:
+                                        disliked = d[1]
+                                favor_data[u.username] = [favored, disliked]
+                print(favor_data)
+                try:
+                    size = int(request.POST['size'])
+                    if size <= 0:
+                        return HttpResponse('Group size not a natural number')
+                except:
+                    return HttpResponse('Group size not a natural number')
+                G, state = combination_group.start_group(
+                    size=size, favor_data=favor_data, total=total, rule=rule)
+                if state:
+                    return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
+                else:
+                    return HttpResponse('Invalid group size')
+                try:
+                    pass
+                except:
+                    return redirect("/accounts/profile")
+
+        return redirect("/accounts/profile")
+    else:
+        return redirect('/accounts/login')

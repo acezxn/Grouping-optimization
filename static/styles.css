@@ -35,6 +35,11 @@ h3 {
   font-size:min(3vw, 20px);
 }
 
+p {
+  font-family: Ubuntu;
+  font-size:min(3vw, 15px);
+}
+
 input[type=submit] {
   width: 10vw;
   min-width: 90px;

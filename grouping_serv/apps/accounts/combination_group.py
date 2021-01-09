@@ -175,7 +175,7 @@ def start_group(size, favor_data, total, rule):
         total = temp.copy()
         meta_scorelist = []
         for remain_group in possible_remainders:
-            score_statistic = []
+
             score_remainder = 0
 
             for member in remain_group:
@@ -187,6 +187,7 @@ def start_group(size, favor_data, total, rule):
                 for single in avoid:
                     if single in remain_group:
                         score_remainder -= 1
+            score_statistic = []
             for groups in metacase[remain_group]:
                 score = 0
                 for member in groups:
@@ -199,10 +200,13 @@ def start_group(size, favor_data, total, rule):
                         if single in groups:
                             score -= 1
                     score_statistic.append(score)
-            if score_remainder < min(score_statistic):
-                meta_scorelist.append(score_remainder)
-            else:
-                meta_scorelist.append(min(score_statistic))
+            try:
+                if score_remainder < min(score_statistic):
+                    meta_scorelist.append(score_remainder)
+                else:
+                    meta_scorelist.append(min(score_statistic))
+            except:
+                pass
         print(meta_scorelist)
 
         maximum = max(meta_scorelist)

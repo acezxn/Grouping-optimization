@@ -183,6 +183,7 @@ def start_group(size, favor_data, total, rule):
                 for r in rule:
                     if r[0] in G and r[1] in G:
                         del metacase[rem]
+                        possible_remainders.remove(rem)
         favor_data = tmp_f.copy()
         total = temp.copy()
         meta_scorelist = []

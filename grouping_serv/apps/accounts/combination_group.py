@@ -77,33 +77,33 @@ def grouping(size, favor_data, total, rule):
         # inner.append(groups[0])
         branch(total, group, group)
     print("grouplist", group_list)
-    tmp = group_list
-    case2rm = []
-    score2rm = []
-    for case in tmp:
-        print("case", case)
-        for g in case:  # groups
-            # print("group",g)
-            for r in rule:
-                print(r[0], r[1])
-                if r[0] in list(g) and r[1] in list(g):
-                    # print(group_list)
-                    try:
-                        # print(len(group_list), len(score_list))
-                        # print(score_list)
-                        # print(score_list[group_list.index(case)])
-                        idx = group_list.index(case)
-                        case2rm.append(case)
-                        score2rm.append(score_list[idx])
-                        print("case data: ", case, score_list[idx])
-                        # group_list.remove(case)
-                        # score_list.remove(score_list[idx])
-                        break
-                    except:
-                        pass
-    for i, j in zip(case2rm, score2rm):
-        group_list.remove(i)
-        score_list.remove(j)
+    # tmp = group_list
+    # case2rm = []
+    # score2rm = []
+    # for case in tmp:
+    #     print("case", case)
+    #     for g in case:  # groups
+    #         # print("group",g)
+    #         for r in rule:
+    #             print(r[0], r[1])
+    #             if r[0] in list(g) and r[1] in list(g):
+    #                 # print(group_list)
+    #                 try:
+    #                     # print(len(group_list), len(score_list))
+    #                     # print(score_list)
+    #                     # print(score_list[group_list.index(case)])
+    #                     idx = group_list.index(case)
+    #                     case2rm.append(case)
+    #                     score2rm.append(score_list[idx])
+    #                     print("case data: ", case, score_list[idx])
+    #                     # group_list.remove(case)
+    #                     # score_list.remove(score_list[idx])
+    #                     break
+    #                 except:
+    #                     pass
+    # for i, j in zip(case2rm, score2rm):
+    #     group_list.remove(i)
+    #     score_list.remove(j)
 
     print("grouplist", group_list)
     print("scorelist", score_list)
@@ -155,6 +155,12 @@ def start_group(size, favor_data, total, rule):
     remain_group = []
     remainder = len(total) % size
     possible_remainders = list(itertools.combinations(total, remainder))
+    tmp = possible_remainders.copy()
+    for rem in tmp:
+        for r in rule:
+            if r[0] in rem and r[1] in rem:
+                possible_remainders.remove(rem)
+
     print('possible rems: ', possible_remainders)
     if remainder != 0:
         for remain_group in possible_remainders:
@@ -170,7 +176,13 @@ def start_group(size, favor_data, total, rule):
             print('output: ', g)
             metacase[remain_group] = g
             print(metacase)
+        tmp = possible_remainders.copy()
 
+        for rem in tmp:
+            for G in metacase[rem]:
+                for r in rule:
+                    if r[0] in G and r[1] in G:
+                        del metacase[rem]
         favor_data = tmp_f.copy()
         total = temp.copy()
         meta_scorelist = []

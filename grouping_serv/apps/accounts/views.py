@@ -654,7 +654,7 @@ def setting(request):
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
 
             else:
-
+                print(request.user.password)
                 if request.POST['orig_passwd'] == request.user.password:
                     if request.POST['new_passwd'] == request.POST['retype']:
                         print(u.password)

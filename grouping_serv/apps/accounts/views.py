@@ -642,16 +642,17 @@ def setting(request):
         if request.method == 'POST':
             if request.POST['chg_uname'] != "":
                 stat = check_exist(request.POST['chg_uname'])
-                if stat == 1:
+                if stat == 0:
                     form = PasswordChangeForm(request.user, request.POST)
                     u = User.objects.get(user_id=request.user.id)
                     print(u, request.POST['chg_uname'])
                     u.username = request.POST['chg_uname']
                     print(u)
                     u.save()
-                    return render(request, 'accounts/setting.html', {'error': 'user already exists'})
-                else:
                     return render(request, 'accounts/setting.html', {})
+                else:
+                    return render(request, 'accounts/setting.html', {'error': 'user already exists'})
+
             else:
 
                 if request.POST['orig_passwd'] == request.user.password:

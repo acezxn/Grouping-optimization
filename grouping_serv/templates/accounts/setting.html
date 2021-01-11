@@ -9,12 +9,8 @@ Settings
 <script>
         function getInputValue(){
             // Selecting the input element and get its value
-            var original = document.getElementById("orig_passwd").value;
             var new_passwd = document.getElementById("new_passwd").value;
             var retype = document.getElementById("retype").value;
-            if (original == "" || new_passwd == "" || retype == ""){
-              document.getElementById("submit").disabled = true;
-            }
             if (new_passwd != retype) {
               document.getElementById("submit").disabled = true;
               document.getElementById('msg').innerHTML = "Retype password does not match with the new password";
@@ -29,7 +25,7 @@ Settings
 <form method="post" action="">
   {% csrf_token %}
   <input id="chg_uname" type="text" name="chg_uname">
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" disabled>
 
 <h2>Change password</h2>
 <h3>Original password</h3>

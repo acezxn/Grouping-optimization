@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import EmailMessage
+
 import json
 import random
 import string
@@ -637,7 +638,21 @@ def compute(request, q):
 def setting(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            pass
+            if request.POST['chg_uname'] != "":
+                stat = check_exist(word)
+                if stat == 1:
+                    return render(request, 'accounts/setting.html', {'error': 'user already exists'})
+            else:
+
+                if request.POST['orig_passwd'] == request.user.password:
+                    if request.POST['new_passwd'] == request.POST['retype']:
+                        u = User.objects.get(username = request.user.username)
+                        u.set_password(request.POST['new_passwd'])
+                        u.save()
+                    else:
+                        return render(request, 'accounts/setting.html', {'error': "Retype password does not match with the new password"})
+                else:
+                    return render(request, 'accounts/setting.html', {'error': 'incorrect original password'})
         else:
             return render(request, 'accounts/setting.html', {})
     else:

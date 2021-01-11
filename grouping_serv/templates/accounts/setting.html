@@ -6,6 +6,19 @@
 <h1 style="text-align: center;">
 Settings
 </h1>
+<script>
+        function getInputValue(){
+            // Selecting the input element and get its value
+            var new_passwd = document.getElementById("new_passwd").value;
+            var retype = document.getElementById("retype").value;
+            if (new_passwd != retype) {
+              document.getElementById("submit").disabled = true;
+              document.getElementById('msg').innerHTML = "Retype password does not match with the new password";
+            } else {
+              document.getElementById("submit").disabled = false;
+            }
+        }
+    </script>
 
 <h2>Change username</h2>
 <form method="post" action="">
@@ -16,25 +29,15 @@ Settings
 
 <h2>Change password</h2>
 <h3>Original password</h3>
-<script>
-        function getInputValue(){
-            // Selecting the input element and get its value
-            var new_passwd = document.getElementById("new_passwd").value;
-            var retype = document.getElementById("retype").value;
-            if (new_passwd != retype) {
-              document.getElementById("submit").disabled = true;
-            } else {
-              document.getElementById("submit").disabled = false;
-            }
-        }
-    </script>
 
-<form method="post" action="">
-  {% csrf_token %}
+
   <input id="orig_passwd" type="text" name="orig_passwd">
   <h3>New password</h3>
   <input id="new_passwd" type="text" name="new_passwd" oninput="getInputValue();">
+  <h3>Retype password</h3>
   <input id="retype" type="text" name="retype" oninput="getInputValue();">
+  <pre id = 'msg'></pre>
+  <p>{{error}}</p>
   <input type="submit" id="submit" value="Submit">
 </form>
 {% endblock %}

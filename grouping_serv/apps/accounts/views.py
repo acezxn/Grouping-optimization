@@ -641,6 +641,9 @@ def setting(request):
             if request.POST['chg_uname'] != "":
                 stat = check_exist(request.POST['chg_uname'])
                 if stat == 1:
+                    u = User.objects.get(username = request.user.username)
+                    u.username = request.POST['chg_uname']
+                    u.save()
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
                 else:
                     return render(request, 'accounts/setting.html', {})

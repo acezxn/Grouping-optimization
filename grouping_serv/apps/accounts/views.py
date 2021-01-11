@@ -8,6 +8,10 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import EmailMessage
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+
 
 import json
 import random
@@ -638,26 +642,14 @@ def compute(request, q):
 def setting(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            if request.POST['chg_uname'] != "":
-                stat = check_exist(request.POST['chg_uname'])
-                if stat == 1:
-                    u = User.objects.get(user_id=request.user.id)
-                    u.last_name = request.POST['chg_uname']
-                    u.save()
-                    return render(request, 'accounts/setting.html', {'error': 'user already exists'})
-                else:
-                    return render(request, 'accounts/setting.html', {})
+            form = PasswordChangeForm(request.user, request.POST)
+            if form.is_valid():
+                user = form.save()
+                update_session_auth_hash(request, user)  # Important!
+                messages.success(request, 'Your password was successfully updated!')
+                return redirect('change_password')
             else:
-
-                if request.POST['orig_passwd'] == request.user.password:
-                    if request.POST['new_passwd'] == request.POST['retype']:
-                        u = User.objects.get(user_id=request.user.id)
-                        u.set_password(request.POST['new_passwd'])
-                        u.save()
-                    else:
-                        return render(request, 'accounts/setting.html', {'error': "Retype password does not match with the new password"})
-                else:
-                    return render(request, 'accounts/setting.html', {'error': 'incorrect original password'})
+                messages.error(request, 'Please correct the error below.')
         else:
             return render(request, 'accounts/setting.html', {})
     else:

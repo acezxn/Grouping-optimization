@@ -22,7 +22,7 @@ Engineer: Daniel Lee
 <br><br>
 </p>
 <a href = 'https://github.com/acezxn/Grouping-optimization'>Github repository</a>
-<h1 style="font-size: max(3vw, 30px); text-align: center;">
+<h1 style="font-size: max(3vw, 25px); text-align: center;">
 About myself
 </h1>
 <p>
@@ -32,12 +32,12 @@ I found a problem in real life grouping algorithms. I noticed that most man-made
 grouping algorithms are not optimized. There are these types of algorithms in common:
 <br><br>
 
-Free group:<br>
+<b>Free grouping:</b><br>
 In this case, everyone is allowed to choose their groupmates by themselves.
 Since everyone want to be happy, they choose according to their favorites.
 However, this caused several groups to be happy while the leftover remainings are unhappy.
 <br><br>
-Randomized group
+<b>Randomized group</b><br>
 In this case, the happiness of each group is random, and unable to make the unhappiest group happier.
 <br><br>
 When I was in elementary school, I used to be leftover almost everytime in making groups.
@@ -50,8 +50,8 @@ app in approach to optimize grouping.
 <p style = "font-family: Ubuntu;">The website collects data of favored and unfavored groups from each classroom user
 <br><br>and form a datastructure: [user, [[favored, []], unfavored, []]]
 <br><br>the program calculate the all possibility of grouping of every member in a class</p>
-<h3 style="font-size: max(4vw, 25px);text-align: left;">Happiness calculating algorithm</h3>
-<p style = "font-size: max(3vw, 30px)">In each group, if one person is grouped with his/her favored person, overall happiness of the group +1,
+<h3 style="font-size: max(3vw, 25px);text-align: left;">Happiness calculating algorithm</h3>
+<p style = "font-family: Ubuntu;">In each group, if one person is grouped with his/her favored person, overall happiness of the group +1,
 <br><br>if grouped with unfavored person, overall happiness of the group -1.
 <br><br>The difference of the most happy group and the most unhappy group is measured in every cases,
 <br><br>The algorithm finally randomly select the case with the happiest least happy group.

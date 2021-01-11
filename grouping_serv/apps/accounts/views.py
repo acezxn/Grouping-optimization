@@ -9,6 +9,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import EmailMessage
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.hashers import check_password
 
 
 import json
@@ -654,8 +655,8 @@ def setting(request):
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
 
             else:
-                print(request.user.password)
-                if request.POST['orig_passwd'] == request.user.password:
+
+                if check_password(request.POST['orig_passwd'], request.user.password):
                     if request.POST['new_passwd'] == request.POST['retype']:
                         print(u.password)
                         u = User.objects.get(user_id=request.user.id)

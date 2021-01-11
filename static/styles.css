@@ -148,7 +148,7 @@ button[type=submit]:hover {
 .ui {
   border: 2px solid;
   padding: 20px;
-  width: 300px;
+  width: 30vw;
   resize: vertical;
   overflow: auto;
   position: absolute;

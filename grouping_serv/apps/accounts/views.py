@@ -639,7 +639,7 @@ def setting(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
             if request.POST['chg_uname'] != "":
-                stat = check_exist(word)
+                stat = check_exist(request.POST['chg_uname'])
                 if stat == 1:
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
             else:

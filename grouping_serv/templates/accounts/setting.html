@@ -16,6 +16,7 @@ Settings
               document.getElementById('msg').innerHTML = "Retype password does not match with the new password";
             } else {
               document.getElementById("submit").disabled = false;
+              document.getElementById('msg').innerHTML = "";
             }
         }
     </script>
@@ -30,11 +31,11 @@ Settings
 <h3>Original password</h3>
 
 
-  <input id="orig_passwd" type="text" name="orig_passwd">
+  <input id="orig_passwd" type="password" name="orig_passwd">
   <h3>New password</h3>
-  <input id="new_passwd" type="text" name="new_passwd" oninput="getInputValue();">
+  <input id="new_passwd" type="password" name="new_passwd" oninput="getInputValue();">
   <h3>Retype password</h3>
-  <input id="retype" type="text" name="retype" oninput="getInputValue();">
+  <input id="retype" type="text" type="password" oninput="getInputValue();">
   <pre id = 'msg'></pre>
   <p>{{error}}</p>
   <input type="submit" id="submit" value="Submit">

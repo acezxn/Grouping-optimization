@@ -642,6 +642,8 @@ def setting(request):
                 stat = check_exist(request.POST['chg_uname'])
                 if stat == 1:
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
+                else:
+                    return render(request, 'accounts/setting.html', {})
             else:
 
                 if request.POST['orig_passwd'] == request.user.password:

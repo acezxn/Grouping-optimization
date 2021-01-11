@@ -25,7 +25,7 @@ Settings
 <form method="post" action="">
   {% csrf_token %}
   <input id="chg_uname" type="text" name="chg_uname">
-  <input type="submit" value="Submit" disabled>
+  <input type="submit" value="Submit">
 
 <h2>Change password</h2>
 <h3>Original password</h3>
@@ -39,6 +39,6 @@ Settings
   <pre id = 'msg' style = "color:rgb(255,0,0);font-family: Ubuntu;
   font-size:min(3vw, 15px);"></pre>
   <p style = "color:rgb(255,0,0);">{{error}}</p>
-  <input type="submit" id="submit" value="Submit">
+  <input type="submit" id="submit" value="Submit" disabled>
 </form>
 {% endblock %}

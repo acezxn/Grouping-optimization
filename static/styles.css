@@ -67,8 +67,7 @@ input[type=submit]:hover {
     cursor: pointer;
     text-align: center;
 }
-input[type=submit]:disabled,
-input[type=submit disabled]{
+input[type=submit]:disabled {
   background-color: #cccccc;
   color: #666666;
 }

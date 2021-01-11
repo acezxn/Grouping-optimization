@@ -644,7 +644,7 @@ def setting(request):
                 stat = check_exist(request.POST['chg_uname'])
                 if stat == 0:
                     form = PasswordChangeForm(request.user, request.POST)
-                    u = User.objects.get(user_id=request.user.id)
+                    u = User.objects.get(id=request.user.id)
                     print(u, request.POST['chg_uname'])
                     u.username = request.POST['chg_uname']
                     print(u)

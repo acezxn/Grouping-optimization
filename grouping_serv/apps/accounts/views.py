@@ -662,6 +662,7 @@ def setting(request):
                         u.set_password(request.POST['new_passwd'])
                         print(u.password)
                         u.save()
+                        return render(request, 'accounts/setting.html', {})
                     else:
                         return render(request, 'accounts/setting.html', {'error': "Retype password does not match with the new password"})
                 else:

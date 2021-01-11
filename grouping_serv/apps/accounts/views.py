@@ -633,3 +633,12 @@ def compute(request, q):
         return redirect("/accounts/profile")
     else:
         return redirect('/accounts/login')
+
+def setting(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            pass
+        else:
+            return render(request, 'accounts/setting.html', {})
+    else:
+        return redirect("/accounts/login")

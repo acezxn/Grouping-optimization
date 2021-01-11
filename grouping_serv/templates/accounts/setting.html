@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Settings{% endblock %}
+{% block content %}
+{% load static %}
+<h1 style="text-align: center;">
+Settings
+</h1>
+
+<h2>Change username</h2>
+<form method="post" action="">
+  {% csrf_token %}
+  <input id="chg_uname" type="text" name="chg_uname">
+  <input type="submit" value="Submit">
+</form>
+
+<h2>Change password</h2>
+<h3>Original password</h3>
+<script>
+        function getInputValue(){
+            // Selecting the input element and get its value
+            var new_passwd = document.getElementById("new_passwd").value;
+            var retype = document.getElementById("retype").value;
+            if (new_passwd != retype) {
+              document.getElementById("submit").disabled = true;
+            } else {
+              document.getElementById("submit").disabled = false;
+            }
+        }
+    </script>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <input id="orig_passwd" type="text" name="orig_passwd">
+  <h3>New password</h3>
+  <input id="new_passwd" type="text" name="new_passwd" oninput="getInputValue();">
+  <input id="retype" type="text" name="retype" oninput="getInputValue();">
+  <input type="submit" id="submit">Submit</button>
+</form>

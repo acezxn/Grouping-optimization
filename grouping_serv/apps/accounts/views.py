@@ -658,7 +658,7 @@ def setting(request):
 
                 if check_password(request.POST['orig_passwd'], request.user.password):
                     if request.POST['new_passwd'] == request.POST['retype']:
-                        u = User.objects.get(user_id=request.user.id)
+                        u = User.objects.get(id=request.user.id)
                         u.set_password(request.POST['new_passwd'])
                         print(u.password)
                         u.save()

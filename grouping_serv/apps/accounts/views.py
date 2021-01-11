@@ -641,7 +641,7 @@ def setting(request):
             if request.POST['chg_uname'] != "":
                 stat = check_exist(request.POST['chg_uname'])
                 if stat == 1:
-                    u = User.objects.get(username = request.user.username)
+                    u = User.objects.get(user_id=request.user.id)
                     u.username = request.POST['chg_uname']
                     u.save()
                     return render(request, 'accounts/setting.html', {'error': 'user already exists'})
@@ -651,7 +651,7 @@ def setting(request):
 
                 if request.POST['orig_passwd'] == request.user.password:
                     if request.POST['new_passwd'] == request.POST['retype']:
-                        u = User.objects.get(username = request.user.username)
+                        u = User.objects.get(user_id=request.user.id)
                         u.set_password(request.POST['new_passwd'])
                         u.save()
                     else:

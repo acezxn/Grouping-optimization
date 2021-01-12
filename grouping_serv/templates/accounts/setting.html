@@ -15,6 +15,10 @@ Settings
               document.getElementById("submit").disabled = true;
               document.getElementById('msg').innerHTML = "Retype password does not match with the new password";
             } else {
+              if (new_passwd == "" or retype == "") {
+                document.getElementById("submit").disabled = true;
+                document.getElementById('msg').innerHTML = "";
+              }
               document.getElementById("submit").disabled = false;
               document.getElementById('msg').innerHTML = "";
             }

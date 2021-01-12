@@ -155,7 +155,6 @@ button[type=submit]:hover {
   width: 30vw;
   resize: vertical;
   overflow: auto;
-  position: absolute;
 }
 
 .list {

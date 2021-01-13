@@ -230,7 +230,7 @@ def start_group(size, favor_data, total, rule):
                 all = metacase[case].copy()
                 all.append(case)
                 max_scores.append(all)
-        print('Select from: 'max_scores)
+        print('Select from: ', max_scores)
         return random.choice(max_scores), 1
 
     else:

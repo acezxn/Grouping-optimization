@@ -24,7 +24,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 
-urlpatterns = i18n_patterns('',
+urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),

@@ -153,7 +153,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "zh-hant"
 LANGUAGES = [
-    ('en','English'),
+    ('en_us','English'),
     ('zh-hant', 'Chinese')
 ]
 

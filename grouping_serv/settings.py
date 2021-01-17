@@ -76,6 +76,10 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 # SECURE_REFERRER_POLICY = []
 ROOT_URLCONF = "grouping_serv.urls"
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 # INSTALLED_APPS += "sslserver"
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_BROWSER_XSS_FILTER = True
@@ -90,6 +94,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'django.template.context_processors.i18n'
             ],
         },
     },
@@ -147,11 +152,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 LANGUAGE_CODE = "zh-hant"
-LANGUAGES = (
-    ('en-us', _('English')),
-    ('de', _('German')),
-    ('zh-hant', _('Chinese'))
-)
+LANGUAGES = [
+    ('en','English'),
+    ('zh-hant', 'Chinese')
+]
 
 TIME_ZONE = "UTC"
 

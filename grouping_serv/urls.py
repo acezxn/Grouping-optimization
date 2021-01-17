@@ -19,13 +19,14 @@ from . import views
 from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns('',
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('logos/favicon.ico')))
-]
+)

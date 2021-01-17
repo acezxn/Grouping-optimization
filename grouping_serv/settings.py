@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware"
@@ -144,9 +147,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 LANGUAGES = (
-    ('en-us', ('English')),
-    ('de', ('German')),
-    ('zh', ('Chinese'))
+    ('en-us', _('English')),
+    ('de', _('German')),
+    ('zh', _('Chinese'))
 )
 
 TIME_ZONE = "UTC"

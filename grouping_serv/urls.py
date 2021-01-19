@@ -16,18 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import RedirectView
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.conf import settings
 
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('logos/favicon.ico'))),
-    path('i18n/', include('django.conf.urls.i18n'))
-]
+    path('i18n/', include('django.conf.urls.i18n')),
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

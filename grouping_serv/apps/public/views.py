@@ -3,6 +3,7 @@ from django.template import loader
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext
 
 def index(request):
     normal_users = 0
@@ -19,7 +20,3 @@ def about(request):
     template = loader.get_template("about.html")
     return render(request, "about.html", {
     "url": "about"})
-
-# def test(request):
-#     output = _('hello')
-#     return HttpResponse(output)

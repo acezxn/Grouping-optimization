@@ -63,7 +63,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 ]
 MIDDLEWARE_CLASSES = (
-"djangosecure.middleware.SecurityMiddleware"
+"djangosecure.middleware.SecurityMiddleware",
+"django.middleware.locale.LocaleMiddleware"
 )
 
 SECURE_SSL_REDIRECT = True

@@ -2,9 +2,9 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django.utils.translation import ugettext
-
+from django.utils import translation
 def index(request):
     normal_users = 0
     user = User.objects.all()

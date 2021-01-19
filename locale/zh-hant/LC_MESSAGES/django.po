@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 10:35+0800\n"
+"POT-Creation-Date: 2021-01-19 14:23+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: grouping_serv/settings.py:156
+#: grouping_serv/apps/public/views.py:24
+msgid "hello"
+msgstr "好"
+
+#: grouping_serv/settings.py:155
 msgid "English"
 msgstr ""
 
-#: grouping_serv/settings.py:157
-msgid "Chinese"
+#: grouping_serv/settings.py:156
+msgid "繁體中文"
 msgstr ""
 
 #: grouping_serv/templates/index.html:8
 msgid "Grouping Optimizer"
 msgstr "分組優化"
+
+#: grouping_serv/templates/index.html:20
+msgid "Add variety in generated results"
+msgstr "爲生成結果添加不同之處"

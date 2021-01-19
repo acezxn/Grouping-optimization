@@ -11,13 +11,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from django.utils.translation import ugettext_lazy as _
-
+from django.utils.translation import ugettext, ugettext_lazy as _
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
+print('BASE_DIR: ',os.path.join(BASE_DIR, 'locale/'))
 PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 
 
@@ -52,16 +51,16 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.locale.LocaleMiddleware'
 ]
 MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware"
@@ -150,11 +149,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
-# LANGUAGE_CODE = "zh-hant"
+# LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "zh-hant"
 LANGUAGES = [
     ('en',_('English')),
-    ('zh-hant',_('Chinese'))
+    ('zh-Hant',_('繁體中文'))
 ]
 
 TIME_ZONE = "UTC"

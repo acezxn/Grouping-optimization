@@ -68,7 +68,8 @@ a:checked {
   {% endif %}
 {% endif %}
 {% get_current_language as LANGUAGE_CODE %}
-<a style='text-align:right;float:right;'>{{LANGUAGE_CODE}}</a>
+{% get_language_info for LANGUAGE_CODE as lang %}
+<a style='text-align:right;float:right;'>{{lang.name_local}} ({{lang.code}})</a>
 <!-- <div class="dropdown">
   <button class="dropbtn">Dropdown
     <i class="fa fa-caret-down"></i>

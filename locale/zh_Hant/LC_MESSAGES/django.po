@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-24 15:00+0800\n"
+"POT-Creation-Date: 2021-01-24 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,23 @@ msgstr "已註冊的人數"
 msgid "Convenient"
 msgstr "方便性"
 
-#: grouping_serv/templates/index.html:16
+#: grouping_serv/templates/index.html:14
+msgid "Just input the group size and press a single button, groups can be generated"
+msgstr "只需要設定組別大小，並可生成組別"
+
+#: grouping_serv/templates/index.html:15
 msgid "Accurate"
 msgstr "準確性"
 
-#: grouping_serv/templates/index.html:19
+#: grouping_serv/templates/index.html:16
+msgid "Iterate all conbinations of grouping, and select the favorable results"
+msgstr "計算所有的組合，從中選取最佳結果"
+
+#: grouping_serv/templates/index.html:17
 msgid "Randomness"
 msgstr "隨機選取"
 
-#: grouping_serv/templates/index.html:20
+#: grouping_serv/templates/index.html:18
 msgid "Add variety in generated results"
 msgstr "在優化組別中隨機挑選"
 

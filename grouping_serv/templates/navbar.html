@@ -35,20 +35,21 @@ a:checked {
   display: block;
 }
 </style> -->
+{% load i18n %}
 <div class="navbar">
     {% load static %}
     <a href="/" style="background-color: rgb(7, 32, 0);" class="logo"><img
             style="width: 4.5vw;height:auto;padding: 0px 0px;max-width:20px;"
             src="{% static 'logos/iplusi.png' %}"></a>
   {% if url == "home" %}
-  <a class="username" href="/">Home</a>
+  <a class="username" href="/">{%trans "Home" %}</a>
   {% else %}
-  <a href="/">Home</a>
+  <a href="/">{%trans "Home"%}</a>
   {% endif %}
   {% if url == "about" %}
-  <a class = "username" href="/about">About</a>
+  <a class = "username" href="/about">{%trans "About" %}</a>
   {% else %}
-  <a href="/about">About</a>
+  <a href="/about">{%trans "About" %}</a>
   {% endif %}
 
 {% if user.is_authenticated %}
@@ -57,13 +58,13 @@ a:checked {
   {% else %}
   <a href="/accounts/profile">{{user.username}}</a>
   {% endif %}
-  <a href="/accounts/logout">Logout</a>
+  <a href="/accounts/logout">{%trans "Logout" %}</a>
 {% else %}
-  <a href="/accounts/login">Login</a>
+  <a href="/accounts/login">{%trans "Login" %}</a>
   {% if url == "signup" %}
-  <a class = "username" href="/accounts/signup">Sign up</a>
+  <a class = "username" href="/accounts/signup">{%trans "Sign up" %}</a>
   {% else %}
-  <a href="/accounts/signup">Sign up</a>
+  <a href="/accounts/signup">{%trans "Sign up" %}</a>
   {% endif %}
 {% endif %}
 <!-- <div class="dropdown">

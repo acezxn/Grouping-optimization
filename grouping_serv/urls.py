@@ -26,10 +26,10 @@ from django.conf import settings
 
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path("", include("grouping_serv.apps.public.urls")),
     path("accounts/", include("grouping_serv.apps.accounts.urls")),
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('logos/favicon.ico'))),
     path('i18n/', include('django.conf.urls.i18n')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

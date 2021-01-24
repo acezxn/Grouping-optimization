@@ -584,6 +584,7 @@ def compute(request, q):
     # authentication gate needed
     if request.user.is_authenticated:
         if request.method == "POST":
+            print('POOOST')
             profile = UserProfile.objects.get(user_id=request.user.id)
             if q not in profile.created:
                 return redirect("/accounts/profile")
@@ -594,7 +595,6 @@ def compute(request, q):
                 rule = []
                 for i in range(len(dict(request.POST)['src[]'])):
                     rule.append([src[i], dst[i]])
-                print("post")
                 all = list(User.objects.all())
                 total = []
                 G = []

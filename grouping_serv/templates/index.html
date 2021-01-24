@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}home{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "home" %}{% endblock %}
 {% block content %}
 {% load static %}
-{% load static i18n %}
 <header style="font-size: 10vw; text-align: center; font-family: Rajdhani;">
 {% trans "Grouping Optimizer" %}
 </header>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}{{classid}}{% endblock %}
 {% block content %}
@@ -17,7 +18,8 @@
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
 <div style="padding: 5vw 0px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">available usernames</a></div>
 <h3 style="font-family: Ubuntu;font-size: max(3vw, 25px);">Combination grouping algorithm</h3>
-<form action = {{"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
+{% get_current_language as LANGUAGE_CODE %}
+<form action = {{"/"|add:LANGUAGE_CODE|add:"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
     <a style="font-family: Ubuntu;">Group size: </a>
     <div><input id="size" type="text" name="size" style="width:100px;"><a> </a><input type="submit" value="compute"></div>

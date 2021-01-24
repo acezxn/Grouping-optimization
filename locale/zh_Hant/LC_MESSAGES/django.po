@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 16:22+0800\n"
+"POT-Creation-Date: 2021-01-24 12:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,18 +16,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: grouping_serv/apps/public/views.py:13
-msgid "welcome"
-msgstr "歡迎"
-
-#: grouping_serv/settings.py:155
-msgid "English"
-msgstr ""
-
-#: grouping_serv/settings.py:156
-msgid "繁體中文"
-msgstr ""
+#: grouping_serv/templates/index.html:4
+msgid "home"
+msgstr "首頁"
 
 #: grouping_serv/templates/index.html:8
 msgid "Grouping Optimizer"
@@ -35,4 +28,27 @@ msgstr "分組優化"
 
 #: grouping_serv/templates/index.html:20
 msgid "Add variety in generated results"
-msgstr "不同"
+msgstr "在優化組別中隨機挑選"
+
+#: grouping_serv/templates/navbar.html:45
+#: grouping_serv/templates/navbar.html:47
+msgid "Home"
+msgstr "首頁"
+
+#: grouping_serv/templates/navbar.html:50
+#: grouping_serv/templates/navbar.html:52
+msgid "About"
+msgstr "關於"
+
+#: grouping_serv/templates/navbar.html:61
+msgid "Logout"
+msgstr "登出"
+
+#: grouping_serv/templates/navbar.html:63
+msgid "Login"
+msgstr "登入"
+
+#: grouping_serv/templates/navbar.html:65
+#: grouping_serv/templates/navbar.html:67
+msgid "Sign up"
+msgstr "註冊"

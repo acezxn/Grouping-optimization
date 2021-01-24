@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-24 12:26+0800\n"
+"POT-Creation-Date: 2021-01-24 15:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,26 @@ msgstr "首頁"
 #: grouping_serv/templates/index.html:8
 msgid "Grouping Optimizer"
 msgstr "分組優化"
+
+#: grouping_serv/templates/index.html:10
+msgid "A website with algorithm to assist grouping"
+msgstr "優化分組的演算法網站"
+
+#: grouping_serv/templates/index.html:11
+msgid "Number of users:"
+msgstr "已註冊的人數"
+
+#: grouping_serv/templates/index.html:13
+msgid "Convenient"
+msgstr "方便性"
+
+#: grouping_serv/templates/index.html:16
+msgid "Accurate"
+msgstr "準確性"
+
+#: grouping_serv/templates/index.html:19
+msgid "Randomness"
+msgstr "隨機選取"
 
 #: grouping_serv/templates/index.html:20
 msgid "Add variety in generated results"

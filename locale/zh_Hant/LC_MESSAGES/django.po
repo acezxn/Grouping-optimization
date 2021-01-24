@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-24 15:09+0800\n"
+"POT-Creation-Date: 2021-01-24 21:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: grouping_serv/templates/about.html:4 grouping_serv/templates/navbar.html:50
+#: grouping_serv/templates/navbar.html:52
+msgid "About"
+msgstr "關於"
+
+#: grouping_serv/templates/about.html:16
+msgid "Creator"
+msgstr "創作者"
+
+#: grouping_serv/templates/about.html:49
+msgid "The algorithm"
+msgstr "分組演算法"
+
+#: grouping_serv/templates/about.html:51
+msgid ""
+"The website collects data of favored and unfavored groups from each "
+"classroom user"
+msgstr "此網站搜集學生對其他同學的喜好"
+
+#: grouping_serv/templates/about.html:52
+msgid "and form a datastructure: {user: [[favored], [unfavored]]}"
+msgstr "，生成一個資料結構: {user: [[favored], [unfavored]]}。"
+
+#: grouping_serv/templates/about.html:53
+msgid ""
+"the program calculates all possibility of grouping of every member in a class"
+msgstr "程式接著計算所有學生分組的組合。"
+
+#: grouping_serv/templates/about.html:54
+msgid "Hapiness calculation"
+msgstr "滿意度計算機制"
+
+#: grouping_serv/templates/about.html:55
+msgid ""
+"In each group, if one person is grouped with his/her favored person, overall "
+"happiness of the group +1,"
+msgstr "在每組中，如果一個組員與他喜歡的同學在一組，該組的滿意度+1。"
+
+#: grouping_serv/templates/about.html:56
+msgid "if grouped with unfavored person, overall happiness of the group -1."
+msgstr "如果一個組員與他較為合不來的同學在一組，該組的滿意度-1。"
+
+#: grouping_serv/templates/about.html:57
+msgid "The unhappiest group in each case is measured and stored in a list A,"
+msgstr "在每個組合中滿意度最低的分數會被記錄到列表A中，"
+
+#: grouping_serv/templates/about.html:58
+msgid ""
+"the algorithm finally select the case with greatest corresponding value in "
+"list A."
+msgstr "演算法最後把列表A的最大值選出，對應該值的組別。"
+
+#: grouping_serv/templates/accounts/login.html:4
+#: grouping_serv/templates/accounts/login.html:6
+#: grouping_serv/templates/accounts/login.html:10
+#: grouping_serv/templates/navbar.html:63
+msgid "Login"
+msgstr "登入"
+
+#: grouping_serv/templates/accounts/signup.html:5
+#: grouping_serv/templates/accounts/signup.html:20
+#: grouping_serv/templates/navbar.html:65
+#: grouping_serv/templates/navbar.html:67
+msgid "Sign up"
+msgstr "註冊"
 
 #: grouping_serv/templates/index.html:4
 msgid "home"
@@ -39,7 +105,8 @@ msgid "Convenient"
 msgstr "方便性"
 
 #: grouping_serv/templates/index.html:14
-msgid "Just input the group size and press a single button, groups can be generated"
+msgid ""
+"Just input the group size and press a single button, groups can be generated"
 msgstr "只需要設定組別大小，並可生成組別"
 
 #: grouping_serv/templates/index.html:15
@@ -63,20 +130,6 @@ msgstr "在優化組別中隨機挑選"
 msgid "Home"
 msgstr "首頁"
 
-#: grouping_serv/templates/navbar.html:50
-#: grouping_serv/templates/navbar.html:52
-msgid "About"
-msgstr "關於"
-
 #: grouping_serv/templates/navbar.html:61
 msgid "Logout"
 msgstr "登出"
-
-#: grouping_serv/templates/navbar.html:63
-msgid "Login"
-msgstr "登入"
-
-#: grouping_serv/templates/navbar.html:65
-#: grouping_serv/templates/navbar.html:67
-msgid "Sign up"
-msgstr "註冊"

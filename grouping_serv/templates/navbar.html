@@ -67,6 +67,8 @@ a:checked {
   <a href="/accounts/signup">{%trans "Sign up" %}</a>
   {% endif %}
 {% endif %}
+{% get_current_language as LANGUAGE_CODE %}
+<a style='text-align:right;float:right;'>{{LANGUAGE_CODE}}</a>
 <!-- <div class="dropdown">
   <button class="dropbtn">Dropdown
     <i class="fa fa-caret-down"></i>

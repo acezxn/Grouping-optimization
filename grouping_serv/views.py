@@ -16,6 +16,5 @@ def about(request):
     template = loader.get_template("about.html")
     return render(request, "about.html")
 
-
 class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = "accounts/profile.html"

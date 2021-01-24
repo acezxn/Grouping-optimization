@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}about{% endblock %}
+{% block title %}{% trans "About" %}{% endblock %}
 {% block content %}
 <style>
 .main {
@@ -12,7 +13,7 @@
 }
 </style>
 <h1 style="font-size: max(5vw, 40px); text-align: center;">
-Creator
+{% trans "Creator" %}
 </h1>
 <div class='main'>
 <!-- <p style = "font-family: Ubuntu;">
@@ -45,16 +46,16 @@ I observed the common grouping algorithms and found weakness of each. Thus, I cr
 app in approach to optimize grouping.
 </p> -->
 </div>
-<h2 style="font-size: max(5vw, 40px); text-align: center;">The algorithm</h2>
+<h2 style="font-size: max(5vw, 40px); text-align: center;">{% trans "The algorithm" %}</h2>
 <div class='main'>
-<p style = "font-family: Ubuntu;">The website collects data of favored and unfavored groups from each classroom user
-<br><br>and form a datastructure: {user: [[favored], [unfavored]]}
-<br><br>the program calculate the all possibility of grouping of every member in a class</p>
-<h3 style="font-size: max(3vw, 25px);text-align: left;">Happiness calculating algorithm</h3>
-<p style = "font-family: Ubuntu;">In each group, if one person is grouped with his/her favored person, overall happiness of the group +1,
-<br><br>if grouped with unfavored person, overall happiness of the group -1.
-<br><br>The unhappiest group in each case is measured and stored in a list A,
-<br><br>The algorithm finally select the case with greatest corresponding value in list A.
+<p style = "font-family: Ubuntu;">{% trans "The website collects data of favored and unfavored groups from each classroom user" %}
+<br><br>{% trans "and form a datastructure: {user: [[favored], [unfavored]]}" %}
+<br><br>{% trans "the program calculates all possibility of grouping of every member in a class" %}</p>
+<h3 style="font-size: max(3vw, 25px);text-align: left;">{% trans "Hapiness calculation" %}</h3>
+<p style = "font-family: Ubuntu;">{% trans "In each group, if one person is grouped with his/her favored person, overall happiness of the group +1," %}
+<br><br>{% trans "if grouped with unfavored person, overall happiness of the group -1." %}
+<br><br>{% trans "The unhappiest group in each case is measured and stored in a list A," %}
+<br><br>{% trans "the algorithm finally select the case with greatest corresponding value in list A." %}
 </p>
 </div>
 {% endblock %}

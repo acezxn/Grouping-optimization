@@ -150,6 +150,11 @@ LOCALE_PATHS = (
 # LANGUAGE_CODE = 'zh-hant'
 LANGUAGE_CODE = 'en'
 
+LANGUAGES = [
+    ('en', 'English'),
+    ('zh-hant', '繁體中文'), 
+]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

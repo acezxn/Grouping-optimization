@@ -77,20 +77,20 @@ padding: 16px;
 font-size: 16px;
 border: none;
 cursor: pointer;
-width: 30vw;
+width: min(30vw, 120px);
 }
 
 .dropdown {
 position: relative;
 display: inline-block;
-width: 30vw;
+width: min(30vw, 120px);
 }
 
 .dropdown-content {
 display: none;
 position: absolute;
 background-color: #f9f9f9;
-min-width: 160px;
+min-width: min(30vw, 120px);
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
 }
@@ -111,18 +111,21 @@ background-color: rgb(1, 79, 0);
   {% get_available_languages as LANGUAGES %}
   {% get_language_info_list for LANGUAGES as languages %}
   <form action="{% url 'set_language' %}" method="post" id="lang_form">{% csrf_token %}
-
-  {% for language in languages %}
-    <button type="submit" name="language" value="{{ language.code }}" style = "background-color: rgb(221, 221, 221);
-    padding: 20px 20px;
-    border-style: ridge;
-    color: black;
-    min-width: 30vw;
-    text-decoration: none;
-    border-radius: 4px;">
-      {{ language.name_local }}
-    </button>
-  {% endfor %}
+    {% with len=LANGUAGE_CODE|length|add:1 %}
+    {% if len == 8 %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'8:' }}" />
+    {% else %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+    {% endif %}
+    <select name="language" class="form-control" onchange="this.form.submit()">
+      {% for language in languages %}
+      <option value="{{ language.code }}"
+          {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
+          {{ language.name_local }}
+      </option>
+      {% endfor %}
+      </select>
+    {% endwith %}
 </form>
 </div>
 </div>

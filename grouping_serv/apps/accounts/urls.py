@@ -26,5 +26,4 @@ urlpatterns = [
     path("compute/<slug:q>/", views.compute),
     path("kick/<slug:q>/", views.kick),
     path("settings", views.setting),
-    path('i18n/', include('django.conf.urls.i18n')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

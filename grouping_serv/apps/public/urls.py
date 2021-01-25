@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -10,4 +10,5 @@ app_name = "public"
 urlpatterns = [
     path("", views.index, name="index"),
     path("about", views.about, name="about"),
+    path('i18n/', include('django.conf.urls.i18n')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

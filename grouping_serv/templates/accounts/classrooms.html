@@ -1,59 +1,47 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+
 {% load i18n %}
-<head>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-  <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&display=swap" rel="stylesheet">
-  {% load static %}
-  <link rel="stylesheet" href="{% static "/styles.css" %}">
-  <title>{% trans "Classes" %}</title>
-</head>
-<body>
-  {% include 'navbar.html' %}
-  <h1 style = "font-family: Rajdhani">{% trans "Your Classrooms" %}</h1>
 
-  <div><h2 style = "font-family: Rajdhani">{% trans "Joined classes" %}</h2><a class = "link" href = /accounts/join>{% trans "Manage" %}</a></div>
-  <div><a> <br></a></div>
-  {% csrf_token %}
+{% block title %}{% trans "home" %}{% endblock %}
+{% block content %}
+{% load static %}
+<h1 style="font-family: Rajdhani">{% trans "Your Classrooms" %}</h1>
 
-  {% with created_class=created %}
-  {% with classes=classrooms %}
+<div>
+  <h2 style="font-family: Rajdhani">{% trans "Joined classes" %}</h2><a class="link" href= /accounts/join>{% trans "Manage" %} </a> </div> <div><a> <br></a>
+</div>
+{% csrf_token %}
 
-    {% for c in classes %}
-      {% if c not in created_class %}
-        <div style = "padding: 30px 0px;"><a class = "selection" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
-      {% endif %}
-    {% endfor %}
-    {% if classes|length == 0 %}
-      <div style = "padding: 30px 0px;"><a class = "msg">{% trans "There is no classroom you have joined" %}</a></div>
-    {% endif %}
-  {% endwith %}
+{% with created_class=created %}
+{% with classes=classrooms %}
+
+{% for c in classes %}
+{% if c not in created_class %}
+<div style="padding: 30px 0px;"><a class="selection" href={{"/accounts/profile/"|add:c}} style="font-family: Ubuntu">{{c}}</a></div>
+{% endif %}
+{% endfor %}
+{% if classes|length == 0 %}
+<div style="padding: 30px 0px;"><a class="msg">{% trans "There is no classroom you have joined" %}</a></div>
+{% endif %}
+{% endwith %}
 
 
-  <h2 style = "font-family: Rajdhani">{% trans "Created classes" %}</h2>
-  {% for c in created_class %}
-    <div style = "padding: 30px 0px;"><a class = "selection" href = {{"/accounts/profile/"|add:c}} style = "font-family: Ubuntu">{{c}}</a></div>
-  {% endfor %}
-  {% if created_class|length == 0 %}
-    <div style = "padding: 30px 0px;"><a class = "msg">{% trans "Nothing created" %}</a></div>
-  {% endif %}
+<h2 style="font-family: Rajdhani">{% trans "Created classes" %}</h2>
+{% for c in created_class %}
+<div style="padding: 30px 0px;"><a class="selection" href={{"/accounts/profile/"|add:c}} style="font-family: Ubuntu">{{c}}</a></div>
+{% endfor %}
+{% if created_class|length == 0 %}
+<div style="padding: 30px 0px;"><a class="msg">{% trans "Nothing created" %}</a></div>
+{% endif %}
 
-  {% endwith %}
-  <div style="border-top: #ccc 1px solid;padding: 1vw 0px">
-    <div style="padding: 1vw 0px"><a class="link" href= /accounts/create>{% trans "create" %} </a> </div>
-    <div><a> <br></a></div>
+{% endwith %}
+<div style="border-top: #ccc 1px solid;padding: 1vw 0px">
+  <div style="padding: 1vw 0px"><a class="link" href= /accounts/create>{% trans "create" %} </a> </div> <div><a> <br></a></div>
 
-  </div>
-  <div class='ui' style="margin: auto; width: 80vw;">
-    <h2>{% trans "User setting" %}</h2>
-    <div style = "padding: 2vw 0px;"><a class = 'link' href = /accounts/settings>{% trans "Change user data" %}</a></div>
-    <div style = "padding: 3vw 0px;"><a class = 'link' href = /accounts/signout style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">{% trans "Delete account" %}</a></div>
-  </div>
-
-</body>
-</html>
+</div>
+<div class='ui' style="margin: auto; width: 80vw;">
+  <h2>{% trans "User setting" %}</h2>
+  <div style="padding: 2vw 0px;"><a class='link' href= /accounts/settings>{% trans "Change user data" %} </a> </div> <div style="padding: 3vw 0px;"><a class='link' href= /accounts/signout
+        style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">{% trans "Delete account" %}</a></div>
+</div>
+{% endblock %}

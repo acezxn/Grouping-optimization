@@ -437,7 +437,6 @@ def classrooms(request):
         #     relation.classrooms.remove('\u200b\n')
         # except:
         #     pass
-        relation.save()
         return render(
             request,
             "accounts/classrooms.html",

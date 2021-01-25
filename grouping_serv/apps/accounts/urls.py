@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from django.conf.urls import url
 from . import views
@@ -26,4 +26,5 @@ urlpatterns = [
     path("compute/<slug:q>/", views.compute),
     path("kick/<slug:q>/", views.kick),
     path("settings", views.setting),
+    path('i18n/', include('django.conf.urls.i18n')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

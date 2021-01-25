@@ -77,20 +77,20 @@ padding: 16px;
 font-size: 16px;
 border: none;
 cursor: pointer;
-width: min(30vw, 120px);
+width: min(30vw, 130px);
 }
 
 .dropdown {
 position: relative;
 display: inline-block;
-width: min(30vw, 120px);
+width: min(30vw, 130px);
 }
 
 .dropdown-content {
 display: none;
 position: absolute;
 background-color: #f9f9f9;
-min-width: min(30vw, 120px);
+min-width: min(30vw, 130px);
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
 }
@@ -117,7 +117,13 @@ background-color: rgb(1, 79, 0);
     {% else %}
     <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
     {% endif %}
-    <select name="language" class="form-control" onchange="this.form.submit()">
+    <select name="language" class="form-control" onchange="this.form.submit()"
+    style="
+    background-color: rgb(50 50 50);
+    color: white;
+    width: min(30vw, 130px);
+    text-align: center;
+">
       {% for language in languages %}
       <option value="{{ language.code }}"
           {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>

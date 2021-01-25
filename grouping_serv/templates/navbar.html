@@ -36,48 +36,102 @@ a:checked {
 }
 </style> -->
 {% load i18n %}
+
 <div class="navbar">
-    {% load static %}
-    <a href="/" style="background-color: rgb(7, 32, 0);" class="logo"><img
-            style="width: 4.5vw;height:auto;padding: 0px 0px;max-width:20px;"
-            src="{% static 'logos/iplusi.png' %}"></a>
+  {% load static %}
+  <a href="/" style="background-color: rgb(7, 32, 0);" class="logo"><img style="width: 4.5vw;height:auto;padding: 0px 0px;max-width:20px;" src="{% static 'logos/iplusi.png' %}"></a>
   {% if url == "home" %}
   <a class="username" href="/">{%trans "Home" %}</a>
   {% else %}
   <a href="/">{%trans "Home"%}</a>
   {% endif %}
   {% if url == "about" %}
-  <a class = "username" href="/about">{%trans "About" %}</a>
+  <a class="username" href="/about">{%trans "About" %}</a>
   {% else %}
   <a href="/about">{%trans "About" %}</a>
   {% endif %}
 
-{% if user.is_authenticated %}
+  {% if user.is_authenticated %}
   {% if url == "accounts" %}
-  <a class = "username" href="/accounts/profile">{{user.username}}</a>
+  <a class="username" href="/accounts/profile">{{user.username}}</a>
   {% else %}
   <a href="/accounts/profile">{{user.username}}</a>
   {% endif %}
   <a href="/accounts/logout">{%trans "Logout" %}</a>
-{% else %}
+  {% else %}
   <a href="/accounts/login">{%trans "Login" %}</a>
   {% if url == "signup" %}
-  <a class = "username" href="/accounts/signup">{%trans "Sign up" %}</a>
+  <a class="username" href="/accounts/signup">{%trans "Sign up" %}</a>
   {% else %}
   <a href="/accounts/signup">{%trans "Sign up" %}</a>
   {% endif %}
-{% endif %}
+  {% endif %}
+</div>
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info for LANGUAGE_CODE as lang %}
-<a style='text-align:right;float:right;'>{{lang.name_local}} ({{lang.code}})</a>
-<!-- <div class="dropdown">
-  <button class="dropbtn">Dropdown
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div> -->
+<style>
+.dropbtn {
+background-color: #4CAF50;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+width: 160px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+width: 160px;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: #3e8e41;
+}
+</style>
+
+
+<div class="dropdown" style = "float:right;">
+<button class="dropbtn">{{lang.name_local}} ({{lang.code}})</button>
+<div class="dropdown-content">
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <form action="{% url 'set_language' %}" method="post" id="lang_form">{% csrf_token %}
+
+  {% for language in languages %}
+    <button type="submit" name="language" value="{{ language.code }}" style = "background-color: rgb(221, 221, 221);
+    padding: 20px 20px;
+    border-style: ridge;
+    color: black;
+    min-width: 160px;
+    text-decoration: none;
+    border-radius: 4px;">
+      {{ language.name_local }}
+    </button>
+  {% endfor %}
+</form>
+</div>
 </div>

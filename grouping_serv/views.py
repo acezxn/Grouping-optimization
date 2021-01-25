@@ -3,7 +3,6 @@ from django.template import loader
 from django.shortcuts import render
 from django.utils.translation import ugettext, ugettext_lazy as _
 from django.views.generic.base import TemplateView
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 

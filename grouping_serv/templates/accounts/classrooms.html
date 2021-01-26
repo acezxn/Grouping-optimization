@@ -3,8 +3,14 @@
 {% load i18n %}
 
 {% block title %}{% trans "Classes" %}{% endblock %}
+
 {% block content %}
 {% load static %}
+
+{% include "accounts/man/classrooms_man.html" %}
+
+
+
 <h1 style="font-family: Rajdhani">{% trans "Your Classrooms" %}</h1>
 
 <div>

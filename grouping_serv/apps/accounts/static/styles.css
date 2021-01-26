@@ -1,24 +1,49 @@
-input[type=text], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+
+input[type=text],
+select {
+    width: 10vw;
+    min-width: 80px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-input[type=password], select {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input[type=password],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h1 {
+  font-family: Ubuntu;
+  font-size:min(4vw, 30px);
+}
+h2 {
+  font-family: Ubuntu;
+  font-size:min(4vw, 25px);
+}
+h3 {
+  font-family: Ubuntu;
+  font-size:min(3vw, 20px);
+}
+
+p {
+  font-family: Ubuntu;
+  font-size:min(3vw, 15px);
 }
 
 input[type=submit] {
-  width: 50%;
+  width: 10vw;
+  min-width: 90px;
+  height: auto;
   background-color: rgb(50, 100, 50);
   color: white;
   padding: 14px 20px;
@@ -26,16 +51,33 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  text-align: center;
+}
+
+input[type=submit]:hover {
+    width: 10vw;
+    min-width: 90px;
+    height: auto;
+    filter: brightness(1.5);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+input[type=submit]:disabled {
+  background-color: #cccccc;
+  color: #666666;
 }
 
 header {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  font-size: 10vw;
+  font-size: font-size:min(5vw, 40px);;
 }
-input[type=submit]:hover {
-  background-color: rgb(100, 200, 100);
-}
+
 
 button[type=submit] {
   width: 50;
@@ -54,18 +96,22 @@ button[type=submit]:hover {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(12, 20, 0);
   float:top;
 }
 
+
 .navbar a {
-  font-family: Rajdhani;
-  float: left;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    font-family: Rajdhani;
+    float: left;
+    font-size: min(4.5vw, 20px);
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.logo:hover {
+    filter:brightness(1.5);
 }
 
 .main {
@@ -77,53 +123,57 @@ button[type=submit]:hover {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(43 202 0);
+  box-shadow: 0 0 10px rgb(0 255 0 / 100%);
 }
 
 .username {
-  background-color: #666;
-}
-.link {
-  font-size: 16px;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-  color: white;
-  background-color: rgb(10, 10, 10);
-  border-radius: 4px;
+  background-color: rgb(1, 79, 0);
 }
 
+
+.link {
+    font-size: 16px;
+    text-align: center;
+    border-style: outset;
+    padding: 1vw 1vw;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(25 25 25 / 1);
+    border-radius: 4px;
+}
 
 .link:hover {
-  background-color: rgb(100, 100, 100);
+    background-color: rgb(0, 0, 0);
+    width: 125px;
+    border-style: inset;
 }
+
+.ui {
+  border: 2px solid;
+  padding: 20px;
+  width: 30vw;
+  resize: vertical;
+  overflow: auto;
+}
+
 .list {
-  background-color: rgb(221, 221, 221);
   padding: 20px 20px;
-  border-style: ridge;
+  border-bottom: #ccc 1px solid;
   color: black;
   text-decoration: none;
-  border-radius: 4px;
-}
-
-.selection {
-  background-color: rgb(221, 221, 221);
-  padding: 20px 20px;
-  border-style: ridge;
-  color: black;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.selection:hover {
-  background-color: rgb(185, 185, 185);
+  font-family: Ubuntu;
+  font-size:min(3vw, 20px);
 }
 
 .msg {
-  background-color: rgb(221, 221, 221);
-  padding: 20px 20px;
-  color: black;
-  text-decoration: none;
+    background-color: rgb(221, 221, 221);
+    padding-right: min(15px, 5%);
+    padding-left: min(15px, 5%);
+    padding-top: min(15px, 5%);
+    padding-bottom: min(15px, 5%);
+    color: black;
+    text-decoration: none;
 }
 
 .table_element {
@@ -131,4 +181,100 @@ button[type=submit]:hover {
   overflow: hidden;
   text-align: center;
   border-radius: 4px;
+}
+
+.selection {
+  background-color: rgb(221, 221, 221);
+  padding: 20px 20px;
+  border-style: outset;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.selection:hover {
+    background-color: rgb(185, 185, 185);
+    border-style: inset;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: rgb(220, 220, 220);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes resize {
+from {color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;font-size: 28px}
+to { text-decoration: none;
+  font-size: 29px;
+  cursor: pointer;}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  font-size: 29px;
+  cursor: pointer;
+  animation-name: resize;
+  animation-duration: 1s
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: rgb(12, 20, 0);
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: rgb(12, 20, 0);
+  color: white;
 }

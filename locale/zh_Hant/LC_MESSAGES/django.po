@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-26 20:57+0800\n"
+"POT-Creation-Date: 2021-01-26 23:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,43 +86,43 @@ msgstr "演算法最後把列表A的最大值選出，對應該值的組別。"
 msgid "Classes"
 msgstr "教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:8
+#: grouping_serv/templates/accounts/classrooms.html:14
 msgid "Your Classrooms"
 msgstr "您的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:11
+#: grouping_serv/templates/accounts/classrooms.html:17
 msgid "Joined classes"
 msgstr "已加入的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:11
+#: grouping_serv/templates/accounts/classrooms.html:17
 msgid "Manage"
 msgstr "管理"
 
-#: grouping_serv/templates/accounts/classrooms.html:24
+#: grouping_serv/templates/accounts/classrooms.html:30
 msgid "There is no classroom you have joined"
 msgstr "你沒有加入的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:29
+#: grouping_serv/templates/accounts/classrooms.html:35
 msgid "Created classes"
 msgstr "已創建的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:34
+#: grouping_serv/templates/accounts/classrooms.html:40
 msgid "Nothing created"
 msgstr "沒有創造的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:39
+#: grouping_serv/templates/accounts/classrooms.html:45
 msgid "create"
 msgstr "創造"
 
-#: grouping_serv/templates/accounts/classrooms.html:43
+#: grouping_serv/templates/accounts/classrooms.html:49
 msgid "User setting"
 msgstr "使用者設定"
 
-#: grouping_serv/templates/accounts/classrooms.html:44
+#: grouping_serv/templates/accounts/classrooms.html:50
 msgid "Change user data"
 msgstr "更改使用者資訊"
 
-#: grouping_serv/templates/accounts/classrooms.html:45
+#: grouping_serv/templates/accounts/classrooms.html:51
 msgid "Delete account"
 msgstr "刪除帳號"
 
@@ -132,6 +132,32 @@ msgstr "刪除帳號"
 #: grouping_serv/templates/navbar.html:62
 msgid "Login"
 msgstr "登入"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:125
+msgid "Guide"
+msgstr "教程"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:133
+msgid ""
+"This is a page helping you manage your classrooms, join classrooms as a "
+"student, and edit your profile."
+msgstr "這是個教室管理，加入教室，以及編輯個人檔案的頁面。"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:134
+msgid "How is the classification of student and teacher work?"
+msgstr "如何分別學生和老師？"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:135
+msgid "As you create a class, you are the teacher in the class."
+msgstr "如果你創造了一個教室，你會成為該教室的老師。"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:136
+msgid "On the other hand, if you join a class, you are a student in the class."
+msgstr "相反的，如果你加入了一個教室，你便是該教室的學生。"
+
+#: grouping_serv/templates/accounts/man/classrooms_man.html:141
+msgid "About the website"
+msgstr "關於這個網站"
 
 #: grouping_serv/templates/accounts/profile.html:16
 msgid "Class password:"
@@ -163,6 +189,7 @@ msgid "Group filter: (Optional)"
 msgstr "結果過濾（非必填，填入不宜同組的學生）"
 
 #: grouping_serv/templates/accounts/profile.html:29
+#: grouping_serv/templates/accounts/profile.html:47
 msgid " Not with "
 msgstr " 不和 "
 

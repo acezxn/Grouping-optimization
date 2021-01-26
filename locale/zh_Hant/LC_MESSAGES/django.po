@@ -164,7 +164,7 @@ msgstr "結果過濾（非必填，填入不宜同組的學生）"
 
 #: grouping_serv/templates/accounts/profile.html:29
 msgid " Not with "
-msgstr "不和"
+msgstr " 不和 "
 
 #: grouping_serv/templates/accounts/profile.html:33
 msgid "ADD RULE"

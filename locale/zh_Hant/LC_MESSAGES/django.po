@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-25 12:08+0800\n"
+"POT-Creation-Date: 2021-01-26 20:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,9 +83,8 @@ msgid ""
 msgstr "演算法最後把列表A的最大值選出，對應該值的組別。"
 
 #: grouping_serv/templates/accounts/classrooms.html:5
-#: grouping_serv/templates/index.html:5
-msgid "home"
-msgstr "首頁"
+msgid "Classes"
+msgstr "教室"
 
 #: grouping_serv/templates/accounts/classrooms.html:8
 msgid "Your Classrooms"
@@ -134,6 +133,69 @@ msgstr "刪除帳號"
 msgid "Login"
 msgstr "登入"
 
+#: grouping_serv/templates/accounts/profile.html:16
+msgid "Class password:"
+msgstr "加入碼: "
+
+#: grouping_serv/templates/accounts/profile.html:18
+msgid "Edit permissions"
+msgstr "編輯權限"
+
+#: grouping_serv/templates/accounts/profile.html:19
+#: grouping_serv/templates/accounts/profile.html:99
+msgid "available usernames"
+msgstr "已加入的學生"
+
+#: grouping_serv/templates/accounts/profile.html:20
+msgid "Combination selection algorithm"
+msgstr "組合挑選分組法"
+
+#: grouping_serv/templates/accounts/profile.html:24
+msgid "Group size: "
+msgstr "單組人數: "
+
+#: grouping_serv/templates/accounts/profile.html:25
+msgid "compute"
+msgstr "計算"
+
+#: grouping_serv/templates/accounts/profile.html:26
+msgid "Group filter: (Optional)"
+msgstr "結果過濾（非必填，填入不宜同組的學生）"
+
+#: grouping_serv/templates/accounts/profile.html:29
+msgid " Not with "
+msgstr "不和"
+
+#: grouping_serv/templates/accounts/profile.html:33
+msgid "ADD RULE"
+msgstr "新增規則"
+
+#: grouping_serv/templates/accounts/profile.html:72
+msgid " favored: "
+msgstr "喜好的："
+
+#: grouping_serv/templates/accounts/profile.html:86
+msgid " unfavored: "
+msgstr "不喜好的："
+
+#: grouping_serv/templates/accounts/profile.html:100
+msgid "Add data"
+msgstr "加入資料"
+
+#: grouping_serv/templates/accounts/profile.html:104
+#: grouping_serv/templates/accounts/profile.html:114
+msgid "Favored"
+msgstr "喜好的："
+
+#: grouping_serv/templates/accounts/profile.html:106
+#: grouping_serv/templates/accounts/profile.html:116
+msgid "Unfavored"
+msgstr "不喜好的："
+
+#: grouping_serv/templates/accounts/profile.html:110
+msgid "Remove data"
+msgstr "刪除資料"
+
 #: grouping_serv/templates/accounts/signup.html:4
 #: grouping_serv/templates/accounts/signup.html:6
 #: grouping_serv/templates/accounts/signup.html:21
@@ -141,6 +203,10 @@ msgstr "登入"
 #: grouping_serv/templates/navbar.html:66
 msgid "Sign up"
 msgstr "註冊"
+
+#: grouping_serv/templates/index.html:5
+msgid "home"
+msgstr "首頁"
 
 #: grouping_serv/templates/index.html:11
 msgid "Grouping Optimizer"
@@ -187,6 +253,3 @@ msgstr "首頁"
 #: grouping_serv/templates/navbar.html:60
 msgid "Logout"
 msgstr "登出"
-
-#~ msgid "Classes"
-#~ msgstr "教室"

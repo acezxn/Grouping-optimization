@@ -13,24 +13,24 @@
 </header>
 {% if own %}
 <div>
-    <h2 style="font-family: Ubuntu;text-align: center;">Class password: {{passcode}}</h2>
+    <h2 style="font-family: Ubuntu;text-align: center;">{% trans "Class password:" %} {{passcode}}</h2>
 </div>
-<div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>Edit permissions</a></div>
-<div style="padding: 5vw 0px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">available usernames</a></div>
-<h3 style="font-family: Ubuntu;font-size: max(3vw, 25px);">Combination grouping algorithm</h3>
+<div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>{% trans "Edit permissions" %}</a></div>
+<div style="padding: 5vw 0px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">{% trans "available usernames" %}</a></div>
+<h3 style="font-family: Ubuntu;font-size: max(3vw, 25px);">{% trans "Combination selection algorithm" %}</h3>
 {% get_current_language as LANGUAGE_CODE %}
 <form action = {{"/"|add:LANGUAGE_CODE|add:"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
-    <a style="font-family: Ubuntu;">Group size: </a>
-    <div><input id="size" type="text" name="size" style="width:100px;"><a> </a><input type="submit" value="compute"></div>
-  <h3 style="font-family: Ubuntu;">Group filter: (Optional)</h3>
+    <a style="font-family: Ubuntu;">{% trans "Group size: " %}</a>
+    <div><input id="size" type="text" name="size" style="width:100px;"><a> </a><input type="submit" value="{% trans 'compute' %}"></div>
+  <h3 style="font-family: Ubuntu;">{% trans "Group filter: (Optional)" %}</h3>
   <div>
     <input type="text" name="src[]" style = "width: 10%;">
-    <a> Not with </a>
+    <a>{% trans " Not with " %}</a>
     <input type="text" name="dst[]" style = "width: 10%;">
   </div>
 </form>
-<button onclick="add_field()" style="font-family: Ubuntu; padding: 1vw 1vw;">ADD RULE</button>
+<button onclick="add_field()" style="font-family: Ubuntu; padding: 1vw 1vw;">{% trans "ADD RULE" %}</button>
 
 <script>
     function add_field(){
@@ -69,7 +69,7 @@
 {% with profile=user.profile %}
 <table style="width:50">
 <tr style="background-color: rgb(100, 255, 100);">
-  <th class = "table_element"> favored: </th>
+  <th class = "table_element">{% trans " favored: " %}</th>
 
 {% with c=classid %}
 {% for f in favored %}
@@ -83,7 +83,7 @@
 </tr>
 
 <tr style="background-color: rgb(255, 100, 100);">
-<th class = "table_element"> unfavored: </th>
+<th class = "table_element">{% trans " unfavored: " %}</th>
 {% with c=classid %}
 {% for f in disliked %}
   {% if f.0 == c %}
@@ -96,24 +96,24 @@
 </table>
 {% endwith %}
 <div style = "padding: 10px 2px"></div>
-<div style = "padding: 10px 2px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class = "link">available usernames</a></div>
-<h3>Add data</h3>
+<div style = "padding: 10px 2px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class = "link">{% trans "available usernames" %}</a></div>
+<h3>{% trans "Add data" %} </h3>
 <form action = "" method="post">
   {% csrf_token %}
   {{ form }}
-  <p>Favored</p>
+  <p>{% trans "Favored" %}</p>
   <input id="favored" type="text" name="favored">
-  <p>Disliked</p>
+  <p>{% trans "Unfavored" %}</p>
   <input id="disliked" type="text" name="disliked">
   <input type="submit" value="OK">
 </form>
-<h3>Remove data</h3>
+<h3>{% trans "Remove data" %}</h3>
 <form action = "" method="post">
   {% csrf_token %}
   {{ form }}
-  <p>Favored</p>
+  <p>{% trans "Favored" %}</p>
   <input id="rm_favored" type="text" name="rm_favored">
-  <p>Disliked</p>
+  <p>{% trans "Unfavored" %}</p>
   <input id="rm_disliked" type="text" name="rm_disliked">
   <input type="submit" value="OK">
 {% endif %}

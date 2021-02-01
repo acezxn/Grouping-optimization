@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-26 23:03+0800\n"
+"POT-Creation-Date: 2021-02-01 19:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,10 +91,12 @@ msgid "Your Classrooms"
 msgstr "您的教室"
 
 #: grouping_serv/templates/accounts/classrooms.html:17
+#, fuzzy
 msgid "Joined classes"
 msgstr "已加入的教室"
 
 #: grouping_serv/templates/accounts/classrooms.html:17
+#: grouping_serv/templates/accounts/join.html:4
 msgid "Manage"
 msgstr "管理"
 
@@ -126,6 +128,61 @@ msgstr "更改使用者資訊"
 msgid "Delete account"
 msgstr "刪除帳號"
 
+#: grouping_serv/templates/accounts/comb_compute.html:5
+msgid "Computed results"
+msgstr "計算結果"
+
+#: grouping_serv/templates/accounts/comb_compute.html:9
+msgid "Results"
+msgstr "結果"
+
+#: grouping_serv/templates/accounts/comb_compute.html:13
+msgid "No results"
+msgstr "沒有結果"
+
+#: grouping_serv/templates/accounts/comb_compute.html:18
+msgid "Group"
+msgstr "組"
+
+#: grouping_serv/templates/accounts/create.html:4
+#: grouping_serv/templates/accounts/create.html:8
+msgid "Create"
+msgstr "創造"
+
+#: grouping_serv/templates/accounts/create.html:13
+msgid "Create classroom"
+msgstr "創建教室"
+
+#: grouping_serv/templates/accounts/create.html:14
+#: grouping_serv/templates/accounts/join.html:14
+#: grouping_serv/templates/accounts/join.html:20
+msgid "Classid"
+msgstr "教室名"
+
+#: grouping_serv/templates/accounts/join.html:8
+msgid "Manage your class"
+msgstr "管理您的教室"
+
+#: grouping_serv/templates/accounts/join.html:13
+msgid "Join classroom"
+msgstr "加入教室"
+
+#: grouping_serv/templates/accounts/join.html:16
+msgid "Class password"
+msgstr "加入碼: "
+
+#: grouping_serv/templates/accounts/join.html:18
+msgid "JOIN"
+msgstr "加入"
+
+#: grouping_serv/templates/accounts/join.html:19
+msgid "Leave classroom"
+msgstr "離開教室"
+
+#: grouping_serv/templates/accounts/join.html:22
+msgid "LEAVE"
+msgstr "離開"
+
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6
 #: grouping_serv/templates/accounts/login.html:10
@@ -133,29 +190,29 @@ msgstr "刪除帳號"
 msgid "Login"
 msgstr "登入"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:125
+#: grouping_serv/templates/accounts/man/classrooms_man.html:134
 msgid "Guide"
 msgstr "教程"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:133
+#: grouping_serv/templates/accounts/man/classrooms_man.html:142
 msgid ""
 "This is a page helping you manage your classrooms, join classrooms as a "
 "student, and edit your profile."
 msgstr "這是個教室管理，加入教室，以及編輯個人檔案的頁面。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:134
+#: grouping_serv/templates/accounts/man/classrooms_man.html:143
 msgid "How is the classification of student and teacher work?"
 msgstr "如何分別學生和老師？"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:135
+#: grouping_serv/templates/accounts/man/classrooms_man.html:144
 msgid "As you create a class, you are the teacher in the class."
 msgstr "如果你創造了一個教室，你會成為該教室的老師。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:136
+#: grouping_serv/templates/accounts/man/classrooms_man.html:145
 msgid "On the other hand, if you join a class, you are a student in the class."
 msgstr "相反的，如果你加入了一個教室，你便是該教室的學生。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:141
+#: grouping_serv/templates/accounts/man/classrooms_man.html:150
 msgid "About the website"
 msgstr "關於這個網站"
 
@@ -222,6 +279,40 @@ msgstr "不喜好的："
 #: grouping_serv/templates/accounts/profile.html:110
 msgid "Remove data"
 msgstr "刪除資料"
+
+#: grouping_serv/templates/accounts/setting.html:4
+#: grouping_serv/templates/accounts/setting.html:8
+msgid "Settings"
+msgstr "使用者設定"
+
+#: grouping_serv/templates/accounts/setting.html:17
+msgid "Retype password does not match with the new password"
+msgstr "重複輸入的密碼不吻合"
+
+#: grouping_serv/templates/accounts/setting.html:30
+msgid "Change username"
+msgstr "更改使用者資訊"
+
+#: grouping_serv/templates/accounts/setting.html:34
+#: grouping_serv/templates/accounts/setting.html:48
+msgid "Submit"
+msgstr "提交"
+
+#: grouping_serv/templates/accounts/setting.html:36
+msgid "Change password"
+msgstr "更改密碼"
+
+#: grouping_serv/templates/accounts/setting.html:37
+msgid "Original password"
+msgstr "舊密碼"
+
+#: grouping_serv/templates/accounts/setting.html:41
+msgid "New password"
+msgstr "新密碼"
+
+#: grouping_serv/templates/accounts/setting.html:43
+msgid "Retype password"
+msgstr "重新輸入新密碼"
 
 #: grouping_serv/templates/accounts/signup.html:4
 #: grouping_serv/templates/accounts/signup.html:6

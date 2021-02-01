@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static i18n %}
 
-{% block title %}Settings{% endblock %}
+{% block title %}{% trans "Settings" %}{% endblock %}
 {% block content %}
 {% load static %}
 <header style="font-size: 10vw; text-align: center; font-family: Rajdhani;">
-Settings
+{% trans "Settings" %}
 </header>
 <script>
         function getInputValue(){
@@ -13,7 +14,7 @@ Settings
             var retype = document.getElementById("retype").value;
             if (new_passwd != retype) {
               document.getElementById("submit").disabled = true;
-              document.getElementById('msg').innerHTML = "Retype password does not match with the new password";
+              document.getElementById('msg').innerHTML = '{% trans "Retype password does not match with the new password" %}';
             } else {
               if (new_passwd == "" || retype == "") {
                 document.getElementById("submit").disabled = true;
@@ -26,24 +27,24 @@ Settings
         }
     </script>
 
-<h2>Change username</h2>
+<h2>{% trans "Change username" %}</h2>
 <form method="post" action="">
   {% csrf_token %}
   <input id="chg_uname" type="text" name="chg_uname">
-  <input type="submit" value="Submit">
+  <input type="submit" value={% trans 'Submit' %}>
 
-<h2>Change password</h2>
-<h3>Original password</h3>
+<h2>{% trans "Change password" %}</h2>
+<h3>{% trans "Original password" %}</h3>
 
 
   <input id="orig_passwd" type="password" name="orig_passwd">
-  <h3>New password</h3>
+  <h3>{% trans "New password" %}</h3>
   <input id="new_passwd" type="password" name="new_passwd" oninput="getInputValue();">
-  <h3>Retype password</h3>
+  <h3>{% trans "Retype password" %}</h3>
   <input id="retype" type="password" name="retype" oninput="getInputValue();">
   <pre id = 'msg' style = "color:rgb(255,0,0);font-family: Ubuntu;
   font-size:min(3vw, 15px);"></pre>
   <p style = "color:rgb(255,0,0);">{{error}}</p>
-  <input type="submit" id="submit" value="Submit" disabled>
+  <input type="submit" id="submit" value={% trans 'Submit' %} disabled>
 </form>
 {% endblock %}

@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
+{% load static i18n %}
 
-{% block title %}Join{% endblock %}
+{% block title %}{% trans "Manage" %}{% endblock %}
 {% block content %}
 
 <h1>
-Manage your class
+{% trans "Manage your class" %}
 </h1>
 
 <form method="post">
   {% csrf_token %}
-  <h3>Join classroom</h3>
-  <p>Classid</p>
+  <h3>{% trans "Join classroom" %}</h3>
+  <p>{% trans "Classid" %}</p>
   <input id="classid" type="text" name="classid">
-  <p>Class password</p>
+  <p>{% trans "Class password" %}</p>
   <input id="passcode" type="text" name="passcode">
-  <input type="submit" value="JOIN">
-  <h3>Leave classroom</h3>
-  <p>Classid</p>
+  <input type="submit" value={% trans "JOIN" %}>
+  <h3>{% trans "Leave classroom" %}</h3>
+  <p>{% trans "Classid" %}</p>
   <input id="rm_classid" type="text" name="rm_classid">
-  <input type="submit" value="LEAVE">
+  <input type="submit" value={% trans "LEAVE" %}>
 </form>
 
 {% endblock %}

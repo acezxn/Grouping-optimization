@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
+{% load static i18n %}
 
-{% block title %}Create class{% endblock %}
+{% block title %}{% trans "Create" %}{% endblock %}
 {% block content %}
 
 <h1>
-Manage classrooms
+{% trans "Create" %}
 </h1>
 
 <form method="post">
   {% csrf_token %}
-  <h3>Create classroom</h3>
-  <p>Classid</p>
+  <h3>{% trans "Create classroom" %}</h3>
+  <p>{% trans "Classid" %}</p>
   <input id="classid" type="text" name="classid">
   <input type="submit" value="OK">
 </form>

@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
+{% load static i18n %}
 
-{% block title %}Computed results{% endblock %}
+
+{% block title %}{% trans "Computed results" %}{% endblock %}
 {% block content %}
 
 <h1>
-Results:
+{% trans "Results" %}:
 </h1>
 {% with grouplist=GROUP %}
 {% if grouplist|length == 0 %}
-<div style = "padding: 30px 0px;"><a class = "msg">No results</a></div>
+<div style = "padding: 30px 0px;"><a class = "msg">{% trans "No results" %}</a></div>
 {% else %}
 <table>
 {% for g in grouplist %}
 <tr style="background-color: rgb(100, 255, 100);">
-  <th class = "table_element">Group {{ forloop.counter }}</th>
+  <th class = "table_element">{% trans "Group" %} {{ forloop.counter }}</th>
 {% for member in g %}
 <td class = "table_element"> {{member}} </td>
 {% endfor %}

@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}Danger zone{% endblock %}
+{% block title %}{% trans "Danger zone" %}{% endblock %}
 {% block content %}
 
-<h1>Danger zone</h1>
+<h1>{% trans "Delete class" %}</h1>
 {% with classid=q %}
-<form action={{"/accounts/rm/"|add:classid|add:"/"}} method='post'>
+<form action={{"/"|add:LANGUAGE_CODE|add:"/accounts/rm/"|add:classid|add:"/"}} method='post'>
   {% csrf_token %}
-  <p>Enter your username to confirm</p>
+  <p>{% trans "Enter your username to confirm" %}</p>
   <div><input id="verify" type="text" name="verify"></div>
   <p>{{error}}</p>
-  <input type="submit" value="Delete class" style="background-color: rgb(221, 0, 0);">
+  <input type="submit" value={% trans "Delete class" %} style="background-color: rgb(221, 0, 0);">
 </form>
 {% endwith %}
 {% endblock %}

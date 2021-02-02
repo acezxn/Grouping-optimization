@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}Manage{% endblock %}
+{% block title %}{% trans "Manage" %}{% endblock %}
 {% block content %}
 
-<h2>Edit permissions</h2>
+<h2>{% trans "Edit permissions" %}</h2>
 
-<a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">Joined users</a>
+<a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">{% trans "Joined users" %}</a>
 
-<h3>Kick user: </h3>
+<h3>{% trans "Kick user: " %}</h3>
 <form action={{"/accounts/kick/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
   <input type="text" name = "member2kick">
-  <input type="submit" value="Kick" style="background-color: rgb(221 1 0);">
+  <input type="submit" value={% trans "Kick" %} style="background-color: rgb(221 1 0);">
 </form>
 
 <form action = {{"/accounts/dangerzone/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
-  <input type="submit" value="Danger Zone" style = "background-color: rgb(221, 0, 0);">
+  <input type="submit" value={% trans "Danger Zone" %} style = "background-color: rgb(221, 0, 0);">
 </form>
 
 {% endblock %}

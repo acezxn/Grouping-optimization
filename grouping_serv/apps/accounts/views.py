@@ -10,7 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.mail import EmailMessage
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.hashers import check_password
-
+from django.utils.translation import gettext
 
 import json
 import random
@@ -245,6 +245,7 @@ def dangerzone(request, q):
 
 def remove(request, q):
     if request.user.is_authenticated:
+        print(request.method)
         if request.method == 'POST':
             profile = UserProfile.objects.get(user_id=request.user.id)
             if request.POST['verify'] == request.user.username:
@@ -285,12 +286,15 @@ def remove(request, q):
                         userprofile.favored = json.dumps(favored)
                         userprofile.disliked = json.dumps(disliked)
                         userprofile.save()
+                    print('done')
                     return redirect("/accounts/profile")
                 else:
+                    print('q not in created')
                     return redirect("/accounts/profile")
             else:
-                return render(request, "accounts/danger.html", {"error": "incorrect username", "q": q})
+                return render(request, "accounts/danger.html", {"error": gettext("incorrect username"), "q": q})
         else:
+            print('not POST')
             return redirect("/accounts/profile")
     else:
         return redirect("/accounts/login")

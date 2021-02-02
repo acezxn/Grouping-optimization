@@ -20,7 +20,7 @@ msgstr ""
 
 #: grouping_serv/apps/accounts/views.py:292
 msgid "incorrect username"
-msgstr "錯誤地使用者名"
+msgstr "錯誤的使用者名"
 
 #: grouping_serv/templates/404.html:11
 msgid "Not found"
@@ -95,7 +95,6 @@ msgid "Your Classrooms"
 msgstr "您的教室"
 
 #: grouping_serv/templates/accounts/classrooms.html:17
-#, fuzzy
 msgid "Joined classes"
 msgstr "已加入的教室"
 

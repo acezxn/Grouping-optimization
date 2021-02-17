@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-02 14:29+0800\n"
+"POT-Creation-Date: 2021-02-17 11:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: grouping_serv/apps/accounts/views.py:292
+#: grouping_serv/apps/accounts/views.py:295
 msgid "incorrect username"
 msgstr "錯誤的使用者名"
+
+#: grouping_serv/apps/accounts/views.py:342
+msgid "verification failed"
+msgstr "認證失敗"
 
 #: grouping_serv/templates/404.html:11
 msgid "Not found"
@@ -129,6 +133,8 @@ msgid "Change user data"
 msgstr "更改使用者資訊"
 
 #: grouping_serv/templates/accounts/classrooms.html:51
+#: grouping_serv/templates/accounts/signout.html:7
+#: grouping_serv/templates/accounts/signout.html:13
 msgid "Delete account"
 msgstr "刪除帳號"
 
@@ -164,17 +170,18 @@ msgid "Classid"
 msgstr "教室名"
 
 #: grouping_serv/templates/accounts/danger.html:4
-#: grouping_serv/templates/accounts/danger.html:7
 msgid "Danger zone"
 msgstr "危險區域"
 
-#: grouping_serv/templates/accounts/danger.html:11
-msgid "Enter your username to confirm"
-msgstr "輸入您的帳號名已做確認"
-
+#: grouping_serv/templates/accounts/danger.html:7
 #: grouping_serv/templates/accounts/danger.html:14
 msgid "Delete class"
 msgstr "刪除教室"
+
+#: grouping_serv/templates/accounts/danger.html:11
+#: grouping_serv/templates/accounts/signout.html:10
+msgid "Enter your username to confirm"
+msgstr "輸入您的帳號名已做確認"
 
 #: grouping_serv/templates/accounts/edit.html:7
 #: grouping_serv/templates/accounts/profile.html:18

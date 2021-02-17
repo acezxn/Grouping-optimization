@@ -4,12 +4,12 @@
 {% block title %}Leave i+i{% endblock %}
 {% block content %}
 
-<h1>Delete account</h1>
+<h1>{% trans "Delete account" %}</h1>
 <form method='post'>
   {% csrf_token %}
-  <p>Enter your username to confirm</p>
+  <p>{% trans "Enter your username to confirm" %}</p>
   <div><input id="verify" type="text" name="verify"></div>
   <p>{{error}}</p>
-  <input type="submit" value="Delete account" class = "danger" style="background-color: rgb(221, 0, 0);">
+  <input type="submit" value={% trans "Delete account" %} class = "danger" style="background-color: rgb(221, 0, 0);">
 </form>
 {% endblock %}

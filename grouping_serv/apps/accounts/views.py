@@ -339,7 +339,7 @@ def unsign(request):
                 # profile.save()
                 return redirect("/")
             else:
-                return HttpResponse('verification failed')
+                return render(request, "accounts/signout.html", {'error': gettext('verification failed')})
         else:
             return render(request, "accounts/signout.html")
     else:

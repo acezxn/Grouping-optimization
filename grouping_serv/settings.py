@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+from django.utils.translation import ugettext
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -151,8 +151,8 @@ LOCALE_PATHS = (
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('en', 'English'),
-    ('zh-hant', '繁體中文'),
+    ('en', ugettext('English')),
+    ('zh-hant', ugettext('Traditional Chinese')),
 ]
 
 TIME_ZONE = 'UTC'

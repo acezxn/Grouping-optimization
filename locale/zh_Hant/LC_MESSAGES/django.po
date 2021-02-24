@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-24 09:49+0800\n"
+"POT-Creation-Date: 2021-02-24 10:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,14 @@ msgstr "錯誤的使用者名"
 #: grouping_serv/apps/accounts/views.py:342
 msgid "verification failed"
 msgstr "認證失敗"
+
+#: grouping_serv/settings.py:154
+msgid "English"
+msgstr "英文"
+
+#: grouping_serv/settings.py:155
+msgid "Traditional Chinese"
+msgstr "繁體中文"
 
 #: grouping_serv/templates/404.html:11
 msgid "Not found"
@@ -228,6 +236,8 @@ msgstr "離開教室"
 msgid "LEAVE"
 msgstr "離開"
 
+#: grouping_serv/templates/accounts/list.html:3
+#: grouping_serv/templates/accounts/list.html:6
 msgid "Available users"
 msgstr "已加入的學生"
 

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from django.utils.translation import ugettext
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,7 @@ SECRET_KEY = "%m1xg0l+v2_ec%!i++y&t$l53*h8e-@_(ps+x723xkd83m-zy!"
 # SESSION_COOKIE_HTTPSONLY=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
 
@@ -151,8 +151,8 @@ LOCALE_PATHS = (
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('en', ugettext('English')),
-    ('zh-hant', ugettext('Traditional Chinese')),
+    ('en', _('English')),
+    ('zh-hant', _('Traditional Chinese')),
 ]
 
 TIME_ZONE = 'UTC'

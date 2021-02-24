@@ -233,7 +233,7 @@ msgstr "已加入的學生"
 
 #: grouping_serv/templates/accounts/list.html:15
 msgid "< Back"
-msgstr ""
+msgstr "< 上一頁"
 
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6

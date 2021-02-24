@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-
-{% block title %}Available users{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Available users" %}{% endblock %}
 {% block content %}
 
-  <h2 style = "font-family: Ubuntu;">Available users</h2>
+  <h2 style = "font-family: Ubuntu;">{% trans "Available users" %}</h2>
   {% csrf_token %}
 
 
@@ -12,6 +12,6 @@
         <div><p class = "list" >{{u}}</p></div>
       {% endif %}
     {% endfor %}
-  <a href = {{prev}} class = "link">{{"< back"}}</a>
+  <a href = {{prev}} class = "link">{% trans "< Back" %}</a>
 
 {% endblock %}

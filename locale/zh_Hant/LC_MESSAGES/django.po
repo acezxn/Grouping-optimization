@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 11:19+0800\n"
+"POT-Creation-Date: 2021-02-24 09:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -227,6 +227,13 @@ msgstr "離開教室"
 #: grouping_serv/templates/accounts/join.html:22
 msgid "LEAVE"
 msgstr "離開"
+
+msgid "Available users"
+msgstr "已加入的學生"
+
+#: grouping_serv/templates/accounts/list.html:15
+msgid "< Back"
+msgstr ""
 
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6

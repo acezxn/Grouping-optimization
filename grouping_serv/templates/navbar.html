@@ -124,30 +124,14 @@ background-color: rgb(1, 79, 0);
     width: min(30vw, 130px);
     text-align: center;
 ">
-      {% if LANGUAGE_CODE == "en" %}
       {% for language in languages %}
+      
       <option value="{{ language.code }}"
           {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
-          {{language.name_local}}
-
-
-
+          {{language.name_translated}}
       </option>
+
       {% endfor %}
-
-      {% else %}
-      {% for language in languages %}
-      <option value="{{ language.code }}"
-          {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
-
-          {% trans language.name_local %}
-
-
-
-      </option>
-      {% endfor %}
-
-      {% endif %}
       </select>
     {% endwith %}
 </form>

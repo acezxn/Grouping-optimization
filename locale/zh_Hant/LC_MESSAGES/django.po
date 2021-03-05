@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-24 10:04+0800\n"
+"POT-Creation-Date: 2021-03-05 12:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,18 @@ msgstr "錯誤的使用者名"
 #: grouping_serv/apps/accounts/views.py:342
 msgid "verification failed"
 msgstr "認證失敗"
+
+#: grouping_serv/apps/accounts/views.py:654
+msgid "invalid characters"
+msgstr "無效的字母"
+
+#: grouping_serv/apps/accounts/views.py:665
+msgid "user already exists"
+msgstr "帳號名已經存在"
+
+#: grouping_serv/apps/accounts/views.py:678
+msgid "Your password must contain at least 8 characters"
+msgstr "你的密碼長度必須長於八個字母"
 
 #: grouping_serv/settings.py:154
 msgid "English"

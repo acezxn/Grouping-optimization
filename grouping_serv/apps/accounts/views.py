@@ -647,25 +647,35 @@ def setting(request):
             if request.POST['chg_uname'] != "":
                 stat = check_exist(request.POST['chg_uname'])
                 if stat == 0:
-                    form = PasswordChangeForm(request.user, request.POST)
-                    u = User.objects.get(id=request.user.id)
-                    print(u, request.POST['chg_uname'])
-                    u.username = request.POST['chg_uname']
-                    print(u)
-                    u.save()
-                    return render(request, 'accounts/setting.html', {})
+
+                        possible_chars = string.ascii_letters + string.digits + "@.+-_"
+                        for i in request.POST['chg_uname']:
+                            if i not in possible_chars:
+                                return render(request, 'accounts/setting.html', {'error': gettext('invalid characters')})
+
+                        form = PasswordChangeForm(request.user, request.POST)
+                        u = User.objects.get(id=request.user.id)
+                        print(u, request.POST['chg_uname'])
+                        u.username = request.POST['chg_uname']
+                        print(u)
+                        u.save()
+                        return render(request, 'accounts/setting.html', {})
+
                 else:
-                    return render(request, 'accounts/setting.html', {'error': 'user already exists'})
+                    return render(request, 'accounts/setting.html', {'error': gettext('user already exists')})
 
             else:
 
                 if check_password(request.POST['orig_passwd'], request.user.password):
                     if request.POST['new_passwd'] == request.POST['retype']:
-                        u = User.objects.get(id=request.user.id)
-                        u.set_password(request.POST['new_passwd'])
-                        print(u.password)
-                        u.save()
-                        return redirect("/accounts/login")
+                        if len(request.POST['chg_uname']) >= 8:
+                            u = User.objects.get(id=request.user.id)
+                            u.set_password(request.POST['new_passwd'])
+                            print(u.password)
+                            u.save()
+                            return redirect("/accounts/login")
+                        else:
+                            return render(request, 'accounts/setting.html', {'error': gettext('Your password must contain at least 8 characters')})
                     else:
                         return render(request, 'accounts/setting.html', {'error': "Retype password does not match with the new password"})
                 else:

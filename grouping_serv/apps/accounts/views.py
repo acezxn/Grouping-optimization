@@ -626,16 +626,19 @@ def compute(request, q):
                         return HttpResponse('Group size not a natural number')
                 except:
                     return HttpResponse('Group size not a natural number')
-                G, state = combination_group.start_group(
-                    size=size, favor_data=favor_data, total=total, rule=rule)
-                if state:
-                    return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
+                if size > len(total):
+                    return HttpResponse('Group size exceeds the total amount of people')
                 else:
-                    return HttpResponse('Invalid group size')
-                try:
-                    pass
-                except:
-                    return redirect("/accounts/profile")
+                    G, state = combination_group.start_group(
+                        size=size, favor_data=favor_data, total=total, rule=rule)
+                    if state:
+                        return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
+                    else:
+                        return HttpResponse('Invalid group size')
+                    try:
+                        pass
+                    except:
+                        return redirect("/accounts/profile")
 
         return redirect("/accounts/profile")
     else:

@@ -46,15 +46,18 @@
 
 </div>
 
-<img onclick="show_settings()" style="width: 10vw;height:auto;padding: 0px 0px;max-width:40px;" src="{% static 'logos/Gear.png' %}">
+<img onclick="show_settings()" id = "gear" style="width: 10vw;height:auto;padding: 0px 0px;max-width:40px;" src="{% static 'logos/plus.png' %}">
 
 <script>
 function show_settings() {
   var x = document.getElementById("box");
+  var y = document.getElementById("gear");
   if (x.style.display === "none") {
     x.style.display = "block";
+    y.src = "{% static 'logos/plus.png' %}";
   } else {
     x.style.display = "none";
+    y.src = "{% static 'logos/plus.png' %}";
   }
 }
 </script>

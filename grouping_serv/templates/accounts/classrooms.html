@@ -45,7 +45,21 @@
   <div style="padding: 1vw 0px"><a class="link" href= /accounts/create>{% trans "create" %} </a> </div> <div><a> <br></a></div>
 
 </div>
-<div class='ui' style="margin: auto; width: 80vw;">
+
+<button onclick="show_settings()"><img style="width: 4.5vw;height:auto;padding: 0px 0px;max-width:20px;" src="{% static 'logos/Gear.png' %}"></button>
+
+<script>
+function show_settings() {
+  var x = document.getElementById("box");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+<div class='ui' style="margin: auto; width: 80vw;" id = "box">
   <h2>{% trans "User setting" %}</h2>
   <div style="padding: 2vw 0px;"><a class='link' href= /accounts/settings>{% trans "Change user data" %} </a> </div> <div style="padding: 3vw 0px;"><a class='link' href= /accounts/signout
         style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">{% trans "Delete account" %}</a></div>

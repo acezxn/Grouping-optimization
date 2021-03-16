@@ -122,9 +122,17 @@ button[type=submit]:hover {
   margin-right: auto;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(43 202 0);
-  box-shadow: 0 0 10px rgb(0 255 0 / 100%);
+.navbar a:hover {
+  background-color: rgb(54 255 0);
+  color: black;
+  box-shadow: 0 0 20px rgb(0 255 0 / 100%);
+  transition: 0.2s;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(54 255 0);
+  box-shadow: 0 0 20px rgb(0 255 0 / 100%);
+  transition: 0.1s;
 }
 
 .username {

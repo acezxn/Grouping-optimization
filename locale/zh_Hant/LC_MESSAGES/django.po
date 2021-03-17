@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-05 12:53+0800\n"
+"POT-Creation-Date: 2021-03-17 15:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,15 @@ msgstr "錯誤的使用者名"
 msgid "verification failed"
 msgstr "認證失敗"
 
-#: grouping_serv/apps/accounts/views.py:654
+#: grouping_serv/apps/accounts/views.py:657
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/views.py:665
+#: grouping_serv/apps/accounts/views.py:668
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: grouping_serv/apps/accounts/views.py:678
+#: grouping_serv/apps/accounts/views.py:681
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
@@ -122,37 +122,37 @@ msgstr "您的教室"
 msgid "Joined classes"
 msgstr "已加入的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:17
+#: grouping_serv/templates/accounts/classrooms.html:30
+msgid "There is no classroom you have joined"
+msgstr "你沒有加入的教室"
+
+#: grouping_serv/templates/accounts/classrooms.html:34
 #: grouping_serv/templates/accounts/edit.html:4
 #: grouping_serv/templates/accounts/join.html:4
 msgid "Manage"
 msgstr "管理"
 
-#: grouping_serv/templates/accounts/classrooms.html:30
-msgid "There is no classroom you have joined"
-msgstr "你沒有加入的教室"
-
-#: grouping_serv/templates/accounts/classrooms.html:35
+#: grouping_serv/templates/accounts/classrooms.html:36
 msgid "Created classes"
 msgstr "已創建的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:40
+#: grouping_serv/templates/accounts/classrooms.html:41
 msgid "Nothing created"
 msgstr "沒有創造的教室"
 
-#: grouping_serv/templates/accounts/classrooms.html:45
+#: grouping_serv/templates/accounts/classrooms.html:46
 msgid "create"
 msgstr "創造"
 
-#: grouping_serv/templates/accounts/classrooms.html:49
+#: grouping_serv/templates/accounts/classrooms.html:67
 msgid "User setting"
 msgstr "使用者設定"
 
-#: grouping_serv/templates/accounts/classrooms.html:50
+#: grouping_serv/templates/accounts/classrooms.html:68
 msgid "Change user data"
 msgstr "更改使用者資訊"
 
-#: grouping_serv/templates/accounts/classrooms.html:51
+#: grouping_serv/templates/accounts/classrooms.html:68
 #: grouping_serv/templates/accounts/signout.html:7
 #: grouping_serv/templates/accounts/signout.html:13
 msgid "Delete account"
@@ -264,29 +264,29 @@ msgstr "< 上一頁"
 msgid "Login"
 msgstr "登入"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:134
+#: grouping_serv/templates/accounts/man/classrooms_man.html:150
 msgid "Guide"
 msgstr "教程"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:142
+#: grouping_serv/templates/accounts/man/classrooms_man.html:158
 msgid ""
 "This is a page helping you manage your classrooms, join classrooms as a "
 "student, and edit your profile."
 msgstr "這是個教室管理，加入教室，以及編輯個人檔案的頁面。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:143
+#: grouping_serv/templates/accounts/man/classrooms_man.html:159
 msgid "How is the classification of student and teacher work?"
 msgstr "如何分別學生和老師？"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:144
+#: grouping_serv/templates/accounts/man/classrooms_man.html:160
 msgid "As you create a class, you are the teacher in the class."
 msgstr "如果你創造了一個教室，你會成為該教室的老師。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:145
+#: grouping_serv/templates/accounts/man/classrooms_man.html:161
 msgid "On the other hand, if you join a class, you are a student in the class."
 msgstr "相反的，如果你加入了一個教室，你便是該教室的學生。"
 
-#: grouping_serv/templates/accounts/man/classrooms_man.html:150
+#: grouping_serv/templates/accounts/man/classrooms_man.html:166
 msgid "About the website"
 msgstr "關於這個網站"
 
@@ -337,16 +337,16 @@ msgid "Add data"
 msgstr "加入資料"
 
 #: grouping_serv/templates/accounts/profile.html:104
-#: grouping_serv/templates/accounts/profile.html:114
+#: grouping_serv/templates/accounts/profile.html:115
 msgid "Favored"
 msgstr "喜好的："
 
 #: grouping_serv/templates/accounts/profile.html:106
-#: grouping_serv/templates/accounts/profile.html:116
+#: grouping_serv/templates/accounts/profile.html:117
 msgid "Unfavored"
 msgstr "不喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:110
+#: grouping_serv/templates/accounts/profile.html:111
 msgid "Remove data"
 msgstr "刪除資料"
 
@@ -361,7 +361,7 @@ msgstr "重複輸入的密碼不吻合"
 
 #: grouping_serv/templates/accounts/setting.html:30
 msgid "Change username"
-msgstr "更改使用者資訊"
+msgstr "改變帳號名"
 
 #: grouping_serv/templates/accounts/setting.html:34
 #: grouping_serv/templates/accounts/setting.html:48
@@ -417,19 +417,19 @@ msgid ""
 "Just input the group size and press a single button, groups can be generated"
 msgstr "只需要設定組別大小，並可生成組別"
 
-#: grouping_serv/templates/index.html:18
+#: grouping_serv/templates/index.html:20
 msgid "Accurate"
 msgstr "準確性"
 
-#: grouping_serv/templates/index.html:19
+#: grouping_serv/templates/index.html:21
 msgid "Iterate all conbinations of grouping, and select the favorable results"
 msgstr "計算所有的組合，從中選取最佳結果"
 
-#: grouping_serv/templates/index.html:20
+#: grouping_serv/templates/index.html:24
 msgid "Randomness"
 msgstr "隨機選取"
 
-#: grouping_serv/templates/index.html:21
+#: grouping_serv/templates/index.html:25
 msgid "Add variety in generated results"
 msgstr "在優化組別中隨機挑選"
 

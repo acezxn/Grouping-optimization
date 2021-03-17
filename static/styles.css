@@ -102,12 +102,12 @@ button[type=submit]:hover {
 
 
 .navbar a {
-    font-family: Rajdhani;
+    font-family: Noto Sans TC;
     float: left;
     font-size: min(4.5vw, 20px);
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: min(4.5vw, 17px) min(4.5vw, 20px);
     text-decoration: none;
 }
 .logo:hover {

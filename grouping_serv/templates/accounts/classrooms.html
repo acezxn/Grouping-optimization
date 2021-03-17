@@ -65,7 +65,6 @@ function show_settings() {
 
 <div class='ui' style="margin: auto; width: 80vw; display: none;" id = "box">
   <h2>{% trans "User setting" %}</h2>
-  <div style="padding: 2vw 0px;"><a class='link' href= /accounts/settings>{% trans "Change user data" %} </a> </div> <div style="padding: 3vw 0px;"><a class='link' href= /accounts/signout
-        style="background-color: rgb(221, 0, 0); text-decoration: none; color: rgb(255, 255, 255);">{% trans "Delete account" %}</a></div>
+  <div style="padding: 2vw 0px;"><a class='link' href= /accounts/settings>{% trans "Change user data" %} </a> </div> <div style="padding: 3vw 0px;"><a class='negative_link' href= /accounts/signout>{% trans "Delete account" %}</a></div>
 </div>
 {% endblock %}

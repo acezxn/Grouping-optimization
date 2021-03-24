@@ -60,9 +60,15 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 MIDDLEWARE_CLASSES = (
-"djangosecure.middleware.SecurityMiddleware"
+"djangosecure.middleware.SecurityMiddleware",
+'django.contrib.sessions.middleware.SessionMiddleware',
+'django_session_timeout.middleware.SessionTimeoutMiddleware',
 )
 
+SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60 # group by minute
+SESSION_TIMEOUT_REDIRECT = 'accounts/login'
 SECURE_SSL_REDIRECT = True
 # # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True

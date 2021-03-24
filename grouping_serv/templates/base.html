@@ -8,12 +8,11 @@
   <meta charset = "utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
-  {% load static %}
+  {% load static i18n %}
   <link rel="stylesheet" href='{% static "/styles.css" %}'>
   <title>{% block title %}Grouping Optimization{% endblock %}</title>
 </head>
 <body>
-  {% load static i18n %}
   {% include 'navbar.html' %}
   <script src='{% static "/onscroll-effect.es6.min.js" %}'></script>
 

@@ -5,3 +5,4 @@ whitenoise
 django-secure
 django-sslserver
 psycopg2
+django-session-timeout

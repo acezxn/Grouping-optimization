@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 ]
+
 MIDDLEWARE_CLASSES = (
 "djangosecure.middleware.SecurityMiddleware",
 'django.contrib.sessions.middleware.SessionMiddleware',

@@ -336,3 +336,55 @@ to { text-decoration: none;
 .hiding_button:hover {
   filter:brightness(1.5);
 }
+
+.box {
+  font-size:4em;
+  height: 60px;
+width: 60px;
+align-items: center;
+margin: 4px;
+font-weight: 700;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#stage{
+padding:10vh, 10vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+#underline {
+transition: transform 0.3s ease-out;
+margin: auto;
+}

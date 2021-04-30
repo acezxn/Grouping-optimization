@@ -61,6 +61,10 @@ var scene = new ScrollMagic.Scene({
   triggerHook: 0.1
 })
   .setClassToggle("#underline", "expand")
+  .addIndicators({
+    name: "Box Timeline",
+    indent: 5
+  })
   .setTween(tl)
   .addTo(controller);
 </script>

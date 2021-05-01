@@ -24,11 +24,11 @@ select {
 
 h1 {
   font-family: Ubuntu;
-  font-size:min(4vw, 30px);
+  font-size:min(6vw, 40px);
 }
 h2 {
   font-family: Ubuntu;
-  font-size:min(4vw, 25px);
+  font-size:min(4.5vw, 25px);
 }
 h3 {
   font-family: Ubuntu;
@@ -46,7 +46,7 @@ input[type=submit] {
   height: auto;
   background-color: rgb(50, 100, 50);
   color: white;
-  padding: 14px 20px;
+  padding: min(14px, 2vw) 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
@@ -75,7 +75,7 @@ input[type=submit]:disabled {
 header {
   padding: 10px;
   text-align: center;
-  font-size: font-size:min(5vw, 40px);;
+  font-size: font-size:min(5vw, 40px);
 }
 
 
@@ -102,12 +102,12 @@ button[type=submit]:hover {
 
 
 .navbar a {
-    font-family: Rajdhani;
+    font-family: Noto Sans TC;
     float: left;
     font-size: min(4.5vw, 20px);
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: min(4.5vw, 17px) min(4.5vw, 20px);
     text-decoration: none;
 }
 .logo:hover {
@@ -122,9 +122,17 @@ button[type=submit]:hover {
   margin-right: auto;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(43 202 0);
-  box-shadow: 0 0 10px rgb(0 255 0 / 100%);
+.navbar a:hover {
+  background-color: rgb(54 255 0);
+  color: black;
+  box-shadow: 0 0 20px rgb(0 255 0 / 100%);
+  transition: 0.2s;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(54 255 0);
+  box-shadow: 0 0 20px rgb(0 255 0 / 100%);
+  transition: 0.1s;
 }
 
 .username {
@@ -133,20 +141,67 @@ button[type=submit]:hover {
 
 
 .link {
-    font-size: 16px;
-    text-align: center;
-    border-style: outset;
-    padding: 1vw 1vw;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(25 25 25 / 1);
-    border-radius: 4px;
+  width: 10vw;
+  min-width: 90px;
+  height: auto;
+  background-color: rgb(50, 100, 50);
+  color: white;
+  padding: min(14px, 2vw) 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
 .link:hover {
-    background-color: rgb(0, 0, 0);
-    width: 125px;
-    border-style: inset;
+    width: 10vw;
+    min-width: 90px;
+    height: auto;
+    filter: brightness(1.5);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(33 154 0);
+    color: black;
+    box-shadow: 0 0 20px rgb(0 255 0 / 100%);
+    transition: 0.2s;
+}
+
+.negative_link {
+  width: 10vw;
+  min-width: 90px;
+  height: auto;
+  background-color: rgb(221 1 2);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.negative_link:hover {
+    width: 10vw;
+    min-width: 90px;
+    height: auto;
+    background-color: rgb(255 119 119)1)1);
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 20px rgb(255 0 0);
+    transition: 0.2s;
 }
 
 .ui {
@@ -277,4 +332,59 @@ to { text-decoration: none;
   padding: 2px 16px;
   background-color: rgb(12, 20, 0);
   color: white;
+}
+.hiding_button:hover {
+  filter:brightness(1.5);
+}
+
+.box {
+  font-size:4em;
+  height: 60px;
+width: 60px;
+align-items: center;
+margin: 4px;
+font-weight: 700;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#stage{
+padding:10vh, 10vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+#underline {
+transition: transform 0.3s ease-out;
+margin: auto;
 }

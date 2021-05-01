@@ -376,6 +376,11 @@ flex-wrap: wrap;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+.expand {
+	transform: scale(2.5, 1);
+}
+
 #stage{
 padding:10vh, 10vh;
 width: 100%;

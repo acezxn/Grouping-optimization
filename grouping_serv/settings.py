@@ -22,6 +22,10 @@ PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+# STRIPE_PUBLISHABLE_KEY = os.environ.get('stripe_pubkey')
+# STRIPE_SECRET_KEY = os.environ.get('stripe_privkey')
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SESSION_EXPIRE_AT_BROWSER_CLOSE=True
@@ -125,6 +129,7 @@ DATABASES = {
         'PORT':'5432'
     }
 }
+
 
 
 # Password validation

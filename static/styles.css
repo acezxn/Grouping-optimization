@@ -37,7 +37,7 @@ h3 {
 
 p {
   font-family: Ubuntu;
-  font-size:min(3vw, 15px);
+  font-size:min(10em, 20px);
 }
 
 input[type=submit] {

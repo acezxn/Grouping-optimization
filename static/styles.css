@@ -24,11 +24,11 @@ select {
 
 h1 {
   font-family: Ubuntu;
-  font-size:min(6vw, 40px);
+  font-size: min(6em, max(2em, 40px));
 }
 h2 {
   font-family: Ubuntu;
-  font-size:min(4.5vw, 25px);
+  font-size: min(4.5em, max(2em, 30px));
 }
 h3 {
   font-family: Ubuntu;

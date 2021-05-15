@@ -22,7 +22,6 @@ PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = "%m1xgwfwnfroinirnrnignpngpreingriengreingerpngiepr"
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
@@ -121,23 +120,13 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 #         },
 #     }
 # }
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         'NAME': os.environ.get('NAME'),
-#         'HOST': os.environ.get('HOST'),
-#         'USER': os.environ.get('USER'),
-#         'PASSWORD': os.environ.get('PASSWORD'),
-#         'PORT':'5432'
-#     }
-# }
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': "d1aievjol527br",
-        'HOST': "ec2-54-235-192-146.compute-1.amazonaws.com",
-        'USER': "znesgytohskxvv",
-        'PASSWORD': "dda0d9b4e2fc6f034f61ea2a585695fdcaa52b27fc12c32fc807bd68ce3dfc74",
+        'NAME': os.environ.get('NAME'),
+        'HOST': os.environ.get('HOST'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
         'PORT':'5432'
     }
 }

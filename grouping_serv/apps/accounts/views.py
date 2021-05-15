@@ -571,14 +571,13 @@ def leave(request):
                 except:
                     pass
             else:
-                return HttpResponse("You own this classroom")
+                return render(request, "error.html", {"error": gettext("The classroom is yours. To leave, go into your class and delete it.")})
             profile.disliked = json.dumps(disliked)
             profile.save()
             print("saved")
             return redirect("/accounts/profile")
         else:
-            print("invalid")
-            return HttpResponse("Invalid selection")
+            return render(request, "error.html", {"error": gettext("Invalid selection")})
     else:
         return redirect('/accounts/login')
 
@@ -587,7 +586,6 @@ def compute(request, q):
     # authentication gate needed
     if request.user.is_authenticated:
         if request.method == "POST":
-            print('POOOST')
             profile = UserProfile.objects.get(user_id=request.user.id)
             if q not in profile.created:
                 return redirect("/accounts/profile")
@@ -623,11 +621,11 @@ def compute(request, q):
                 try:
                     size = int(request.POST['size'])
                     if size <= 0:
-                        return HttpResponse('Group size not a natural number')
+                        return render(request, "error.html", {"error": gettext("Group size not a natural number")})
                 except:
-                    return HttpResponse('Group size not a natural number')
+                   return render(request, "error.html", {"error": gettext("Group size not a natural number")})
                 if size > len(total):
-                    return HttpResponse('Group size exceeds the total amount of people')
+                    return render(request, "error.html", {"error": gettext("Group size exceeds the total amount of people")})
                 else:
                     G, state = combination_group.start_group(
                         size=size, favor_data=favor_data, total=total, rule=rule)

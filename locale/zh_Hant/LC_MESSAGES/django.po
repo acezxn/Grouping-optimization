@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 11:46+0800\n"
+"POT-Creation-Date: 2021-05-15 17:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,23 +55,23 @@ msgstr "帳號名已經存在"
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:174
+#: grouping_serv/settings.py:178
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:175
+#: grouping_serv/settings.py:179
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
-#: grouping_serv/templates/404.html:11
+#: grouping_serv/templates/404.html:12
 msgid "Not found"
 msgstr "找不到"
 
-#: grouping_serv/templates/404.html:15
+#: grouping_serv/templates/404.html:16
 msgid "Sorry! the page is not found on the server"
 msgstr "這個網址不存在"
 
-#: grouping_serv/templates/404.html:16 grouping_serv/templates/error.html:16
+#: grouping_serv/templates/404.html:18
 msgid "Return to home"
 msgstr "回到首頁"
 
@@ -456,10 +456,6 @@ msgstr "重新輸入新密碼"
 #: grouping_serv/templates/navbar.html:66
 msgid "Sign up"
 msgstr "註冊"
-
-#: grouping_serv/templates/error.html:11
-msgid "Something's wrong"
-msgstr ""
 
 #: grouping_serv/templates/index.html:5
 msgid "home"

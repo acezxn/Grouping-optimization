@@ -21,14 +21,15 @@ PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "%m1xgwfwnfroinirnrnignpngpreingriengreingerpngiepr"
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 # SESSION_COOKIE_HTTPSONLY=True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
 
@@ -115,13 +116,23 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 #         },
 #     }
 # }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         'NAME': os.environ.get('NAME'),
+#         'HOST': os.environ.get('HOST'),
+#         'USER': os.environ.get('USER'),
+#         'PASSWORD': os.environ.get('PASSWORD'),
+#         'PORT':'5432'
+#     }
+# }
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': os.environ.get('NAME'),
-        'HOST': os.environ.get('HOST'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
+        'NAME': "d1aievjol527br",
+        'HOST': "ec2-54-235-192-146.compute-1.amazonaws.com",
+        'USER': "znesgytohskxvv",
+        'PASSWORD': "dda0d9b4e2fc6f034f61ea2a585695fdcaa52b27fc12c32fc807bd68ce3dfc74",
         'PORT':'5432'
     }
 }

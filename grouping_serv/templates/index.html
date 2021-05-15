@@ -12,21 +12,58 @@
 </header>
 <!-- <div data-scroll="scully" data-scroll-repeat="true"> … </div> -->
 <h1 style = "font-family: Ubuntu; text-align: center;">{% trans "A website with algorithm to assist grouping" %}</h1>
+<a id = "convenient"></a>
 <h2 style = "font-family: Ubuntu;text-align:center;border: 0.1vw solid;padding: 3vw">{% trans "Number of users:" %} {{users}}</h2>
 
 <div style="height:10vw;width:20vw;margin-left: auto;margin-right: auto;"></div>
 <header style="font-size: 6vw; text-align: center; font-family: Noto Sans TC;">{% trans "Convenient" %}</header>
 <h1 style="font-family: Ubuntu;text-align: center;">{% trans "Just input the group size and press a single button, groups can be generated" %}</h1>
-<div style="height:10vw;width:20vw;margin-left: auto;margin-right: auto;"></div>
+<div id="stage">
+    <div class="box">i</div>
+    <div class="box">i</div>
+    <div class="box">i</div>
+    <div class="box">i</div>
+    <div class="box">i</div>
+    <div class="box">i</div>
+</div>
+<div style ="border-top: solid; width: 20%; margin-right: auto; margin-left: auto;" id = "underline"></div>
+<div style ="margin-right: auto; margin-left: auto;text-align:center;font-size:4em;">+</div>
 
 <header style="font-size: 6vw; text-align: center; font-family: Noto Sans TC;">{% trans "Accurate" %}</header>
 <h1 style="font-family: Ubuntu;text-align: center;">{% trans "Iterate all conbinations of grouping, and select the favorable results" %}</h1>
-<div style="height:10vw;width:20vw;margin-left: auto;margin-right: auto;"></div>
-
+<div style ="font-size: 3vw; border: 0.1px solid;padding: 5vw 5vw; width: 20%; margin-right: auto; margin-left: auto; text-align: center;" class="shake-little shake-constant">{% trans "Optimization" %}</div>
+<div style ="margin-right: auto; margin-left: auto;text-align:center;padding-top:4vh;"><i class="arrow down"></i></div>
 <header style="font-size: 6vw; text-align: center; font-family: Noto Sans TC;">{% trans "Randomness" %}</header>
 <h1 style="font-family: Ubuntu;text-align: center;">{% trans "Add variety in generated results" %}</h1>
 <!-- <img src = "{% static 'images/done.png' %}"> -->
 <footer>
   {% get_current_language as LANGUAGE_CODE %}
 </footer>
+<script>
+TweenLite.defaultEase = Linear.easeNone;
+
+var controller = new ScrollMagic.Controller();
+var tl = new TimelineMax();
+tl.staggerFrom(".box", 0.5, {
+  scale: 0,
+  cycle: {
+    y: [-50, 50]
+  },
+  ease: Back.easeOut,
+  stagger: {
+    from: "center",
+    amount: 0.25
+  }
+});
+
+
+var scene = new ScrollMagic.Scene({
+  triggerElement: "#convenient",
+  triggerHook: 0.1
+})
+  .setClassToggle("#underline", "expand")
+
+  .setTween(tl)
+  .addTo(controller);
+</script>
 {% endblock %}

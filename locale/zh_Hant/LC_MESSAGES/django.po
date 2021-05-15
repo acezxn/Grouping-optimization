@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-17 15:09+0800\n"
+"POT-Creation-Date: 2021-05-01 16:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,11 @@ msgstr "帳號名已經存在"
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:154
+#: grouping_serv/settings.py:161
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:155
+#: grouping_serv/settings.py:162
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
@@ -400,36 +400,40 @@ msgstr "首頁"
 msgid "Grouping Optimizer"
 msgstr "分組優化"
 
-#: grouping_serv/templates/index.html:13
+#: grouping_serv/templates/index.html:14
 msgid "A website with algorithm to assist grouping"
 msgstr "優化分組的演算法網站"
 
-#: grouping_serv/templates/index.html:14
+#: grouping_serv/templates/index.html:16
 msgid "Number of users:"
 msgstr "已註冊的人數"
 
-#: grouping_serv/templates/index.html:16
+#: grouping_serv/templates/index.html:19
 msgid "Convenient"
 msgstr "方便性"
 
-#: grouping_serv/templates/index.html:17
+#: grouping_serv/templates/index.html:20
 msgid ""
 "Just input the group size and press a single button, groups can be generated"
 msgstr "只需要設定組別大小，並可生成組別"
 
-#: grouping_serv/templates/index.html:20
+#: grouping_serv/templates/index.html:32
 msgid "Accurate"
 msgstr "準確性"
 
-#: grouping_serv/templates/index.html:21
+#: grouping_serv/templates/index.html:33
 msgid "Iterate all conbinations of grouping, and select the favorable results"
 msgstr "計算所有的組合，從中選取最佳結果"
 
-#: grouping_serv/templates/index.html:24
+#: grouping_serv/templates/index.html:34
+msgid "Optimization"
+msgstr "優化演算法"
+
+#: grouping_serv/templates/index.html:36
 msgid "Randomness"
 msgstr "隨機選取"
 
-#: grouping_serv/templates/index.html:25
+#: grouping_serv/templates/index.html:37
 msgid "Add variety in generated results"
 msgstr "在優化組別中隨機挑選"
 

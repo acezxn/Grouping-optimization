@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+        <title>{% trans "Something's wrong" %}</title>
+    </head>
+
+<body>
+    <h1 style = "text-align: center; font-family: 'Noto Sans TC', sans-serif;">{{error}}</h1>
+    <a class = "link" href="/" style = "font-family: 'Noto Sans TC', sans-serif;">{% trans "Return to home" %}</a>
+</body>
+</html>

@@ -75,7 +75,7 @@ input[type=submit]:disabled {
 header {
   padding: 10px;
   text-align: center;
-  font-size: font-size:min(5vw, 40px);
+  font-size:min(5vw, 40px);
 }
 
 

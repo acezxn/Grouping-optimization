@@ -1,40 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- <style>
-a:hover {
-  background-color: rgb(255, 100, 100);
-}
-a:checked {
-  background-color: rgb(150, 100, 100);
-}
-.username:hover {
-  background-color: rgb(100, 100, 255);
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style> -->
 {% load i18n %}
 
 <div class="navbar">
@@ -125,7 +90,7 @@ background-color: rgb(1, 79, 0);
     text-align: center;
 ">
       {% for language in languages %}
-      
+
       <option value="{{ language.code }}"
           {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
           {{language.name_translated}}

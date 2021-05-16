@@ -59,7 +59,7 @@ msgstr "無效的字母"
 
 #: grouping_serv/apps/accounts/views.py:531
 msgid "Class already joined"
-msgstr ""
+msgstr "已經加數該教室"
 
 #: grouping_serv/apps/accounts/views.py:543
 msgid "class not exist"

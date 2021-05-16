@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 17:35+0800\n"
+"POT-Creation-Date: 2021-05-16 14:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,48 +18,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: grouping_serv/apps/accounts/views.py:295
+#: grouping_serv/apps/accounts/views.py:100
+#: grouping_serv/apps/accounts/views.py:127
+msgid "Cannot find specified user"
+msgstr "找不到指定的使用者"
+
+#: grouping_serv/apps/accounts/views.py:225
+msgid "Classroom not yours"
+msgstr "你有教室的擁有權"
+
+#: grouping_serv/apps/accounts/views.py:227
+#, fuzzy
+#| msgid "Join classroom"
+msgid "No such classroom"
+msgstr "加入教室"
+
+#: grouping_serv/apps/accounts/views.py:296
 msgid "incorrect username"
 msgstr "錯誤的使用者名"
 
-#: grouping_serv/apps/accounts/views.py:342
+#: grouping_serv/apps/accounts/views.py:343
 msgid "verification failed"
 msgstr "認證失敗"
 
-#: grouping_serv/apps/accounts/views.py:574
+#: grouping_serv/apps/accounts/views.py:475
+msgid "Max number of class created reached"
+msgstr "你已經達到最大班級創造數"
+
+#: grouping_serv/apps/accounts/views.py:481
+#, fuzzy
+#| msgid "user already exists"
+msgid "class already created"
+msgstr "帳號名已經存在"
+
+#: grouping_serv/apps/accounts/views.py:486
+#, fuzzy
+#| msgid "invalid characters"
+msgid "Invalid class name"
+msgstr "無效的字母"
+
+#: grouping_serv/apps/accounts/views.py:531
+msgid "Class already joined"
+msgstr ""
+
+#: grouping_serv/apps/accounts/views.py:543
+msgid "class not exist"
+msgstr "教室不存在"
+
+#: grouping_serv/apps/accounts/views.py:545
+#, fuzzy
+#| msgid "Class password"
+msgid "Invalid classid or password"
+msgstr "加入碼: "
+
+#: grouping_serv/apps/accounts/views.py:575
 msgid "The classroom is yours. To leave, go into your class and delete it."
 msgstr "這是你創建的教室。如果要離開，嘗試刪除教室。"
 
-#: grouping_serv/apps/accounts/views.py:580
+#: grouping_serv/apps/accounts/views.py:581
 msgid "Invalid selection"
 msgstr "指定教室無效"
 
-#: grouping_serv/apps/accounts/views.py:624
-#: grouping_serv/apps/accounts/views.py:626
+#: grouping_serv/apps/accounts/views.py:625
+#: grouping_serv/apps/accounts/views.py:627
 msgid "Group size not a natural number"
 msgstr "組別大小不是正整數"
 
-#: grouping_serv/apps/accounts/views.py:628
+#: grouping_serv/apps/accounts/views.py:629
 msgid "Group size exceeds the total amount of people"
 msgstr "組別大小超過總人數"
 
-#: grouping_serv/apps/accounts/views.py:655
+#: grouping_serv/apps/accounts/views.py:636
+msgid "Invalid group size"
+msgstr "單組人數: "
+
+#: grouping_serv/apps/accounts/views.py:656
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/views.py:666
+#: grouping_serv/apps/accounts/views.py:667
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: grouping_serv/apps/accounts/views.py:679
+#: grouping_serv/apps/accounts/views.py:680
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:178
+#: grouping_serv/settings.py:167
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:179
+#: grouping_serv/settings.py:168
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
@@ -71,9 +120,18 @@ msgstr "找不到"
 msgid "Sorry! the page is not found on the server"
 msgstr "這個網址不存在"
 
-#: grouping_serv/templates/404.html:18
+#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
+#: grouping_serv/templates/error.html:16
 msgid "Return to home"
 msgstr "回到首頁"
+
+#: grouping_serv/templates/500.html:12
+msgid "Oops"
+msgstr ""
+
+#: grouping_serv/templates/500.html:16
+msgid "Sorry! It's not your problem!"
+msgstr ""
 
 #: grouping_serv/templates/about.html:4 grouping_serv/templates/navbar.html:49
 #: grouping_serv/templates/navbar.html:51
@@ -456,6 +514,10 @@ msgstr "重新輸入新密碼"
 #: grouping_serv/templates/navbar.html:66
 msgid "Sign up"
 msgstr "註冊"
+
+#: grouping_serv/templates/error.html:11
+msgid "Something's wrong"
+msgstr ""
 
 #: grouping_serv/templates/index.html:5
 msgid "home"

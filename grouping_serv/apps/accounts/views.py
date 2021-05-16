@@ -97,7 +97,8 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Cannot find specified user')
+                                return render(request, "error.html", {"error": gettext("Cannot find specified user")})
+
                             # if request.POST["favored"].replace(" ", "").split(",") != [""]:
                             #
                             # else:
@@ -123,7 +124,7 @@ def ProfileView(request, q):
                                             break
                                         idx += 1
                             else:
-                                return HttpResponse('Cannot find specified user')
+                                return render(request, "error.html", {"error": gettext("Cannot find specified user")})
                             # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
                             #
                             # else:
@@ -221,9 +222,9 @@ def ProfileView(request, q):
                             },
                         )
                 else:
-                    return HttpResponse("Classroom not yours")
+                    return render(request, "error.html", {"error": gettext("Classroom not yours")})
             else:
-                return HttpResponse("No such classroom")
+                return render(request, "error.html", {"error": gettext("No such classroom")})
 
         #     return redirect("/accounts/profile")
         # print(json.loads(request.user.profile.favored))
@@ -471,18 +472,18 @@ def create(request):
             classes = []
             relation = UserProfile.objects.get(user_id=request.user.id)
             if len(relation.created) >= 5:
-                return HttpResponse("Max number of class created reached")
+                return render(request, "error.html", {"error": gettext("Max number of class created reached")})
             for u in user:
                 userprofile = UserProfile.objects.get(user_id=u.id)
                 classes.extend(userprofile.created)
 
             if request.POST["classid"] in classes:
-                return HttpResponse("class already created")
+                return render(request, "error.html", {"error": gettext("class already created")})
             else:
                 for e in list(request.POST["classid"]):
                     valid_char = string.ascii_letters + string.digits
                     if e not in valid_char:
-                        return HttpResponse("Invalid class name")
+                        return render(request, "error.html", {"error": gettext("Invalid class name")})
                 relation.created.append(request.POST["classid"])
                 passcode = json.loads(relation.passcode)
 
@@ -527,7 +528,7 @@ def join(request):
                 if permitted:
                     if request.POST["classid"] in classes:
                         if request.POST["classid"] in relation.classrooms:
-                            return HttpResponse("Class already joined")
+                            return render(request, "error.html", {"error": gettext("Class already joined")})
                         else:
                             relation.classrooms.append(request.POST["classid"])
                             favored = json.loads(relation.favored)
@@ -539,9 +540,9 @@ def join(request):
                             relation.save()
                             return redirect("/accounts/profile")
                     else:
-                        return HttpResponse("class not exist")
+                        return render(request, "error.html", {"error": gettext("class not exist")})
                 else:
-                    return HttpResponse("Invalid classid or password")
+                    return render(request, "error.html", {"error": gettext("Invalid classid or password")})
         else:
             return render(request, "accounts/join.html", {})
     else:
@@ -632,7 +633,7 @@ def compute(request, q):
                     if state:
                         return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
                     else:
-                        return HttpResponse('Invalid group size')
+                        return render(request, "error.html", {"error": gettext('Invalid group size')})
                     try:
                         pass
                     except:

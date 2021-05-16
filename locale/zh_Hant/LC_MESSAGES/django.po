@@ -59,7 +59,7 @@ msgstr "無效的字母"
 
 #: grouping_serv/apps/accounts/views.py:531
 msgid "Class already joined"
-msgstr "已經加數該教室"
+msgstr "已經加入該教室"
 
 #: grouping_serv/apps/accounts/views.py:543
 msgid "class not exist"
@@ -127,11 +127,11 @@ msgstr "回到首頁"
 
 #: grouping_serv/templates/500.html:12
 msgid "Oops"
-msgstr ""
+msgstr "抱歉！"
 
 #: grouping_serv/templates/500.html:16
 msgid "Sorry! It's not your problem!"
-msgstr ""
+msgstr "抱歉，這不是你的問題！"
 
 #: grouping_serv/templates/about.html:4 grouping_serv/templates/navbar.html:49
 #: grouping_serv/templates/navbar.html:51

@@ -72,10 +72,12 @@ input[type=submit]:disabled {
   color: #666666;
 }
 
+
 header {
   padding: 10px;
   text-align: center;
   font-size:min(5vw, 40px);
+  font-weight: 100;
 }
 
 

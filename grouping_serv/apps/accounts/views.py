@@ -84,7 +84,7 @@ def ProfileView(request, q):
                                 for data in favored:
                                     print(data)
                                     if data[0] == q:
-                                        for u in users:
+                                        for u in user:
                                             for d in processed_data:
                                                 if u.username == d:
                                                     if q not in u.classrooms:
@@ -120,7 +120,7 @@ def ProfileView(request, q):
                                 for data in disliked:
                                     print(data)
                                     if data[0] == q:
-                                        for u in users:
+                                        for u in user:
                                             for d in processed_data:
                                                 if u.username == d:
                                                     if q not in u.classrooms:

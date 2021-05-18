@@ -85,9 +85,18 @@ def ProfileView(request, q):
                                     for data in favored:
                                         print(data)
                                         if data[0] == q:
+                                            for u in users:
+                                                for d in processed_data:
+                                                    if u.username == d:
+                                                        if q is not in u.classrooms:
+                                                            return render(request, "error.html", {"error": gettext("User not in this classroom")})
+                                                    if d in data[1]:
+                                                        return render(request, "error.html", {"error": gettext("User already added")})
                                             print(
                                                 [data[0], data[1] + processed_data]
                                             )
+
+
                                             favored[idx] = [
                                                 data[0],
                                                 data[1] + processed_data,
@@ -112,6 +121,13 @@ def ProfileView(request, q):
                                     for data in disliked:
                                         print(data)
                                         if data[0] == q:
+                                            for u in users:
+                                                for d in processed_data:
+                                                    if u.username == d:
+                                                        if q is not in u.classrooms:
+                                                            return render(request, "error.html", {"error": gettext("User not in this classroom")})
+                                                    if d in data[1]:
+                                                        return render(request, "error.html", {"error": gettext("User already added")})
                                             print(
                                                 [data[0], data[1] + processed_data]
                                             )

@@ -144,24 +144,24 @@ def ProfileView(request, q):
                         #
                         # else:
                         #     relation.disliked = relation.disliked
-                    except:
-                        pass
-
-                    # remove data
-                    try:
-                        idx = 0
-                        favored = json.loads(relation.favored)
-                        for data in favored:
-                            if data[0] == q:
-                                for element in request.POST["rm_favored"].replace(" ", "").split(","):
-                                    data[1].remove(element)
-
-                                favored[idx] = [data[0], data[1]]
-                                relation.favored = json.dumps(favored)
-                                break
-                            idx += 1
                         try:
                             pass
+                        except:
+                            pass
+
+                        # remove data
+                        try:
+                            idx = 0
+                            favored = json.loads(relation.favored)
+                            for data in favored:
+                                if data[0] == q:
+                                    for element in request.POST["rm_favored"].replace(" ", "").split(","):
+                                        data[1].remove(element)
+
+                                    favored[idx] = [data[0], data[1]]
+                                    relation.favored = json.dumps(favored)
+                                    break
+                                idx += 1
 
                         except Exception as e:
                             print(e)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-16 14:17+0800\n"
+"POT-Creation-Date: 2021-05-18 17:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,89 +18,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: grouping_serv/apps/accounts/views.py:100
-#: grouping_serv/apps/accounts/views.py:127
+#: grouping_serv/apps/accounts/views.py:93
+#: grouping_serv/apps/accounts/views.py:129
+msgid "User not in this classroom"
+msgstr "該使用者不再這個教室"
+
+#: grouping_serv/apps/accounts/views.py:95
+#: grouping_serv/apps/accounts/views.py:131
+msgid "User already added"
+msgstr "已經加入該帳號"
+
+#: grouping_serv/apps/accounts/views.py:110
+#: grouping_serv/apps/accounts/views.py:144
 msgid "Cannot find specified user"
 msgstr "找不到指定的使用者"
 
-#: grouping_serv/apps/accounts/views.py:225
+#: grouping_serv/apps/accounts/views.py:242
 msgid "Classroom not yours"
 msgstr "你有教室的擁有權"
 
-#: grouping_serv/apps/accounts/views.py:227
+#: grouping_serv/apps/accounts/views.py:244
 #, fuzzy
 #| msgid "Join classroom"
 msgid "No such classroom"
 msgstr "加入教室"
 
-#: grouping_serv/apps/accounts/views.py:296
+#: grouping_serv/apps/accounts/views.py:313
 msgid "incorrect username"
 msgstr "錯誤的使用者名"
 
-#: grouping_serv/apps/accounts/views.py:343
+#: grouping_serv/apps/accounts/views.py:360
 msgid "verification failed"
 msgstr "認證失敗"
 
-#: grouping_serv/apps/accounts/views.py:475
+#: grouping_serv/apps/accounts/views.py:492
 msgid "Max number of class created reached"
 msgstr "你已經達到最大班級創造數"
 
-#: grouping_serv/apps/accounts/views.py:481
-#, fuzzy
-#| msgid "user already exists"
+#: grouping_serv/apps/accounts/views.py:498
 msgid "class already created"
-msgstr "帳號名已經存在"
+msgstr "已經創造該教室"
 
-#: grouping_serv/apps/accounts/views.py:486
+#: grouping_serv/apps/accounts/views.py:503
 #, fuzzy
 #| msgid "invalid characters"
 msgid "Invalid class name"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/views.py:531
+#: grouping_serv/apps/accounts/views.py:548
 msgid "Class already joined"
 msgstr "已經加入該教室"
 
-#: grouping_serv/apps/accounts/views.py:543
+#: grouping_serv/apps/accounts/views.py:560
 msgid "class not exist"
 msgstr "教室不存在"
 
-#: grouping_serv/apps/accounts/views.py:545
+#: grouping_serv/apps/accounts/views.py:562
 #, fuzzy
 #| msgid "Class password"
 msgid "Invalid classid or password"
 msgstr "加入碼: "
 
-#: grouping_serv/apps/accounts/views.py:575
+#: grouping_serv/apps/accounts/views.py:592
 msgid "The classroom is yours. To leave, go into your class and delete it."
 msgstr "這是你創建的教室。如果要離開，嘗試刪除教室。"
 
-#: grouping_serv/apps/accounts/views.py:581
+#: grouping_serv/apps/accounts/views.py:598
 msgid "Invalid selection"
 msgstr "指定教室無效"
 
-#: grouping_serv/apps/accounts/views.py:625
-#: grouping_serv/apps/accounts/views.py:627
+#: grouping_serv/apps/accounts/views.py:642
+#: grouping_serv/apps/accounts/views.py:644
 msgid "Group size not a natural number"
 msgstr "組別大小不是正整數"
 
-#: grouping_serv/apps/accounts/views.py:629
+#: grouping_serv/apps/accounts/views.py:646
 msgid "Group size exceeds the total amount of people"
 msgstr "組別大小超過總人數"
 
-#: grouping_serv/apps/accounts/views.py:636
+#: grouping_serv/apps/accounts/views.py:653
 msgid "Invalid group size"
 msgstr "單組人數: "
 
-#: grouping_serv/apps/accounts/views.py:656
+#: grouping_serv/apps/accounts/views.py:673
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/views.py:667
+#: grouping_serv/apps/accounts/views.py:684
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: grouping_serv/apps/accounts/views.py:680
+#: grouping_serv/apps/accounts/views.py:697
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
@@ -133,8 +141,8 @@ msgstr "抱歉！"
 msgid "Sorry! It's not your problem!"
 msgstr "抱歉，這不是你的問題！"
 
-#: grouping_serv/templates/about.html:4 grouping_serv/templates/navbar.html:49
-#: grouping_serv/templates/navbar.html:51
+#: grouping_serv/templates/about.html:4 grouping_serv/templates/navbar.html:14
+#: grouping_serv/templates/navbar.html:16
 msgid "About"
 msgstr "關於"
 
@@ -383,7 +391,7 @@ msgstr "< 上一頁"
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6
 #: grouping_serv/templates/accounts/login.html:10
-#: grouping_serv/templates/navbar.html:62
+#: grouping_serv/templates/navbar.html:27
 msgid "Login"
 msgstr "登入"
 
@@ -510,14 +518,14 @@ msgstr "重新輸入新密碼"
 #: grouping_serv/templates/accounts/signup.html:4
 #: grouping_serv/templates/accounts/signup.html:6
 #: grouping_serv/templates/accounts/signup.html:21
-#: grouping_serv/templates/navbar.html:64
-#: grouping_serv/templates/navbar.html:66
+#: grouping_serv/templates/navbar.html:29
+#: grouping_serv/templates/navbar.html:31
 msgid "Sign up"
 msgstr "註冊"
 
 #: grouping_serv/templates/error.html:11
 msgid "Something's wrong"
-msgstr ""
+msgstr "有些問題"
 
 #: grouping_serv/templates/index.html:5
 msgid "home"
@@ -544,31 +552,30 @@ msgid ""
 "Just input the group size and press a single button, groups can be generated"
 msgstr "只需要設定組別大小，並可生成組別"
 
-#: grouping_serv/templates/index.html:32
+#: grouping_serv/templates/index.html:33
 msgid "Accurate"
 msgstr "準確性"
 
-#: grouping_serv/templates/index.html:33
+#: grouping_serv/templates/index.html:34
 msgid "Iterate all conbinations of grouping, and select the favorable results"
 msgstr "計算所有的組合，從中選取最佳結果"
 
-#: grouping_serv/templates/index.html:34
+#: grouping_serv/templates/index.html:35
 msgid "Optimization"
 msgstr "優化演算法"
 
-#: grouping_serv/templates/index.html:36
+#: grouping_serv/templates/index.html:37
 msgid "Randomness"
 msgstr "隨機選取"
 
-#: grouping_serv/templates/index.html:37
+#: grouping_serv/templates/index.html:38
 msgid "Add variety in generated results"
 msgstr "在優化組別中隨機挑選"
 
-#: grouping_serv/templates/navbar.html:44
-#: grouping_serv/templates/navbar.html:46
+#: grouping_serv/templates/navbar.html:9 grouping_serv/templates/navbar.html:11
 msgid "Home"
 msgstr "首頁"
 
-#: grouping_serv/templates/navbar.html:60
+#: grouping_serv/templates/navbar.html:25
 msgid "Logout"
 msgstr "登出"

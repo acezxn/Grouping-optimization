@@ -73,80 +73,79 @@ def ProfileView(request, q):
                         relation = UserProfile.objects.get(user_id=userid)
 
                         # post data
-                        processed_data, state = normalize(
-                            request.POST["favored"].split(","))
-                        print('processed_data: ', processed_data)
-                        if state == 1:
-                            if processed_data != [""]:
-                                idx = 0
-                                favored = json.loads(relation.favored)
-                                print(favored)
-                                for data in favored:
-                                    print(data)
-                                    if data[0] == q:
-                                        for u in user:
-                                            for d in processed_data:
-                                                if u.username == d:
-
-                                                    if q not in UserProfile.objects.get(user_id=u.id).classrooms:
-                                                        return render(request, "error.html", {"error": gettext("User not in this classroom")})
-                                                if d in data[1]:
-                                                    return render(request, "error.html", {"error": gettext("User already added")})
-                                        print(
-                                            [data[0], data[1] + processed_data]
-                                        )
-
-
-                                        favored[idx] = [
-                                            data[0],
-                                            data[1] + processed_data,
-                                        ]
-                                        relation.favored = json.dumps(
-                                            favored)
-                                        break
-                                    idx += 1
-                        else:
-                            return render(request, "error.html", {"error": gettext("Cannot find specified user")})
-
-                        # if request.POST["favored"].replace(" ", "").split(",") != [""]:
-                        #
-                        # else:
-                        #     pass
-                        processed_data, state = normalize(
-                            request.POST["disliked"].split(","))
-                        if state == 1:
-                            if processed_data != [""]:
-                                idx = 0
-                                disliked = json.loads(relation.disliked)
-                                for data in disliked:
-                                    print(data)
-                                    if data[0] == q:
-                                        for u in user:
-                                            for d in processed_data:
-                                                if u.username == d:
-                                                    if q not in UserProfile.objects.get(user_id=u.id).classrooms:
-                                                        return render(request, "error.html", {"error": gettext("User not in this classroom")})
-                                                if d in data[1]:
-                                                    return render(request, "error.html", {"error": gettext("User already added")})
-                                        print(
-                                            [data[0], data[1] + processed_data]
-                                        )
-                                        disliked[idx] = [
-                                            data[0],
-                                            data[1] + processed_data,
-                                        ]
-                                        relation.disliked = json.dumps(
-                                            disliked)
-                                        break
-                                    idx += 1
-                        else:
-                            return render(request, "error.html", {"error": gettext("Cannot find specified user")})
-                        # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
-                        #
-                        # else:
-                        #     relation.disliked = relation.disliked
                         try:
-                            pass
+                            processed_data, state = normalize(
+                                request.POST["favored"].split(","))
+                            print('processed_data: ', processed_data)
+                            if state == 1:
+                                if processed_data != [""]:
+                                    idx = 0
+                                    favored = json.loads(relation.favored)
+                                    print(favored)
+                                    for data in favored:
+                                        print(data)
+                                        if data[0] == q:
+                                            for u in user:
+                                                for d in processed_data:
+                                                    if u.username == d:
+
+                                                        if q not in UserProfile.objects.get(user_id=u.id).classrooms:
+                                                            return render(request, "error.html", {"error": gettext("User not in this classroom")})
+                                                    if d in data[1]:
+                                                        return render(request, "error.html", {"error": gettext("User already added")})
+                                            print(
+                                                [data[0], data[1] + processed_data]
+                                            )
+
+
+                                            favored[idx] = [
+                                                data[0],
+                                                data[1] + processed_data,
+                                            ]
+                                            relation.favored = json.dumps(
+                                                favored)
+                                            break
+                                        idx += 1
+                            else:
+                                return render(request, "error.html", {"error": gettext("Cannot find specified user")})
+
+                            # if request.POST["favored"].replace(" ", "").split(",") != [""]:
+                            #
+                            # else:
+                            #     pass
+                            processed_data, state = normalize(
+                                request.POST["disliked"].split(","))
+                            if state == 1:
+                                if processed_data != [""]:
+                                    idx = 0
+                                    disliked = json.loads(relation.disliked)
+                                    for data in disliked:
+                                        print(data)
+                                        if data[0] == q:
+                                            for u in user:
+                                                for d in processed_data:
+                                                    if u.username == d:
+                                                        if q not in UserProfile.objects.get(user_id=u.id).classrooms:
+                                                            return render(request, "error.html", {"error": gettext("User not in this classroom")})
+                                                    if d in data[1]:
+                                                        return render(request, "error.html", {"error": gettext("User already added")})
+                                            print(
+                                                [data[0], data[1] + processed_data]
+                                            )
+                                            disliked[idx] = [
+                                                data[0],
+                                                data[1] + processed_data,
+                                            ]
+                                            relation.disliked = json.dumps(
+                                                disliked)
+                                            break
+                                        idx += 1
+                            else:
+                                return render(request, "error.html", {"error": gettext("Cannot find specified user")})
+                            # if request.POST["disliked"].replace(" ", "").split(",") != [""]:
+                            #
+                            # else:
+                            #     relation.disliked = relation.disliked
                         except:
                             pass
 

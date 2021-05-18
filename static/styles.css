@@ -109,6 +109,7 @@ button[type=submit]:hover {
     text-align: center;
     padding: min(4.5vw, 17px) min(4.5vw, 20px);
     text-decoration: none;
+    font-weight: 100;
 }
 .logo:hover {
     filter:brightness(1.5);
@@ -324,6 +325,7 @@ to { text-decoration: none;
   padding: 2px 16px;
   background-color: rgb(12, 20, 0);
   color: white;
+  font-weight: 100;
 }
 
 .modal-body {padding: 2px 16px;}

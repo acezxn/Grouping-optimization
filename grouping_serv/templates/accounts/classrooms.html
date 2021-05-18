@@ -11,10 +11,10 @@
 
 
 
-<h1 style="font-family: Rajdhani">{% trans "Your Classrooms" %}</h1>
+<h1 style="font-family: Noto Sans TC">{% trans "Your Classrooms" %}</h1>
 
 <div>
-  <h2 style="font-family: Rajdhani">{% trans "Joined classes" %}</h2>
+  <h2 style="font-family: Noto Sans TC">{% trans "Joined classes" %}</h2>
 </div>
 {% csrf_token %}
 
@@ -33,7 +33,7 @@
 <div><a><br><br></a></div>
 <a class="link" href= /accounts/join>{% trans "Manage" %} </a> <div><a><br><br></a></div>
 
-<h2 style="font-family: Rajdhani">{% trans "Created classes" %}</h2>
+<h2 style="font-family: Noto Sans TC">{% trans "Created classes" %}</h2>
 {% for c in created_class %}
 <div style="padding: 30px 0px;"><a class="selection" href={{"/accounts/profile/"|add:c}} style="font-family: Ubuntu">{{c}}</a></div>
 {% endfor %}

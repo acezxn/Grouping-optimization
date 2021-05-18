@@ -161,7 +161,7 @@ def ProfileView(request, q):
                                 break
                             idx += 1
                         try:
-
+                            pass
 
                         except Exception as e:
                             print(e)

@@ -147,7 +147,7 @@ def grouping(size, favor_data, total, rule):
 
 
 # select remainder from each case and look for the case with the happiest unhappy group
-def start_group(size, favor_data, total, rule):
+def start_group(size, favor_data, total, rule, reward, punish):
     # rule = [('user', 'user2')]
     metacase = dict()
     temp = total.copy()
@@ -197,10 +197,10 @@ def start_group(size, favor_data, total, rule):
                 avoid = favor_data[member][1]
                 for single in favored:
                     if single in remain_group:
-                        score_remainder += 1
+                        score_remainder += reward
                 for single in avoid:
                     if single in remain_group:
-                        score_remainder -= 1
+                        score_remainder -= punish
             score_statistic = []
             for groups in metacase[remain_group]:
                 score = 0
@@ -209,10 +209,10 @@ def start_group(size, favor_data, total, rule):
                     avoid = favor_data[member][1]
                     for single in favored:
                         if single in groups:
-                            score += 1
+                            score += reward
                     for single in avoid:
                         if single in groups:
-                            score -= 1
+                            score -= punish
                     score_statistic.append(score)
             try:
                 if score_remainder < min(score_statistic):
@@ -242,5 +242,5 @@ if __name__ == "__main__":
     favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []]}
     total = ['A', 'B', 'C']
     # g = start_group(2, favor_data, total, [])
-    g, stat = start_group(2, favor_data, total, [])
+    g, stat = start_group(2, favor_data, total, [], 1, 1)
     print(g)

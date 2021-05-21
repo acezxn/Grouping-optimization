@@ -24,11 +24,11 @@ select {
 
 h1 {
   font-family: Ubuntu;
-  font-size:min(6vw, 40px);
+  font-size: min(6em, max(2em, 40px));
 }
 h2 {
   font-family: Ubuntu;
-  font-size:min(4.5vw, 25px);
+  font-size: min(4.5em, max(2em, 30px));
 }
 h3 {
   font-family: Ubuntu;
@@ -37,7 +37,7 @@ h3 {
 
 p {
   font-family: Ubuntu;
-  font-size:min(3vw, 15px);
+  font-size:min(10em, 20px);
 }
 
 input[type=submit] {
@@ -72,10 +72,12 @@ input[type=submit]:disabled {
   color: #666666;
 }
 
+
 header {
   padding: 10px;
   text-align: center;
-  font-size: font-size:min(5vw, 40px);
+  font-size:min(5vw, 40px);
+  font-weight: 100;
 }
 
 
@@ -109,6 +111,7 @@ button[type=submit]:hover {
     text-align: center;
     padding: min(4.5vw, 17px) min(4.5vw, 20px);
     text-decoration: none;
+    font-weight: 100;
 }
 .logo:hover {
     filter:brightness(1.5);
@@ -146,7 +149,7 @@ button[type=submit]:hover {
   height: auto;
   background-color: rgb(50, 100, 50);
   color: white;
-  padding: min(14px, 2vw) 20px;
+  padding: min(30px, 2vh) 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
@@ -161,7 +164,7 @@ button[type=submit]:hover {
     height: auto;
     filter: brightness(1.5);
     color: white;
-    padding: 14px 20px;
+    padding: min(30px, 2vh) 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
@@ -324,6 +327,7 @@ to { text-decoration: none;
   padding: 2px 16px;
   background-color: rgb(12, 20, 0);
   color: white;
+  font-weight: 100;
 }
 
 .modal-body {padding: 2px 16px;}

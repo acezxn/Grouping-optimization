@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 17:02+0800\n"
+"POT-Creation-Date: 2021-05-21 16:50+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,36 +87,41 @@ msgstr "這是你創建的教室。如果要離開，嘗試刪除教室。"
 msgid "Invalid selection"
 msgstr "指定教室無效"
 
-#: grouping_serv/apps/accounts/views.py:642
 #: grouping_serv/apps/accounts/views.py:644
+#: grouping_serv/apps/accounts/views.py:646
 msgid "Group size not a natural number"
 msgstr "組別大小不是正整數"
 
-#: grouping_serv/apps/accounts/views.py:646
+#: grouping_serv/apps/accounts/views.py:653
+#: grouping_serv/apps/accounts/views.py:655
+msgid "reward and punish values should be positive integers"
+msgstr "心情加扣分權重必須是正整數"
+
+#: grouping_serv/apps/accounts/views.py:658
 msgid "Group size exceeds the total amount of people"
 msgstr "組別大小超過總人數"
 
-#: grouping_serv/apps/accounts/views.py:653
+#: grouping_serv/apps/accounts/views.py:665
 msgid "Invalid group size"
 msgstr "單組人數: "
 
-#: grouping_serv/apps/accounts/views.py:673
+#: grouping_serv/apps/accounts/views.py:685
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/views.py:684
+#: grouping_serv/apps/accounts/views.py:696
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: grouping_serv/apps/accounts/views.py:697
+#: grouping_serv/apps/accounts/views.py:709
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:167
+#: grouping_serv/settings.py:174
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:168
+#: grouping_serv/settings.py:175
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
@@ -426,7 +431,7 @@ msgid "Class password:"
 msgstr "加入碼: "
 
 #: grouping_serv/templates/accounts/profile.html:19
-#: grouping_serv/templates/accounts/profile.html:99
+#: grouping_serv/templates/accounts/profile.html:113
 msgid "available usernames"
 msgstr "已加入的學生"
 
@@ -443,41 +448,57 @@ msgid "compute"
 msgstr "計算"
 
 #: grouping_serv/templates/accounts/profile.html:26
+msgid "Advanced"
+msgstr "進階"
+
+#: grouping_serv/templates/accounts/profile.html:27
+msgid "Alter reward and punishment values"
+msgstr "改變心情加扣分權重"
+
+#: grouping_serv/templates/accounts/profile.html:28
+msgid "Score added for each people being with a desired groupmate: "
+msgstr "每個人與自己想要的組員在同組時加的分數： "
+
+#: grouping_serv/templates/accounts/profile.html:32
+msgid "Score deducted for each people being with an undesired groupmate: "
+msgstr "每個人與自己不想要的組員在同組時扣的分數： "
+
+#: grouping_serv/templates/accounts/profile.html:36
 msgid "Group filter: (Optional)"
 msgstr "結果過濾（非必填，填入不宜同組的學生）"
 
-#: grouping_serv/templates/accounts/profile.html:29
-#: grouping_serv/templates/accounts/profile.html:47
+#: grouping_serv/templates/accounts/profile.html:40
+#: grouping_serv/templates/accounts/profile.html:61
 msgid " Not with "
 msgstr " 不和 "
 
-#: grouping_serv/templates/accounts/profile.html:33
+#: grouping_serv/templates/accounts/profile.html:44
 msgid "ADD RULE"
 msgstr "新增規則"
 
-#: grouping_serv/templates/accounts/profile.html:72
+#: grouping_serv/templates/accounts/profile.html:86
 msgid " favored: "
 msgstr "喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:86
+#: grouping_serv/templates/accounts/profile.html:100
 msgid " unfavored: "
 msgstr "不喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:100
+#: grouping_serv/templates/accounts/profile.html:114
 msgid "Add data"
 msgstr "加入資料"
 
-#: grouping_serv/templates/accounts/profile.html:104
-#: grouping_serv/templates/accounts/profile.html:115
+#: grouping_serv/templates/accounts/profile.html:118
+#: grouping_serv/templates/accounts/profile.html:129
 msgid "Favored"
 msgstr "喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:106
-#: grouping_serv/templates/accounts/profile.html:117
+#: grouping_serv/templates/accounts/profile.html:120
+#: grouping_serv/templates/accounts/profile.html:131
 msgid "Unfavored"
 msgstr "不喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:111
+#: grouping_serv/templates/accounts/profile.html:125
 msgid "Remove data"
 msgstr "刪除資料"
 

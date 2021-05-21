@@ -22,20 +22,34 @@
 <form action = {{"/"|add:LANGUAGE_CODE|add:"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
     <a style="font-family: Ubuntu;">{% trans "Group size: " %}</a>
-    <div><input id="size" type="text" name="size" style="width:100px;"><a> </a><input type="submit" value="{% trans 'compute' %}"></div>
+    <div><input id="size" type="number" name="size" style="padding: min(14px, 2vw) 20px; border: solid 1px" min = "1"><a> </a><input type="submit" value="{% trans 'compute' %}"></div>
+  <h2>{% trans "Advanced" %}</h2>
+  <h3 style="font-family: Ubuntu;">{% trans "Alter reward and punishment values" %}</h3>
+  <a style="font-family: Ubuntu;">{% trans "Score added for each people being with a desired groupmate: " %}</a>
+  <br>
+  <input type="number" name="reward" style="padding: min(14px, 2vw) 20px; border: solid 1px" min = "1" max = "10" value = "1">
+  <br>
+  <a style="font-family: Ubuntu;">{% trans "Score deducted for each people being with an undesired groupmate: " %}</a>
+  <br>
+  <input type="number" name="punish" style="padding: min(14px, 2vw) 20px; border: solid 1px" min = "1" max = "10" value = "1">
+
   <h3 style="font-family: Ubuntu;">{% trans "Group filter: (Optional)" %}</h3>
+  <div id = "filter">
   <div>
-    <input type="text" name="src[]" style = "width: 10%;">
+    <input type="text" name="src[]" style = "width: 10%; border: solid 1px">
     <a>{% trans " Not with " %}</a>
-    <input type="text" name="dst[]" style = "width: 10%;">
+    <input type="text" name="dst[]" style = "width: 10%; border: solid 1px">
   </div>
+  </div>
+  <button onclick="add_field()" style="font-family: Ubuntu; padding: 1vw 1vw;" type = "button">{% trans "ADD RULE" %}</button>
+
 </form>
-<button onclick="add_field()" style="font-family: Ubuntu; padding: 1vw 1vw;">{% trans "ADD RULE" %}</button>
+
 
 <script>
     function add_field(){
 
-        var x = document.getElementById("form");
+        var x = document.getElementById("filter");
         // create an input field to insert
         var div = document.createElement("div");
         var src_field = document.createElement("input");
@@ -43,10 +57,10 @@
         var dst_field = document.createElement("input");
         // set input field data type to text
         src_field.setAttribute("type", "text");
-        src_field.setAttribute("style", "width: 10%;");
+        src_field.setAttribute("style", "width: 10%; border: solid 1px");
         mid_text.innerText = "{% trans ' Not with ' %}";
         dst_field.setAttribute("type", "text");
-        dst_field.setAttribute("style", "width: 10%;");
+        dst_field.setAttribute("style", "width: 10%; border: solid 1px");
         // set input field name
         src_field.setAttribute("name", "src[]");
         dst_field.setAttribute("name", "dst[]");
@@ -61,7 +75,7 @@
         var divpos = div.childElementCount;
         div.insertBefore(dst_field, div.childNodes[divpos]);
         var pos = x.childElementCount;
-        x.insertBefore(div, x.childNodes[pos+10]);
+        x.appendChild(div);
     }
 </script>
 {% else %}

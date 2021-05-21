@@ -636,17 +636,29 @@ def compute(request, q):
                                         disliked = d[1]
                                 favor_data[u.username] = [favored, disliked]
                 print(favor_data)
+
+
                 try:
                     size = int(request.POST['size'])
                     if size <= 0:
                         return render(request, "error.html", {"error": gettext("Group size not a natural number")})
                 except:
                    return render(request, "error.html", {"error": gettext("Group size not a natural number")})
+
+
+                try:
+                    reward = int(request.POST['reward'])
+                    punish = int(request.POST['punish'])
+                    if reward <= 0 or punish <= 0:
+                        return render(request, "error.html", {"error": gettext("reward and punish values should be positive integers")})
+                except:
+                    return render(request, "error.html", {"error": gettext("reward and punish values should be positive integers")})
+
                 if size > len(total):
                     return render(request, "error.html", {"error": gettext("Group size exceeds the total amount of people")})
                 else:
                     G, state = combination_group.start_group(
-                        size=size, favor_data=favor_data, total=total, rule=rule)
+                        size=size, favor_data=favor_data, total=total, rule=rule, reward = reward, punish=punish)
                     if state:
                         return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
                     else:

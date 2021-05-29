@@ -31,50 +31,14 @@
   <a href="/accounts/signup">{%trans "Sign up" %}</a>
   {% endif %}
   {% endif %}
-</div>
-{% get_current_language as LANGUAGE_CODE %}
+  <div class="dropdown" style = "float:right;">
 {% get_language_info for LANGUAGE_CODE as lang %}
-<style>
-.dropbtn {
-background-color: rgb(1, 79, 0);
-color: white;
-padding: 16px;
-font-size: 16px;
-border: none;
-cursor: pointer;
-width: min(30vw, 130px);
-}
-
-.dropdown {
-position: relative;
-display: inline-block;
-width: min(30vw, 130px);
-}
-
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #f9f9f9;
-min-width: min(30vw, 130px);
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-.dropdown:hover .dropbtn {
-background-color: rgb(1, 79, 0);
-}
-</style>
-
-
-<div class="dropdown" style = "float:right;">
+{% get_current_language as LANGUAGE_CODE %}
 <button class="dropbtn">{{lang.name_local}} ({{lang.code}})</button>
 <div class="dropdown-content">
   {% get_available_languages as LANGUAGES %}
   {% get_language_info_list for LANGUAGES as languages %}
+<i>
   <form action="{% url 'set_language' %}" method="post" id="lang_form">{% csrf_token %}
     {% with len=LANGUAGE_CODE|length|add:1 %}
     {% if len == 8 %}
@@ -100,5 +64,66 @@ background-color: rgb(1, 79, 0);
       </select>
     {% endwith %}
 </form>
+</i>
 </div>
 </div>
+
+</div>
+<style>
+.dropdown {
+  float: left;
+  text-align: center;
+  overflow: hidden;
+  font-family: Noto Sans TC;
+  font-weight: 100;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;padding: min(4.5vw, 17px) 0px;width: min(30vw, 200px);
+  font-size: min(4.5vw, 20px);  
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(54 255 0);
+  color: black;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(255,255,255);
+  width: min(30vw, 200px);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content i {
+  float: none;
+  color: black;
+  padding: min(4.5vw, 17px) 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left; 
+  background-color: rgb(12, 20, 0);
+  border: solid 1px;
+  border-color: rgb(54 255 0);
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+
+

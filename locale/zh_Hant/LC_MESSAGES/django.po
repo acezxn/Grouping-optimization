@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 16:50+0800\n"
+"POT-Creation-Date: 2021-06-03 00:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,13 +117,23 @@ msgstr "帳號名已經存在"
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:174
+#: grouping_serv/settings.py:174 setting_bkp.py:174 settings.py:176
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:175
+#: grouping_serv/settings.py:175 setting_bkp.py:175 settings.py:177
 msgid "Traditional Chinese"
 msgstr "繁體中文"
+
+#: grouping_serv/templates/403.html:14 grouping_serv/templates/403_csrf.html:14
+msgid "Sorry! The action is not allowed"
+msgstr "很抱歉！這個行為是不允許的！"
+
+#: grouping_serv/templates/403.html:15 grouping_serv/templates/403_csrf.html:15
+#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
+#: grouping_serv/templates/error.html:16
+msgid "Return to home"
+msgstr "回到首頁"
 
 #: grouping_serv/templates/404.html:12
 msgid "Not found"
@@ -132,11 +142,6 @@ msgstr "找不到"
 #: grouping_serv/templates/404.html:16
 msgid "Sorry! the page is not found on the server"
 msgstr "這個網址不存在"
-
-#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
-#: grouping_serv/templates/error.html:16
-msgid "Return to home"
-msgstr "回到首頁"
 
 #: grouping_serv/templates/500.html:12
 msgid "Oops"
@@ -155,11 +160,11 @@ msgstr "關於"
 msgid "Creator"
 msgstr "創作者"
 
-#: grouping_serv/templates/about.html:22
+#: grouping_serv/templates/about.html:23
 msgid "What is the website created for"
 msgstr "這個網站要達成什麼"
 
-#: grouping_serv/templates/about.html:24
+#: grouping_serv/templates/about.html:25
 msgid ""
 "\n"
 " I found a problem in real life grouping algorithms. I noticed that most man-"
@@ -173,11 +178,11 @@ msgstr ""
 "組結果。這些分組法被經常使用：\n"
 "  "
 
-#: grouping_serv/templates/about.html:30
+#: grouping_serv/templates/about.html:31
 msgid "Free grouping:"
 msgstr "自由分組"
 
-#: grouping_serv/templates/about.html:31
+#: grouping_serv/templates/about.html:32
 msgid ""
 "\n"
 "In this case, everyone is allowed to choose their groupmates by themselves.\n"
@@ -190,11 +195,11 @@ msgstr ""
 "因為大家都想滿足自己的欲望，他們選擇自己最喜歡的組員。\n"
 "然而，這將造成些許組別的快樂建立在剩餘組員的不快樂上。\n"
 
-#: grouping_serv/templates/about.html:37
+#: grouping_serv/templates/about.html:38
 msgid "Randomized group"
 msgstr "隨機分組"
 
-#: grouping_serv/templates/about.html:38
+#: grouping_serv/templates/about.html:39
 msgid ""
 "\n"
 "In this case, the happiness of each group is random, and unable to make the "
@@ -203,44 +208,44 @@ msgstr ""
 "\n"
 "在這個情況，組別的滿意度市隨機的，因此無法有效提昇最低滿意度。\n"
 
-#: grouping_serv/templates/about.html:45
+#: grouping_serv/templates/about.html:46
 msgid "The algorithm"
 msgstr "分組演算法"
 
-#: grouping_serv/templates/about.html:47
+#: grouping_serv/templates/about.html:48
 msgid ""
 "The website collects data of favored and unfavored groups from each "
 "classroom user"
 msgstr "此網站搜集學生對其他同學的喜好"
 
-#: grouping_serv/templates/about.html:48
+#: grouping_serv/templates/about.html:49
 msgid "and form a datastructure: {user: [[favored], [unfavored]]}"
 msgstr "，生成一個資料結構: {user: [[favored], [unfavored]]}。"
 
-#: grouping_serv/templates/about.html:49
+#: grouping_serv/templates/about.html:50
 msgid ""
 "the program calculates all possibility of grouping of every member in a class"
 msgstr "程式接著計算所有學生分組的組合。"
 
-#: grouping_serv/templates/about.html:50
+#: grouping_serv/templates/about.html:51
 msgid "Hapiness calculation"
 msgstr "滿意度計算機制"
 
-#: grouping_serv/templates/about.html:51
+#: grouping_serv/templates/about.html:52
 msgid ""
 "In each group, if one person is grouped with his/her favored person, overall "
 "happiness of the group +1,"
 msgstr "在每組中，如果一個組員與他喜歡的同學在一組，該組的滿意度+1。"
 
-#: grouping_serv/templates/about.html:52
+#: grouping_serv/templates/about.html:53
 msgid "if grouped with unfavored person, overall happiness of the group -1."
 msgstr "如果一個組員與他較為合不來的同學在一組，該組的滿意度-1。"
 
-#: grouping_serv/templates/about.html:53
+#: grouping_serv/templates/about.html:54
 msgid "The unhappiest group in each case is measured and stored in a list A,"
 msgstr "在每個組合中滿意度最低的分數會被記錄到列表A中，"
 
-#: grouping_serv/templates/about.html:54
+#: grouping_serv/templates/about.html:55
 msgid ""
 "the algorithm finally select the case with greatest corresponding value in "
 "list A."

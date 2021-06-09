@@ -397,3 +397,8 @@ align-items: center;
 transition: transform 0.3s ease-out;
 margin: auto;
 }
+
+
+@media screen and (max-width: 1300px) {
+  #marquee{ display: none; }   /* hide it on larger screens */
+}

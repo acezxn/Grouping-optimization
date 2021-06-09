@@ -31,8 +31,7 @@
   <a href="/accounts/signup">{%trans "Sign up" %}</a>
   {% endif %}
   {% endif %}
-  <marquee style="color: white; display:block;padding:min(4.5vw, 17px) min(4.5vw, 20px);width: 50%;text-align: center;margin-left: 400px;margin-right: 300px;/* overflow: auto; */position: fixed;font-family:Noto Sans TC; font-size:min(4.5vw, 20px);" id="marquee"></marquee>
-  <div class="dropdown" style = "float:right;">
+<div class="dropdown" style = "float:right;">
 {% get_language_info for LANGUAGE_CODE as lang %}
 {% get_current_language as LANGUAGE_CODE %}
 <button class="dropbtn">{{lang.name_local}} ({{lang.code}})</button>
@@ -70,6 +69,8 @@
 </div>
 
 </div>
+<marquee style="color: black; display:block;padding:min(4.5vw, 17px) min(4.5vw, 20px);width: 50%;text-align: center;margin-left: 400px;margin-right: 300px;/* overflow: auto; */position: fixed;font-family:Noto Sans TC; font-size:min(4.5vw, 20px);" id="marquee">
+</marquee>
 <style>
 .dropdown {
   float: left;

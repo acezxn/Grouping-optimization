@@ -16,6 +16,7 @@ def grouping(size, favor_data, total, rule):
     processed_data = []
     minimums = []
     min_scores = []
+    opt_score = []
     # return [size, favor_data, total]
 
     #
@@ -78,18 +79,30 @@ def grouping(size, favor_data, total, rule):
         branch(total, group, group)
     print("grouplist", group_list)
     print("scorelist", score_list)
+
+# get the most unhappy group
     if len(group_list) > 0:
         for j in score_list:
             MIN = min(j)
             print(MIN)
             min_scores.append(MIN)
         print("max", max(min_scores))
-        for j in min_scores:
-            print(j)
-            if j == max(min_scores):
-                minimums.append(group_list[min_scores.index(j)])
 
-        r = random.choice(minimums)
+# select the case with the happiest unhappy group
+        for j in min_scores:
+            if j == max(min_scores):
+                print('Selected score: ', score_list[min_scores.index(j)])
+                minimums.append(group_list[min_scores.index(j)])
+                opt_score.append(score_list[min_scores.index(j)])
+
+# further optimize the optimized case
+        
+        k = []
+        for h in opt_score:
+              k.append(max(h)) 
+        random.shuffle(minimums)
+        r = minimums[k.index(max(k))]
+        print(minimums)
         return r, 1
     else:
         return [], 1
@@ -193,8 +206,8 @@ def start_group(size, favor_data, total, rule, reward, punish):
 
 
 if __name__ == "__main__":
-    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []]}
-    total = ['A', 'B', 'C']
+    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []]}
+    total = ['A', 'B', 'C', 'D']
     # g = start_group(2, favor_data, total, [])
     g, stat = start_group(2, favor_data, total, [], 1, 1)
     print(g)

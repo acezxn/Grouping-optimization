@@ -25,5 +25,6 @@ urlpatterns = [
     path("list/<slug:q>/", views.list_user),
     path("compute/<slug:q>/", views.compute),
     path("kick/<slug:q>/", views.kick),
+    path("gencode/<slug:q>/", views.change_code),
     path("settings", views.setting),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

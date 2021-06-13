@@ -15,6 +15,14 @@
   <input type="submit" value={% trans "Kick" %} style="background-color: rgb(221 1 0);">
 </form>
 
+<div style = "padding: 1em 0em;">
+</div>
+
+<a href={{"/accounts/gencode/"|add:classid|add:"/"}} class="link">{% trans "Generate a new class passcode" %}</a>
+
+<div style = "padding: 1em 0em;">
+</div>
+
 <form action = {{"/accounts/dangerzone/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
   <input type="submit" value={% trans "Danger Zone" %} style = "background-color: rgb(221, 0, 0);">

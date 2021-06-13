@@ -442,9 +442,9 @@ def kick(request, q):
             pass
         except Exception as e:
             pass
-        return redirect("/accounts/profile")
+        return redirect("/accounts/profile"+q)
     else:
-        return redirect("/accounts/profile")
+        return redirect("/accounts/profile"+q)
 
 
 def classrooms(request):
@@ -481,6 +481,19 @@ def generate(length):
         code.append(random.choice(list(numbers)))
     return ''.join(code)
 
+
+def change_code(request, q):
+    userid = request.user.id
+    profileobj = UserProfile.objects.get(user_id=userid)
+    classrooms = json.loads(profileobj.passcode)
+    
+    for i in range(len(classrooms)):
+        if classrooms[i][0] == q:
+            classrooms[i][1] = generate(8)
+    
+    profileobj.passcode = json.dumps(classrooms)
+    profileobj.save()
+    return redirect("/accounts/profile/"+q)
 
 def create(request):
     if request.user.is_authenticated:

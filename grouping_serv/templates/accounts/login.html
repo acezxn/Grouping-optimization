@@ -6,7 +6,8 @@
 <h2>{% trans "Login" %}</h2>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  <p><label>{% trans "Username:" %}<label>{{ form.username }}</p>
+  <p><label>{% trans "Password:" %}<label>{{ form.password }}</p>
   <button type="submit">{% trans "Login" %}</button>
 </form>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 00:00+0800\n"
+"POT-Creation-Date: 2021-06-18 16:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,23 +117,13 @@ msgstr "帳號名已經存在"
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:174 setting_bkp.py:174 settings.py:176
+#: grouping_serv/settings.py:167
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:175 setting_bkp.py:175 settings.py:177
+#: grouping_serv/settings.py:168
 msgid "Traditional Chinese"
 msgstr "繁體中文"
-
-#: grouping_serv/templates/403.html:14 grouping_serv/templates/403_csrf.html:14
-msgid "Sorry! The action is not allowed"
-msgstr "很抱歉！這個行為是不允許的！"
-
-#: grouping_serv/templates/403.html:15 grouping_serv/templates/403_csrf.html:15
-#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
-#: grouping_serv/templates/error.html:16
-msgid "Return to home"
-msgstr "回到首頁"
 
 #: grouping_serv/templates/404.html:12
 msgid "Not found"
@@ -142,6 +132,11 @@ msgstr "找不到"
 #: grouping_serv/templates/404.html:16
 msgid "Sorry! the page is not found on the server"
 msgstr "這個網址不存在"
+
+#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
+#: grouping_serv/templates/error.html:16
+msgid "Return to home"
+msgstr "回到首頁"
 
 #: grouping_serv/templates/500.html:12
 msgid "Oops"
@@ -361,11 +356,11 @@ msgstr "踢除學生"
 msgid "Kick"
 msgstr "踢除"
 
-#: grouping_serv/templates/accounts/edit.html:18
+#: grouping_serv/templates/accounts/edit.html:21
 msgid "Generate a new class passcode"
 msgstr "生成一個全新的加入碼"
 
-#: grouping_serv/templates/accounts/edit.html:25
+#: grouping_serv/templates/accounts/edit.html:28
 msgid "Danger Zone"
 msgstr "危險區域"
 
@@ -404,10 +399,18 @@ msgstr "< 上一頁"
 
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6
-#: grouping_serv/templates/accounts/login.html:10
+#: grouping_serv/templates/accounts/login.html:11
 #: grouping_serv/templates/navbar.html:27
 msgid "Login"
 msgstr "登入"
+
+#: grouping_serv/templates/accounts/login.html:9
+msgid "Username:"
+msgstr "使用者名稱"
+
+#: grouping_serv/templates/accounts/login.html:10
+msgid "Password:"
+msgstr "使用者密碼"
 
 #: grouping_serv/templates/accounts/man/classrooms_man.html:150
 msgid "Guide"
@@ -609,3 +612,6 @@ msgstr "首頁"
 #: grouping_serv/templates/navbar.html:25
 msgid "Logout"
 msgstr "登出"
+
+#~ msgid "Sorry! The action is not allowed"
+#~ msgstr "很抱歉！這個行為是不允許的！"

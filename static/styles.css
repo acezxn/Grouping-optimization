@@ -1,11 +1,10 @@
 
 input[type=text],
 select {
-    width: 10vw;
     min-width: 80px;
     width: 50%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 1vh 1em;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -15,7 +14,7 @@ input[type=password],
 select {
     width: 50%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 1vh 1em;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -414,7 +413,6 @@ align-items: center;
 transition: transform 0.3s ease-out;
 margin: auto;
 }
-
 
 @media screen and (max-width: 1300px) {
   #marquee{ display: none; }   /* hide it on larger screens */

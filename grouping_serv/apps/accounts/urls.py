@@ -13,7 +13,7 @@ urlpatterns = [
         name="login",
     ),
     path("logout", auth_views.LogoutView.as_view(), name="logout"),
-    path("profile", views.classrooms),
+    path("profile", views.classrooms, name="classrooms"),
     path("profile/<slug:q>/", views.ProfileView),
     path("rm/<slug:q>/", views.remove),
     path("create", views.create),

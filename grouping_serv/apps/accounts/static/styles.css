@@ -1,11 +1,10 @@
 
 input[type=text],
 select {
-    width: 10vw;
     min-width: 80px;
     width: 50%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 1vh 1em;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -15,7 +14,7 @@ input[type=password],
 select {
     width: 50%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 1vh 1em;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -144,6 +143,8 @@ button[type=submit]:hover {
 
 
 .link {
+  font-family: Noto Sans TC;
+  font size: 1em;
   width: 10vw;
   min-width: 90px;
   height: auto;
@@ -225,6 +226,8 @@ button[type=submit]:hover {
 }
 
 .msg {
+    font-size: 1em;
+    font-family: Noto Sans TC;
     background-color: rgb(221, 221, 221);
     padding-right: min(15px, 5%);
     padding-left: min(15px, 5%);
@@ -239,6 +242,8 @@ button[type=submit]:hover {
   overflow: hidden;
   text-align: center;
   border-radius: 4px;
+  font-family: Noto Sans TC;
+  font-weight: 200;
 }
 
 .selection {
@@ -354,6 +359,21 @@ justify-content: center;
 flex-wrap: wrap;
 
 }
+
+.box2 {
+  font-size:4em;
+  height: 60px;
+width: 60px;
+align-items: center;
+margin: 4px;
+font-weight: 700;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -396,4 +416,8 @@ align-items: center;
 #underline {
 transition: transform 0.3s ease-out;
 margin: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  #marquee{ display: none; }   /* hide it on larger screens */
 }

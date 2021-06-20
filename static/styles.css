@@ -143,6 +143,8 @@ button[type=submit]:hover {
 
 
 .link {
+  font-family: Noto Sans TC;
+  font size: 1em;
   width: 10vw;
   min-width: 90px;
   height: auto;
@@ -224,6 +226,8 @@ button[type=submit]:hover {
 }
 
 .msg {
+    font-size: 1em;
+    font-family: Noto Sans TC;
     background-color: rgb(221, 221, 221);
     padding-right: min(15px, 5%);
     padding-left: min(15px, 5%);

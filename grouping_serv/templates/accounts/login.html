@@ -8,6 +8,10 @@
   {% csrf_token %}
   <p><label>{% trans "Username:" %}<label>{{ form.username }}</p>
   <p><label>{% trans "Password:" %}<label>{{ form.password }}</p>
+
+  {% if form.errors %}
+    <p class="small">{% trans "Your username and password didn't match. Please try again." %}</p>
+  {% endif %}
   <button type="submit">{% trans "Login" %}</button>
 </form>
 {% endblock %}

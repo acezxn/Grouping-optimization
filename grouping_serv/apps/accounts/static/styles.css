@@ -142,6 +142,12 @@ button[type=submit]:hover {
 }
 
 
+.small {
+  font-size: min(8em, 15px);
+  color: rgb(100,100,100);
+}
+
+
 .link {
   font-family: Noto Sans TC;
   font size: 1em;

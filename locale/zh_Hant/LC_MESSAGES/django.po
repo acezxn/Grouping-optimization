@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-18 16:54+0800\n"
+"POT-Creation-Date: 2021-06-28 16:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,11 +155,11 @@ msgstr "關於"
 msgid "Creator"
 msgstr "創作者"
 
-#: grouping_serv/templates/about.html:31
+#: grouping_serv/templates/about.html:33
 msgid "What is the website created for"
 msgstr "這個網站要達成什麼"
 
-#: grouping_serv/templates/about.html:33
+#: grouping_serv/templates/about.html:35
 msgid ""
 "\n"
 " I found a problem in real life grouping algorithms. I noticed that most man-"
@@ -173,11 +173,11 @@ msgstr ""
 "組結果。這些分組法被經常使用：\n"
 "  "
 
-#: grouping_serv/templates/about.html:39
+#: grouping_serv/templates/about.html:41
 msgid "Free grouping:"
 msgstr "自由分組"
 
-#: grouping_serv/templates/about.html:40
+#: grouping_serv/templates/about.html:42
 msgid ""
 "\n"
 "In this case, everyone is allowed to choose their groupmates by themselves.\n"
@@ -190,11 +190,11 @@ msgstr ""
 "因為大家都想滿足自己的欲望，他們選擇自己最喜歡的組員。\n"
 "然而，這將造成些許組別的快樂建立在剩餘組員的不快樂上。\n"
 
-#: grouping_serv/templates/about.html:46
+#: grouping_serv/templates/about.html:48
 msgid "Randomized group"
 msgstr "隨機分組"
 
-#: grouping_serv/templates/about.html:47
+#: grouping_serv/templates/about.html:49
 msgid ""
 "\n"
 "In this case, the happiness of each group is random, and unable to make the "
@@ -203,44 +203,44 @@ msgstr ""
 "\n"
 "在這個情況，組別的滿意度市隨機的，因此無法有效提昇最低滿意度。\n"
 
-#: grouping_serv/templates/about.html:54
+#: grouping_serv/templates/about.html:56
 msgid "The algorithm"
 msgstr "分組演算法"
 
-#: grouping_serv/templates/about.html:56
+#: grouping_serv/templates/about.html:58
 msgid ""
 "The website collects data of favored and unfavored groups from each "
 "classroom user"
 msgstr "此網站搜集學生對其他同學的喜好"
 
-#: grouping_serv/templates/about.html:57
+#: grouping_serv/templates/about.html:59
 msgid "and form a datastructure: {user: [[favored], [unfavored]]}"
 msgstr "，生成一個資料結構: {user: [[favored], [unfavored]]}。"
 
-#: grouping_serv/templates/about.html:58
+#: grouping_serv/templates/about.html:60
 msgid ""
 "the program calculates all possibility of grouping of every member in a class"
 msgstr "程式接著計算所有學生分組的組合。"
 
-#: grouping_serv/templates/about.html:59
+#: grouping_serv/templates/about.html:61
 msgid "Hapiness calculation"
 msgstr "滿意度計算機制"
 
-#: grouping_serv/templates/about.html:60
+#: grouping_serv/templates/about.html:62
 msgid ""
 "In each group, if one person is grouped with his/her favored person, overall "
 "happiness of the group +1,"
 msgstr "在每組中，如果一個組員與他喜歡的同學在一組，該組的滿意度+1。"
 
-#: grouping_serv/templates/about.html:61
+#: grouping_serv/templates/about.html:63
 msgid "if grouped with unfavored person, overall happiness of the group -1."
 msgstr "如果一個組員與他較為合不來的同學在一組，該組的滿意度-1。"
 
-#: grouping_serv/templates/about.html:62
+#: grouping_serv/templates/about.html:64
 msgid "The unhappiest group in each case is measured and stored in a list A,"
 msgstr "在每個組合中滿意度最低的分數會被記錄到列表A中，"
 
-#: grouping_serv/templates/about.html:63
+#: grouping_serv/templates/about.html:65
 msgid ""
 "the algorithm finally select the case with greatest corresponding value in "
 "list A."
@@ -399,7 +399,7 @@ msgstr "< 上一頁"
 
 #: grouping_serv/templates/accounts/login.html:4
 #: grouping_serv/templates/accounts/login.html:6
-#: grouping_serv/templates/accounts/login.html:11
+#: grouping_serv/templates/accounts/login.html:15
 #: grouping_serv/templates/navbar.html:27
 msgid "Login"
 msgstr "登入"
@@ -411,6 +411,10 @@ msgstr "使用者名稱"
 #: grouping_serv/templates/accounts/login.html:10
 msgid "Password:"
 msgstr "使用者密碼"
+
+#: grouping_serv/templates/accounts/login.html:13
+msgid "Your username and password didn't match. Please try again."
+msgstr "你的帳號和密碼不吻合，請再試一次。"
 
 #: grouping_serv/templates/accounts/man/classrooms_man.html:150
 msgid "Guide"

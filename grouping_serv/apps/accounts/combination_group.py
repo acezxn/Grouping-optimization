@@ -7,9 +7,8 @@ and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored p
 """
 
 
-def grouping(size, favor_data, total, rule, reward, punish):
+def grouping(size, favor_data, total, rule, reward, punish, parent):
     group_list = []
-
     inner = []
     scores = []
     score_list = []
@@ -17,6 +16,7 @@ def grouping(size, favor_data, total, rule, reward, punish):
     minimums = []
     min_scores = []
     opt_score = []
+    prev = []
 
     def complement(src, aux): # find other people from "src" except groupmates in "aux"
         out = []
@@ -28,6 +28,7 @@ def grouping(size, favor_data, total, rule, reward, punish):
     def happiness_calc(group, reward, punish): # happiness calculation algorithm
         score = 0
         for member in group:
+            #print(favor_data)
             favored = favor_data[member][0]
             avoid = favor_data[member][1]
             for single in favored:
@@ -38,14 +39,35 @@ def grouping(size, favor_data, total, rule, reward, punish):
                     score -= punish
         return score
 
-    def branch(src, group, starter): # recursive algorithm to list all possible outcomes of grouping
-        if group != starter:
-            inner.append(group)
+    def branch(src, group, starter, parent): # recursive algorithm to list all possible outcomes of grouping
+        p = group
+        inner.append(group)
         other = complement(src, group)
         groups = list(itertools.combinations(other, size))
+        #print(other)
         if len(other) == size: # if other people in the class equals the group size
             inner.append(other)
-            inner.append(starter)
+            if starter not in inner:
+                inner.append(starter)
+            if parent not in inner and parent is not None:
+                inner.append(parent)
+            if len(prev) > len(inner):
+                for i in prev:
+                    contained = False
+                    for k in inner:
+                    	for j in range(size):
+                            if i[j] in k:
+                                contained = True
+                                break
+                    if not contained:
+                        inner.append(i)
+                                        
+
+
+
+            prev.clear()
+            prev.extend(inner)
+            #print(inner)
             for g in inner:
                 score = happiness_calc(g, reward, punish)
                 scores.append(score)
@@ -53,11 +75,10 @@ def grouping(size, favor_data, total, rule, reward, punish):
             group_list.append(list(inner))
             inner.clear()
             scores.clear()
-
             return
         else:
             if len(other) == 0: # if there is no more people in the class
-                inner.append(starter)
+                #inner.append(started)
                 for g in inner:
                     score = happiness_calc(g, reward, punish)
                     scores.append(score)
@@ -67,7 +88,7 @@ def grouping(size, favor_data, total, rule, reward, punish):
                 scores.clear()
                 return
         for group in groups:
-            branch(other, group, starter)
+            branch(other, group, starter, p)
 
 ################################################################################
 
@@ -75,7 +96,7 @@ def grouping(size, favor_data, total, rule, reward, punish):
     #print("groups", groups)
     for group in groups:
         # inner.append(groups[0])
-        branch(total, group, group)
+        branch(total, group, group, parent)
     #print("grouplist", group_list)
     #print("scorelist", score_list)
 
@@ -117,7 +138,9 @@ def start_group(size, favor_data, total, rule, reward, punish):
     # rule = [('user', 'user2')]
     metacase = dict()
     temp = total.copy()
+    print(favor_data)
     tmp_f = favor_data.copy()
+    print(tmp_f)
     remain_group = []
     remainder = len(total) % size # find the number of remaining people
     possible_remainders = list(itertools.combinations(total, remainder)) # find the possible remaining group
@@ -143,7 +166,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
                 #print("data before run")
                 #print(total)
                 #print(favor_data)
-            g, stat = grouping(size, favor_data, total, rule, reward, punish)
+            g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
             #print('output: ', g)
             metacase[remain_group] = g
             #print('metacase: ',metacase)
@@ -198,27 +221,34 @@ def start_group(size, favor_data, total, rule, reward, punish):
                     meta_scorelist.append(min(score_statistic))
             except:
                 pass
-        #print(meta_scorelist)
+        print(meta_scorelist)
 
         maximum = max(meta_scorelist) # find the greatest score from the low scores
         max_scores = []
-
+        #print('metacase: ',metacase)
         # select the groups
         for case in possible_remainders:
             if meta_scorelist[possible_remainders.index(case)] == maximum:
                 all = metacase[case].copy()
                 all.append(case)
                 max_scores.append(all)
-        #print('Select from: ', max_scores)
+        print('Select from: ', max_scores)
+        print(random.choice(max_scores))
         return random.choice(max_scores), 1
 
     else:
-        g, stat = grouping(size, favor_data, total, rule, reward, punish)
+        g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
         return g, stat
 
 
 if __name__ == "__main__":
     favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []]}
     total = ['A', 'B', 'C', 'D']
+
+    #favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+    #total = ['user', 'user2', 'user3', 'user4', 'Steven']
     g, stat = start_group(3, favor_data, total, [], 1, 1)
-    #print(g)
+    
+
+    #g, stat = grouping(3, favor_data, total, [], 1, 1, None)
+    print(g, stat)

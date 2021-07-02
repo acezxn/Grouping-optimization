@@ -138,9 +138,9 @@ def start_group(size, favor_data, total, rule, reward, punish):
     # rule = [('user', 'user2')]
     metacase = dict()
     temp = total.copy()
-    print(favor_data)
+    #print(favor_data)
     tmp_f = favor_data.copy()
-    print(tmp_f)
+    #print(tmp_f)
     remain_group = []
     remainder = len(total) % size # find the number of remaining people
     possible_remainders = list(itertools.combinations(total, remainder)) # find the possible remaining group
@@ -238,6 +238,11 @@ def start_group(size, favor_data, total, rule, reward, punish):
 
     else:
         g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
+        tmp = g.copy()
+        for group in tmp:
+            for r in rule:
+                if r[0] in group and r[1] in group:
+                    g.remove(group)
         return g, stat
 
 
@@ -245,9 +250,9 @@ if __name__ == "__main__":
     favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []]}
     total = ['A', 'B', 'C', 'D']
 
-    #favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
-    #total = ['user', 'user2', 'user3', 'user4', 'Steven']
-    g, stat = start_group(3, favor_data, total, [], 1, 1)
+    favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+    total = ['user', 'user2', 'user3', 'user4', 'Steven']
+    g, stat = start_group(5, favor_data, total, [["user4", "user"]], 1, 1)
     
 
     #g, stat = grouping(3, favor_data, total, [], 1, 1, None)

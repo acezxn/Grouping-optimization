@@ -377,7 +377,7 @@ def signup(request):
             id = request.user.id
             obj = UserProfile.create(id)
             obj.save()
-            return redirect("/")
+            return redirect("/accounts/profile")
     else:
         form = UserCreationForm()
     if not request.user.is_authenticated:
@@ -413,38 +413,44 @@ def list_user(request, q):
 
 
 def kick(request, q):
-    if request.method == 'POST':
-        request.POST['member2kick']
-        userlist = User.objects.all()
-        for i in userlist:
-            if i.username == request.POST['member2kick']:
-                id = i.id
-                break
+    if request.user.is_authenticated:
+        print(request.method)
+        if request.method == 'POST':
+            request.POST['member2kick']
+            userlist = User.objects.all()
+            for i in userlist:
+                if i.username == request.POST['member2kick']:
+                    id = i.id
+                    break
 
-        profile = UserProfile.objects.get(user_id=id)
-        classrooms = profile.classrooms
-        classrooms.remove(q)
-        favored = json.loads(profile.favored)
-        for e in favored:
-            if e[0] == q:
-                favored.remove(e)
-                break
-        disliked = json.loads(profile.disliked)
-        for e in disliked:
-            if e[0] == q:
-                disliked.remove(e)
-                break
-        profile.favored = json.dumps(favored)
-        profile.disliked = json.dumps(disliked)
-        profile.classrooms = classrooms
-        profile.save()
-        try:
-            pass
-        except Exception as e:
-            pass
-        return redirect("/accounts/profile"+q)
+            profile = UserProfile.objects.get(user_id=id)
+            classrooms = profile.classrooms
+            classrooms.remove(q)
+            favored = json.loads(profile.favored)
+            for e in favored:
+                if e[0] == q:
+                    favored.remove(e)
+                    break
+            disliked = json.loads(profile.disliked)
+            for e in disliked:
+                if e[0] == q:
+                    disliked.remove(e)
+                    break
+            profile.favored = json.dumps(favored)
+            profile.disliked = json.dumps(disliked)
+            profile.classrooms = classrooms
+            profile.save()
+            try:
+                pass
+            except Exception as e:
+                pass
+            print('kicked')
+            return redirect("/accounts/profile/"+q)
+        else:
+            print('not post')
+            return redirect("/accounts/profile/"+q)
     else:
-        return redirect("/accounts/profile"+q)
+        return redirect("/accounts/login")
 
 
 def classrooms(request):
@@ -483,17 +489,22 @@ def generate(length):
 
 
 def change_code(request, q):
-    userid = request.user.id
-    profileobj = UserProfile.objects.get(user_id=userid)
-    classrooms = json.loads(profileobj.passcode)
-    
-    for i in range(len(classrooms)):
-        if classrooms[i][0] == q:
-            classrooms[i][1] = generate(8)
-    
-    profileobj.passcode = json.dumps(classrooms)
-    profileobj.save()
-    return redirect("/accounts/profile/"+q)
+    if request.user.is_authenticated:
+        userid = request.user.id
+        profileobj = UserProfile.objects.get(user_id=userid)
+        classrooms = json.loads(profileobj.passcode)
+
+        for i in range(len(classrooms)):
+            if classrooms[i][0] == q:
+                classrooms[i][1] = generate(8)
+
+        profileobj.passcode = json.dumps(classrooms)
+        profileobj.save()
+        return redirect("/accounts/profile/"+q)
+
+    else:
+         return redirect("/accounts/login")
+
 
 def create(request):
     if request.user.is_authenticated:

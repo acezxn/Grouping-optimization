@@ -9,7 +9,7 @@
 <a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">{% trans "Joined users" %}</a>
 
 <h3>{% trans "Kick user: " %}</h3>
-<form action={{"/accounts/kick/"|add:classid|add:"/"}} method="post">
+<form action={{"/"|add:LANGUAGE_CODE|add:"/accounts/kick/"|add:classid|add:"/"}} method="post">
   {% csrf_token %}
   <input type="text" name = "member2kick">
   <input type="submit" value={% trans "Kick" %} style="background-color: rgb(221 1 0);">

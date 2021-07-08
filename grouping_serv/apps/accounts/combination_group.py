@@ -28,7 +28,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
     def happiness_calc(group, reward, punish): # happiness calculation algorithm
         score = 0
         for member in group:
-            #print(favor_data)
             favored = favor_data[member][0]
             avoid = favor_data[member][1]
             for single in favored:
@@ -44,7 +43,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
         inner.append(group)
         other = complement(src, group)
         groups = list(itertools.combinations(other, size))
-        #print(other)
         if len(other) == size: # if other people in the class equals the group size
             inner.append(other)
             if starter not in inner:
@@ -155,7 +153,6 @@ def start_group(size, favor_data, total, rule, reward, punish):
 
     #print('possible rems: ', possible_remainders)
     if remainder != 0: # if there are remaining people
-
         # form optimized groups for each remaining groups
         for remain_group in possible_remainders:
             favor_data = tmp_f.copy()
@@ -199,7 +196,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
                     if single in remain_group:
                         score_remainder -= punish
             score_statistic = []
-            
+
             # recalculate the happiness of the other groups
             for groups in metacase[remain_group]:
                 score = 0
@@ -221,11 +218,11 @@ def start_group(size, favor_data, total, rule, reward, punish):
                     meta_scorelist.append(min(score_statistic))
             except:
                 pass
-        print(meta_scorelist)
+        if len(meta_scorelist) == 0:
+            return [], 1
 
         maximum = max(meta_scorelist) # find the greatest score from the low scores
         max_scores = []
-        #print('metacase: ',metacase)
         # select the groups
         for case in possible_remainders:
             if meta_scorelist[possible_remainders.index(case)] == maximum:
@@ -252,7 +249,7 @@ if __name__ == "__main__":
 
     favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
     total = ['user', 'user2', 'user3', 'user4', 'Steven']
-    g, stat = start_group(5, favor_data, total, [["user4", "user"]], 1, 1)
+    g, stat = start_group(3, favor_data, total, [["user4", "user4"]], 1, 1)
     
 
     #g, stat = grouping(3, favor_data, total, [], 1, 1, None)

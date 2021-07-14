@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from django.utils.translation import ugettext
 from django.utils import translation
+from django.views.decorators.http import require_GET
+
+
 def index(request):
     normal_users = 0
     user = User.objects.all()
@@ -20,3 +23,4 @@ def about(request):
     template = loader.get_template("about.html")
     return render(request, "about.html", {
     "url": "about"})
+

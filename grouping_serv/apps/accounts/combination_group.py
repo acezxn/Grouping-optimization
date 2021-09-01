@@ -74,9 +74,8 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
                 score = happiness_calc(g, reward, punish)
                 scores.append(score)
 
-            # print(arr)
             score_list.append(list(scores))
-            group_list.append([tuple(inner)])
+            group_list.append(list(inner))
             inner.clear()
             scores.clear()
             return
@@ -103,7 +102,7 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
         # t = threading.Thread(target=branch, args=(total, group, group, parent,))
         branch(total, group, group, parent)
 
-        print(group_list)
+        print("grouplist", group_list)
         # t.start()
         print(group, len(group_list), (time.time() * 1000) - now)
         now = time.time() * 1000
@@ -111,7 +110,7 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
     #print("grouplist", group_list)
     #print("scorelist", score_list)
     # print("scorelist: ", score_list)
-    print("grouplist", len(group_list))
+    print("grouplist", group_list)
 # get the most unhappy group
     if len(group_list) > 0:
         for j in score_list:
@@ -137,7 +136,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
               k.append(max(h))
         random.shuffle(minimums)
         r = minimums[k.index(max(k))]
-        #print(minimums)
         return r, 1
     else:
         return [], 1
@@ -182,7 +180,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
                 #print(favor_data)
             print("grouping")
             g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
-            #print('output: ', g)
+            print('output: ', g)
             metacase[remain_group] = g
             #print('metacase: ',metacase)
         tmp = possible_remainders.copy()
@@ -216,6 +214,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
             score_statistic = []
 
             # recalculate the happiness of the other groups
+            print("arere", metacase[remain_group])
             for groups in metacase[remain_group]:
                 score = 0
                 for member in groups:
@@ -266,12 +265,12 @@ if __name__ == "__main__":
     favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []], 'F': [[], []], 'G': [['E'], ['F']], 'H': [['G'], ['J']], 'I': [['G'], ['F']], "J": [[], []], "K": [[], []], "L": [[], []], 'M': [[], []], 'N': [[], []], "O": [[], []]}
     total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
 
-    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []]}
-    total = ['A', 'B', 'C', 'D', 'E']
+    #favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []]}
+    #total = ['A', 'B', 'C', 'D', 'E']
 
-   # favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
-   # total = ['user', 'user2', 'user3', 'user4', 'Steven']
-    g, stat = start_group(3, favor_data, total, [], 1, 1)
+    #favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+    #total = ['user', 'user2', 'user3', 'user4', 'Steven']
+    g, stat = start_group(5, favor_data, total, [], 1, 1)
 
 
     #g, stat = grouping(3, favor_data, total, [], 1, 1, None)

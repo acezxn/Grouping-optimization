@@ -214,7 +214,6 @@ def start_group(size, favor_data, total, rule, reward, punish):
             score_statistic = []
 
             # recalculate the happiness of the other groups
-            print("arere", metacase[remain_group])
             for groups in metacase[remain_group]:
                 score = 0
                 for member in groups:
@@ -262,15 +261,15 @@ def start_group(size, favor_data, total, rule, reward, punish):
 
 
 if __name__ == "__main__":
-    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []], 'F': [[], []], 'G': [['E'], ['F']], 'H': [['G'], ['J']], 'I': [['G'], ['F']], "J": [[], []], "K": [[], []], "L": [[], []], 'M': [[], []], 'N': [[], []], "O": [[], []]}
-    total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
+    #favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []], 'F': [[], []], 'G': [['E'], ['F']], 'H': [['G'], ['J']], 'I': [['G'], ['F']], "J": [[], []], "K": [[], []], "L": [[], []], 'M': [[], []], 'N': [[], []], "O": [[], []]}
+    #total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
 
     #favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []]}
     #total = ['A', 'B', 'C', 'D', 'E']
 
-    #favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
-    #total = ['user', 'user2', 'user3', 'user4', 'Steven']
-    g, stat = start_group(5, favor_data, total, [], 1, 1)
+    favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+    total = ['user', 'user2', 'user3', 'user4', 'Steven']
+    g, stat = start_group(3, favor_data, total, [], 1, 1)
 
 
     #g, stat = grouping(3, favor_data, total, [], 1, 1, None)

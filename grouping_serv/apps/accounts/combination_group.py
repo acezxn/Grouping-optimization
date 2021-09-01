@@ -10,7 +10,7 @@ and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored p
 """
 
 def comb(n, r):
-    return math.factorial(n) / (math.factorial(r) * math.factorial(n-r))
+    return math.factorial(n) // (math.factorial(r) * math.factorial(n-r))
 
 def grouping(size, favor_data, total, rule, reward, punish, parent):
     group_list = []

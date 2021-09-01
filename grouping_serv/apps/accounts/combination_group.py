@@ -1,5 +1,8 @@
 import itertools
 import random
+import math
+import threading
+import time
 
 """
 Favor data records the favorism of different people. The dictionary has key of different names,
@@ -59,45 +62,54 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
                                 break
                     if not contained:
                         inner.append(i)
-                                        
+
 
 
 
             prev.clear()
             prev.extend(inner)
-            #print(inner)
             for g in inner:
                 score = happiness_calc(g, reward, punish)
                 scores.append(score)
+
+            # print(arr)
             score_list.append(list(scores))
-            group_list.append(list(inner))
+            group_list.append([tuple(inner)])
             inner.clear()
             scores.clear()
             return
+        elif len(other) != 0:
+            for i in range(math.comb(len(other) -1, size - 1)):
+                # print("groups:", groups)
+                group = groups[i]
+                branch(other, group, starter, p)
+
         else:
-            if len(other) == 0: # if there is no more people in the class
-                #inner.append(started)
-                for g in inner:
-                    score = happiness_calc(g, reward, punish)
-                    scores.append(score)
-                score_list.append(list(scores))
-                group_list.append(list(inner))
-                inner.clear()
-                scores.clear()
-                return
-        for group in groups:
-            branch(other, group, starter, p)
+            score = happiness_calc(src, reward, punish)
+            scores.append(score)
+            score_list.append(list(scores))
+            group_list.append([tuple(src)])
 
 ################################################################################
 
     groups = list(itertools.combinations(total, size))
-    #print("groups", groups)
-    for group in groups:
+    print("groups", len(groups), math.comb(len(total) - 1, size - 1))
+    now = time.time() * 1000
+    for i in range(math.comb(len(total) - 1, size - 1)):
         # inner.append(groups[0])
+        group = groups[i]
+        # t = threading.Thread(target=branch, args=(total, group, group, parent,))
         branch(total, group, group, parent)
+
+        print(group_list)
+        # t.start()
+        print(group, len(group_list), (time.time() * 1000) - now)
+        now = time.time() * 1000
+    # t.join()
     #print("grouplist", group_list)
     #print("scorelist", score_list)
-
+    # print("scorelist: ", score_list)
+    print("grouplist", len(group_list))
 # get the most unhappy group
     if len(group_list) > 0:
         for j in score_list:
@@ -105,19 +117,22 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
             #print(MIN)
             min_scores.append(MIN)
         #print("max", max(min_scores))
+        print("calculated min scores")
 
 # select the case with the happiest unhappy group
+        MAX = max(min_scores)
         for j in min_scores:
-            if j == max(min_scores):
+            if j == MAX:
                 #print('Selected score: ', score_list[min_scores.index(j)])
                 minimums.append(group_list[min_scores.index(j)])
                 opt_score.append(score_list[min_scores.index(j)])
+                # print("find the max min")
 
 # further optimize the optimized case
-        
+
         k = []
         for h in opt_score:
-              k.append(max(h)) 
+              k.append(max(h))
         random.shuffle(minimums)
         r = minimums[k.index(max(k))]
         #print(minimums)
@@ -163,6 +178,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
                 #print("data before run")
                 #print(total)
                 #print(favor_data)
+            print("grouping")
             g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
             #print('output: ', g)
             metacase[remain_group] = g
@@ -234,6 +250,7 @@ def start_group(size, favor_data, total, rule, reward, punish):
         return random.choice(max_scores), 1
 
     else:
+        print("grouping")
         g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
         tmp = g.copy()
         for group in tmp:
@@ -244,13 +261,16 @@ def start_group(size, favor_data, total, rule, reward, punish):
 
 
 if __name__ == "__main__":
-    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []]}
-    total = ['A', 'B', 'C', 'D']
+    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []], 'F': [[], []], 'G': [['E'], ['F']], 'H': [['G'], ['J']], 'I': [['G'], ['F']], "J": [[], []], "K": [[], []], "L": [[], []], 'M': [[], []], 'N': [[], []], "O": [[], []]}
+    total = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
 
-    favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
-    total = ['user', 'user2', 'user3', 'user4', 'Steven']
-    g, stat = start_group(3, favor_data, total, [["user4", "user4"]], 1, 1)
-    
+    favor_data = {'A': [['B'], ['C']], 'B': [['C'], ['A']], 'C': [[], []], 'D': [[], []], 'E': [[], []]}
+    total = ['A', 'B', 'C', 'D', 'E']
+
+   # favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+   # total = ['user', 'user2', 'user3', 'user4', 'Steven']
+    g, stat = start_group(3, favor_data, total, [], 1, 1)
+
 
     #g, stat = grouping(3, favor_data, total, [], 1, 1, None)
     print(g, stat)

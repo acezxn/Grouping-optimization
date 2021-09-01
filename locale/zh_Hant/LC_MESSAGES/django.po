@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-04 17:19+0800\n"
+"POT-Creation-Date: 2021-09-01 10:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,170 +18,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: grouping_serv/apps/accounts/tmp.py:93 grouping_serv/apps/accounts/tmp.py:129
-#: grouping_serv/apps/accounts/vbkp.py:93
-#: grouping_serv/apps/accounts/vbkp.py:129
 #: grouping_serv/apps/accounts/views.py:93
 #: grouping_serv/apps/accounts/views.py:129
 msgid "User not in this classroom"
 msgstr "該使用者不再這個教室"
 
-#: grouping_serv/apps/accounts/tmp.py:95 grouping_serv/apps/accounts/tmp.py:131
-#: grouping_serv/apps/accounts/vbkp.py:95
-#: grouping_serv/apps/accounts/vbkp.py:131
 #: grouping_serv/apps/accounts/views.py:95
 #: grouping_serv/apps/accounts/views.py:131
 msgid "User already added"
 msgstr "已經加入該帳號"
 
-#: grouping_serv/apps/accounts/tmp.py:110
-#: grouping_serv/apps/accounts/tmp.py:144
-#: grouping_serv/apps/accounts/vbkp.py:110
-#: grouping_serv/apps/accounts/vbkp.py:144
 #: grouping_serv/apps/accounts/views.py:110
 #: grouping_serv/apps/accounts/views.py:144
 msgid "Cannot find specified user"
 msgstr "找不到指定的使用者"
 
-#: grouping_serv/apps/accounts/tmp.py:242
-#: grouping_serv/apps/accounts/vbkp.py:242
 #: grouping_serv/apps/accounts/views.py:242
 msgid "Classroom not yours"
 msgstr "你有教室的擁有權"
 
-#: grouping_serv/apps/accounts/tmp.py:244
-#: grouping_serv/apps/accounts/vbkp.py:244
 #: grouping_serv/apps/accounts/views.py:244
-#, fuzzy
-#| msgid "Join classroom"
 msgid "No such classroom"
 msgstr "沒有指定的教室"
 
-#: grouping_serv/apps/accounts/tmp.py:313
-#: grouping_serv/apps/accounts/vbkp.py:313
 #: grouping_serv/apps/accounts/views.py:313
 msgid "incorrect username"
 msgstr "錯誤的使用者名"
 
-#: grouping_serv/apps/accounts/tmp.py:360
-#: grouping_serv/apps/accounts/vbkp.py:360
 #: grouping_serv/apps/accounts/views.py:360
 msgid "verification failed"
 msgstr "認證失敗"
 
-#: grouping_serv/apps/accounts/tmp.py:513
-#: grouping_serv/apps/accounts/vbkp.py:510
 #: grouping_serv/apps/accounts/views.py:516
 msgid "Max number of class created reached"
 msgstr "你已經達到最大班級創造數"
 
-#: grouping_serv/apps/accounts/tmp.py:519
-#: grouping_serv/apps/accounts/vbkp.py:516
 #: grouping_serv/apps/accounts/views.py:522
 msgid "class already created"
 msgstr "該教室已經存在"
 
-#: grouping_serv/apps/accounts/tmp.py:524
-#: grouping_serv/apps/accounts/vbkp.py:521
 #: grouping_serv/apps/accounts/views.py:527
 msgid "Invalid class name"
 msgstr "無效的教室名"
 
-#: grouping_serv/apps/accounts/tmp.py:569
-#: grouping_serv/apps/accounts/vbkp.py:566
 #: grouping_serv/apps/accounts/views.py:572
 msgid "Class already joined"
 msgstr "已經加入該教室"
 
-#: grouping_serv/apps/accounts/tmp.py:581
-#: grouping_serv/apps/accounts/vbkp.py:578
 #: grouping_serv/apps/accounts/views.py:584
 msgid "class not exist"
 msgstr "教室不存在"
 
-#: grouping_serv/apps/accounts/tmp.py:583
-#: grouping_serv/apps/accounts/vbkp.py:580
 #: grouping_serv/apps/accounts/views.py:586
 msgid "Invalid classid or password"
 msgstr "錯誤的教室名或密碼"
 
-#: grouping_serv/apps/accounts/tmp.py:613
-#: grouping_serv/apps/accounts/vbkp.py:610
 #: grouping_serv/apps/accounts/views.py:616
 msgid "The classroom is yours. To leave, go into your class and delete it."
 msgstr "這是你創建的教室。如果要離開，嘗試刪除教室。"
 
-#: grouping_serv/apps/accounts/tmp.py:619
-#: grouping_serv/apps/accounts/vbkp.py:616
 #: grouping_serv/apps/accounts/views.py:622
 msgid "Invalid selection"
 msgstr "指定教室無效"
 
-#: grouping_serv/apps/accounts/tmp.py:665
-#: grouping_serv/apps/accounts/tmp.py:667
-#: grouping_serv/apps/accounts/vbkp.py:662
-#: grouping_serv/apps/accounts/vbkp.py:664
-#: grouping_serv/apps/accounts/views.py:668
-#: grouping_serv/apps/accounts/views.py:670
+#: grouping_serv/apps/accounts/views.py:669
+#: grouping_serv/apps/accounts/views.py:671
 msgid "Group size not a natural number"
 msgstr "組別大小不是正整數"
 
-#: grouping_serv/apps/accounts/tmp.py:674
-#: grouping_serv/apps/accounts/tmp.py:676
-#: grouping_serv/apps/accounts/vbkp.py:671
-#: grouping_serv/apps/accounts/vbkp.py:673
-#: grouping_serv/apps/accounts/views.py:677
-#: grouping_serv/apps/accounts/views.py:679
+#: grouping_serv/apps/accounts/views.py:678
+#: grouping_serv/apps/accounts/views.py:680
 msgid "reward and punish values should be positive integers"
 msgstr "心情加扣分權重必須是正整數"
 
-#: grouping_serv/apps/accounts/tmp.py:679
-#: grouping_serv/apps/accounts/vbkp.py:676
-#: grouping_serv/apps/accounts/views.py:682
+#: grouping_serv/apps/accounts/views.py:683
 msgid "Group size exceeds the total amount of people"
 msgstr "組別大小超過總人數"
 
-#: grouping_serv/apps/accounts/tmp.py:686
-#: grouping_serv/apps/accounts/vbkp.py:683
-#: grouping_serv/apps/accounts/views.py:689
+#: grouping_serv/apps/accounts/views.py:690
+msgid "class size exceeds 15 people"
+msgstr "教室人數超過15人"
+
+#: grouping_serv/apps/accounts/views.py:700
+msgid "Did not specify a valid algorithm"
+msgstr "沒有設定有效的演算法"
+
+#: grouping_serv/apps/accounts/views.py:705
 msgid "Invalid group size"
 msgstr "單組人數: "
 
-#: grouping_serv/apps/accounts/tmp.py:706
-#: grouping_serv/apps/accounts/vbkp.py:703
-#: grouping_serv/apps/accounts/views.py:709
+#: grouping_serv/apps/accounts/views.py:725
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: grouping_serv/apps/accounts/tmp.py:717
-#: grouping_serv/apps/accounts/vbkp.py:714
-#: grouping_serv/apps/accounts/views.py:720
+#: grouping_serv/apps/accounts/views.py:736
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: grouping_serv/apps/accounts/tmp.py:730
-#: grouping_serv/apps/accounts/vbkp.py:727
-#: grouping_serv/apps/accounts/views.py:733
+#: grouping_serv/apps/accounts/views.py:749
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: grouping_serv/settings.py:174 setting_bkp.py:174 settings.py:176
+#: grouping_serv/settings.py:167
 msgid "English"
 msgstr "英文"
 
-#: grouping_serv/settings.py:175 setting_bkp.py:175 settings.py:177
+#: grouping_serv/settings.py:168
 msgid "Traditional Chinese"
 msgstr "繁體中文"
-
-#: grouping_serv/templates/403.html:14 grouping_serv/templates/403_csrf.html:14
-msgid "Sorry! The action is not allowed"
-msgstr "很抱歉！這個行為是不允許的！"
-
-#: grouping_serv/templates/403.html:15 grouping_serv/templates/403_csrf.html:15
-#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
-#: grouping_serv/templates/error.html:16
-msgid "Return to home"
-msgstr "回到首頁"
 
 #: grouping_serv/templates/404.html:12
 msgid "Not found"
@@ -190,6 +134,11 @@ msgstr "找不到"
 #: grouping_serv/templates/404.html:16
 msgid "Sorry! the page is not found on the server"
 msgstr "這個網址不存在"
+
+#: grouping_serv/templates/404.html:18 grouping_serv/templates/500.html:18
+#: grouping_serv/templates/error.html:16
+msgid "Return to home"
+msgstr "回到首頁"
 
 #: grouping_serv/templates/500.html:12
 msgid "Oops"
@@ -257,16 +206,16 @@ msgstr ""
 "在這個情況，組別的滿意度市隨機的，因此無法有效提昇最低滿意度。\n"
 
 #: grouping_serv/templates/about.html:56
-msgid "The algorithm"
-msgstr "分組演算法"
+msgid "Combination Selection Algorithm"
+msgstr "組合挑選分組法"
 
-#: grouping_serv/templates/about.html:58
+#: grouping_serv/templates/about.html:58 grouping_serv/templates/about.html:70
 msgid ""
 "The website collects data of favored and unfavored groups from each "
 "classroom user"
 msgstr "此網站搜集學生對其他同學的喜好"
 
-#: grouping_serv/templates/about.html:59
+#: grouping_serv/templates/about.html:59 grouping_serv/templates/about.html:71
 msgid "and form a datastructure: {user: [[favored], [unfavored]]}"
 msgstr "，生成一個資料結構: {user: [[favored], [unfavored]]}。"
 
@@ -275,29 +224,91 @@ msgid ""
 "the program calculates all possibility of grouping of every member in a class"
 msgstr "程式接著計算所有學生分組的組合。"
 
-#: grouping_serv/templates/about.html:61
+#: grouping_serv/templates/about.html:61 grouping_serv/templates/about.html:73
 msgid "Hapiness calculation"
 msgstr "滿意度計算機制"
 
-#: grouping_serv/templates/about.html:62
+#: grouping_serv/templates/about.html:63 grouping_serv/templates/about.html:75
 msgid ""
 "In each group, if one person is grouped with his/her favored person, overall "
 "happiness of the group +1,"
 msgstr "在每組中，如果一個組員與他喜歡的同學在一組，該組的滿意度+1。"
 
-#: grouping_serv/templates/about.html:63
+#: grouping_serv/templates/about.html:64 grouping_serv/templates/about.html:76
 msgid "if grouped with unfavored person, overall happiness of the group -1."
 msgstr "如果一個組員與他較為合不來的同學在一組，該組的滿意度-1。"
 
-#: grouping_serv/templates/about.html:64
+#: grouping_serv/templates/about.html:65
 msgid "The unhappiest group in each case is measured and stored in a list A,"
 msgstr "在每個組合中滿意度最低的分數會被記錄到列表A中，"
 
-#: grouping_serv/templates/about.html:65
+#: grouping_serv/templates/about.html:66
 msgid ""
 "the algorithm finally select the case with greatest corresponding value in "
 "list A."
 msgstr "演算法最後把列表A的最大值選出，對應該值的組別。"
+
+#: grouping_serv/templates/about.html:69
+msgid "Regression Algorithm"
+msgstr "回歸演算法"
+
+#: grouping_serv/templates/about.html:72
+msgid ""
+"The program first create a randomized grouping case, and the program finds "
+"the most unhappy group and change the member from the group with other "
+"groups randomly. If the score of the most unhappy group exceeds the record, "
+"then set it as the current record. If the program cannot beat the record "
+"with a fixed attempts, the program will return the record."
+msgstr ""
+"程式首先隨機生成一個分組，然後找出最不開心的一組並把其成員用其他組的成員隨機"
+"替換。如果最不開心的一組的心情分高於最高紀錄，將會把此分數和分組設為最高紀"
+"錄，如果這個程式無法再依定的次數內打破紀錄，將會回傳最高紀錄了分組。"
+
+#: grouping_serv/templates/about.html:78
+msgid "Similarities and Differences"
+msgstr "相同與不同處"
+
+#: grouping_serv/templates/about.html:79
+msgid "Similarities"
+msgstr "相同處"
+
+#: grouping_serv/templates/about.html:79
+msgid "1. The parameters of both algorithms are the same"
+msgstr "1. 可設定的參數都一樣"
+
+#: grouping_serv/templates/about.html:80
+msgid "Differences"
+msgstr "不同處"
+
+#: grouping_serv/templates/about.html:81
+msgid ""
+"1. Since combination selection algorithm would actually enumerate all "
+"possibilities of grouping, the grouping process would be significantly "
+"slower when class size is about 15. Therefore, the website limits the usage "
+"of this algorithm for classes with more than 15 people. However, regression "
+"algorithm has fixed complexity, thus it is capable of running in larger "
+"classes."
+msgstr ""
+"1. 因為組合挑選分組法將會列舉出所有分組的可能，所以計算時間將會在15人分組時嚴"
+"重增加，所以系統只開放15人或以下分組時使用此演算法。然而，回歸演算法擁有固定"
+"的複雜度，所以可以在更大的教室裡使用。"
+
+#: grouping_serv/templates/about.html:81
+msgid ""
+"2. Combination selection algorithm separates the remainders as a new group, "
+"but regression algorithm joins the left over members to existing groups. "
+"That is because, to improve overall experience while using this website, the "
+"computation must be as fast as possible. Since combination selection "
+"algorithm has a complexity growing rapidly as class size grows, it puts "
+"pressure on the time for computation. If the complexity is further "
+"multiplied with the complexity of assigning remaining members to existing "
+"groups, it will decrease the user experience and take away the conveniency "
+"of the website."
+msgstr ""
+"2. 組合挑選分組法會把剩餘的成員編成一組，但是回歸演算法會把剩餘的成員加入其他"
+"組中。因為，為了提升使用體驗，計算必續越快越好。因為組合挑選分組法將會有龐大"
+"的複雜度，如果又乘以分配剩餘成員的複雜度，將會降低使用體驗以及使這網站不方便"
+"使用。"
 
 #: grouping_serv/templates/accounts/classrooms.html:5
 msgid "Classes"
@@ -500,74 +511,90 @@ msgid "Class password:"
 msgstr "加入碼: "
 
 #: grouping_serv/templates/accounts/profile.html:19
-#: grouping_serv/templates/accounts/profile.html:113
+#: grouping_serv/templates/accounts/profile.html:141
 msgid "available usernames"
 msgstr "已加入的學生"
 
 #: grouping_serv/templates/accounts/profile.html:20
-msgid "Combination selection algorithm"
-msgstr "組合挑選分組法"
+msgid "Grouping"
+msgstr "分組"
 
-#: grouping_serv/templates/accounts/profile.html:24
+#: grouping_serv/templates/accounts/profile.html:27
+msgid "Grouping algorithm (see about page for more info)"
+msgstr "分組演算法（詳情請見「關於」頁面）"
+
+#: grouping_serv/templates/accounts/profile.html:30
+msgid "combination selection (slow but accurate)"
+msgstr "組合挑選分組法（慢但準確）"
+
+#: grouping_serv/templates/accounts/profile.html:31
+msgid "regression algorithm (fast but less accurate)"
+msgstr "回歸演算法（快但不完全準確）"
+
+#: grouping_serv/templates/accounts/profile.html:36
+msgid "Add remaining member in existing groups"
+msgstr "把剩餘的成員加入已存在的組別"
+
+#: grouping_serv/templates/accounts/profile.html:39
 msgid "Group size: "
 msgstr "單組人數: "
 
-#: grouping_serv/templates/accounts/profile.html:25
+#: grouping_serv/templates/accounts/profile.html:40
 msgid "compute"
 msgstr "計算"
 
-#: grouping_serv/templates/accounts/profile.html:26
+#: grouping_serv/templates/accounts/profile.html:41
 msgid "Advanced"
 msgstr "進階"
 
-#: grouping_serv/templates/accounts/profile.html:27
+#: grouping_serv/templates/accounts/profile.html:42
 msgid "Alter reward and punishment values"
 msgstr "改變心情加扣分權重"
 
-#: grouping_serv/templates/accounts/profile.html:28
+#: grouping_serv/templates/accounts/profile.html:43
 msgid "Score added for each people being with a desired groupmate: "
 msgstr "每個人與自己想要的組員在同組時加的分數： "
 
-#: grouping_serv/templates/accounts/profile.html:32
+#: grouping_serv/templates/accounts/profile.html:47
 msgid "Score deducted for each people being with an undesired groupmate: "
 msgstr "每個人與自己不想要的組員在同組時扣的分數： "
 
-#: grouping_serv/templates/accounts/profile.html:36
+#: grouping_serv/templates/accounts/profile.html:51
 msgid "Group filter: (Optional)"
 msgstr "結果過濾（非必填，填入不宜同組的學生）"
 
-#: grouping_serv/templates/accounts/profile.html:40
-#: grouping_serv/templates/accounts/profile.html:61
+#: grouping_serv/templates/accounts/profile.html:55
+#: grouping_serv/templates/accounts/profile.html:76
 msgid " Not with "
 msgstr " 不和 "
 
-#: grouping_serv/templates/accounts/profile.html:44
+#: grouping_serv/templates/accounts/profile.html:59
 msgid "ADD RULE"
 msgstr "新增規則"
 
-#: grouping_serv/templates/accounts/profile.html:86
+#: grouping_serv/templates/accounts/profile.html:114
 msgid " favored: "
 msgstr "喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:100
+#: grouping_serv/templates/accounts/profile.html:128
 msgid " unfavored: "
 msgstr "不喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:114
+#: grouping_serv/templates/accounts/profile.html:142
 msgid "Add data"
 msgstr "加入資料"
 
-#: grouping_serv/templates/accounts/profile.html:118
-#: grouping_serv/templates/accounts/profile.html:129
+#: grouping_serv/templates/accounts/profile.html:146
+#: grouping_serv/templates/accounts/profile.html:157
 msgid "Favored"
 msgstr "喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:120
-#: grouping_serv/templates/accounts/profile.html:131
+#: grouping_serv/templates/accounts/profile.html:148
+#: grouping_serv/templates/accounts/profile.html:159
 msgid "Unfavored"
 msgstr "不喜好的："
 
-#: grouping_serv/templates/accounts/profile.html:125
+#: grouping_serv/templates/accounts/profile.html:153
 msgid "Remove data"
 msgstr "刪除資料"
 
@@ -669,3 +696,6 @@ msgstr "首頁"
 #: grouping_serv/templates/navbar.html:25
 msgid "Logout"
 msgstr "登出"
+
+#~ msgid "Sorry! The action is not allowed"
+#~ msgstr "很抱歉！這個行為是不允許的！"

@@ -17,10 +17,25 @@
 </div>
 <div><a class = "link" href = {{"/accounts/edit/"|add:classid}}>{% trans "Edit permissions" %}</a></div>
 <div style="padding: 5vw 0px"><a href={{"/accounts/list/"|add:classid|add:"/"}} class="link">{% trans "available usernames" %}</a></div>
-<h3 style="font-family: Ubuntu;font-size: max(3vw, 25px);">{% trans "Combination selection algorithm" %}</h3>
+<h3 style="font-family: Ubuntu;font-size: max(3vw, 25px);">{% trans "Grouping" %}</h3>
+
+
 {% get_current_language as LANGUAGE_CODE %}
 <form action = {{"/"|add:LANGUAGE_CODE|add:"/accounts/compute/"|add:classid|add:"/"}} method="post" id = 'form'>
   {% csrf_token %}
+
+  <a style="font-family: Ubuntu;">{% trans "Grouping algorithm (see about page for more info)" %}</a>
+  <br>
+  <select name="algo" id="algo" style="border: solid 1px;width: 20em;height: 2em;font-family: Ubuntu;" onchange="enable_checkbox()">
+    <option value="combination">{% trans "combination selection (slow but accurate)" %}</option>
+    <option value="regression">{% trans "regression algorithm (fast but less accurate)" %}</option>
+  </select>
+  <br>
+  <div style = "display: none; padding: 1em 0px; " id="add_rem">
+    <input type="checkbox" name="add_rem" value="yes">
+    <a style="font-family: Ubuntu;"> {% trans "Add remaining member in existing groups" %} <a><br>
+  </div>
+
     <a style="font-family: Ubuntu;">{% trans "Group size: " %}</a>
     <div><input id="size" type="number" name="size" style="padding: min(14px, 2vw) 20px; border: solid 1px" min = "1"><a> </a><input type="submit" value="{% trans 'compute' %}"></div>
   <h2>{% trans "Advanced" %}</h2>
@@ -76,6 +91,19 @@
         div.insertBefore(dst_field, div.childNodes[divpos]);
         var pos = x.childElementCount;
         x.appendChild(div);
+    }
+    function enable_checkbox() {
+    var algo = document.getElementById("algo");
+    var add_rem_box =  document.getElementById("add_rem");
+    var algotype = algo.value;
+
+
+    if (algotype == "regression") {
+       	add_rem_box.style.display = "block";
+    } else {
+    	add_rem_box.style.display = "none";
+    }
+
     }
 </script>
 {% else %}

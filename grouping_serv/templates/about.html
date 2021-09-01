@@ -53,16 +53,32 @@ In this case, the happiness of each group is random, and unable to make the unha
 
 </p>
 </div>
-<h2 style="font-size: max(4em, 40px); text-align: center;font-family:Noto Sans TC;">{% trans "The algorithm" %}</h2>
+<h2 style="font-size: max(4em, 40px); text-align: center;font-family:Noto Sans TC;">{% trans "Combination Selection Algorithm" %}</h2>
 <div class='main'>
 <p style = "font-family: Ubuntu;">{% trans "The website collects data of favored and unfavored groups from each classroom user" %}
 <br><br>{% trans "and form a datastructure: {user: [[favored], [unfavored]]}" %}
 <br><br>{% trans "the program calculates all possibility of grouping of every member in a class" %}</p>
 <h3 style="font-size: max(3vw, 25px);text-align: left;font-family:Noto Sans TC;">{% trans "Hapiness calculation" %}</h3>
-<p style = "font-family: Ubuntu;">{% trans "In each group, if one person is grouped with his/her favored person, overall happiness of the group +1," %}
+<p style = "font-family: Ubuntu;">
+{% trans "In each group, if one person is grouped with his/her favored person, overall happiness of the group +1," %}
 <br><br>{% trans "if grouped with unfavored person, overall happiness of the group -1." %}
 <br><br>{% trans "The unhappiest group in each case is measured and stored in a list A," %}
 <br><br>{% trans "the algorithm finally select the case with greatest corresponding value in list A." %}
 </p>
 </div>
+<h2 style="font-size: max(4em, 40px); text-align: center;font-family:Noto Sans TC;">{% trans "Regression Algorithm" %}</h2><div class="main">
+<p style="font-family: Ubuntu;">{% trans "The website collects data of favored and unfavored groups from each classroom user" %}
+<br><br>{% trans "and form a datastructure: {user: [[favored], [unfavored]]}" %}
+<br><br>{% trans "The program first create a randomized grouping case, and the program finds the most unhappy group and change the member from the group with other groups randomly. If the score of the most unhappy group exceeds the record, then set it as the current record. If the program cannot beat the record with a fixed attempts, the program will return the record." %}</p>
+<h3 style="font-size: max(3vw, 25px);text-align: left;font-family:Noto Sans TC;">{% trans "Hapiness calculation" %}</h3>
+<p style = "font-family: Ubuntu;">
+{% trans "In each group, if one person is grouped with his/her favored person, overall happiness of the group +1," %}
+<br><br>{% trans "if grouped with unfavored person, overall happiness of the group -1." %}
+</p>
+</div><h2 style="font-size: max(4em, 40px); text-align: center;font-family:Noto Sans TC;">{% trans "Similarities and Differences" %}</h2><div class="main">
+<h3 style="font-size: max(3vw, 25px);text-align: left;font-family:Noto Sans TC;">{% trans "Similarities" %}</h3><p style="font-family: Ubuntu;">{% trans "1. The parameters of both algorithms are the same" %}</p>
+<h3 style="font-size: max(3vw, 25px);text-align: left;font-family:Noto Sans TC;">{% trans "Differences" %}</h3>
+<p style="font-family: Ubuntu;">{% trans "1. Since combination selection algorithm would actually enumerate all possibilities of grouping, the grouping process would be significantly slower when class size is about 15. Therefore, the website limits the usage of this algorithm for classes with more than 15 people. However, regression algorithm has fixed complexity, thus it is capable of running in larger classes." %}<br><br>{% trans "2. Combination selection algorithm separates the remainders as a new group, but regression algorithm joins the left over members to existing groups. That is because, to improve overall experience while using this website, the computation must be as fast as possible. Since combination selection algorithm has a complexity growing rapidly as class size grows, it puts pressure on the time for computation. If the complexity is further multiplied with the complexity of assigning remaining members to existing groups, it will decrease the user experience and take away the conveniency of the website." %}</p>
+</div>
+
 {% endblock %}

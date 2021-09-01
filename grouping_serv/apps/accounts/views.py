@@ -17,7 +17,7 @@ import random
 import string
 
 from . import combination_group
-
+from . import multi_regression
 
 def check_exist(word):
     users = User.objects.all()
@@ -682,8 +682,23 @@ def compute(request, q):
                 if size > len(total):
                     return render(request, "error.html", {"error": gettext("Group size exceeds the total amount of people")})
                 else:
-                    G, state = combination_group.start_group(
-                        size=size, favor_data=favor_data, total=total, rule=rule, reward = reward, punish=punish)
+                    algo = request.POST['algo']
+                    if algo == 'combination':
+                        if len(total) <= 15:
+                            G, state = combination_group.start_group(size=size, favor_data=favor_data, total=total, rule=rule, reward = reward, punish=punish)
+                        else:
+                            return render(request, "error.html", {"error": gettext("class size exceeds 15 people")})
+                    elif algo == 'regression':
+                        try:
+                            if request.POST['add_rem'] == 'yes':
+                                G, state = multi_regression.optimize(size, total, favor_data, rule, reward, punish, True)
+                            else:
+                                G, state = multi_regression.optimize(size, total, favor_data, rule, reward, punish, False)
+                        except:
+                            G, state = multi_regression.optimize(size, total, favor_data, rule, reward, punish, False)
+                    else:
+                         return render(request, "error.html", {"error": gettext("Did not specify a valid algorithm")})
+
                     if state:
                         return render(request, "accounts/comb_compute.html", {"GROUP": G, "url": "accounts"})
                     else:
@@ -740,3 +755,9 @@ def setting(request):
             return render(request, 'accounts/setting.html', {})
     else:
         return redirect("/accounts/login")
+
+if __name__ == "__main__":
+    fav_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
+    total = ['user2', 'user4', 'Steven', 'user3', 'user']
+    g, state = multi_regression.optimize(2, total, fav_data, [['user', 'user2'], ['user', 'user3'], ['user', 'user4']], 1, 4)
+    print(g)

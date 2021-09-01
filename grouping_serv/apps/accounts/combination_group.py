@@ -9,6 +9,8 @@ Favor data records the favorism of different people. The dictionary has key of d
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
 """
 
+def comb(n, r):
+    return math.factorial(n) / (math.factorial(r) * math.factorial(n-r))
 
 def grouping(size, favor_data, total, rule, reward, punish, parent):
     group_list = []
@@ -79,7 +81,7 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
             scores.clear()
             return
         elif len(other) != 0:
-            for i in range(math.comb(len(other) -1, size - 1)):
+            for i in range(comb(len(other) -1, size - 1)):
                 # print("groups:", groups)
                 group = groups[i]
                 branch(other, group, starter, p)
@@ -93,9 +95,9 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
 ################################################################################
 
     groups = list(itertools.combinations(total, size))
-    print("groups", len(groups), math.comb(len(total) - 1, size - 1))
+    print("groups", len(groups), comb(len(total) - 1, size - 1))
     now = time.time() * 1000
-    for i in range(math.comb(len(total) - 1, size - 1)):
+    for i in range(comb(len(total) - 1, size - 1)):
         # inner.append(groups[0])
         group = groups[i]
         # t = threading.Thread(target=branch, args=(total, group, group, parent,))

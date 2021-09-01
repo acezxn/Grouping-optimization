@@ -9,6 +9,19 @@ Favor data records the favorism of different people. The dictionary has key of d
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
 """
 
+def happiness_calc(group, reward, punish): # happiness calculation algorithm
+    score = 0
+    for member in group:
+        favored = favor_data[member][0]
+        avoid = favor_data[member][1]
+        for single in favored:
+            if single in group:
+                score += reward
+        for single in avoid:
+            if single in group:
+                score -= punish
+    return score
+
 def comb(n, r):
     return math.factorial(n) // (math.factorial(r) * math.factorial(n-r))
 
@@ -30,18 +43,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
                 out.append(i)
         return tuple(out)
 
-    def happiness_calc(group, reward, punish): # happiness calculation algorithm
-        score = 0
-        for member in group:
-            favored = favor_data[member][0]
-            avoid = favor_data[member][1]
-            for single in favored:
-                if single in group:
-                    score += reward
-            for single in avoid:
-                if single in group:
-                    score -= punish
-        return score
 
     def branch(src, group, starter, parent): # recursive algorithm to list all possible outcomes of grouping
         p = group
@@ -102,7 +103,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
         # t = threading.Thread(target=branch, args=(total, group, group, parent,))
         branch(total, group, group, parent)
 
-        print("grouplist", group_list)
         # t.start()
         print(group, len(group_list), (time.time() * 1000) - now)
         now = time.time() * 1000
@@ -110,7 +110,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
     #print("grouplist", group_list)
     #print("scorelist", score_list)
     # print("scorelist: ", score_list)
-    print("grouplist", group_list)
 # get the most unhappy group
     if len(group_list) > 0:
         for j in score_list:
@@ -118,7 +117,6 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
             #print(MIN)
             min_scores.append(MIN)
         #print("max", max(min_scores))
-        print("calculated min scores")
 
 # select the case with the happiest unhappy group
         MAX = max(min_scores)
@@ -178,11 +176,8 @@ def start_group(size, favor_data, total, rule, reward, punish):
                 #print("data before run")
                 #print(total)
                 #print(favor_data)
-            print("grouping")
             g, stat = grouping(size, favor_data, total, rule, reward, punish, None)
-            print('output: ', g)
             metacase[remain_group] = g
-            #print('metacase: ',metacase)
         tmp = possible_remainders.copy()
 
         # delete the newly generated cases which violates the rules
@@ -197,35 +192,19 @@ def start_group(size, favor_data, total, rule, reward, punish):
         total = temp.copy()
         meta_scorelist = []
 
+
         # calculating the happiness scores for the remaining groups
         for remain_group in possible_remainders:
 
-            score_remainder = 0
 
-            for member in remain_group:
-                favored = favor_data[member][0]
-                avoid = favor_data[member][1]
-                for single in favored:
-                    if single in remain_group:
-                        score_remainder += reward
-                for single in avoid:
-                    if single in remain_group:
-                        score_remainder -= punish
+            score_remainder = happiness_calc(remain_group, reward, punish)
+
             score_statistic = []
 
             # recalculate the happiness of the other groups
             for groups in metacase[remain_group]:
-                score = 0
-                for member in groups:
-                    favored = favor_data[member][0]
-                    avoid = favor_data[member][1]
-                    for single in favored:
-                        if single in groups:
-                            score += reward
-                    for single in avoid:
-                        if single in groups:
-                            score -= punish
-                    score_statistic.append(score)
+                score = happiness_calc(groups, reward, punish)
+                score_statistic.append(score)
             try:
                 # trying to append the minimum score
                 if score_remainder < min(score_statistic):
@@ -268,7 +247,7 @@ if __name__ == "__main__":
     #total = ['A', 'B', 'C', 'D', 'E']
 
     favor_data = {'user3': [[], []], 'user2': [['user'], []], 'user4': [[], ['user2']], 'Steven': [['user3'], ['user4']], 'user': [['user2'], []]}
-    total = ['user', 'user2', 'user3', 'user4', 'Steven']
+    total = ['user', 'user4', 'Steven', 'user2', 'user3']
     g, stat = start_group(3, favor_data, total, [], 1, 1)
 
 

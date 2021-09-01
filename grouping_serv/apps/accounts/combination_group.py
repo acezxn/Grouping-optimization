@@ -9,7 +9,7 @@ Favor data records the favorism of different people. The dictionary has key of d
 and value as [[favored], [unfavored]] each favored person worth 1pt, unfavored person worth -1pt.
 """
 
-def happiness_calc(group, reward, punish): # happiness calculation algorithm
+def happiness_calc(group, favor_data, reward, punish): # happiness calculation algorithm
     score = 0
     for member in group:
         favored = favor_data[member][0]
@@ -72,7 +72,7 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
             prev.clear()
             prev.extend(inner)
             for g in inner:
-                score = happiness_calc(g, reward, punish)
+                score = happiness_calc(g, favor_data, reward, punish)
                 scores.append(score)
 
             score_list.append(list(scores))
@@ -87,7 +87,7 @@ def grouping(size, favor_data, total, rule, reward, punish, parent):
                 branch(other, group, starter, p)
 
         else:
-            score = happiness_calc(src, reward, punish)
+            score = happiness_calc(group, favor_data, reward, punish)
             scores.append(score)
             score_list.append(list(scores))
             group_list.append([tuple(src)])
@@ -197,13 +197,13 @@ def start_group(size, favor_data, total, rule, reward, punish):
         for remain_group in possible_remainders:
 
 
-            score_remainder = happiness_calc(remain_group, reward, punish)
+            score_remainder = happiness_calc(remain_group, favor_data, reward, punish)
 
             score_statistic = []
 
             # recalculate the happiness of the other groups
             for groups in metacase[remain_group]:
-                score = happiness_calc(groups, reward, punish)
+                score = happiness_calc(groups, favor_data, reward, punish)
                 score_statistic.append(score)
             try:
                 # trying to append the minimum score

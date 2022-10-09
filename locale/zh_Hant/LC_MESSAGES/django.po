@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 10:17+0800\n"
+"POT-Creation-Date: 2022-10-09 14:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,102 +157,111 @@ msgstr "關於"
 msgid "Creator"
 msgstr "創作者"
 
-#: grouping_serv/templates/about.html:33
+#: grouping_serv/templates/about.html:34
+msgid "Who am I"
+msgstr "關於我"
+
+#: grouping_serv/templates/about.html:36
+msgid ""
+"\n"
+"  I am a passionate developer who likes to make interesting projects. I am "
+"interested in cybersecurity, automations, \n"
+"  and various computer science related fields. Once being a middle school "
+"student, I was oppressed by the brutality\n"
+"  of free group division in class. I could not choose my groupmates since I "
+"lacked social skills so everyone \n"
+"  indirectly \"choose\" my groupmate for me. I made this website to solve "
+"this problem.\n"
+"  "
+msgstr ""
+"\n"
+"  我是名熱忱於興趣的開發者，喜歡研究資訊安全、做電腦自動化專題，等等關於電腦科學的領域。\n "
+"  我曾是名國中學生，被自由分組的殘酷所壓迫。因為較弱的社交能力，我曾沒有辦法選擇我的組員。\n"
+"  別人一度間接「選擇」了我的組員，所以我做了這個網站已嘗試解決分組的不公。\n"
+"  "
+
+#: grouping_serv/templates/about.html:44
 msgid "What is the website created for"
 msgstr "這個網站要達成什麼"
 
-#: grouping_serv/templates/about.html:35
+#: grouping_serv/templates/about.html:46
 msgid ""
 "\n"
-" I found a problem in real life grouping algorithms. I noticed that most man-"
-"made\n"
-"grouping algorithms are not optimized. There are these types of algorithms "
-"in common:\n"
+"  Making groups in the classroom has many benefits. But it could turn into a "
+"disaster. \n"
+"  The process of searching teammates solely by social skills is brutal and "
+"sacrificial. \n"
+"  Most strategies enhanced social stratification and discrimination in the "
+"classroom.\n"
+"\n"
+"  You cannot swing a home run without hitting the sweet spot, no matter how "
+"hard you hit. \n"
+"  The website attempts to find the sweet spot. The algorithm considers "
+"likeness and dis-likeness, \n"
+"  targets for overall happiness and/or fairness, and then finds the "
+"optimized result. Therefore,\n"
+"  the website intends to maximize the social interest in grouping.\n"
 "  "
 msgstr ""
 "\n"
-"我從現在經常使用的分組法發現了問題。我發現大多數分組法並沒有辦法產生優化的分"
-"組結果。這些分組法被經常使用：\n"
+"  教室的分組活動固然有好處，但是有可能會變成一場災難。\n"
+"  只用社交技巧來決定組員非常的殘酷，而且是具有犧牲性的\n"
+"  現存的大部分分組的方式都會加深班中的分層與歧視。\n"
+"\n"
+"  無論力道，沒有擊中甜蜜點，不可能擊出全壘打。\n"
+"  這個網站就是要來找分組的甜蜜點。考慮進每位成員對其他組員的喜好，\n"
+"  針對整體的滿意度與公平性，找出最優的分組方式，\n"
+"  藉此最大化分組的社群利益。\n"
 "  "
 
-#: grouping_serv/templates/about.html:41
-msgid "Free grouping:"
-msgstr "自由分組"
-
-#: grouping_serv/templates/about.html:42
-msgid ""
-"\n"
-"In this case, everyone is allowed to choose their groupmates by themselves.\n"
-"Since everyone want to be happy, they choose according to their favorites.\n"
-"However, this caused several groups to be happy while the leftover "
-"remainings are unhappy.\n"
-msgstr ""
-"\n"
-"在這個情況，所有人都可以選擇自己想要的組員。\n"
-"因為大家都想滿足自己的欲望，他們選擇自己最喜歡的組員。\n"
-"然而，這將造成些許組別的快樂建立在剩餘組員的不快樂上。\n"
-
-#: grouping_serv/templates/about.html:48
-msgid "Randomized group"
-msgstr "隨機分組"
-
-#: grouping_serv/templates/about.html:49
-msgid ""
-"\n"
-"In this case, the happiness of each group is random, and unable to make the "
-"unhappiest group happier.\n"
-msgstr ""
-"\n"
-"在這個情況，組別的滿意度市隨機的，因此無法有效提昇最低滿意度。\n"
-
-#: grouping_serv/templates/about.html:56
+#: grouping_serv/templates/about.html:60
 msgid "Combination Selection Algorithm"
 msgstr "組合挑選分組法"
 
-#: grouping_serv/templates/about.html:58 grouping_serv/templates/about.html:70
+#: grouping_serv/templates/about.html:62 grouping_serv/templates/about.html:74
 msgid ""
 "The website collects data of favored and unfavored groups from each "
 "classroom user"
 msgstr "此網站搜集學生對其他同學的喜好"
 
-#: grouping_serv/templates/about.html:59 grouping_serv/templates/about.html:71
+#: grouping_serv/templates/about.html:63 grouping_serv/templates/about.html:75
 msgid "and form a datastructure: {user: [[favored], [unfavored]]}"
 msgstr "，生成一個資料結構: {user: [[favored], [unfavored]]}。"
 
-#: grouping_serv/templates/about.html:60
+#: grouping_serv/templates/about.html:64
 msgid ""
 "the program calculates all possibility of grouping of every member in a class"
 msgstr "程式接著計算所有學生分組的組合。"
 
-#: grouping_serv/templates/about.html:61 grouping_serv/templates/about.html:73
+#: grouping_serv/templates/about.html:65 grouping_serv/templates/about.html:77
 msgid "Hapiness calculation"
 msgstr "滿意度計算機制"
 
-#: grouping_serv/templates/about.html:63 grouping_serv/templates/about.html:75
+#: grouping_serv/templates/about.html:67 grouping_serv/templates/about.html:79
 msgid ""
 "In each group, if one person is grouped with his/her favored person, overall "
 "happiness of the group +1,"
 msgstr "在每組中，如果一個組員與他喜歡的同學在一組，該組的滿意度+1。"
 
-#: grouping_serv/templates/about.html:64 grouping_serv/templates/about.html:76
+#: grouping_serv/templates/about.html:68 grouping_serv/templates/about.html:80
 msgid "if grouped with unfavored person, overall happiness of the group -1."
 msgstr "如果一個組員與他較為合不來的同學在一組，該組的滿意度-1。"
 
-#: grouping_serv/templates/about.html:65
+#: grouping_serv/templates/about.html:69
 msgid "The unhappiest group in each case is measured and stored in a list A,"
 msgstr "在每個組合中滿意度最低的分數會被記錄到列表A中，"
 
-#: grouping_serv/templates/about.html:66
+#: grouping_serv/templates/about.html:70
 msgid ""
 "the algorithm finally select the case with greatest corresponding value in "
 "list A."
 msgstr "演算法最後把列表A的最大值選出，對應該值的組別。"
 
-#: grouping_serv/templates/about.html:69
+#: grouping_serv/templates/about.html:73
 msgid "Regression Algorithm"
 msgstr "回歸演算法"
 
-#: grouping_serv/templates/about.html:72
+#: grouping_serv/templates/about.html:76
 msgid ""
 "The program first create a randomized grouping case, and the program finds "
 "the most unhappy group and change the member from the group with other "
@@ -264,23 +273,23 @@ msgstr ""
 "替換。如果最不開心的一組的心情分高於最高紀錄，將會把此分數和分組設為最高紀"
 "錄，如果這個程式無法再依定的次數內打破紀錄，將會回傳最高紀錄了分組。"
 
-#: grouping_serv/templates/about.html:78
+#: grouping_serv/templates/about.html:82
 msgid "Similarities and Differences"
 msgstr "相同與不同處"
 
-#: grouping_serv/templates/about.html:79
+#: grouping_serv/templates/about.html:83
 msgid "Similarities"
 msgstr "相同處"
 
-#: grouping_serv/templates/about.html:79
+#: grouping_serv/templates/about.html:83
 msgid "1. The parameters of both algorithms are the same"
 msgstr "1. 可設定的參數都一樣"
 
-#: grouping_serv/templates/about.html:80
+#: grouping_serv/templates/about.html:84
 msgid "Differences"
 msgstr "不同處"
 
-#: grouping_serv/templates/about.html:81
+#: grouping_serv/templates/about.html:85
 msgid ""
 "1. Since combination selection algorithm would actually enumerate all "
 "possibilities of grouping, the grouping process would be significantly "
@@ -293,7 +302,7 @@ msgstr ""
 "重增加，所以系統只開放15人或以下分組時使用此演算法。然而，回歸演算法擁有固定"
 "的複雜度，所以可以在更大的教室裡使用。"
 
-#: grouping_serv/templates/about.html:81
+#: grouping_serv/templates/about.html:85
 msgid ""
 "2. Combination selection algorithm separates the remainders as a new group, "
 "but regression algorithm joins the left over members to existing groups. "
@@ -696,6 +705,47 @@ msgstr "首頁"
 #: grouping_serv/templates/navbar.html:25
 msgid "Logout"
 msgstr "登出"
+
+#~ msgid ""
+#~ "\n"
+#~ " I found a problem in real life grouping algorithms. I noticed that most "
+#~ "man-made\n"
+#~ "grouping algorithms are not optimized. There are these types of "
+#~ "algorithms in common:\n"
+#~ "  "
+#~ msgstr ""
+#~ "\n"
+#~ "我從現在經常使用的分組法發現了問題。我發現大多數分組法並沒有辦法產生優化的"
+#~ "分組結果。這些分組法被經常使用：\n"
+#~ "  "
+
+#~ msgid "Free grouping:"
+#~ msgstr "自由分組"
+
+#~ msgid ""
+#~ "\n"
+#~ "In this case, everyone is allowed to choose their groupmates by "
+#~ "themselves.\n"
+#~ "Since everyone want to be happy, they choose according to their "
+#~ "favorites.\n"
+#~ "However, this caused several groups to be happy while the leftover "
+#~ "remainings are unhappy.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "在這個情況，所有人都可以選擇自己想要的組員。\n"
+#~ "因為大家都想滿足自己的欲望，他們選擇自己最喜歡的組員。\n"
+#~ "然而，這將造成些許組別的快樂建立在剩餘組員的不快樂上。\n"
+
+#~ msgid "Randomized group"
+#~ msgstr "隨機分組"
+
+#~ msgid ""
+#~ "\n"
+#~ "In this case, the happiness of each group is random, and unable to make "
+#~ "the unhappiest group happier.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "在這個情況，組別的滿意度市隨機的，因此無法有效提昇最低滿意度。\n"
 
 #~ msgid "Sorry! The action is not allowed"
 #~ msgstr "很抱歉！這個行為是不允許的！"

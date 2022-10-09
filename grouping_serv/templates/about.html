@@ -30,25 +30,29 @@
 <div style="display:block;padding: 2em 2em;"></div>
 
 <h1 style="font-size: max(2.5em, 25px); text-align: center;font-family:Noto Sans TC;padding: 1em 0em;">
-{% trans "What is the website created for" %}</h1>
+
+{% trans "Who am I" %}</h1>
 <p>
   {% blocktranslate %}
- I found a problem in real life grouping algorithms. I noticed that most man-made
-grouping algorithms are not optimized. There are these types of algorithms in common:
+  I am a passionate developer who likes to make interesting projects. I am interested in cybersecurity, automations, 
+  and various computer science related fields. Once being a middle school student, I was oppressed by the brutality
+  of free group division in class. I could not choose my groupmates since I lacked social skills so everyone 
+  indirectly "choose" my groupmate for me. I made this website to solve this problem.
   {% endblocktranslate %}
 <br><br>
 
-<b style="font-size: max(1.5em, 20px);font-family:Noto Sans TC;">{% trans "Free grouping:" %}</b><br>
-{% blocktranslate %}
-In this case, everyone is allowed to choose their groupmates by themselves.
-Since everyone want to be happy, they choose according to their favorites.
-However, this caused several groups to be happy while the leftover remainings are unhappy.
-{% endblocktranslate %}
-<br><br>
-<b style="font-size: max(1.5em, 20px);font-family:Noto Sans TC;">{% trans "Randomized group" %}</b><br>
-{% blocktranslate %}
-In this case, the happiness of each group is random, and unable to make the unhappiest group happier.
-{% endblocktranslate %}
+{% trans "What is the website created for" %}</h1>
+<p>
+  {% blocktranslate %}
+  Making groups in the classroom has many benefits. But it could turn into a disaster. 
+  The process of searching teammates solely by social skills is brutal and sacrificial. 
+  Most strategies enhanced social stratification and discrimination in the classroom.
+
+  You cannot swing a home run without hitting the sweet spot, no matter how hard you hit. 
+  The website attempts to find the sweet spot. The algorithm considers likeness and dis-likeness, 
+  targets for overall happiness and/or fairness, and then finds the optimized result. Therefore,
+  the website intends to maximize the social interest in grouping.
+  {% endblocktranslate %}
 <br><br>
 
 </p>
@@ -82,3 +86,4 @@ In this case, the happiness of each group is random, and unable to make the unha
 </div>
 
 {% endblock %}
+

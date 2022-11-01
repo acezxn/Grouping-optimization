@@ -48,9 +48,10 @@ The web application actually includes only Combination Selection Grouping and Re
 
 ## Performance
 ### Complexity for Combination Selection Grouping:
-n represents the total number of people, r represents the group size.
-O = n-1 C r-1 * n-r-1 C r-1 * …; n-xr-1 >= r-1; x is a positive integer
-The complexity grows in factorial. Therefore, it is not suitable to group a class with more than 12 people.
+n represents the total number of people, r represents the group size, and x represents a positive integer.
+<br/>
+### $O={n-1 \choose r-1} \cdot {n-r-1 \choose r-1} \cdot {n-2r-1 \choose r-1}...;n-xr-1 \geq r-1$
+The complexity grows factorially. Therefore, it is not suitable to group a class with more than 12 people.
 
 ### Complexity for Regression Algorithm:
 Maximum complexity:

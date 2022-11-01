@@ -3,7 +3,7 @@
 This website is intended to achieve the fairest group division, increasing social interests by improving overall satisfaction of groupmates.
 https://group-optipus.herokuapp.com
 
-![About this website](https://group-optipus.herokuapp.com/about)
+[About this website](https://group-optipus.herokuapp.com/about)
 
 ## Features
 To work with the algorithms, an account is needed.

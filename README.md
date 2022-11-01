@@ -54,9 +54,9 @@ n represents the total number of people, r represents the group size, and x repr
 The complexity grows factorially. Therefore, it is not suitable to group a class with more than 12 people.
 
 ### Complexity for Regression Algorithm:
-Maximum complexity:
-O = depth * max_attempts
-whereas depth is set fixed to 100 and max_attempts is set fixed to 100000.
+Maximum complexity: <br/>
+### $O = depth * attempts$<br/>
+whereas depth is set fixed to 100 and maximum attempts is set fixed to 100000.<br/>
 Therefore, it is more usable when grouping large classes.
 
 

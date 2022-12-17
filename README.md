@@ -1,9 +1,9 @@
 # <img src="images/iplusi.png" width=30px>&nbsp;&nbsp;&nbsp;&nbsp;Grouping-optimization
 
 This website is intended to achieve the fairest group division, increasing social interests by improving overall satisfaction of groupmates.
-https://group-optipus.herokuapp.com
+https://114.32.151.36
 
-[About this website](https://group-optipus.herokuapp.com/about)
+[About this website](https://114.32.151.36/about)
 
 ## Features
 To work with the algorithms, an account is needed.

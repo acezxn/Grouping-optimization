@@ -91,6 +91,8 @@ def ProfileView(request, q):
 
                                                         if q not in UserProfile.objects.get(user_id=u.id).classrooms:
                                                             return render(request, "error.html", {"error": gettext("User not in this classroom")})
+                                                        if u.id == request.user.id:
+                                                            return render(request, "error.html", {"error": gettext("Invalid user input")})
                                                     if d in data[1]:
                                                         return render(request, "error.html", {"error": gettext("User already added")})
                                             print(

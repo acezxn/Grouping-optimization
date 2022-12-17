@@ -10,10 +10,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.utils.translation import ugettext_lazy as _
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
 PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 
 
@@ -21,12 +23,12 @@ PROJECT_DIR = os.path.join(BASE_DIR, "grouping_serv")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
-# STRIPE_PUBLISHABLE_KEY = os.environ.get('stripe_pubkey')
-# STRIPE_SECRET_KEY = os.environ.get('stripe_privkey')
+# STRIPE_PUBLISHABLE_KEY = env('stripe_pubkey')
+# STRIPE_SECRET_KEY = env('stripe_privkey')
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SESSION_EXPIRE_AT_BROWSER_CLOSE=True
@@ -35,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "192.168.68.110", "172.16.150.187", 'group-optipus.herokuapp.com']
+ALLOWED_HOSTS = ["localhost", "192.168.1.130", "114.32.151.36", 'group-optipus.herokuapp.com']
 
 
 # Application definition
@@ -123,10 +125,10 @@ WSGI_APPLICATION = "grouping_serv.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME': os.environ.get('NAME'),
-        'HOST': os.environ.get('HOST'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
+        'NAME': os.getenv('NAME'),
+        'HOST': os.getenv('HOST'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
         'PORT':'5432'
     }
 }

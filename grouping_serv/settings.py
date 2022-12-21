@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "grouping_serv.apps.accounts",
     "djangosecure",
     "sslserver",
+    "captcha"
 ]
 
 MIDDLEWARE = [
@@ -189,6 +190,7 @@ LOGOUT_REDIRECT_URL = "public:index"
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
+CAPTCHA_OUTPUT_FORMAT = u"%(hidden_field)s<br>%(image)s<br>%(text_field)s"
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
 # )

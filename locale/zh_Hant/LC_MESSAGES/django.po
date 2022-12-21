@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 15:19+0800\n"
+"POT-Creation-Date: 2022-12-22 00:34+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,116 +18,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\grouping_serv\apps\accounts\views.py:93
-#: .\grouping_serv\apps\accounts\views.py:131
+#: .\grouping_serv\apps\accounts\views.py:59
+msgid "Captcha verification failed"
+msgstr "身分認證失敗"
+
+#: .\grouping_serv\apps\accounts\views.py:97
+#: .\grouping_serv\apps\accounts\views.py:135
 msgid "User not in this classroom"
 msgstr "該使用者不再這個教室"
 
-#: .\grouping_serv\apps\accounts\views.py:95
+#: .\grouping_serv\apps\accounts\views.py:99
 msgid "Invalid user input"
 msgstr "不能輸入這個帳號名"
 
-#: .\grouping_serv\apps\accounts\views.py:97
-#: .\grouping_serv\apps\accounts\views.py:133
+#: .\grouping_serv\apps\accounts\views.py:101
+#: .\grouping_serv\apps\accounts\views.py:137
 msgid "User already added"
 msgstr "已經加入該帳號"
 
-#: .\grouping_serv\apps\accounts\views.py:112
-#: .\grouping_serv\apps\accounts\views.py:146
+#: .\grouping_serv\apps\accounts\views.py:116
+#: .\grouping_serv\apps\accounts\views.py:150
 msgid "Cannot find specified user"
 msgstr "找不到指定的使用者"
 
-#: .\grouping_serv\apps\accounts\views.py:244
+#: .\grouping_serv\apps\accounts\views.py:250
 msgid "Classroom not yours"
 msgstr "你有教室的擁有權"
 
-#: .\grouping_serv\apps\accounts\views.py:246
+#: .\grouping_serv\apps\accounts\views.py:252
 msgid "No such classroom"
 msgstr "沒有指定的教室"
 
-#: .\grouping_serv\apps\accounts\views.py:315
+#: .\grouping_serv\apps\accounts\views.py:321
 msgid "incorrect username"
 msgstr "錯誤的使用者名"
 
-#: .\grouping_serv\apps\accounts\views.py:362
+#: .\grouping_serv\apps\accounts\views.py:368
 msgid "verification failed"
 msgstr "認證失敗"
 
-#: .\grouping_serv\apps\accounts\views.py:518
+#: .\grouping_serv\apps\accounts\views.py:524
 msgid "Max number of class created reached"
 msgstr "你已經達到最大班級創造數"
 
-#: .\grouping_serv\apps\accounts\views.py:524
+#: .\grouping_serv\apps\accounts\views.py:530
 msgid "class already created"
 msgstr "該教室已經存在"
 
-#: .\grouping_serv\apps\accounts\views.py:529
+#: .\grouping_serv\apps\accounts\views.py:535
 msgid "Invalid class name"
 msgstr "無效的教室名"
 
-#: .\grouping_serv\apps\accounts\views.py:574
+#: .\grouping_serv\apps\accounts\views.py:580
 msgid "Class already joined"
 msgstr "已經加入該教室"
 
-#: .\grouping_serv\apps\accounts\views.py:586
+#: .\grouping_serv\apps\accounts\views.py:592
 msgid "class not exist"
 msgstr "教室不存在"
 
-#: .\grouping_serv\apps\accounts\views.py:588
+#: .\grouping_serv\apps\accounts\views.py:594
 msgid "Invalid classid or password"
 msgstr "錯誤的教室名或密碼"
 
-#: .\grouping_serv\apps\accounts\views.py:618
+#: .\grouping_serv\apps\accounts\views.py:624
 msgid "The classroom is yours. To leave, go into your class and delete it."
 msgstr "這是你創建的教室。如果要離開，嘗試刪除教室。"
 
-#: .\grouping_serv\apps\accounts\views.py:624
+#: .\grouping_serv\apps\accounts\views.py:630
 msgid "Invalid selection"
 msgstr "指定教室無效"
 
-#: .\grouping_serv\apps\accounts\views.py:671
-#: .\grouping_serv\apps\accounts\views.py:673
+#: .\grouping_serv\apps\accounts\views.py:677
+#: .\grouping_serv\apps\accounts\views.py:679
 msgid "Group size not a natural number"
 msgstr "組別大小不是正整數"
 
-#: .\grouping_serv\apps\accounts\views.py:680
-#: .\grouping_serv\apps\accounts\views.py:682
+#: .\grouping_serv\apps\accounts\views.py:686
+#: .\grouping_serv\apps\accounts\views.py:688
 msgid "reward and punish values should be positive integers"
 msgstr "心情加扣分權重必須是正整數"
 
-#: .\grouping_serv\apps\accounts\views.py:685
+#: .\grouping_serv\apps\accounts\views.py:691
 msgid "Group size exceeds the total amount of people"
 msgstr "組別大小超過總人數"
 
-#: .\grouping_serv\apps\accounts\views.py:692
+#: .\grouping_serv\apps\accounts\views.py:698
 msgid "class size exceeds 15 people"
 msgstr "教室人數超過15人"
 
-#: .\grouping_serv\apps\accounts\views.py:702
+#: .\grouping_serv\apps\accounts\views.py:708
 msgid "Did not specify a valid algorithm"
 msgstr "沒有設定有效的演算法"
 
-#: .\grouping_serv\apps\accounts\views.py:707
+#: .\grouping_serv\apps\accounts\views.py:713
 msgid "Invalid group size"
 msgstr "單組人數: "
 
-#: .\grouping_serv\apps\accounts\views.py:727
+#: .\grouping_serv\apps\accounts\views.py:733
 msgid "invalid characters"
 msgstr "無效的字母"
 
-#: .\grouping_serv\apps\accounts\views.py:738
+#: .\grouping_serv\apps\accounts\views.py:744
 msgid "user already exists"
 msgstr "帳號名已經存在"
 
-#: .\grouping_serv\apps\accounts\views.py:751
+#: .\grouping_serv\apps\accounts\views.py:757
 msgid "Your password must contain at least 8 characters"
 msgstr "你的密碼長度必須長於八個字母"
 
-#: .\grouping_serv\settings.py:169
+#: .\grouping_serv\settings.py:170
 msgid "English"
 msgstr "英文"
 
-#: .\grouping_serv\settings.py:170
+#: .\grouping_serv\settings.py:171
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
@@ -605,13 +609,13 @@ msgstr "不喜好的："
 msgid "Add data"
 msgstr "加入資料"
 
-#: .\grouping_serv\templates\accounts\profile.html:146
-#: .\grouping_serv\templates\accounts\profile.html:157
+#: .\grouping_serv\templates\accounts\profile.html:145
+#: .\grouping_serv\templates\accounts\profile.html:156
 msgid "Favored"
 msgstr "喜好的："
 
-#: .\grouping_serv\templates\accounts\profile.html:148
-#: .\grouping_serv\templates\accounts\profile.html:159
+#: .\grouping_serv\templates\accounts\profile.html:147
+#: .\grouping_serv\templates\accounts\profile.html:158
 msgid "Unfavored"
 msgstr "不喜好的："
 

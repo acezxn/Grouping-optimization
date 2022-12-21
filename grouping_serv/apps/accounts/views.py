@@ -54,6 +54,10 @@ def ProfileView(request, q):
 
     if request.user.is_authenticated:
         if request.method == "POST":
+            form = NameForm(request.POST)
+            if not form.is_valid():
+                return render(request, "error.html", {"error": gettext("Captcha verification failed")})
+
             userid = request.user.id
             user = User.objects.all()
             classes = []
@@ -224,7 +228,8 @@ def ProfileView(request, q):
                                 "created": 1,
                                 "url": "accounts",
                                 "joined_users": joined_user,
-                                "passcode": code
+                                "passcode": code,
+                                "form": NameForm()
                             },
                         )
                     else:
@@ -237,7 +242,8 @@ def ProfileView(request, q):
                                 "favored": json.loads(relation.favored),
                                 "disliked": json.loads(relation.disliked),
                                 "created": 0,
-                                "url": "accounts"
+                                "url": "accounts",
+                                "form": NameForm()
                             },
                         )
                 else:
@@ -630,6 +636,10 @@ def compute(request, q):
     # authentication gate needed
     if request.user.is_authenticated:
         if request.method == "POST":
+            form = NameForm(request.POST)
+            if not form.is_valid():
+                return render(request, "error.html", {"error": gettext("Captcha verification failed")})
+
             profile = UserProfile.objects.get(user_id=request.user.id)
             if q not in profile.created:
                 return redirect("/accounts/profile")

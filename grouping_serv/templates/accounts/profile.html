@@ -35,7 +35,7 @@
     <input type="checkbox" name="add_rem" value="yes">
     <a style="font-family: Ubuntu;"> {% trans "Add remaining member in existing groups" %} <a><br>
   </div>
-
+  {{ form.as_p }}
     <a style="font-family: Ubuntu;">{% trans "Group size: " %}</a>
     <div><input id="size" type="number" name="size" style="padding: min(14px, 2vw) 20px; border: solid 1px" min = "1"><a> </a><input type="submit" value="{% trans 'compute' %}"></div>
   <h2>{% trans "Advanced" %}</h2>
@@ -142,23 +142,23 @@
 <h3>{% trans "Add data" %} </h3>
 <form action = "" method="post">
   {% csrf_token %}
-  {{ form }}
   <p>{% trans "Favored" %}</p>
   <input id="favored" type="text" name="favored">
   <p>{% trans "Unfavored" %}</p>
   <input id="disliked" type="text" name="disliked">
   <br>
+  {{ form.as_p }}
   <input type="submit" value="OK">
 </form>
 <h3>{% trans "Remove data" %}</h3>
 <form action = "" method="post">
   {% csrf_token %}
-  {{ form }}
   <p>{% trans "Favored" %}</p>
   <input id="rm_favored" type="text" name="rm_favored">
   <p>{% trans "Unfavored" %}</p>
   <input id="rm_disliked" type="text" name="rm_disliked">
   <br>
+  {{ form.as_p }}
   <input type="submit" value="OK">
 {% endif %}
 {% endif %}

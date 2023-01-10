@@ -5,6 +5,18 @@ https://projectgo-374215.uc.r.appspot.com/
 
 [About this website](https://projectgo-374215.uc.r.appspot.com/en/about)
 
+## Pictures
+
+Signing up <br>
+<img width="800" alt="Screen Shot 2023-01-10 at 10 56 27 PM" src="https://user-images.githubusercontent.com/14313049/211585603-2c1e00c2-f812-48f8-a63d-59ed5cb081bb.png">
+<br>Class members could input their preferences<br>
+<img width="800" alt="Screen Shot 2023-01-10 at 10 57 39 PM" src="https://user-images.githubusercontent.com/14313049/211585733-3238b71e-2c72-44cf-a7c0-a92f213c67ef.png">
+<br>Class owners could customize optimization methods<br>
+<img width="800" alt="Screen Shot 2023-01-10 at 10 58 26 PM" src="https://user-images.githubusercontent.com/14313049/211586141-5ca58b48-599a-47b7-ad9b-cb8e46b6c474.png">
+<br>An example of the output<br>
+<img width="800" alt="Screen Shot 2023-01-10 at 10 59 05 PM" src="https://user-images.githubusercontent.com/14313049/211586605-f17ebcae-ba50-44ef-9333-1cd742a34d76.png">
+
+
 ## Features
 To work with the algorithms, an account is needed.
 - Users can register accounts on group-optipus.herokuapp.com. In every account, user can join a classroom or create a new one. 

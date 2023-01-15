@@ -18,8 +18,8 @@ Signing up <br>
 
 
 ## Features
-To work with the algorithms, an account is needed.
-- Users can register accounts on group-optipus.herokuapp.com. In every account, user can join a classroom or create a new one. 
+An account is needed to work with the algorithms of the web application.
+- Users can register accounts on https://projectgo-374215.uc.r.appspot.com/. In every account, user can join a classroom or create a new one. 
 - Classrooms are intended for the class owner (the class creator) to select the favorite algorithm to generate optimized groups. There is an algorithm is faster for smaller classes (less than 12 people), and the other that is generally slower but capable of handling larger classes.
 - Everyone except the class owner have the interface to provide information of their favorites as well as someone they do not like much. The information is designed not be exposed to anyone within and outside the classroom. Only the person holding the information can view it.
 - The web application supports both English and Traditional Chinese.

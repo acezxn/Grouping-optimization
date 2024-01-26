@@ -1,10 +1,6 @@
 # <img src="images/iplusi.png" width=30px>&nbsp;&nbsp;&nbsp;&nbsp;Grouping-optimization
 
-This website is intended to achieve the fairest group division, increasing social interests by improving overall satisfaction of groupmates.
-https://projectgo-374215.uc.r.appspot.com/
-
-[About this website](https://projectgo-374215.uc.r.appspot.com/en/about)
-
+This website is intended to achieve the fairest group division, increasing social interests by improving overall satisfaction of group mates.
 ## Pictures
 
 Signing up <br>

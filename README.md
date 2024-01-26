@@ -15,7 +15,7 @@ Signing up <br>
 
 ## Features
 An account is needed to work with the algorithms of the web application.
-- Users can register accounts on https://projectgo-374215.uc.r.appspot.com/. In every account, user can join a classroom or create a new one. 
+- Users can register accounts. In every account, user can join a classroom or create a new one. 
 - Classrooms are intended for the class owner (the class creator) to select the favorite algorithm to generate optimized groups. There is an algorithm is faster for smaller classes (less than 12 people), and the other that is generally slower but capable of handling larger classes.
 - Everyone except the class owner have the interface to provide information of their favorites as well as someone they do not like much. The information is designed not be exposed to anyone within and outside the classroom. Only the person holding the information can view it.
 - The web application supports both English and Traditional Chinese.
@@ -42,12 +42,12 @@ The web application actually includes only Combination Selection Grouping and Re
 ### Complexity for Combination Selection Grouping:
 n represents the total number of people, r represents the group size, and x represents a positive integer.
 <br/>
-### $O={n-1 \choose r-1} \cdot {n-r-1 \choose r-1} \cdot {n-2r-1 \choose r-1}...;n-xr-1 \geq r-1$
+### $${n-1 \choose r-1} \cdot {n-r-1 \choose r-1} \cdot {n-2r-1 \choose r-1}...;n-xr-1 \geq r-1$$
 The complexity grows factorially. Therefore, it is not suitable to group a class with more than 12 people.
 
 ### Complexity for Regression Algorithm:
 Maximum complexity: <br/>
-### $O = depth * attempts$<br/>
+### $$depth * attempts$$<br/>
 whereas depth is set fixed to 100 and maximum attempts is set fixed to 100000.<br/>
 Therefore, it is more usable when grouping large classes.
 
